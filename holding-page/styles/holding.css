@@ -1,0 +1,84 @@
+/* Holding page: one screen, minimal and bold (style mix 60% tech, 40% luxury fashion, RFA §7). Uses tokens.css only. */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  display: flex; flex-direction: column;
+  min-height: 100vh; min-height: 100dvh;
+  padding: clamp(1.5rem, 4vw, 3rem) var(--gutter);
+  background: var(--bg); color: var(--ink);
+  font: 400 var(--text-md)/1.65 var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--spark-deep); outline-offset: 3px; }
+
+.page { width: 100%; max-width: var(--container); margin-inline: auto; display: flex; flex-direction: column; flex: 1; }
+
+/* Small uppercase mono label */
+.label {
+  font: 500 var(--text-xs)/1.4 var(--mono);
+  letter-spacing: var(--tracking-label); text-transform: uppercase;
+}
+
+/* Top: brand left, services right, hairline below */
+.top {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem;
+  padding-bottom: .875rem;
+  border-bottom: var(--rule-strong);
+}
+
+/* Middle: the headline */
+/* Centred (2026-10-12): headline and line sit in the middle of the screen */
+.main {
+  flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;
+  padding-block: var(--space-lg);
+  text-align: center;
+}
+/* Commented out 2026-10-12, not deleted: left-aligned version.
+.main { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-block: var(--space-lg); }
+*/
+
+.title {
+  font: 600 var(--text-display)/.95 var(--display);
+  letter-spacing: var(--tracking-display);
+}
+.title span { display: block; }
+.title .italic { font-weight: 500; font-style: italic; color: var(--primary); }
+
+.sub {
+  max-width: 34rem; margin-top: var(--space-md); margin-inline: auto; padding-top: 1.5rem;
+  border-top: var(--rule);
+  font-size: var(--text-lead); font-weight: 600; line-height: 1.4;
+  text-wrap: balance; /* no single word left alone on the last line */
+}
+.sub span { display: block; } /* one sentence per line */
+
+/* Phones: top and bottom labels stack, so centre them to match the middle */
+@media (max-width: 35rem) {
+  .top, .bottom { flex-direction: column; align-items: center; text-align: center; }
+}
+
+.contact { margin-top: 1.25rem; color: var(--muted); }
+.contact a { color: var(--primary); font-weight: 600; text-underline-offset: .25em; }
+
+/* Bottom: year and tagline */
+.bottom {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem;
+  padding-top: .875rem;
+  border-top: var(--rule);
+  color: var(--muted);
+}
+
+/* One slow fade on load; nothing loops */
+.fade { animation: fade var(--fade) var(--ease) both; animation-delay: calc(var(--d, 0) * var(--stagger)); }
+@keyframes fade { from { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade { animation: none; }
+}

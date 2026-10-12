@@ -1,0 +1,3 @@
+# Cloudflare Pages redirects for the holding page.
+# Business card QR code (doc/print/card-qr.svg) points to /card, so the cards work while this page is live.
+/card  /  302
