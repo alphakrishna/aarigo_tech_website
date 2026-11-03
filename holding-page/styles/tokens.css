@@ -1,0 +1,78 @@
+/* COPY of site/styles/tokens.css (2026-10-12) so this folder deploys on its own. Edit the site copy first, then copy it here. */
+/* Aaurigo Tech design tokens: Stone Teal (locked 2026-09-25), style mix 60% tech, 40% luxury fashion (RFA §7).
+   The only file with raw colour values. Other files use these tokens, never hex.
+   Breakpoints can't be tokens in plain CSS media queries; use these values: 35rem (phone), 55rem (tablet, menu switch). */
+
+:root {
+  /* Colour */
+  --bg: #F5F3EE;          /* stone */
+  --surface: #FFFFFF;
+  --soft: #EDE9E1;        /* sand */
+  --tint: #E2EEF0;
+  --line: #E4E0D8;
+  --ink: #132227;
+  --muted: #566469;
+  --primary: #0E4D5C;     /* teal: actions and links only */
+  --primary-deep: #0A3945;
+  --spark: #B08D57;       /* champagne: fine lines only */
+  --spark-deep: #7A5C30;  /* champagne for text, passes 4.5:1 on stone */
+  --pop: #F0BFAE;         /* blush coral, rare */
+  --on-primary: #FFFFFF;
+
+  /* Type families */
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --body: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+
+  /* Type scale (rem only) */
+  --text-xs: .75rem;      /* mono labels */
+  --text-sm: .875rem;
+  --text-md: 1rem;
+  --text-lead: clamp(1.125rem, 2vw, 1.375rem);
+  --text-fact: clamp(1.5rem, 3vw, 2.25rem);
+  --text-display: clamp(3.25rem, 12vw, 9.5rem);
+  --text-intro: 1.125rem;
+  --text-h3: clamp(1.375rem, 2.4vw, 1.75rem);
+  --text-quote: clamp(1.5rem, 3.4vw, 2.5rem);
+  --text-h2: clamp(2.25rem, 6vw, 4.5rem);
+  --text-page: clamp(2.75rem, 8vw, 6rem);  /* H1 on inner pages */
+  --tracking-label: .14em;
+  --tracking-display: -.04em;
+  --tracking-title: -.03em;
+
+  /* Dark footer (the only dark area, RFA §7) */
+  --on-dark: #F5F3EE;
+  --on-dark-muted: #A3B2B6;  /* 7:1 on ink */
+  --line-dark: #2C3D42;
+
+  /* Space */
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --space-sm: 1rem;
+  --space-md: clamp(2rem, 5vw, 3.5rem);
+  --space-lg: clamp(2.5rem, 7vw, 5rem);
+  --section: clamp(4.5rem, 10vw, 8rem);  /* vertical space around each section */
+  --container: 75rem;
+  --measure: 38rem;      /* comfortable line length for body text */
+  --tap: 3rem;            /* minimum tap target height */
+
+  /* Shape: sharp corners, hairlines instead of cards and shadows */
+  --radius: .125rem;
+  --rule: 1px solid var(--line);
+  --rule-strong: 1px solid var(--ink);
+
+  /* Motion: slow, soft fades only; nothing floats, pulses or loops */
+  --ease: ease-out;
+  --fast: .2s;
+  --fade: 1.2s;
+  --stagger: .15s;
+}
+
+/* Commented out 2026-10-10, not deleted (style mix: sharp corners, no shadows, RFA §7).
+:root {
+  --radius: 1.125rem;
+  --radius-pill: 999px;
+  --radius-sharp: .125rem;
+  --shadow: 0 1.5rem 3.75rem -2rem rgba(19, 34, 39, .32);
+  --shadow-soft: 0 .75rem 2rem -1.25rem rgba(19, 34, 39, .28);
+}
+*/
