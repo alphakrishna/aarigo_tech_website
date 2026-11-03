@@ -1,0 +1,142 @@
+/* Home hero (WEB-8.2), chosen direction (WEB-8.13): 60% tech, 40% luxury fashion (RFA §7).
+   One very large headline, left aligned, hairline rules, teal only for the action,
+   one static product screen, spec-sheet facts. Section styles only; shared parts live in components.css. */
+
+.hero { padding-block: clamp(2rem, 6vw, 4rem) clamp(3rem, 8vw, 6rem); }
+
+/* was until 2026-10-13: the line moved onto the header (header.css), directly under the nav bar
+.hero-rule { border-bottom: var(--rule-strong); }
+*/
+
+/* was until 2026-10-13: brand left, services right above the hairline
+.hero-label {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem;
+  padding-bottom: .875rem;
+  border-bottom: var(--rule-strong);
+}
+*/
+
+/* ---------- Headline ---------- */
+.hero-title {
+  margin-top: clamp(1rem, 3vw, 2.5rem); /* was until 2026-10-13: clamp(2.5rem, 8vw, 5.5rem), when a label sat above it */
+  font: 600 var(--text-display)/.95 var(--display);
+  letter-spacing: var(--tracking-display);
+  font-variation-settings: "opsz" 144;
+  text-wrap: initial;
+}
+.hero-title .line { display: block; }
+.hero-title .line-italic { font-weight: 500; font-style: italic; color: var(--primary); }
+
+/* ---------- Headline and founder photo side by side (2026-11-01, Krishna: his photo in the hero) ----------
+   The photo has a pure white background; multiply turns that white into the stone page colour, so he stands on the
+   page with no box around him, his arms resting on the hairline of the row below. */
+.hero-top {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(14rem, 28rem);   /* was until 2026-11-01 (text beside the photo): minmax(14rem, 26rem) */
+  align-items: center; column-gap: clamp(2rem, 5vw, 4rem);   /* was until 2026-11-01: align-items: end; column-gap: clamp(1.5rem, 4vw, 3rem) */
+  background: var(--bg); isolation: isolate;   /* the photo blends with this stone, whatever layers sit above it */
+}
+.hero-photo { align-self: end; margin: clamp(1rem, 3vw, 2.5rem) 0 0; mix-blend-mode: multiply; }   /* on the figure, so it still blends while the fade gives it its own layer; its foot rests on the facts line */
+.hero-photo img { display: block; width: 100%; height: auto; }
+/* was until 2026-11-01 (Krishna: align the text with the image): .hero-top + .hero-row { margin-top: 0; } .hero-top .hero-title { padding-bottom: var(--space-md); } */
+.hero-text .hero-title { font-size: var(--text-display-side); }   /* a narrower column beside the photo, so a little smaller */
+.hero-text .hero-row { grid-template-columns: 1fr; gap: 1.75rem; }   /* sub line, then the buttons, stacked in the column */
+.hero-top + .hero-facts { margin-top: 0; }   /* the photo rests on the facts line */
+
+/* ---------- Text and actions in two columns ---------- */
+.hero-row {
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 2rem clamp(2rem, 6vw, 6rem);
+  align-items: end;
+  margin-top: var(--space-md);
+  padding-top: 1.5rem;
+  border-top: var(--rule);
+}
+.hero-sub { font-size: var(--text-lead); font-weight: 600; line-height: 1.4; }
+.hero-intro { margin-top: .75rem; max-width: 34rem; color: var(--muted); }
+
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm) 1.75rem; }
+/* was until 2026-11-01 (the note under the buttons came off, Krishna: make it a little clean): .hero-note { flex-basis: 100%; font-size: var(--text-sm); color: var(--muted); } */
+
+/* ---------- One calm product screen (decorative) ----------
+   Not on the page since 2026-10-13 (hidden in index.html until a real project screenshot exists, WEB-2.1 to 2.6).
+   Kept as a planned variant, like the WEB-6 ones. */
+.hero-screen {
+  margin-top: var(--space-lg);
+  border: var(--rule-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow: hidden;
+}
+.screen-bar {
+  display: flex; align-items: center; gap: .375rem;
+  padding: .625rem .875rem;
+  border-bottom: var(--rule);
+}
+.screen-bar i { width: .5rem; height: .5rem; border-radius: 50%; border: 1px solid var(--muted); }
+.screen-bar span { margin-inline: auto; font-size: .6875rem; letter-spacing: .08em; text-transform: none; color: var(--muted); }
+.screen-body {
+  display: grid; grid-template-columns: 1fr 1.2fr; gap: 6%;
+  aspect-ratio: 21 / 8;
+  padding: 5% 6%;
+}
+.screen-text { display: flex; flex-direction: column; justify-content: center; gap: .75rem; }
+/* Commented out 2026-10-12, not deleted: moved to the shared .media-blank in components.css.
+.screen-image {
+  background:
+    linear-gradient(135deg, transparent 49.8%, var(--line) 50%, transparent 50.2%),
+    var(--soft);
+}
+*/
+
+/* Skeleton lines */
+.sk { display: block; width: 100%; height: .5rem; background: var(--soft); }
+.sk-label { width: 28%; height: .375rem; background: var(--spark); }
+.sk-title { width: 90%; height: 1.125rem; background: var(--ink); }
+.sk-btn { width: 32%; height: 1.5rem; margin-top: .5rem; background: var(--primary); }
+.sk-title.short { width: 60%; }
+.sk-line.short { width: 70%; }
+
+/* ---------- Spec sheet facts ---------- */
+.hero-facts {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  border-top: var(--rule-strong);
+}
+.hero-facts li { display: flex; flex-direction: column; gap: .25rem; padding: 1.25rem 1.5rem 0 0; }
+.hero-facts li + li { padding-left: 1.5rem; border-left: var(--rule); }
+.hero-facts strong {
+  margin-top: .5rem;
+  font: 600 var(--text-fact)/1.1 var(--display);
+  letter-spacing: -.02em;
+}
+.fact-text { font-size: .9375rem; color: var(--muted); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 55rem) {
+  .hero-top { grid-template-columns: 1fr; }
+  .hero-photo { justify-self: center; width: min(100%, 24rem); margin-top: var(--space-md); }
+  .hero-row { grid-template-columns: 1fr; }
+  .screen-body { aspect-ratio: 16 / 9; }
+}
+
+@media (max-width: 35rem) {
+  .hero-actions .btn-primary { flex: 1; }
+  .screen-body { grid-template-columns: 1fr; aspect-ratio: auto; padding: 1.25rem 1.25rem 1.5rem; }
+  .screen-image { aspect-ratio: 16 / 9; }
+  .hero-facts { grid-template-columns: 1fr; }
+  .hero-facts li { padding: var(--space-sm) 0; }
+  .hero-facts li + li { padding-left: 0; border-left: 0; border-top: var(--rule); }
+}
+
+/* tried and reversed 2026-10-14 (Krishna: "reverse it"): who it is for, above the headline
+.hero-label { margin-top: clamp(1rem, 3vw, 2.5rem); }
+.hero-label + .hero-title { margin-top: 1rem; }
+*/
+
+/* was until 2026-10-21 (Krishna: keep the black off the Home page):
+( ---------- On the black band (2026-10-21, Krishna: black on every page; .intro-glow in components.css) ---------- )
+.intro-glow .hero-title .line-italic { color: var(--spark); }
+.intro-glow .hero-row { border-top-color: var(--line-dark); }
+.intro-glow .hero-intro, .intro-glow .hero-note { color: var(--on-dark-muted); }
+.intro-glow .hero-facts, .intro-glow .hero-facts li + li { border-color: var(--line-dark); }
+.intro-glow .fact-text { color: var(--on-dark-muted); }
+*/

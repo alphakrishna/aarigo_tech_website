@@ -1,0 +1,23 @@
+/* Stop paying for guesswork + "Time to real user data" chart (WEB-8.3, WEB-7.4, copy home.md §3). */
+
+.guess-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); align-items: start; }
+.guess-lead { font-size: var(--text-intro); font-weight: 600; }
+.guess-body { margin-top: 1rem; color: var(--muted); }
+.guess-quote { padding-left: 1.5rem; border-left: 1px solid var(--spark); }
+
+/* ---------- Chart: two bars, months against weeks ---------- */
+.chart { margin-top: var(--space-lg); padding-top: 1.5rem; border-top: var(--rule-strong); }
+.chart-title { margin-bottom: 1.5rem; }
+.chart-rows { display: grid; gap: 1.75rem; }
+.chart-row { display: grid; grid-template-columns: 11rem 1fr; gap: .5rem 2rem; align-items: center; }
+.chart-name { font-weight: 600; }
+.chart-track { display: grid; gap: .5rem; }
+.chart-bar { display: block; height: .75rem; }
+.chart-bar-slow { width: 100%; background: var(--line); }
+.chart-bar-fast { width: 18%; background: var(--ink); }
+.chart-note { font-size: var(--text-sm); color: var(--muted); }
+
+@media (max-width: 55rem) {
+  .guess-grid { grid-template-columns: 1fr; }
+  .chart-row { grid-template-columns: 1fr; }
+}

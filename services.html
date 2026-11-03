@@ -1,0 +1,980 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web &amp; App Development Services | Aaurigo Tech</title>
+  <meta name="description" content="Custom websites, web apps and iOS and Android apps, built right and built fast. A live preview link and a short review call at every milestone."> <!-- 2026-10-21: mobile apps off and back the same day; Brand tried as a separate service and taken off (Krishna: brand will be combined with every service) -->
+  <link rel="canonical" href="https://www.aaurigotech.com/services"> <!-- 2026-11-03: self canonical on the final www address (RFA §5.11) -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.aaurigotech.com/"}, {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.aaurigotech.com/services"}]}</script> <!-- 2026-11-03: BreadcrumbList on inner pages (RFA §5.11) -->
+  <!-- Copy: doc/copy/services.md (draft until approved). Header and footer are copies of index.html until the Astro port (WEB-3.2). -->
+
+  <!-- Google Fonts for now; self-host before launch (WEB-4.4). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+
+  <!-- Order matters: tokens → base → components → sections (in page order) -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/sections/header.css">
+  <link rel="stylesheet" href="styles/sections/packages.css">
+  <link rel="stylesheet" href="styles/sections/phases.css">
+  <!-- was until 2026-10-21 (Krishna: one process for all three services): website-week.css (now archive/) and process.css (still used by Home and About) -->
+  <link rel="stylesheet" href="styles/sections/faq.css">
+  <link rel="stylesheet" href="styles/sections/service-cards.css">
+  <link rel="stylesheet" href="styles/sections/app-show.css">
+  <link rel="stylesheet" href="styles/sections/cta.css">
+  <link rel="stylesheet" href="styles/sections/footer.css">
+
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="scripts/site.js" defer></script>
+</head>
+<body class="cards-page" data-enter="cards">   <!-- 2026-10-22 (Krishna): card design across the whole page, styles/sections/service-cards.css; 2026-10-30 (Krishna: its own entrances, not the About slides): data-enter, see base.css -->
+  <!-- [PLACEHOLDER] Every href="#" Book a call link becomes the booking page (WEB-14.8.6). -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- 1. Announcement bar (home.md §1) -->
+  <div class="announce">
+    <div class="container">
+      <!-- was until 2026-10-13:
+      <p>Now booking new projects. Talk to us in as little as 30 minutes.
+        <a href="#" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </p>
+      -->
+      <p class="announce-inner">
+        <span class="announce-label label label-accent"><span class="announce-dot" aria-hidden="true"></span>Now booking</span>
+        <span class="announce-text">Talk to us in as little as 30 minutes.</span>
+        <a href="#" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Site header (WEB-5) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Aaurigo Tech</a>
+      <nav aria-label="Main">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menu</button>
+        <ul class="nav-list list-plain" id="main-menu">
+          <li><a href="services.html" aria-current="page">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-sm header-cta" href="#" target="_blank" rel="noopener">
+        Book a call<span class="sr-only"> (opens in a new tab)</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-intro intro-glow"> <!-- was until 2026-10-21 (Krishna: black on every page): [section class="page-intro"] -->
+      <div class="container reveal">
+        <!-- was until 2026-10-21 (Krishna: remove the page name above the heading): [p class="label label-accent"]Services[/p] -->
+        <h1 class="page-title">Launch sooner. Learn faster. <em>Spend smarter.</em></h1> <!-- was until 2026-10-21 (Krishna: black on every page): [h1 class="page-title"]Launch sooner. Learn faster. Spend smarter.[/h1] -->
+        <p class="page-lead">We build websites, web apps and mobile apps that reach real users in weeks. Every project is scoped around one clear outcome, built with care, and shipped early so your next decision is based on real data.</p> <!-- 2026-10-21: mobile apps off and back the same day; Brand tried as a separate service and taken off (Krishna: brand will be combined with every service) -->
+        <!-- was until 2026-10-14 (Krishna: not every section needs the call button; each package below has its own button):
+        <div class="page-actions">
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+          <p class="page-note">Talk in as little as 30 minutes, during your business hours.</p>
+        </div>
+        -->
+      </div>
+    </section>
+
+    <!-- Packages (services.md §2 to §4). Names come from WEB-1.17. Badge "Most requested" commented out: no badges (RFA §7). -->
+    <section class="section" aria-label="Packages">
+      <div class="container reveal-scroll">
+        <!-- Packages as spec sheets (2026-10-21 (Krishna: packages too dense, premium spec sheet layout)). The prep call, steps and care plan are explained in How we work
+             and the extras below, so each package keeps only its promise, its path, four specs and its price. Styles: packages.css -->
+        <article class="offer offer-has-media" id="web-development" aria-labelledby="web-development-title">
+          <!-- was until 2026-10-30 (Krishna: photo from Selected_Photos, DSC_0678): [div class="offer-media offer-photo media-blank placeholder" role="img" aria-label="[PLACEHOLDER] Krishna at his desk, a website in progress on the laptop"][span class="label"][PHOTO] You at your desk with a laptop · media/services/websites.webp[/span][/div] -->
+          <div class="offer-media offer-photo photo-mid"><img src="media/services/websites.webp" srcset="media/services/websites-720.webp 720w, media/services/websites.webp 1100w" sizes="(max-width: 55rem) 100vw, 40vw" alt="Krishna, our founder, smiling as he holds up a laptop to show a website we built." width="1100" height="1546" loading="lazy" decoding="async"></div>   <!-- 2026-10-31 (Krishna: his own edit, website.png, client name on screen soft blurred by Krishna; cup logo painted out with the cup's own colour on export, wall sign left as is); was DSC_0678, alt "Krishna, our founder, smiling at the table as he works on a laptop.", files in archive/media/services-2026-10-30/ -->
+          <!-- was until 2026-10-22 (Krishna: own photos instead of project screenshots, doc/photo-shoot-services.md):
+          [figure class="offer-media"]   ( 2026-10-22 (Krishna: image cards for credibility, like the reference): a real project of ours as proof )
+            [div class="shot-frame"]
+              [img src="media/work/drarpangandhi.webp" alt="Dr. Arpan Gandhi home page, a website we rebuilt from scratch." width="1200" height="900" loading="lazy"]
+            [/div]
+            [figcaption class="offer-media-caption"][span class="label"]From our work · Dr. Arpan Gandhi[/span][a class="btn-link" href="case-study-dr-arpan-gandhi.html"]See the story [span aria-hidden="true"]→[/span][/a][/figcaption]
+          [/figure]
+          -->
+          <div class="offer-main">
+            <p class="label label-accent">01</p>
+            <h2 class="offer-name" id="web-development-title">Websites</h2>
+            <p class="offer-line">Your whole website, built in one week.</p>
+            <p class="offer-path label"><span>Week 1 · Prep</span><span aria-hidden="true">→</span><span>Week 2 · Build</span><span aria-hidden="true">→</span><span>Live</span></p>
+            <p class="offer-who">For businesses that look better than their website.</p>
+          </div>
+          <div class="offer-side">
+            <p class="offer-price"><span class="label">From</span><span class="offer-amount" data-price="website">A$4,999</span></p>
+            <p class="offer-pay">Pay in one go, or split it into 2 or 3 payments. <a class="btn-link" href="#pay-instalments">Get more information <span aria-hidden="true">→</span></a></p> <!-- 2026-11-02 (Krishna: under each card's price, like "Investment ... (split into ... payments)" with a Get more information link) -->
+            <ul class="offer-specs list-plain">
+              <!-- 2026-11-02 (Krishna: a little more detail on each service): points taken from websites.html, already approved there -->
+              <!-- 2026-11-02 (Krishna: only the relevant points): "Tested on phones, tablets, laptops and large screens" and "Fast to load and easy for everyone to use" taken off this card; both stay on websites.html -->
+              <li>Up to 6 custom pages, designed around your brand, no templates</li> <!-- was until 2026-11-02: Up to 6 custom pages, no templates -->
+              <li>Set up to be found in search and AI answers</li> <!-- was until 2026-10-21 (Krishna: say it plainly, set up to be found): [li]Ready for search and AI answers[/li] -->
+              <li>Two weeks of our care plan included after launch</li> <!-- was until 2026-11-02 (Krishna: never say free; two weeks of the care plan are included in the main package after launch): [li]Two weeks of small changes on us after launch[/li] -->
+              <!-- was until 2026-11-02 (moved under the price): [li]Pay in one go, or in two or three parts[/li] (2026-11-02 (Krishna: the payment options as a point on each service)) -->
+              <li>VIP support for the entire build period</li> <!-- back 2026-10-21 (Krishna: mention it in each service too) -->
+            </ul>
+            <!-- was until 2026-10-22 (Krishna: nothing repeated), said once in the pricing section: [p class="offer-note"]More pages or something specific? We quote it on top.[/p] -->
+            <div class="offer-actions">
+              <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call about a website <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+              <a class="btn-link" href="websites.html">Know more <span aria-hidden="true">→</span></a> <!-- was until 2026-10-31 (Krishna: a page for each service, "Know more" in place of "See every step"): [a class="btn-link" href="#how-we-work"]See every step [span aria-hidden="true"]→[/span][/a] -->
+            </div>
+          </div>
+        </article>
+        <article class="offer offer-has-media" id="web-applications" aria-labelledby="web-applications-title">
+          <!-- was until 2026-10-30 (Krishna: photo from Selected_Photos, DSC_0613): [div class="offer-media offer-photo media-blank placeholder" role="img" aria-label="[PLACEHOLDER] A user flow sketched on sticky notes beside a laptop"][span class="label"][PHOTO] A planning moment, sketches and a dashboard · media/services/web-apps.webp[/span][/div] -->
+          <div class="offer-media offer-photo"><img src="media/services/web-apps.webp" srcset="media/services/web-apps-720.webp 720w, media/services/web-apps.webp 1100w" sizes="(max-width: 55rem) 100vw, 40vw" alt="Krishna in a white shirt, smiling at his laptop with a coffee beside him." width="1100" height="1650" loading="lazy" decoding="async"></div>   <!-- 2026-10-31 (Krishna: his own Canva edit, web-app.png; the glowing logo on the laptop lid painted out with the lid's own shading); was DSC_0676 the same day, alt "Krishna smiling as he types on his laptop.", files archive/media/services-2026-10-31/web-apps-dsc0676*.webp --> <!-- 2026-10-31 (Krishna: a different outfit from the Websites photo) DSC_0676, the laptop stickers painted out with the lid's own shading; was DSC_0626 the same day, alt "Krishna laughing and pointing towards the camera.", files in archive/media/services-2026-10-31/ --> <!-- 2026-10-31 (Krishna: more energy) DSC_0626, cup and wall sign cropped out; was DSC_0613, alt "Krishna thinking a problem through at his laptop, hand on his chin.", files in archive/media/services-2026-10-30/ -->
+          <!-- was until 2026-10-22 (Krishna: own photos instead of project screenshots, doc/photo-shoot-services.md):
+          [figure class="offer-media"]   ( 2026-10-22 (Krishna: image cards for credibility, like the reference): a real project of ours as proof )
+            [div class="shot-frame"]
+              [img src="media/work/parktag.webp" alt="ParkTag home page, a brand and web app we built from scratch." width="1200" height="900" loading="lazy"]
+            [/div]
+            [figcaption class="offer-media-caption"][span class="label"]From our work · ParkTag[/span][a class="btn-link" href="case-study-parktag.html"]See the story [span aria-hidden="true"]→[/span][/a][/figcaption]
+          [/figure]
+          -->
+          <div class="offer-main">
+            <p class="label label-accent">02</p>
+            <h2 class="offer-name" id="web-applications-title">Web apps</h2>
+            <p class="offer-line">Your own tool, live early and grown on real use.</p>
+            <p class="offer-path label"><span>Prep</span><span aria-hidden="true">→</span><span>Build in milestones</span><span aria-hidden="true">→</span><span>Grow</span></p>
+            <p class="offer-who">For founders with an idea, and teams outgrowing spreadsheets.</p>
+          </div>
+          <div class="offer-side">
+            <p class="offer-price"><span class="label">From</span><span class="offer-amount" data-price="webapp">A$24,999</span></p>
+            <p class="offer-pay">Pay in one go, or split it into 2 or 3 payments. <a class="btn-link" href="#pay-instalments">Get more information <span aria-hidden="true">→</span></a></p> <!-- 2026-11-02 (Krishna: under each card's price, like "Investment ... (split into ... payments)" with a Get more information link) -->
+            <ul class="offer-specs list-plain">
+              <!-- 2026-11-02 (Krishna: a little more detail on each service): points taken from web-apps.html, already approved there -->
+              <!-- 2026-11-02 (Krishna: only the relevant points): taken off this card, all still on web-apps.html: "See how people use it, built in", "Built to grow with you, never to be rebuilt", "Unlimited changes across three review rounds" -->
+              <li>Built around the one outcome that matters most</li>
+              <li>Secure sign in, user roles and safe handling of your data</li> <!-- was until 2026-11-02: Secure sign in and user roles -->
+              <li>Connected to one tool you already use, like payments or email</li>
+              <!-- was until 2026-11-02 (moved under the price): [li]Pay in one go, or in two or three parts[/li] (2026-11-02 (Krishna: the payment options as a point on each service)) -->
+              <li>VIP support for the entire build period</li> <!-- back 2026-10-21 (Krishna: mention it in each service too) -->
+            </ul>
+            <!-- was until 2026-10-22 (Krishna: nothing repeated), said once in the pricing section: [p class="offer-note"]Bigger scope or something specific? We quote it on top.[/p] -->
+            <div class="offer-actions">
+              <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call about a web app <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+              <a class="btn-link" href="web-apps.html">Know more <span aria-hidden="true">→</span></a> <!-- was until 2026-10-31 (Krishna: a page for each service, "Know more" in place of "See every step"): [a class="btn-link" href="#how-we-work"]See every step [span aria-hidden="true"]→[/span][/a] -->
+            </div>
+          </div>
+        </article>
+        <article class="offer offer-has-media" id="mobile-apps" aria-labelledby="mobile-apps-title">
+          <!-- was until 2026-10-30 (Krishna: photo from Selected_Photos, DSC_0821; no phone shot yet): [div class="offer-media offer-photo media-blank placeholder" role="img" aria-label="[PLACEHOLDER] A hand holding a phone with an app design on screen"][span class="label"][PHOTO] A hand holding a phone with an app design · media/services/mobile-apps.webp[/span][/div] -->
+          <!-- was until 2026-11-01 (Krishna: two demo phones with a little animation, app-show.css): [div class="offer-media offer-photo"][img src="media/services/mobile-apps.webp" srcset="media/services/mobile-apps-720.webp 720w, media/services/mobile-apps.webp 1100w" sizes="(max-width: 55rem) 100vw, 40vw" alt="Krishna laughing on the grass outdoors, hand in his hair." width="1100" height="1497" loading="lazy" decoding="async"][/div] 2026-10-31 (Krishna: more energy) DSC_0822; was DSC_0821, alt "Krishna sitting relaxed on the grass outdoors.", height 1650 -->
+          <!-- 2026-11-01 (Krishna: yes): our own café booking demo, built in code. Never shown as client work; swap in a real app's screens once a client says yes in writing. -->
+          <div class="offer-media app-show">
+            <div class="app-stage" role="img" aria-label="Two phones showing a demo café app we designed: today's menu, booking a table for two, the booking confirmed and the loyalty points.">
+              <div class="app-words"><span class="app-word app-word-1">Book.</span><span class="app-word app-word-2">Booked.</span><span class="app-word app-word-3">Rewarded.</span></div>
+              <div class="phone phone-back">
+                <div class="phone-screen">
+                  <div class="app-screen">
+                    <p class="app-top"><span class="app-brand">Your café</span><span class="app-avatar"></span></p>
+                    <p class="app-title">Today's menu</p>
+                    <div class="app-chips"><span class="is-on">Coffee</span><span>Food</span><span>Sweet</span></div>
+                    <ul class="app-menu">
+                      <li>Flat white</li>
+                      <li>Iced latte</li>
+                      <li>Cardamom bun</li>
+                      <li>Avocado toast</li>
+                      <li>Banana bread</li>
+                      <li>Masala chai</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="phone phone-front">
+                <div class="phone-screen">
+                  <div class="app-screen app-screen-1">
+                    <p class="app-top"><span class="app-brand">Your café</span><span class="app-avatar"></span></p>
+                    <p class="app-hello">Good evening</p>
+                    <p class="app-title">Book a table</p>
+                    <p class="app-label">Day</p>
+                    <div class="app-chips"><span class="is-on">Today</span><span>Tomorrow</span><span>Sat</span></div>
+                    <p class="app-label">Guests</p>
+                    <div class="app-chips"><span>1</span><span class="is-on">2</span><span>3</span><span>4</span></div>
+                    <p class="app-label">Time</p>
+                    <div class="app-chips"><span>18:30</span><span class="is-on app-pick">19:00</span><span>19:30</span></div>
+                    <span class="app-btn app-press">Book a table</span>
+                    <span class="app-tap app-tap-1"></span><span class="app-tap app-tap-2"></span>
+                  </div>
+                  <div class="app-screen app-screen-next app-screen-2 app-done">
+                    <span class="app-tick"></span>
+                    <p class="app-title">You're booked.</p>
+                    <p class="app-note">Table for 2, today at 19:00. We'll save you a seat by the window.</p>
+                    <span class="app-btn">Add to calendar</span>
+                  </div>
+                  <div class="app-screen app-screen-next app-screen-3">
+                    <p class="app-top"><span class="app-brand">Your café</span><span class="app-avatar"></span></p>
+                    <p class="app-label">Your points</p>
+                    <p class="app-points"></p>
+                    <div class="app-bar"><span></span></div>
+                    <p class="app-note">60 more for a free coffee.</p>
+                    <div class="app-stamps"><span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span></span><span></span></div>
+                    <p class="app-note">Every visit adds a stamp.</p>
+                    <span class="app-btn app-btn-quiet">See rewards</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="label app-caption">A demo app we designed</p>
+          </div>
+          <!-- 2026-10-22: no image yet. We have no real mobile app screenshot; add one here (figure.offer-media, class offer-has-media) once a real app of ours can be shown. Never a mock up presented as real work. -->
+          <div class="offer-main">
+            <p class="label label-accent">03</p>
+            <h2 class="offer-name" id="mobile-apps-title">Mobile apps</h2>
+            <p class="offer-line">One app for iPhone and Android.</p>
+            <p class="offer-path label"><span>Prep</span><span aria-hidden="true">→</span><span>Build in milestones</span><span aria-hidden="true">→</span><span>Launch</span></p>
+            <p class="offer-who">For businesses that want to live in their customer's pocket.</p>
+          </div>
+          <div class="offer-side">
+            <p class="offer-price"><span class="label">From</span><span class="offer-amount" data-price="mobile">A$34,999</span></p>
+            <p class="offer-pay">Pay in one go, or split it into 2 or 3 payments. <a class="btn-link" href="#pay-instalments">Get more information <span aria-hidden="true">→</span></a></p> <!-- 2026-11-02 (Krishna: under each card's price, like "Investment ... (split into ... payments)" with a Get more information link) -->
+            <ul class="offer-specs list-plain">
+              <!-- 2026-11-02 (Krishna: a little more detail on each service): points taken from mobile-apps.html, already approved there, worded so nothing repeats the web app list -->
+              <!-- 2026-11-02 (Krishna: only the relevant points): taken off this card, all still on mobile-apps.html: "Notifications and usage insight built in", "Payments, maps or another tool you rely on, linked in", "Tested on real phones of different sizes" -->
+              <li>One build for both, made to feel at home on each</li>
+              <li>A test version on your own phone at every milestone</li>
+              <li>Published on both app stores for you</li>
+              <!-- was until 2026-11-02 (moved under the price): [li]Pay in one go, or in two or three parts[/li] (2026-11-02 (Krishna: the payment options as a point on each service)) -->
+              <li>VIP support for the entire build period</li> <!-- back 2026-10-21 (Krishna: mention it in each service too) -->
+            </ul>
+            <!-- was until 2026-10-22 (Krishna: nothing repeated), said once in the pricing section: [p class="offer-note"]Bigger scope or something specific? We quote it on top.[/p] -->
+            <div class="offer-actions">
+              <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call about an app <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+              <a class="btn-link" href="mobile-apps.html">Know more <span aria-hidden="true">→</span></a> <!-- was until 2026-10-31 (Krishna: a page for each service, "Know more" in place of "See every step"): [a class="btn-link" href="#how-we-work"]See every step [span aria-hidden="true"]→[/span][/a] -->
+            </div>
+          </div>
+        </article>
+
+        <!-- Optional extras (2026-10-21): Brand (+ A$1,000) and Care plan (from 10% of the project price a month), Krishna. -->
+        <div class="extras" aria-labelledby="extras-title">
+          <!-- was until 2026-10-30 (Krishna: call them Add-ons): [h2 class="extras-title label label-accent" id="extras-title"]Optional extras[/h2] -->
+          <h2 class="extras-title label label-accent" id="extras-title">Add-ons</h2>
+          <div class="extras-grid">
+            <!-- Premium upgrade (2026-10-22, Krishna): an extra on any package for scale, deeper connections and advanced features.
+                 No prices on the site; they are internal (doc/rate-card-internal.md). Reworded from his list: no brand names, no editing panel for clients
+                 (REQ-BIZ-7), no tracking, a page cap instead of "15 and more". The invoice lists what it buys (internal). -->
+            <article class="extra" id="premium-upgrade" aria-labelledby="premium-upgrade-title">
+              <!-- was until 2026-10-30 (Krishna: photo from Selected_Photos, DSC_0796): [div class="extra-photo media-blank placeholder" role="img" aria-label="[PLACEHOLDER] A bigger project laid out across two screens"][span class="label"][PHOTO] A bigger project across two screens · media/services/premium.webp[/span][/div] -->
+              <div class="extra-photo"><img src="media/services/premium.webp" srcset="media/services/premium-480.webp 480w, media/services/premium.webp 800w" sizes="(max-width: 55rem) 100vw, 30vw" alt="Krishna in a black shirt at a table, laptop open in front of him." width="800" height="1000" loading="lazy" decoding="async"></div> <!-- 2026-11-01 (Krishna: exchange the Brand and Premium images): the black shirt photo moved here from Brand; was alt "Krishna in a white hoodie, smiling and giving two thumbs up under the leaves." -->   <!-- 2026-10-22 (Krishna: same structure as Brand and Care plan) --> <!-- 2026-11-01 (Krishna: update the Premium) his own premium.png (thumbs up), master media-originals/services/premium-krishna-2.png, tight 4:3 crop from 23.5% down so the thumbs show; was premiuem.png (ledge), alt "Krishna in a white hoodie, sitting relaxed on a high stone ledge.", files in archive/media/services-2026-11-01/premium-hoodie-ledge*.webp --> <!-- 2026-11-01 (Krishna: a new image for Premium) his own premiuem.png, shoe stripes painted out, master media-originals/services/premium-hoodie-clean.jpg; was DSC_0723, alt "Krishna smiling, a printed project plan in his hand.", files in archive/media/services-2026-11-01/premium-dsc0723*.webp --> <!-- earlier the same day (Krishna: change the Premium photo) DSC_0723, a plan in hand for a bigger project quoted for you; was DSC_0830 (shoe stripes painted out), alt "Krishna seated high on a stone ledge in bright sunlight.", files in archive/media/services-2026-11-01/premium-dsc0830-clean*.webp --> <!-- 2026-10-31 (Krishna: more energy) DSC_0830, shoe stripes blurred; was DSC_0796, alt "Krishna outdoors in the evening light, arms crossed." -->
+              <div class="extra-head">
+                <h3 class="extra-name" id="premium-upgrade-title">Premium</h3>
+                <p class="extra-price">Quoted for you</p>
+              </div>
+              <p class="extra-text">More room to grow, added before we build.</p> <!-- was until 2026-10-22 (Krishna: shorter points, cards end level): [p class="extra-text"]More room to grow, added to any package before we build.[/p] -->   <!-- was until 2026-10-22 (Krishna: cleaner, in points): one paragraph listing everything for a website and for an app -->
+              <div class="premium-lists premium-lists-two">
+                <div>
+                  <p class="label premium-for">Website</p> <!-- was until 2026-10-22 (Krishna: shorter points, cards end level):               [div class="premium-lists"]                 [div]                   [p class="label premium-for"]Website[/p] -->
+                  <ul class="list-plain premium-list">
+                    <li>15 custom pages</li> <!-- was until 2026-10-22 (Krishna: shorter points, cards end level): [li]Up to 15 custom pages[/li] -->
+                    <li>Blog or product pages</li> <!-- was until 2026-10-22 (Krishna: shorter points, cards end level): [li]Pages built from your content[/li] -->
+                    <li>Custom motion</li>
+                    <li>Leads to your tools</li> <!-- was until 2026-10-22 (Krishna: shorter points, cards end level): [li]Enquiries sent straight to your tools[/li] -->
+                    <li class="premium-more">And many more</li>   <!-- 2026-10-23 (Krishna: add "and many more") -->
+                  </ul>
+                </div>
+                <div>
+                  <p class="label premium-for">App</p>
+                  <ul class="list-plain premium-list">
+                    <li>Roles for each user</li> <!-- was until 2026-10-22 (Krishna: shorter points, cards end level): [li]Separate areas for each kind of user[/li] -->
+                    <li>Maps or AI features</li> <!-- was until 2026-10-22 (Krishna: shorter points, cards end level): [li]Live maps or AI features[/li] -->
+                    <li>Subscriptions</li> <!-- was until 2026-10-22 (Krishna: shorter points, cards end level): [li]Subscriptions in several currencies[/li] -->
+                    <li>Usage dashboards</li> <!-- was until 2026-10-22 (Krishna: shorter points, cards end level): [li]Dashboards that show how it's used[/li] -->
+                    <li class="premium-more">And many more</li>   <!-- 2026-10-23 (Krishna: add "and many more") -->
+                  </ul>
+                </div>
+              </div>
+              <a class="btn-link" href="contact.html">Ask about Premium <span aria-hidden="true">→</span></a>
+            </article>
+            <!-- was until 2026-10-22 (Krishna: same structure as Brand and Care plan):
+            [article class="extra extra-wide" id="premium-upgrade" aria-labelledby="premium-upgrade-title"]
+              [div class="extra-head"]
+                [h3 class="extra-name" id="premium-upgrade-title"]Premium upgrade[/h3]
+              [/div]   ( 2026-10-22 (Krishna: Premium prices stay internal, see doc/rate-card-internal.md): the price line under the name is removed )
+              [p class="extra-text"]For when your project needs more room to grow: more pages, deeper connections and smarter features, added to any package before we build.[/p]
+              [div class="premium-grid"]
+                [div class="premium-col"]
+                  [p class="premium-for"][span class="premium-name"]Website[/span][/p]
+                  [ul class="list-plain premium-list"]
+                    [li]Up to 15 custom pages, up from 6[/li]
+                    [li]Pages built from your content, like a blog, products or listings[/li]
+                    [li]Custom interactions and motion that make it memorable[/li]
+                    [li]New enquiries sent straight to the tools you already use[/li]
+                  [/ul]
+                [/div]
+                [div class="premium-col"]
+                  [p class="premium-for"][span class="premium-name"]Web app and mobile app[/span][/p]   ( 2026-10-22: one heading once the prices came off (was Web app and Mobile app, each with its price) )
+                  [ul class="list-plain premium-list"]
+                    [li]Separate areas for admins, managers and customers, all in one system[/li]
+                    [li]Live connections to other systems, like maps or AI features[/li]
+                    [li]Subscription payments in several currencies[/li]
+                    [li]Dashboards that show how people use it[/li]
+                  [/ul]
+                [/div]
+              [/div]
+              [a class="btn-link" href="contact.html"]Ask about Premium [span aria-hidden="true"]→[/span][/a]
+            [/article]
+            -->
+            <article class="extra" id="brand-addon" aria-labelledby="brand-addon-title">
+              <!-- was until 2026-10-30 (Krishna: photo from Selected_Photos, DSC_0842): [div class="extra-photo media-blank placeholder" role="img" aria-label="[PLACEHOLDER] Colour swatches, logo sketches and a business card laid out on a desk"][span class="label"][PHOTO] A flat lay of swatches, logo sketches and cards · media/services/brand.webp[/span][/div] -->
+              <div class="extra-photo"><img src="media/services/brand.webp" srcset="media/services/brand-480.webp 480w, media/services/brand.webp 800w" sizes="(max-width: 55rem) 100vw, 30vw" alt="Krishna in a white hoodie, smiling and giving two thumbs up under the leaves." width="800" height="1000" loading="lazy" decoding="async"></div> <!-- 2026-11-01 (Krishna: exchange the Brand and Premium images): the thumbs up photo moved here from Premium; was alt "Krishna in a black shirt at a table, laptop open in front of him." --> <!-- 2026-11-01 (Krishna: the new Brand image) his own Brand.png, master media-originals/services/brand-krishna.png, 4:3 crop; was DSC_0804, alt "Krishna striking a playful pose under warm evening lights.", files in archive/media/services-2026-11-01/brand-dsc0804*.webp --> <!-- 2026-10-31 (Krishna: more energy) DSC_0804; was DSC_0842, alt "Krishna seated against a pale stone wall in soft daylight." -->   <!-- 2026-10-22 (Krishna: own photos instead of project screenshots, doc/photo-shoot-services.md) -->
+              <div class="extra-head">
+                <h3 class="extra-name" id="brand-addon-title">Brand</h3>
+                <p class="extra-price">+&nbsp;<span data-price="brand">A$2,999</span></p>
+              </div>
+              <p class="extra-text">A look people remember, ready before we build.</p>   <!-- was until 2026-10-22 (Krishna: points like the Premium card): [p class="extra-text"]A look people remember, ready before we build: your logo, colours and fonts, with icons, patterns and business card and social media designs chosen to fit your needs.[/p] -->
+              <div class="premium-lists">
+                <div>
+                  <p class="label premium-for">Your full brand kit</p>
+                  <ul class="list-plain premium-list premium-list-two">   <!-- 2026-10-22 (Krishna: one point per item, not combined); was four grouped points -->
+                    <li>Logo design</li>
+                    <li>Secondary logo</li>
+                    <li>Brand marks</li>
+                    <li>Brand colours</li>
+                    <li>Brand fonts</li>
+                    <li>Icons</li>
+                    <li>Mood board</li>
+                    <li>Sticker design</li>
+                    <li>Animated GIFs</li>
+                    <li>Social media covers</li>
+                    <li>Business cards</li>
+                    <li>Brand patterns</li>
+                  </ul>   <!-- was until 2026-10-22 (Krishna: Brand US$1,199 with the full brand kit): [p class="label premium-for"]Chosen to fit you[/p]                   [ul class="list-plain premium-list"]                     [li]Your logo, colours and fonts[/li]                     [li]Icons and patterns[/li]                     [li]Business card designs[/li]                     [li]Social media designs[/li]                   [/ul] -->
+                </div>
+              </div>
+              <a class="btn-link" href="contact.html">Ask about a brand <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="extra" id="care-plan" aria-labelledby="care-plan-title">
+              <!-- was until 2026-10-30 (Krishna: photo from Selected_Photos, DSC_0652, cropped): [div class="extra-photo media-blank placeholder" role="img" aria-label="[PLACEHOLDER] A coffee beside an open laptop on a calm desk"][span class="label"][PHOTO] A calm desk, coffee beside a laptop · media/services/care-plan.webp[/span][/div] -->
+              <div class="extra-photo"><img src="media/services/care-plan.webp" srcset="media/services/care-plan-480.webp 480w, media/services/care-plan.webp 800w" sizes="(max-width: 55rem) 100vw, 30vw" alt="Krishna in a green tee, arms resting on his closed laptop, a calm smile." width="800" height="1000" loading="lazy" decoding="async"></div> <!-- 2026-11-01 (Krishna: we can show the laptop with stickers): recropped to include the laptop; the one tech company logo sticker painted out with the lid's own silver, the text stickers kept; master media-originals/services/care-krishna-clean.jpg; was alt "Krishna in a green tee, arms resting on the table, a calm smile.", files in archive/media/services-2026-11-01/care-krishna-no-laptop*.webp --> <!-- 2026-11-01 (Krishna: the new Care image) his own care.png, master media-originals/services/care-krishna.png, 4:5 crop leaving out the cup logo and the laptop stickers; was DSC_0652, alt "Krishna smiling, arms folded on the table in front of him.", files in archive/media/services-2026-11-01/care-plan-dsc0652-4x5*.webp --> <!-- 2026-11-01 (Krishna: square add-on photos, nothing cut off): DSC_0652 recropped square, laptop stickers and café cup left out; was alt "Krishna smiling, arms resting on his closed laptop.", height 666, files in archive/media/services-2026-11-01/care-plan-dsc0652-wide*.webp; the 4:3 Premium and Brand files are there too -->   <!-- 2026-10-22 (Krishna: own photos instead of project screenshots, doc/photo-shoot-services.md) -->
+              <div class="extra-head">
+                <h3 class="extra-name" id="care-plan-title">Care plan</h3>
+                <p class="extra-price">From <span data-price="care">A$449</span> a month</p> <!-- was until 2026-10-22 (Krishna: care plan from A$200 a month): [p class="extra-price"]From 10% a month[/p] -->
+              </div>
+              <p class="extra-text">After launch, we stay with you.</p>   <!-- was until 2026-10-22 (Krishna: points like the Premium card): [p class="extra-text"]After launch, we stay with you: every change made, tested and kept fast by the people who built it. Starts at [span data-price="care"]A$299[/span] a month, paid in advance; more complex projects need more care, and we agree the rate with you first.[/p] -->
+              <div class="premium-lists">
+                <div>
+                  <p class="label premium-for">Every month</p>
+                  <ul class="list-plain premium-list">
+                    <li>Every change made</li> <!-- was until 2026-10-22 (Krishna: shorter points, cards end level): [li]Every change made for you[/li] -->
+                    <li>Tested first</li> <!-- was until 2026-10-22 (Krishna: shorter points, cards end level): [li]Tested before it goes live[/li] -->
+                    <li>Kept fast</li> <!-- was until 2026-10-22 (Krishna: shorter points, cards end level): [li]Kept as fast as launch day[/li] -->
+                    <li>By the team who built it</li> <!-- was until 2026-10-22 (Krishna: shorter points, cards end level): [li]Made by the people who built it[/li] -->
+                  </ul>
+                </div>
+              </div>
+              <p class="extra-note">Paid monthly in advance. Bigger projects need more care, agreed with you first.</p> <!-- was until 2026-10-22 (Krishna: shorter points, cards end level): [p class="extra-note"]Paid in advance. Bigger projects need more care, and we agree the rate with you first.[/p] --> <!-- was until 2026-10-22 (Krishna: care plan from A$200 a month): Starts at 10% of your whole project price per month, paid in advance; more complex projects need more care, and we agree the rate with you first.[/p] -->
+              <a class="btn-link" href="contact.html">Ask about the care plan <span aria-hidden="true">→</span></a>
+            </article>
+          </div>
+        </div>
+        <!-- was until 2026-10-21 (Krishna: packages too dense, premium spec sheet layout):
+        ( Prices in the visitor's currency (2026-10-21, Krishna). The script picks the currency from the device time zone (nothing is sent anywhere)
+             and remembers the choice in this browser only. Prices per currency live in scripts/site.js (PRICES). )
+        ( was until 2026-10-21 (Krishna: no picker, detect it automatically):
+        [div class="currency-pick" hidden]
+          [label class="label" for="currency"]Prices in[/label]
+          [select class="currency-select" id="currency"]
+            [option value="AUD"]AUD[/option]
+            [option value="AED"]AED[/option]
+            [option value="GBP"]GBP[/option]
+            [option value="USD"]USD[/option]
+          [/select]
+        [/div]
+        )
+
+        [article class="package" id="web-development" aria-labelledby="web-development-title"]
+          [div]
+            [p class="label label-accent"]01[/p]
+            [h2 class="package-name" id="web-development-title"]Websites[/h2] ( was until 2026-10-14: Web Development )
+            [p class="package-text"]Your whole website built in one week, after one week of prep together.[/p] ( was until 2026-10-21 (Krishna: website built in one week, after one week of prep): [p class="package-text"]A complete website in two weeks, ready to sell the day it goes live.[/p] )
+            [dl class="package-plan"]
+              [div][dt class="label"]Week 1 · Prep[/dt][dd]A prep call to review everything together, and your content made ready.[/dd][/div]
+              [div][dt class="label"]Week 2 · Build[/dt][dd]We design and build every page in one week, and your website goes live.[/dd][/div] ( was until 2026-10-21 (Krishna: website built in one week, after one week of prep): [div][dt class="label"]Week 2 · Build[/dt][dd]We design and build every page, and your website goes live.[/dd][/div] )
+            [/dl] ( was until 2026-10-21 (Krishna: specific website package, two weeks): [p class="package-text"]Fast, high-converting websites and landing pages, designed and built from scratch.[/p] )
+            [p class="package-who"][a class="btn-link" href="#how-we-work"]See every step [span aria-hidden="true"]→[/span][/a][/p]
+            [p class="package-who"][strong]Who it's for:[/strong] Businesses whose website doesn't yet look as good as the business really is, or who need a landing page to test a new offer.[/p]
+          [/div]
+          [div class="package-side"]
+            [p class="label"]What you get[/p]
+            [ul class="service-features list-plain"]
+              [li]Up to 6 custom pages, designed around your brand, no templates[/li]
+              [li]Looks right on every screen, from the smallest phone up[/li]
+              [li]A prep call before we build, so nothing is missed[/li]
+              [li]VIP support by email and video call, during your business hours[/li]
+              [li]Ready for search and AI answers, and easy for everyone to use[/li]
+              [li]Add our care plan after launch, and every change is made for you[/li] ( was until 2026-10-21 (Krishna: care plan is a paid extra, 10% a month): [li]After launch, we make every change for you, so it stays fast[/li] )
+            [/ul]
+            ( was until 2026-10-21 (Krishna: specific website package, two weeks):
+            [ul class="service-features list-plain"]
+              [li]Custom design in your brand, no templates[/li]
+              [li]Mobile-first build that loads fast[/li]
+              [li]SEO basics, analytics and search console set up from day one[/li]
+              [li]Accessible by default (WCAG 2.2 AA)[/li]
+              [li]After launch, we make every change for you, so it stays fast[/li] ( was until 2026-10-13: [li]Training so your team can update content[/li] (no editing panel for clients, REQ-BIZ-7) )
+            [/ul]
+            )
+            ( Price in the visitor's currency (site.js PRICES). Timeline set by Krishna 2026-10-21 for this package. ) ( was until 2026-10-21 (Krishna: specific website package, two weeks):  Price from the rate card in the visitor's currency (WEB-1.17, WEB-9.6). Timeline commented out until WEB-1.12.  )
+            [p class="package-price"][span class="label"]From[/span][span class="price-value" data-price="website"]A$5,000[/span][span class="price-note"]More than 6 pages or something specific? We quote it on top.[/span] ( was until 2026-10-21 (Krishna: specific website package, two weeks): [span class="price-note"]Specific requirements? We quote them on top.[/span] )[/p] ( was until 2026-10-21 (Krishna: real prices in AUD, shown in the visitor's currency): [p class="package-price placeholder"][span class="label"]From[/span][span class="price-value"][PLACEHOLDER] price[/span][span class="price-note"]Specific requirements? We quote them on top.[/span][/p] )
+            [div class="package-actions"]
+              [a class="btn btn-primary" href="#" target="_blank" rel="noopener"]Book a call about a website [span class="arrow" aria-hidden="true"]→[/span][span class="sr-only"] (opens in a new tab)[/span][/a]
+              [a class="btn-link" href="contact.html"]Get a quote [span aria-hidden="true"]→[/span][/a]
+            [/div]
+          [/div]
+        [/article]
+
+        [article class="package" id="web-applications" aria-labelledby="web-applications-title"]
+          [div]
+            [p class="label label-accent"]02[/p]
+            [h2 class="package-name" id="web-applications-title"]Web apps[/h2] ( was until 2026-10-14: Web Applications )
+            [p class="package-text"]Client portals, booking systems, dashboards and tools for your team. Live early, then grown on real use.[/p]
+            [dl class="package-plan"]
+              [div][dt class="label"]Step 1 · Prep[/dt][dd]A prep call to agree the one outcome that matters most, with every feature planned in one document you approve.[/dd][/div]
+              [div][dt class="label"]Step 2 · Build[/dt][dd]Built in milestones, with a live preview link and one short call to sign off each one.[/dd][/div]
+              [div][dt class="label"]Step 3 · Grow[/dt][dd]It goes live, real people use it, and we improve it on what they actually do.[/dd][/div]
+            [/dl] ( was until 2026-10-21 (Krishna: specific packages from the reference tactics): [p class="package-text"]Dashboards, client portals, SaaS products and internal tools. We launch an MVP first, then grow it on real usage.[/p] )
+            [p class="package-who"][strong]Who it's for:[/strong] Founders validating a product idea, and teams replacing spreadsheets or slow manual work with a proper tool.[/p]
+          [/div]
+          [div class="package-side"]
+            [p class="label"]What you get[/p]
+            [ul class="service-features list-plain"]
+              [li]The first version built around the one outcome that matters most[/li]
+              [li]Secure sign in, user roles and safe handling of your data[/li]
+              [li]Built to grow with you, never to be rebuilt[/li]
+              [li]Unlimited changes across three review rounds[/li]
+              [li]VIP support by email and video call, during your business hours[/li]
+              [li]See what your users actually do, built in[/li]
+            [/ul]
+            ( was until 2026-10-21 (Krishna: specific packages from the reference tactics):
+            [ul class="service-features list-plain"]
+              [li]MVP scoped around the one outcome that matters most[/li]
+              [li]Secure login, roles and data handling[/li]
+              [li]Architecture built to scale, not to be rebuilt[/li]
+              [li]Weekly demos: you see progress, never silence[/li]
+              [li]Analytics so you learn what users actually do[/li]
+            [/ul]
+            )
+            ( Price from the rate card in the visitor's currency (WEB-1.17, WEB-9.6). Timeline commented out until WEB-1.12. )
+            [p class="package-price"][span class="label"]From[/span][span class="price-value" data-price="webapp"]A$10,000[/span][span class="price-note"]Bigger scope or something specific? We quote it on top.[/span] ( was until 2026-10-21 (Krishna: specific packages from the reference tactics): [span class="price-note"]Specific requirements? We quote them on top.[/span] )[/p] ( was until 2026-10-21 (Krishna: real prices in AUD, shown in the visitor's currency): [p class="package-price placeholder"][span class="label"]From[/span][span class="price-value"][PLACEHOLDER] price[/span][span class="price-note"]Specific requirements? We quote them on top.[/span][/p] )
+            [div class="package-actions"]
+              [a class="btn btn-primary" href="#" target="_blank" rel="noopener"]Book a call about a web app [span class="arrow" aria-hidden="true"]→[/span][span class="sr-only"] (opens in a new tab)[/span][/a]
+              [a class="btn-link" href="contact.html"]Get a quote [span aria-hidden="true"]→[/span][/a]
+            [/div]
+          [/div]
+        [/article]
+
+        [article class="package" id="mobile-apps" aria-labelledby="mobile-apps-title"]
+          [div]
+            [p class="label label-accent"]03[/p]
+            [h2 class="package-name" id="mobile-apps-title"]Mobile apps[/h2] ( was until 2026-10-14: Mobile Apps )
+            [p class="package-text"]One app for iPhone and Android, made to feel at home on both and built to ship fast.[/p]
+            [dl class="package-plan"]
+              [div][dt class="label"]Step 1 · Prep[/dt][dd]A prep call to agree what the app must do first, with every screen planned in one document you approve.[/dd][/div]
+              [div][dt class="label"]Step 2 · Build[/dt][dd]Built in milestones, with a test version on your own phone and one short call to sign off each one.[/dd][/div]
+              [div][dt class="label"]Step 3 · Launch[/dt][dd]We publish it on both app stores for you, and you see how customers use it.[/dd][/div]
+            [/dl] ( was until 2026-10-21 (Krishna: specific packages from the reference tactics): [p class="package-text"]iOS and Android apps from one codebase, designed to feel native and built to ship fast.[/p] )
+            [p class="package-who"][strong]Who it's for:[/strong] Businesses that want to be in their customer's pocket: bookings, orders, loyalty, field teams or a product of their own.[/p]
+          [/div]
+          [div class="package-side"]
+            [p class="label"]What you get[/p]
+            [ul class="service-features list-plain"]
+              [li]One app for iPhone and Android, from one build[/li]
+              [li]A test version on your own phone at every milestone[/li]
+              [li]Published on both app stores, handled for you[/li]
+              [li]Notifications and usage insight built in[/li]
+              [li]VIP support by email and video call, during your business hours[/li]
+              [li]Add our care plan after launch, and every change is made for you[/li] ( was until 2026-10-21 (Krishna: care plan is a paid extra, 10% a month): [li]After launch, we make every change for you, so it keeps working[/li] )
+            [/ul]
+            ( was until 2026-10-21 (Krishna: specific packages from the reference tactics):
+            [ul class="service-features list-plain"]
+              [li]One codebase for iOS and Android[/li]
+              [li]App Store and Google Play submission handled for you[/li]
+              [li]Push notifications and usage analytics built in[/li]
+              [li]Weekly test builds on your own phone[/li]
+            [/ul]
+            )
+            ( Price from the rate card in the visitor's currency (WEB-1.17, WEB-9.6). Timeline commented out until WEB-1.12. )
+            [p class="package-price"][span class="label"]From[/span][span class="price-value" data-price="mobile"]A$15,000[/span][span class="price-note"]Bigger scope or something specific? We quote it on top.[/span] ( was until 2026-10-21 (Krishna: specific packages from the reference tactics): [span class="price-note"]Specific requirements? We quote them on top.[/span] )[/p] ( was until 2026-10-21 (Krishna: real prices in AUD, shown in the visitor's currency): [p class="package-price placeholder"][span class="label"]From[/span][span class="price-value"][PLACEHOLDER] price[/span][span class="price-note"]Specific requirements? We quote them on top.[/span][/p] )
+            [div class="package-actions"]
+              [a class="btn btn-primary" href="#" target="_blank" rel="noopener"]Book a call about an app [span class="arrow" aria-hidden="true"]→[/span][span class="sr-only"] (opens in a new tab)[/span][/a]
+              [a class="btn-link" href="contact.html"]Get a quote [span aria-hidden="true"]→[/span][/a]
+            [/div]
+          [/div]
+        [/article]
+
+        ( Brand add-on (2026-10-21, Krishna: brand is an add-on to any package for + A$1,000, not a service of its own).
+             His list grouped into five lines; "done in a day" stays off until WEB-1.12. )
+        [article class="package" id="brand-addon" aria-labelledby="brand-addon-title"]
+          [div]
+            [p class="label label-accent"]Optional extra[/p] ( was until 2026-10-21 (no hyphenated words): Add on, hyphenated )
+            [h2 class="package-name" id="brand-addon-title"]Brand[/h2]
+            [p class="package-text"]Add a brand to any website, web app or mobile app: a look people remember, ready before we build the rest.[/p]
+            [p class="package-who"][strong]Who it's for:[/strong] New businesses that need a look of their own, and growing ones whose brand no longer fits.[/p]
+          [/div]
+          [div class="package-side"]
+            [p class="label"]What you get[/p]
+            [ul class="service-features list-plain"]
+              [li]A mood board, so we agree the direction first[/li]
+              [li]Logo, a secondary logo and brand marks[/li]
+              [li]Brand colours, fonts and patterns[/li]
+              [li]Icons, stickers and animated GIFs[/li]
+              [li]Business cards and social media covers[/li]
+            [/ul]
+            [p class="package-price"][span class="label"]Add for[/span][span class="price-value"]+&nbsp;[span data-price="brand"]A$1,000[/span][/span][span class="price-note"]On top of any package above.[/span][/p]
+            [div class="package-actions"]
+              [a class="btn-link" href="contact.html"]Ask about a brand [span aria-hidden="true"]→[/span][/a]
+            [/div]
+          [/div]
+        [/article]
+
+        ( Care plan (2026-10-21, Krishna): optional extra, 10% of the project price per month, paid in advance. )
+        [article class="package" id="care-plan" aria-labelledby="care-plan-title"]
+          [div]
+            [p class="label label-accent"]Optional extra[/p]
+            [h2 class="package-name" id="care-plan-title"]Care plan[/h2]
+            [p class="package-text"]After launch, we stay with you. Every change is made, tested and kept fast by the people who built it, so your website or app keeps working as hard as you do.[/p]
+            [p class="package-who"][strong]Who it's for:[/strong] Businesses that want their website or app looked after, without hiring anyone to do it.[/p]
+          [/div]
+          [div class="package-side"]
+            [p class="label"]What you get[/p]
+            [ul class="service-features list-plain"]
+              [li]Every change made for you, and tested before it goes live[/li]
+              [li]Kept fast after launch, with every change checked for speed[/li]
+              [li]VIP support by email and video call, during your business hours[/li]
+              [li]You always talk to the people who built it[/li]
+            [/ul]
+            [p class="package-price"][span class="label"]Starting at[/span][span class="price-value"]10%[/span][span class="price-note"]of your whole project price, per month, paid in advance. For a website, that starts at [span data-price="care"]A$500[/span] a month. More complex projects need more care, so the rate goes up with them, and we agree it with you first.[/span][/p] ( was until 2026-10-21 (Krishna: starts at 10% of the whole project, higher for complex projects): [p class="package-price"][span class="label"]From[/span][span class="price-value"]10%[/span][span class="price-note"]of your project price, per month, paid in advance. For a website, from [span data-price="care"]A$500[/span] a month.[/span][/p] )
+            [div class="package-actions"]
+              [a class="btn-link" href="contact.html"]Ask about the care plan [span aria-hidden="true"]→[/span][/a]
+            [/div]
+          [/div]
+        [/article]
+
+        ( was until 2026-10-21 (Krishna: brand combined with every service, not its own option): Brand package
+ Brand package (added 2026-10-21 (Krishna: brand added as a service)). Krishna's list grouped into five lines. "Done in a day" left out until the timeline study WEB-1.12 is approved. 
+        [article class="package" id="brand" aria-labelledby="brand-title"]
+          [div]
+            [p class="label label-accent"]03[/p]
+            [h2 class="package-name" id="brand-title"]Brand[/h2]
+            [p class="package-text"]A brand people remember: your logo, colours and fonts, and everything you need to use them well.[/p]
+            [p class="package-who"][strong]Who it's for:[/strong] New businesses that need a look of their own, and growing ones whose brand no longer fits.[/p]
+          [/div]
+          [div class="package-side"]
+            [p class="label"]What you get[/p]
+            [ul class="service-features list-plain"]
+              [li]A mood board, so we agree the direction first[/li]
+              [li]Logo, a secondary logo and brand marks[/li]
+              [li]Brand colours, fonts and patterns[/li]
+              [li]Icons, stickers and animated GIFs[/li]
+              [li]Business cards and social media covers[/li]
+            [/ul]
+             Price from the rate card in the visitor's currency (WEB-1.17, WEB-9.6). Timeline commented out until WEB-1.12. 
+            [p class="package-price placeholder"][span class="label"]From[/span][span class="price-value"][PLACEHOLDER] price[/span][span class="price-note"]Specific requirements? We quote them on top.[/span][/p]
+            [div class="package-actions"]
+              [a class="btn btn-primary" href="#" target="_blank" rel="noopener"]Book a call about a brand [span class="arrow" aria-hidden="true"]→[/span][span class="sr-only"] (opens in a new tab)[/span][/a]
+              [a class="btn-link" href="contact.html"]Get a quote [span aria-hidden="true"]→[/span][/a]
+            [/div]
+          [/div]
+        [/article]
+        )
+
+
+
+        -->
+      </div>
+    </section>
+
+    <!-- was until 2026-10-21 (Krishna: one process for all three services):
+    ( Websites, week by week (2026-10-21, Krishna). Reference tactic: a clear phase by phase process with a prep call before
+         the build; our own words, our own steps, plus what we need from the client at each step. Styles: sections/website-week.css )
+    [section class="section website-week" id="website-weeks" aria-labelledby="website-weeks-title"]
+      [div class="container reveal-scroll"]
+        [header class="section-head"]
+          [p class="label label-accent"]Websites, step by step[/p]
+          [h2 class="section-title" id="website-weeks-title"]One week to prepare. [em]One week to build.[/em][/h2]
+          [p class="section-intro"]Here is exactly what happens, and the little we need from you.[/p]
+        [/header]
+        [ol class="week-rows list-plain"]
+          [li class="week-row"]
+            [div]
+              [p class="label week-when"]Week 1[/p]
+              [h3 class="week-name"]Prep[/h3]
+            [/div]
+            [ol class="week-steps list-plain"]
+              [li class="week-step"]
+                [span class="label label-accent"]01[/span]
+                [h4 class="week-step-name"]Onboard[/h4]
+                [p class="week-step-text"]One 30 minute call, then a written agreement of exactly what is included. We review your current website before we talk.[/p]
+                [p class="week-step-you"][span class="label"]From you[/span]One call, and a yes to the plan.[/p]
+              [/li]
+              [li class="week-step"]
+                [span class="label label-accent"]02[/span]
+                [h4 class="week-step-name"]Content[/h4]
+                [p class="week-step-text"]We plan every page in one shared document: the words, the photos and the layout. You send what only you know, we shape the rest.[/p]
+                [p class="week-step-you"][span class="label"]From you[/span]Your logo, photos and the facts about your business, all in one go.[/p]
+              [/li]
+              [li class="week-step"]
+                [span class="label label-accent"]03[/span]
+                [h4 class="week-step-name"]Prep call[/h4]
+                [p class="week-step-text"]At the end of the week we go through the whole plan together, so the build starts with nothing missing. Nothing is built until you agree.[/p]
+                [p class="week-step-you"][span class="label"]From you[/span]One call, and your approval.[/p]
+              [/li]
+            [/ol]
+          [/li]
+          [li class="week-row"]
+            [div]
+              [p class="label week-when"]Week 2[/p]
+              [h3 class="week-name"]Build[/h3]
+            [/div]
+            [ol class="week-steps list-plain"]
+              [li class="week-step"]
+                [span class="label label-accent"]04[/span]
+                [h4 class="week-step-name"]Build[/h4]
+                [p class="week-step-text"]We design and build every page, and you watch it take shape on a live preview link.[/p]
+                [p class="week-step-you"][span class="label"]From you[/span]Your changes, in one list. We make every one.[/p]
+              [/li]
+              [li class="week-step"]
+                [span class="label label-accent"]05[/span]
+                [h4 class="week-step-name"]Launch[/h4]
+                [p class="week-step-text"]Checked page by page on every screen, then your website goes live, ready for search and AI answers.[/p]
+                [p class="week-step-you"][span class="label"]From you[/span]Your final yes.[/p]
+              [/li]
+            [/ol]
+          [/li]
+          [li class="week-row"]
+            [div]
+              [p class="label week-when"]After launch[/p]
+              [h3 class="week-name"]Yours[/h3]
+            [/div]
+            [ol class="week-steps list-plain"]
+              [li class="week-step"]
+                [span class="label label-accent"]06[/span]
+                [h4 class="week-step-name"]Handover[/h4]
+                [p class="week-step-text"]One training session, a written guide to keep, and ownership and access handed to you. Our care plan covers every change after that.[/p]
+                [p class="week-step-you"][span class="label"]From you[/span]Nothing. You get back to your business.[/p]
+              [/li]
+            [/ol]
+          [/li]
+        [/ol]
+        [p class="week-note"]The build week starts once your content is in and the plan is approved. Up to 6 custom pages; more pages are quoted on top.[/p]
+      [/div]
+    [/section]
+    -->
+
+    <!-- How we work (2026-10-21, Krishna): one process for websites, web apps and mobile apps, three phases that match
+         Focus. Build. Grow. Each step says what we do and what we need from the client. Styles: sections/phases.css -->
+    <section class="section phases" id="how-we-work" aria-labelledby="process-title">
+      <div class="container reveal-scroll">
+        <!-- 2026-10-22 (Krishna: cards like the reference, one per step, heading on the left). Styles: sections/phases.css; the phase rows version is in archive/phases-rows-2026-10-22.css -->
+        <div class="phases-layout">
+          <div class="phases-aside">
+            <header class="section-head">
+              <h2 class="section-title" id="process-title">Focus. Build. <em>Grow.</em></h2>
+              <p class="section-intro">The same three phases for every website, web app and mobile app. We walk every step with you, and ask only for the little that only you can give.</p>
+            </header>
+            <p class="phase-note">Websites take one week of prep, then one week to build, with up to 6 custom pages. Web apps and mobile apps are built in milestones, with the timeline set in your plan. The build starts once your content is in and the plan is approved.</p>
+          </div>
+          <ol class="phase-cards list-plain">
+          <li class="phase-card">
+            <h3 class="phase-card-name">Onboard</h3>
+            <p class="label phase-card-when">01 · Focus</p>
+            <p class="phase-card-text">We start by getting to know you and your business over a relaxed 30 minute call. Once the paperwork is done, we set you up with your own project document, and the fun begins.</p>
+            <p class="phase-card-you">All we need: one call, and a yes to the plan.</p>
+          </li>
+          <li class="phase-card">
+            <h3 class="phase-card-name">Plan and content</h3>
+            <p class="label phase-card-when">02 · Focus</p>
+            <p class="phase-card-text">Together we plan every page or screen, every feature, the words and the photos. You share what only you know, and we shape the rest so it sounds like you.</p>
+            <p class="phase-card-you">All we need: your logo, photos and the facts about your business, in one go.</p>
+          </li>
+          <li class="phase-card">
+            <h3 class="phase-card-name">Prep call</h3>
+            <p class="label phase-card-when">03 · Focus</p>
+            <p class="phase-card-text">Before we build, we sit down with you and walk through the whole plan, so we start ready. Nothing is built until you're happy with it.</p>
+            <p class="phase-card-you">All we need: one call, and your approval.</p>
+          </li>
+          <li class="phase-card">
+            <h3 class="phase-card-name">Build</h3>
+            <p class="label phase-card-when">04 · Build</p>
+            <p class="phase-card-text">This is where your idea comes to life. Watch it come together, milestone by milestone, on a live preview link or on your own phone.</p>
+            <p class="phase-card-perk">VIP support for the entire build period</p>
+            <p class="phase-card-you">All we need: your changes in one list, across three review rounds.</p>
+          </li>
+          <li class="phase-card">
+            <h3 class="phase-card-name">Launch</h3>
+            <p class="label phase-card-when">05 · Build</p>
+            <p class="phase-card-text">We check everything on every screen, then we launch it together. It is a big day, and we celebrate it with you.</p>
+            <p class="phase-card-you">All we need: your final yes.</p>
+          </li>
+          <li class="phase-card">
+            <h3 class="phase-card-name">Handover</h3>
+            <p class="label phase-card-when">06 · Grow</p>
+            <p class="phase-card-text">We don't hand over the keys and walk away. You get training, a written guide and full ownership, and our care plan is there whenever you need us.</p>
+            <p class="phase-card-you">Nothing needed from you. You get back to your business.</p>
+          </li>
+          </ol>
+        </div>
+        <!-- was until 2026-10-22 (Krishna: cards like the reference, one per step, heading on the left):
+        [header class="section-head"]
+          ( was until 2026-10-21 (Krishna: remove the label, keep Focus. Build. Grow.): [p class="label label-accent"]How we work[/p] )
+          [h2 class="section-title" id="process-title"]Focus. Build. [em]Grow.[/em][/h2]
+          [p class="section-intro"]The same three phases for every website, web app and mobile app. We walk every step with you, and ask only for the little that only you can give.[/p] ( was until 2026-10-21 (Krishna: partner voice, not a corporate supplier): [p class="section-intro"]The same three phases for every website, web app and mobile app. Here is exactly what happens, and the little we need from you.[/p] )
+        [/header]
+        [ol class="phase-rows list-plain"]
+          [li class="phase-row"]
+            [div]
+              [p class="label phase-when"]Phase 1 · Prep[/p]
+              [h3 class="phase-name"]Focus[/h3]
+            [/div]
+            [ol class="phase-steps list-plain"]
+              [li class="phase-step"]
+                [span class="label label-accent"]01[/span]
+                [h4 class="phase-step-name"]Onboard[/h4]
+                [p class="phase-step-text"]We start by getting to know you and your business over a relaxed 30 minute call. Once the paperwork is done, we set you up with your own project document, and the fun begins.[/p] ( was until 2026-10-21 (Krishna: warmer, happier, shorter): Before we even talk, we get to know your business and what you have today. Then we get you onboarded: one 30 minute call, a written agreement of exactly what is included, and your own project document where everything about your project lives. ) ( was until 2026-10-21 (Krishna: partner voice, not a corporate supplier): [p class="phase-step-text"]One 30 minute call, then a written agreement of exactly what is included. We look at what you have today before we talk.[/p] )
+                [p class="phase-step-you"]All we need: one call, and a yes to the plan.[/p] ( was until 2026-10-21 (Krishna: soft italic line instead of the FROM YOU label): From you: One call, and a yes to the plan. )
+              [/li]
+              [li class="phase-step"]
+                [span class="label label-accent"]02[/span]
+                [h4 class="phase-step-name"]Plan and content[/h4]
+                [p class="phase-step-text"]Together we plan every page or screen, every feature, the words and the photos. You share what only you know, and we shape the rest so it sounds like you.[/p] ( was until 2026-10-21 (Krishna: warmer, happier, shorter): Together we fill your project document with every page or screen, every feature, the words and the photos. You share what only you know, and we shape the rest, so it sounds like you. ) ( was until 2026-10-21 (Krishna: partner voice, not a corporate supplier): [p class="phase-step-text"]Everything planned in one shared document: every page or screen, every feature, the words and the photos. You send what only you know, we shape the rest.[/p] )
+                [p class="phase-step-you"]All we need: your logo, photos and the facts about your business, in one go.[/p] ( was until 2026-10-21 (Krishna: soft italic line instead of the FROM YOU label): From you: Your logo, photos and the facts about your business, all in one go. )
+              [/li]
+              [li class="phase-step"]
+                [span class="label label-accent"]03[/span]
+                [h4 class="phase-step-name"]Prep call[/h4]
+                [p class="phase-step-text"]Before we build, we sit down with you and walk through the whole plan, so we start ready. Nothing is built until you're happy with it.[/p] ( was until 2026-10-21 (Krishna: warmer, happier, shorter): Before we build, we sit down with you and go through the whole plan, so we start ready and nothing is missed. Nothing is built until you are happy with it. ) ( was until 2026-10-21 (Krishna: partner voice, not a corporate supplier): [p class="phase-step-text"]We go through the whole plan together, so the build starts with nothing missing. Nothing is built until you agree.[/p] )
+                [p class="phase-step-you"]All we need: one call, and your approval.[/p] ( was until 2026-10-21 (Krishna: soft italic line instead of the FROM YOU label): From you: One call, and your approval. )
+              [/li]
+            [/ol]
+          [/li]
+          [li class="phase-row"]
+            [div]
+              [p class="label phase-when"]Phase 2 · Build[/p]
+              [h3 class="phase-name"]Build[/h3]
+              [p class="phase-perk"]VIP support for the entire build period[/p] ( 2026-10-21 (Krishna): "during your business hours" removed ) ( was until 2026-10-21: VIP support, during your business hours (Krishna: for the entire build period) ) ( 2026-10-21, Krishna: make it clear in the Build phase )
+            [/div]
+            [ol class="phase-steps list-plain"]
+              [li class="phase-step"]
+                [span class="label label-accent"]04[/span]
+                [h4 class="phase-step-name"]Build[/h4]
+                [p class="phase-step-text"]This is where your idea comes to life. Watch it come together, milestone by milestone, on a live preview link or on your own phone.[/p] ( was until 2026-10-21 (Krishna: warmer, happier, shorter): This is where your idea comes to life. We build it in milestones you can watch, on a live preview link or a test version on your own phone. Whenever you need us, VIP support is there by email and video call, for the entire build period. ) ( tightened 2026-10-21 ) ( was until 2026-10-21 (Krishna: VIP support belongs to the build phase, when clients need it most): ends at "for mobile apps." ) ( was until 2026-10-21 (Krishna: partner voice, not a corporate supplier): [p class="phase-step-text"]Built in milestones, and you watch it take shape: a live preview link for websites and web apps, a test version on your own phone for mobile apps.[/p] )
+                [p class="phase-step-you"]All we need: your changes in one list, across three review rounds.[/p] ( was until 2026-10-21 (Krishna: soft italic line instead of the FROM YOU label): From you: Your changes, in one list. Unlimited changes across three review rounds. )
+              [/li]
+              [li class="phase-step"]
+                [span class="label label-accent"]05[/span]
+                [h4 class="phase-step-name"]Launch[/h4]
+                [p class="phase-step-text"]We check everything on every screen, then we launch it together. It is a big day, and we celebrate it with you.[/p] ( was until 2026-10-21 (Krishna: warmer, happier, shorter): We check everything on every screen, then we launch it with you: your website or web app goes online, your mobile app goes onto both app stores. ) ( was until 2026-10-21 (Krishna: partner voice, not a corporate supplier): [p class="phase-step-text"]Checked on every screen, then it goes live: your website or web app online, your mobile app on both app stores.[/p] )
+                [p class="phase-step-you"]All we need: your final yes.[/p] ( was until 2026-10-21 (Krishna: soft italic line instead of the FROM YOU label): From you: Your final yes. )
+              [/li]
+            [/ol]
+          [/li]
+          [li class="phase-row"]
+            [div]
+              [p class="label phase-when"]Phase 3 · After launch[/p]
+              [h3 class="phase-name"]Grow[/h3]
+            [/div]
+            [ol class="phase-steps list-plain"]
+              [li class="phase-step"]
+                [span class="label label-accent"]06[/span]
+                [h4 class="phase-step-name"]Handover[/h4]
+                [p class="phase-step-text"]We don't hand over the keys and walk away. You get training, a written guide and full ownership, and our care plan is there whenever you need us.[/p] ( was until 2026-10-21 (Krishna: warmer, happier, shorter): We don't hand over the keys and walk away. You get a training session, a written guide to keep, and full ownership and access. After that, our care plan keeps it fast, with every change made by the people who built it. ) ( was until 2026-10-21 (Krishna: partner voice, not a corporate supplier): [p class="phase-step-text"]One training session, a written guide to keep, and ownership and access handed to you. Our care plan covers every change after that.[/p] )
+                [p class="phase-step-you"]Nothing needed from you. You get back to your business.[/p] ( was until 2026-10-21 (Krishna: soft italic line instead of the FROM YOU label): From you: Nothing. You get back to your business. )
+              [/li]
+            [/ol]
+          [/li]
+        [/ol]
+        [p class="phase-note"]Websites take one week of prep, then one week to build, with up to 6 custom pages. Web apps and mobile apps are built in milestones, with the timeline set in your plan. The build starts once your content is in and the plan is approved.[/p]
+        -->
+      </div>
+    </section>
+
+    <!-- Pricing and custom projects in one section (2026-10-22 (Krishna: nothing repeated)): the From prices, how anything bigger is quoted,
+         and custom work, said once. Replaces the separate Custom projects and Pricing sections and the note under each package. -->
+    <section class="section section-alt" id="pricing" aria-labelledby="pricing-title">
+      <div class="container text-block reveal-scroll">
+        <header class="section-head">
+          <!-- was until 2026-10-22 (Krishna: remove the unnecessary labels above headings): [p class="label label-accent"]Pricing[/p] -->
+          <h2 class="section-title" id="pricing-title">Clear price, before any work starts.</h2>
+        </header>
+        <div>
+          <p>Every package starts from the price shown. Need more pages, a bigger scope or something different, like a custom platform or a system that connects to yours? Tell us about it on a short call and we send one clear price, quoted on top, never below. No work starts until you've agreed to it.</p>
+          <p class="section-cta"><a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call about your project <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a></p>
+        </div>
+      </div>
+    </section>
+    <!-- was until 2026-10-22 (Krishna: nothing repeated):
+    ( Custom projects (services.md §5) )
+    [section class="section section-alt" aria-labelledby="custom-title"]
+      [div class="container text-block reveal-scroll"]
+        [header class="section-head"]
+          [p class="label label-accent"]Custom projects[/p]
+          [h2 class="section-title" id="custom-title"]Need something bigger or different?[/h2]
+        [/header]
+        [div]
+          [p]Custom platforms, system integrations and technical consulting. Tell us the problem and we'll shape the right solution, with a timeline set after a short scoping call.[/p]
+          [p class="section-cta"][a class="btn btn-primary" href="#" target="_blank" rel="noopener"]Book a scoping call [span class="arrow" aria-hidden="true"]→[/span][span class="sr-only"] (opens in a new tab)[/span][/a][/p]
+        [/div]
+      [/div]
+    [/section]
+    -->
+
+    <!-- How pricing works (services.md §6). Old body commented out 2026-10-12, it said we don't publish prices:
+         "Every project is different, so we don't publish fixed prices. After a short call we send a clear scope, timeline and price. No surprises, and no work starts until you've agreed to it." -->
+    <!-- was until 2026-10-22 (Krishna: nothing repeated), merged into the pricing section above:
+    [section class="section" aria-labelledby="pricing-title"]
+      [div class="container text-block reveal-scroll"]
+        [header class="section-head"]
+          [p class="label label-accent"]Pricing[/p]
+          [h2 class="section-title" id="pricing-title"]Clear price, before any work starts.[/h2]
+        [/header]
+        [p]Every package starts from the price shown. Tell us what you need on a short call and we send one clear price. If your project needs more, we quote it on top, never below. No work starts until you've agreed to it.[/p] ( was until 2026-10-21 (Krishna: real prices in AUD, shown in the visitor's currency): [p class="placeholder"][PLACEHOLDER] How the From price works and how specific requirements are quoted on top (WEB-2.19). No work starts until you've agreed to the price.[/p] )
+      [/div]
+    [/section]
+    -->
+
+    <!-- was until 2026-10-21 (Krishna: one process for all three services):
+    ( Process (services.md §7 reuses Home §6) )
+    [section class="section section-alt" aria-labelledby="process-title"]
+      [div class="container reveal-scroll"]
+        [header class="section-head"]
+          [p class="label label-accent"]How we work[/p]
+          [h2 class="section-title" id="process-title"]Focus. Build. Grow.[/h2]
+          [p class="section-intro"]From the first call to launch day, here is how it goes, and how little of your time it takes.[/p] ( was until 2026-10-17 (Krishna: update the sub pages to match Home; no timeline until WEB-1.12): [p class="section-intro"]Your project journey in five clear steps, built for speed and no surprises.[/p] )
+        [/header]
+        [ol class="steps list-plain"]
+          [li][span class="label label-accent"]01[/span][h3 class="step-name"]Onboard[/h3][p class="step-line"]You tell us once.[/p][ul class="list-plain service-features step-text"][li]We review your website before we talk[/li][li]One 30 minute call, then one package we recommend: you say yes or no[/li][li]A written agreement of exactly what is included[/li][li]Everything asked for in one go, with no passwords shared[/li][/ul][/li]
+          [li][span class="label label-accent"]02[/span][h3 class="step-name"]Prep[/h3][p class="step-line"]You see it take shape.[/p][ul class="list-plain service-features step-text"][li]Never a template: you describe the feel, we recommend the colours[/li][li]Every page planned in one document you approve, so nothing gets missed[/li][li]You send only your logo, photos and what only you know[/li][li]For apps, one short call per feature[/li][li]Nothing is built until you agree[/li][/ul][/li]
+          [li][span class="label label-accent"]03[/span][h3 class="step-name"]Build[/h3][p class="step-line"]You steer, we build.[/p][ul class="list-plain service-features step-text"][li]Built in milestones, so you see progress early[/li][li]A live preview link, updated as we build[/li][li]One short call per milestone to review and sign off[/li][li]Tell us what to change, we write it down[/li][li]Unlimited changes across three review rounds[/li][/ul][/li]
+          [li][span class="label label-accent"]04[/span][h3 class="step-name"]Launch[/h3][p class="step-line"]The real you goes live.[/p][ul class="list-plain service-features step-text"][li]Checked page by page before your final yes[/li][li]Ready for Google and AI search from day one[/li][li]Your business online, the way it really is[/li][/ul][/li]
+          [li][span class="label label-accent"]05[/span][h3 class="step-name"]Handover[/h3][p class="step-line"]You get back to your business.[/p][ul class="list-plain service-features step-text"][li]One training session for your team[/li][li]A written guide to keep[/li][li]Ownership and access handed to you[/li][li]A monthly care plan: every change made, tested and kept fast[/li][li]You talk to the person who built it[/li][/ul][/li]
+        [/ol]
+        ( was until 2026-10-17 (Krishna: update the sub pages to match Home; no timeline until WEB-1.12):
+        [ol class="steps list-plain"]
+          [li][span class="label label-accent"]01[/span][h3 class="step-name"]Onboard[/h3][p class="step-text"]We make it official and collect everything we need in one go: access, accounts and your goals. No chasing you for logins later.[/p][/li]
+          [li][span class="label label-accent"]02[/span][h3 class="step-name"]Prep[/h3][p class="step-text"]You get a private preview link to watch progress live. We lock the scope in short, focused calls, one per feature, instead of one long meeting.[/p][/li]
+          [li][span class="label label-accent"]03[/span][h3 class="step-name"]Build[/h3][p class="step-text"]Built in the open. A review call at every milestone lets you steer early, not at the very end.[/p][/li]
+          [li][span class="label label-accent"]04[/span][h3 class="step-name"]Launch[/h3][p class="step-text"]We go live early, so real users and real data start shaping what comes next.[/p][/li]
+          [li][span class="label label-accent"]05[/span][h3 class="step-name"]Handover[/h3][p class="step-text"]We train your team to run the new system with confidence, then keep improving it with you.[/p][/li]
+        [/ol]
+        )
+
+        ( was until 2026-10-17 (the full steps are here now and the video is off until WEB-8.15): [p class="section-cta"][a class="btn-link" href="index.html#how-we-work"]Watch how we work [span aria-hidden="true"]→[/span][/a][/p] )
+      [/div]
+    [/section]
+    -->
+
+    <!-- Accessible by default (services.md §8) -->
+    <section class="section" aria-labelledby="access-title">
+      <div class="container text-block reveal-scroll">
+        <header class="section-head">
+          <!-- was until 2026-10-22 (Krishna: remove the unnecessary labels above headings): [p class="label label-accent"]Accessible by default[/p] -->
+          <h2 class="section-title" id="access-title">Built for everyone.</h2>
+        </header>
+        <p>Everything we build is accessible by default: readable contrast, full keyboard use, and it works with screen readers and reduced motion settings. It's the right thing to do, it reaches more customers, and it lowers legal risk.</p> <!-- was until 2026-10-22 (no hyphenated words): [p]Every site we build is accessible by default: readable contrast, full keyboard use, screen-reader friendly and respectful of reduced-motion settings. It's the right thing to do, it reaches more customers, and it lowers legal risk.[/p] -->
+      </div>
+    </section>
+
+    <!-- FAQ (moved from Home 2026-10-12, services.md §9) -->
+    <section class="section section-alt" aria-labelledby="faq-title">
+      <div class="container faq-grid reveal-scroll">
+        <header class="section-head">
+          <!-- was until 2026-10-22 (Krishna: remove the unnecessary labels above headings): [p class="label label-accent"]FAQ[/p] -->
+          <h2 class="section-title" id="faq-title">Questions, answered.</h2>
+          <p class="section-intro">Don't see yours? Book a call and ask us directly.</p>
+        </header>
+        <div class="faq-list">
+          <details><summary>How can you deliver this fast without cutting quality?</summary><p>We scope tightly around one core outcome, work in focused sprints and reuse proven building blocks. We cut scope from version one, never quality.</p></details>
+          <details><summary>How does launching early save me money?</summary><p>Real users show you what matters. Instead of paying to build every feature up front, you invest in what the data proves people use and pay for.</p></details>
+          <!-- Old answer, commented out 2026-10-12 (quote-only replaced by From prices): Every project is different, so we quote after a short call once we understand what you need. You get a clear price and timeline before any work starts. -->
+          <details><summary>How much does it cost?</summary><p>Websites start from <span data-price="website">A$4,999</span>, web apps from <span data-price="webapp">A$24,999</span> and mobile apps from <span data-price="mobile">A$34,999</span>. A brand can be added to any of them for <span data-price="brand">A$2,999</span>. If your project needs more, we quote it on top, and you agree the price before any work starts.</p></details> <!-- was until 2026-10-21 (Krishna: real prices in AUD, shown in the visitor's currency): [details][summary]How much does it cost?[/summary][p class="placeholder"][PLACEHOLDER] Answer with the package From prices (WEB-2.19).[/p][/details] -->
+          <details id="pay-instalments"><summary>Can I pay in instalments?</summary><p>Yes, on every service. Pay in one go, or split the price into two or three payments spread across the build, whichever suits your cash flow best.</p></details> <!-- 2026-11-02 (Krishna: one payment, two or three instalments, for all three services; the split and dates stay internal) -->
+          <details><summary>How quickly can we talk?</summary><p>In as little as 30 minutes. Book a call and pick any open slot during your business hours, shown in your own time zone.</p></details>
+          <details><summary>How involved do I need to be?</summary><p>A kickoff, a few short calls to lock the scope, and a review call at each milestone. You can watch progress on your preview link any time. We handle the rest.</p></details>
+          <details><summary>Do you work with clients in other countries?</summary><p>Yes. Aaurigo Tech is a global company, and we work across time zones with clear updates.</p></details>
+          <details><summary>What happens after launch?</summary><p>We don't walk away. We train your team, hand over a written guide and full ownership, and look at the real data with you. If you want us to keep looking after it, our care plan makes every change for you.</p> <!-- was until 2026-10-21 (Krishna: care plan is a paid extra, 10% a month): [p]We train your team to run the new system day to day, review the real data with you, and keep improving it with ongoing support.[/p] --></details>
+          <details><summary>Do you work with existing websites or apps?</summary><p>Yes. We can improve, rebuild or extend what you already have. We'll tell you honestly whether it's faster to improve or to start fresh.</p></details>
+          <details><summary>Do you offer ongoing support?</summary><p>Yes, with our care plan: every change made, tested and kept fast by the people who built it. It starts at <span data-price="care">A$449</span> a month, paid in advance. More complex projects need more care, so the rate goes up with them, and we agree it with you first.</p> <!-- was until 2026-10-22 (Krishna: care plan from A$200 a month): It starts at 10% of your whole project price per month, paid in advance, so a website starts at [span data-price="care"]A$1,000[/span] a month. More complex projects need more care, so the rate goes up with them, and we agree it with you first.[/p] --> <!-- was until 2026-10-21 (Krishna: starts at 10% of the whole project, higher for complex projects): It costs 10% of your project price per month, paid in advance. For a website, that starts at [span data-price="care"]A$500[/span] a month.[/p] --> <!-- was until 2026-10-21 (Krishna: care plan is a paid extra, 10% a month): [p]Yes. After launch we offer ongoing support and improvements based on your real user data.[/p] --></details>
+          <details><summary>Who owns the code?</summary><p>You do. Once the project is paid for, the code, designs and accounts are yours.</p></details>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section cta cta-glow" aria-labelledby="cta-title"> <!-- was until 2026-10-21 (Krishna: black on every page): [section class="section cta" aria-labelledby="cta-title"] -->
+      <div class="container reveal-scroll">
+        <h2 class="cta-title" id="cta-title">Not sure which service fits?</h2>
+        <p class="cta-body">Book a call and we'll tell you the fastest route to real users, in as little as 30 minutes.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+          <a class="btn-link" href="contact.html">Or send us a message</a>
+        </div>
+        <p class="cta-closing label">Enable businesses to do more.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 13. Footer (home.md §13, WEB-5.7). No Client login link until BIZ-3.10. -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">Aaurigo Tech</p>
+          <p class="footer-tagline">Launch fast. Learn faster. Grow smarter.</p>
+        </div>
+        <nav aria-labelledby="footer-nav">
+          <p class="footer-heading label" id="footer-nav">Navigate</p>
+          <ul class="footer-links list-plain">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-work">
+          <p class="footer-heading label" id="footer-work">Work with us</p>
+          <ul class="footer-links list-plain">
+            <li><a href="websites.html">Websites</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#web-development --></li>
+            <li><a href="web-apps.html">Web apps</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#web-applications --></li>
+            <!-- was until 2026-10-21 (Krishna: brand combined with every service, not its own option): [li][a href="services.html#brand"]Brand[/a][/li] -->
+            <li><a href="mobile-apps.html">Mobile apps</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#mobile-apps --></li> <!-- was until 2026-10-14: Web Development · Web Applications · Mobile Apps -->
+            <li><a href="#" target="_blank" rel="noopener">Book a call<span class="sr-only"> (opens in a new tab)</span></a></li>
+          </ul>
+        </nav>
+        <div class="footer-news">
+          <p class="footer-heading label">Newsletter</p>
+          <p>Short notes on building and launching faster. One email a month.</p>
+          <!-- Posts to Zoho Campaigns once NEWS-1.11 is set up. -->
+          <form action="#" method="post">
+            <div class="field">
+              <label class="field-label" for="news-email">Your email address</label>
+              <div class="form-row">
+                <input class="field-input" id="news-email" name="email" type="email" autocomplete="email" required>
+                <button class="btn btn-primary" type="submit">Join</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> Aaurigo Tech. All rights reserved.</p>
+        <ul class="list-plain" aria-label="Legal">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="accessibility.html">Accessibility Statement</a></li>
+        </ul>
+        <!-- [PLACEHOLDER] Social links (LinkedIn, Instagram, GitHub, X) once WEB-1.4 is done. -->
+      </div>
+      <p class="footer-mark" aria-hidden="true">Aaurigo Tech</p> <!-- 2026-10-25 (Krishna: polish): the name set large and quiet as the closing moment; decorative, the brand is already named above -->
+    </div>
+  </footer>
+</body>
+</html>

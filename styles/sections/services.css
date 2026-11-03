@@ -1,0 +1,503 @@
+﻿/* What we build (WEB-8.4, WEB-6.3, copy home.md §4). Since 2026-10-14: three hanging bookmarks (below); the old row styles are commented out. */
+
+/* was until 2026-10-14 (rows replaced by hanging bookmarks):
+.services-list { border-top: var(--rule-strong); }
+
+.service {
+  display: grid; grid-template-columns: 5rem 1fr 1fr auto; gap: 1rem 2rem;
+  padding-block: 2rem;
+  border-bottom: var(--rule);
+}
+.service-title { font: 600 var(--text-h3)/1.15 var(--display); letter-spacing: -.01em; }
+.service-text { margin-top: .5rem; color: var(--muted); }
+*/
+
+/* Commented out 2026-10-12, not deleted: .service-features moved to components.css (used by Home and Services).
+.service-features { display: grid; gap: .5rem; align-content: start; }
+.service-features li { display: flex; align-items: baseline; gap: .75rem; }
+.service-features li::before { content: ""; flex: none; width: .3125rem; height: .3125rem; background: var(--spark); transform: translateY(-.2em); }
+*/
+/* Commented out 2026-10-12, not deleted: the hairline marker looked like an em dash.
+.service-features li::before { content: ""; flex: none; width: .75rem; height: 1px; background: var(--spark); transform: translateY(-.25em); }
+*/
+
+/* was until 2026-10-14 (rows replaced by hanging bookmarks):
+.service-link { align-self: start; }
+
+[ Link hugs its text, so the underline never stretches across the row on phones (2026-10-14) ]
+.service-link { justify-self: start; }
+*/
+
+/* was until 2026-10-14 (replaced by the one .build-close row below, Krishna):
+[ After launch line: the care plan in public wording (2026-10-14, REQ-BIZ-7) ]
+.services-after { padding-block: 1.5rem; border-bottom: var(--rule); }
+
+[ Custom projects strip ]
+.custom-strip {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem 2rem;
+  padding-block: 2rem;
+  border-bottom: var(--rule-strong);
+}
+.custom-strip p { max-width: 40rem; }
+*/
+
+/* was until 2026-10-14:
+@media (max-width: 55rem) {
+  .service { grid-template-columns: 1fr; }
+}
+*/
+
+/* ---------- Three hang tags (Home "What we build", 2026-10-14) ----------
+   One ink rail; each service is a white tag with clipped top corners and a punched hole (champagne eyelet),
+   hanging on a thin string. Strings differ a little in length. Static: nothing swings, no shadow. */
+.bookmarks {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 3vw, 2.5rem);   /* three again 2026-10-21: Brand tag added */
+  /* was until 2026-10-21 (Brand tag added): repeat(2, 1fr) with max-width: 52rem; margin-inline: auto; */
+  align-items: start;
+  margin-bottom: var(--space-md);
+  /* was until 2026-10-14 (Krishna: tags not linked to the ink line): border-top: var(--rule-strong); the rail */
+}
+.bookmark {
+  --string: 2.5rem;   /* length of the string from the rail to the tag */
+  --hole: 1.75rem;    /* hole centre, measured from the top of the tag */
+  position: relative;
+  padding-top: var(--string);
+}
+.bookmark:nth-child(2) { --string: 4.5rem; }
+.bookmark:nth-child(3) { --string: 3.25rem; }
+/* was until 2026-10-14 (one straight line across the tag; Krishna: break the thread, make it realistic):
+.bookmark::before {
+  content: ""; position: absolute; z-index: 1;
+  top: 0; left: 50%;
+  width: 1px; height: calc(var(--string) + var(--hole));
+  background: var(--ink);
+}
+*/
+/* The string: a twine loop drawn at true size (60 x 96 units = 3.75 x 6rem). The hole sits at unit y 72 (4.5rem),
+   so the drawing is placed to put that point on the hole. Cord in twine colours with a twisted texture. */
+.tag-string {
+  position: absolute; z-index: 1;
+  top: calc(var(--string) + var(--hole) - 4.5rem); left: 50%;
+  width: 3.75rem; height: 6rem;
+  transform: translateX(-50%);
+  overflow: visible;
+}
+.tag-string .cord { fill: none; stroke: var(--spark-deep); stroke-width: 2; stroke-linecap: round; }
+.tag-string .cord-twist { fill: none; stroke: var(--spark); stroke-width: 1; stroke-linecap: round; stroke-dasharray: 1.5 2.5; }
+.tag-knot { fill: var(--spark-deep); }
+
+/* A very slight tilt, as if each tag settled where it hangs. Static, nothing moves. Turned off on phones. */
+.bookmark { transform-origin: 50% 0; }
+.bookmark:nth-child(1) { rotate: -1.4deg; }
+.bookmark:nth-child(2) { rotate: .8deg; }
+.bookmark:nth-child(3) { rotate: -.6deg; }
+
+/* was until 2026-10-14 (ink line loop with upward tails, stretched to fit):
+[ The string: a free loop through the hole, knotted above it, two loose ends (no rail) ]
+.tag-string {
+  position: absolute; z-index: 1;
+  top: 0; left: 50%;
+  width: 3.75rem; height: calc(var(--string) + var(--hole));
+  transform: translateX(-50%);
+  overflow: visible;
+}
+.tag-string path { fill: none; stroke: var(--ink); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.tag-knot { fill: var(--ink); }
+[ was until 2026-10-14 (no pin without a rail): .tag-pin { fill: var(--spark); } ]
+*/
+
+.tag {
+  position: relative;
+  display: flex; flex-direction: column; gap: 1rem;
+  padding: calc(var(--hole) + 2.25rem) clamp(1.25rem, 2.5vw, 2rem) 2.25rem;
+  background: var(--surface);
+  clip-path: polygon(1.5rem 0, calc(100% - 1.5rem) 0, 100% 1.5rem, 100% 100%, 0 100%, 0 1.5rem);
+}
+.tag::before {   /* the punched hole with a champagne eyelet */
+  content: ""; position: absolute;
+  top: var(--hole); left: 50%;
+  width: .875rem; height: .875rem;
+  border: 2px solid var(--spark); border-radius: 50%;
+  background: var(--soft);   /* the section background shows through the hole */
+  transform: translate(-50%, -50%);
+}
+.bookmark-title { font: 600 var(--text-h3)/1.15 var(--display); letter-spacing: -.01em; }
+.bookmark-text { color: var(--muted); }
+/* was until 2026-10-14 (now centred, see the end of this file): .tag .btn-link { align-self: start; } */
+
+@media (max-width: 55rem) {
+  .bookmarks { grid-template-columns: 1fr; gap: 0; }
+  .bookmark,
+  .bookmark:nth-child(2),
+  .bookmark:nth-child(3) { --string: 3rem; rotate: none; }  /* was 2rem until 2026-10-14: the twine loop needs room */
+  .bookmark:nth-child(1),
+  .bookmark:nth-child(2) { rotate: none; }
+}
+
+/* was until 2026-10-14 (same day): bookmark ribbons with a V notch at the bottom
+[ ---------- Three hanging bookmarks (Home "What we build", 2026-10-14) ----------
+   One ink rail; each bookmark hangs from it, white, with a V notch cut at the bottom.
+   Lengths differ a little, like real bookmarks. Static: nothing swings, no shadow. ]
+.bookmarks {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 3vw, 2.5rem);
+  align-items: start;
+  margin-bottom: var(--space-md);
+  border-top: var(--rule-strong);   [ the rail ]
+}
+.bookmark {
+  --notch: 2.5rem;
+  display: flex; flex-direction: column; gap: 1rem;
+  padding: 2rem clamp(1.25rem, 2.5vw, 2rem) calc(var(--notch) + 2.5rem);
+  background: var(--surface);
+  border-top: 2px solid var(--spark);   [ where the ribbon meets the rail ]
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - var(--notch)), 0 100%);
+}
+.bookmark:nth-child(2) { padding-bottom: calc(var(--notch) + 5rem); }
+.bookmark:nth-child(3) { padding-bottom: calc(var(--notch) + 3.5rem); }
+.bookmark-title { font: 600 var(--text-h3)/1.15 var(--display); letter-spacing: -.01em; }
+.bookmark-text { color: var(--muted); }
+.bookmark .btn-link { align-self: start; }
+
+@media (max-width: 55rem) {
+  .bookmarks { grid-template-columns: 1fr; }
+  .bookmark,
+  .bookmark:nth-child(2),
+  .bookmark:nth-child(3) { padding-bottom: calc(var(--notch) + 2rem); }
+}
+
+*/
+
+/* ---------- Home "What we build": everything centred (2026-10-14, Krishna) ---------- */
+.build .section-head { margin-inline: auto; justify-items: center; text-align: center; }
+.tag { align-items: center; text-align: center; }
+.tag .btn-link { align-self: center; }
+.tag .service-features { justify-items: center; }
+/* was until 2026-10-14 (the two rows are now one .build-close row):
+.services-after { text-align: center; }
+.build .custom-strip { flex-direction: column; justify-content: center; text-align: center; }
+*/
+.tag .service-features li::before { content: none; }   /* centred lines read cleaner without the square markers */
+/* was until 2026-10-14: .build .custom-strip p { margin-inline: auto; } */
+
+/* Closing row: care line and custom projects side by side, one hairline row (2026-10-14, Krishna) */
+/* was until 2026-10-14 (same day; Krishna: still looks a little off. Headings as big as the tag titles, the left half
+   ended early and left a gap, two strong rules boxed it in like a table):
+.build-close {
+  display: grid; grid-template-columns: 1fr 1fr;
+  margin-top: var(--space-md);
+  border-block: var(--rule-strong);
+  text-align: center;
+}
+.build-close-item { padding: 2rem clamp(1rem, 3vw, 2.5rem); }
+.build-close-item + .build-close-item { border-left: var(--rule); }
+.build-close-item { align-content: start; }
+.build-close-item strong { display: block; margin-bottom: .375rem; font: 600 var(--text-h3)/1.25 var(--display); }
+.build-close .btn-link { display: inline-flex; margin-top: .875rem; }
+[ was until 2026-10-14 (same day): .build-close .btn-link { display: inline-block; margin-top: .5rem; } ]
+
+*/
+/* was until 2026-10-14 (same day, two columns were uneven):
+.build-close {
+  display: grid; grid-template-columns: 1fr 1fr; align-items: center;
+  max-width: 62rem; margin: var(--space-lg) auto 0;
+  border-top: var(--rule);
+  text-align: center;
+}
+.build-close-item { padding: 1.75rem clamp(1rem, 3vw, 2.5rem) 0; color: var(--muted); }
+.build-close-item + .build-close-item { border-left: var(--rule); }
+.build-close-item strong { display: block; margin-bottom: .25rem; font: 600 var(--text-lead)/1.3 var(--display); color: var(--ink); }
+.build-close .btn-link { display: inline-flex; margin-top: .75rem; }
+
+@media (max-width: 55rem) {
+  .build-close { grid-template-columns: 1fr; }
+  .build-close-item { padding-inline: 0; }
+  .build-close-item + .build-close-item { border-left: 0; border-top: var(--rule); }
+}
+*/
+/* One centred line: care line | custom projects link. A short hairline between, stacked on phones */
+.build-close {
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: .75rem 0;
+  margin-top: var(--space-lg); padding-top: 1.75rem;
+  border-top: var(--rule);
+  text-align: center; color: var(--muted);
+}
+.build-close-item { padding-inline: clamp(1rem, 2.5vw, 2rem); }
+.build-close-item + .build-close-item { border-left: var(--rule); }
+.build-close-item strong { font-weight: 600; color: var(--ink); }
+.build-close .btn-link { margin-left: .25rem; color: var(--ink); }
+
+@media (max-width: 55rem) {
+  .build-close { flex-direction: column; align-items: center; gap: 1rem; }
+  .build-close-item { padding-inline: 0; }
+  .build-close-item + .build-close-item { border-left: 0; }
+  .build-close-item strong { display: block; }
+}
+
+/* ---------- "Most popular" seal on the middle tag (2026-10-14, Krishna: polished and royal) ----------
+   Serrated gold rosette with a soft sheen, double rings and a dotted ring, text curved top and bottom,
+   small stars, a star emblem in the centre. Palette colours only. Static, never spins. */
+.stamp {
+  position: absolute; z-index: 2;
+  top: calc(var(--string) - 2.75rem); right: -1.75rem;
+  width: 6.5rem; height: 6.5rem;
+  rotate: -10deg;
+}
+/* was until 2026-10-14 (gold royal seal, replaced by the red wax seal below):
+.stamp-gold-light { stop-color: var(--spark); }
+.stamp-gold-deep { stop-color: var(--spark-deep); }
+.stamp-sheen-on { stop-color: var(--surface); stop-opacity: .28; }
+.stamp-sheen-off { stop-color: var(--surface); stop-opacity: 0; }
+.stamp-edge { fill: url(#stamp-gold); }
+.stamp-sheen { fill: url(#stamp-sheen); }
+.stamp-ring { fill: none; stroke: var(--bg); stroke-width: .9; opacity: .85; }
+.stamp-ring-thin { stroke-width: .5; }
+.stamp-dots { fill: none; stroke: var(--bg); stroke-width: 1.1; stroke-linecap: round; stroke-dasharray: .01 2.6; opacity: .8; }
+.stamp-text { font: 600 9px var(--display); letter-spacing: .16em; fill: var(--bg); }
+.stamp-text-small { font: 500 6.5px var(--mono); letter-spacing: .28em; }
+.stamp-star { fill: var(--bg); }
+.stamp-emblem { fill: var(--bg); opacity: .95; }
+*/
+
+@media (max-width: 55rem) {
+  .stamp { right: .25rem; }
+}
+
+/* was until 2026-10-14 (same day, simple disc):
+[ ---------- "Most popular" stamp on the middle tag (2026-10-14, Krishna) ----------
+   Round champagne seal, text around the edge, over the tag's top right corner. Static, never spins. ]
+.stamp {
+  position: absolute; z-index: 2;
+  top: calc(var(--string) - 2.25rem); right: -1.5rem;
+  width: 5.5rem; height: 5.5rem;
+  rotate: -12deg;
+}
+.stamp-disc { fill: var(--spark); }
+.stamp-line { fill: none; stroke: var(--surface); stroke-width: .75; }
+.stamp-text { font: 600 8px var(--mono); letter-spacing: .08em; fill: var(--ink); }
+.stamp-dot { fill: var(--ink); }
+
+@media (max-width: 55rem) {
+  .stamp { right: .5rem; }
+}
+*/
+
+/* ---------- Red wax seal (2026-10-14, Krishna: "old style, red liquid on top of a letter") ----------
+   Melted wax blob with an uneven edge, a pressed circle with a raised rim, "MOST POPULAR" and an "A" monogram
+   pressed in (a light copy offset by half a unit makes them look embossed), a soft gloss. Static.
+   Uses the .stamp position; the gold seal colours above stay for reference. */
+.wax-stop-light { stop-color: var(--wax-light); }
+.wax-stop { stop-color: var(--wax); }
+.wax-stop-deep { stop-color: var(--wax-deep); }
+/* was until 2026-10-14 (earlier wax seal): .wax-blob { fill: url(#wax-body); } */
+/* was until 2026-10-14 (earlier wax seal): .wax-press { fill: url(#wax-press); } */
+/* was until 2026-10-14 (earlier wax seal): .wax-rim-light { fill: none; stroke: var(--wax-light); stroke-width: 1.6; opacity: .8; } */
+/* was until 2026-10-14 (earlier wax seal): .wax-rim-dark { fill: none; stroke: var(--wax-deep); stroke-width: 1.6; } */
+/* was until 2026-10-14 (earlier wax seal): .wax-ring { fill: none; stroke: var(--wax-deep); stroke-width: .7; opacity: .7; } */
+.seal-text { font: 700 9.5px var(--display); letter-spacing: .12em; fill: var(--wax-light); }  /* raised lettering; was 600 8.5px in --wax-deep until 2026-10-14 */
+/* was until 2026-10-14: .seal-text-hi, .seal-mono-hi { fill: var(--wax-deep); opacity: 1; }  [ the shadow under the raised lettering; was --wax-light until 2026-10-14 ] */
+.seal-text-hi { fill: var(--wax-deep); opacity: 1; }  /* the pressed shadow under the gold lettering */
+/* was until 2026-10-14 (earlier wax seal): .seal-mono { font: italic 600 30px var(--display); fill: var(--wax-light); }  /* was --wax-deep until 2026-10-14 */ */
+/* was until 2026-10-14 (earlier wax seal): .seal-star { fill: var(--wax-light); }  /* was --wax-deep until 2026-10-14 */ */
+/* was until 2026-10-14 (earlier wax seal): .wax-gloss { fill: var(--surface); opacity: .18; } */
+.seal { rotate: -8deg; width: 7.5rem; height: 7.5rem; top: calc(var(--string) - 3.25rem); right: -2rem; }  /* larger so the words read */
+@media (max-width: 55rem) {
+  .seal { right: 0; }
+}
+
+/* Gold leaf lettering on the wax seal (2026-10-14, Krishna): metallic gradient, a fine dark edge for crispness,
+   the deep wax copy underneath reads as the pressed shadow. Replaces the light wax lettering. */
+.gold-stop-hi { stop-color: var(--gold-hi); }
+.gold-stop { stop-color: var(--spark); }
+.gold-stop-deep { stop-color: var(--spark-deep); }
+.seal-gold { fill: url(#gold-leaf); stroke: var(--spark-deep); stroke-width: .25; paint-order: stroke; }
+
+/* ---------- Wax seal with a gold crest (2026-10-14, after Krishna's reference image) ----------
+   Thick raised rim lit from the top left, a sunken smooth centre, a raised gold crest with a pressed shadow,
+   a soft cast shadow on the tag. Static. */
+.seal-cast { fill: var(--ink); opacity: .28; }
+.seal-rim { fill: url(#wax-rim); }
+.seal-rim-light { fill: none; stroke: var(--wax-light); stroke-width: 5; stroke-linecap: round; opacity: .75; }  /* back to .75 (2026-10-14, Krishna preferred it); was .3 during the lighting pass */
+.seal-rim-dark { fill: none; stroke: var(--wax-deep); stroke-width: 5; stroke-linecap: round; opacity: .8; }
+.seal-centre { fill: url(#wax-centre); }
+.seal-wall-dark { fill: none; stroke: var(--wax-deep); stroke-width: 2.6; stroke-linecap: round; }
+.seal-wall-light { fill: none; stroke: var(--wax-light); stroke-width: 1.6; stroke-linecap: round; opacity: .7; }
+.seal-emboss { fill: var(--wax-deep); }
+.seal-shield-a { font: italic 600 11.5px var(--display); fill: var(--wax); }  /* was 15px until 2026-10-14, before the crest was scaled down */
+.seal { width: 8.5rem; height: 8.5rem; top: calc(var(--string) - 3.75rem); right: -2.25rem; }
+@media (max-width: 55rem) {
+  .seal { width: 7.5rem; height: 7.5rem; right: 0; }
+}
+
+/* Realistic lighting on the seal (2026-10-14): the bevel filters light the rim and the gold from the top left */
+/* was until 2026-10-14 (Krishna preferred the version before this lighting pass): 
+.seal-light { lighting-color: var(--surface); }
+.seal-rim-lit { fill: url(#wax-rim); }
+.seal-bubble { fill: none; stroke: var(--wax-light); stroke-width: .5; opacity: .55; }
+*/
+
+/* ---------- Premium pass on the three service tags (2026-11-02, Krishna: "do it", calmer and more premium) ----------
+   Kept: the tag idea (punched hole with its champagne eyelet), centred text, the middle tag sitting lower, the wax seal.
+   Changed: no twine loops, no tilt, round corners like every other card, the name in big italics like the
+   How we work cards, larger text. The earlier rules above stay as they were; these override them. */
+.tag-string { display: none; }                       /* was: a twine loop above each tag */
+.bookmark,
+.bookmark:nth-child(1),
+.bookmark:nth-child(2),
+.bookmark:nth-child(3) { rotate: none; }            /* was: -1.4deg, .8deg, -.6deg */
+.bookmark { --string: 1rem; }                        /* was 2.5rem, 4.5rem, 3.25rem: the room the twine needed */
+.bookmark:nth-child(2) { --string: 2.75rem; }        /* the main service still sits a little lower */
+.bookmark:nth-child(3) { --string: 1rem; }
+.tag {
+  clip-path: none; border-radius: var(--radius-card);   /* was: clipped top corners */
+  gap: 1.125rem;
+  padding: calc(var(--hole) + 2rem) clamp(1.5rem, 3vw, 2.5rem) 2.5rem;
+}
+.tag .bookmark-title { font: italic 500 clamp(1.875rem, 2.8vw, 2.375rem)/1.05 var(--display); letter-spacing: var(--tracking-title); }
+.tag .bookmark-text { font-size: var(--text-intro); line-height: 1.55; max-width: 24ch; }   /* was the same day: var(--text-lead), too big for the card */
+.tag .service-features { gap: .625rem; padding-top: 1.125rem; border-top: 1px solid var(--spark); width: 100%; }
+.tag .btn-link { margin-top: auto; }              /* the links line up at the foot of each card */
+.bookmarks { align-items: stretch; }               /* equal height cards; was: start */
+.bookmark { display: flex; flex-direction: column; }
+.tag { flex: 1; }
+.tag .service-features { font-size: var(--text-md); }
+
+@media (max-width: 55rem) {
+  .bookmarks { gap: 1.5rem; }
+  .bookmark,
+  .bookmark:nth-child(2),
+  .bookmark:nth-child(3) { --string: 0rem; }
+}
+.build-close { font-size: var(--text-md); }          /* keeps the after launch row on one line with Home's larger body text (2026-11-02) */
+
+/* ---------- Holding attention (2026-11-02, Krishna: the cards blend into the sand; dark middle card, a drawn sketch per card,
+   large outlined numbers, hover effects) ---------- */
+
+/* Large outlined number, behind the top left of each card (the small mono label restyled; it stays real text) */
+.tag > .label {
+  position: absolute; top: .75rem; left: 1.25rem; z-index: 0;
+  font: italic 500 clamp(4rem, 6vw, 5.5rem)/1 var(--display); letter-spacing: -.04em; text-transform: none;
+  color: transparent; -webkit-text-stroke: 1px var(--spark);
+  transition: color var(--open) var(--ease);
+}
+.tag > *:not(.label) { position: relative; z-index: 1; }
+
+/* The featured middle card: ink, like the footer and the Handover card, so the main service draws the eye */
+.bookmark:nth-child(2) .tag { background: var(--ink); color: var(--on-dark); }
+.bookmark:nth-child(2) .bookmark-text { color: var(--on-dark-muted); }
+.bookmark:nth-child(2) .btn-link { color: var(--on-dark); }
+
+/* The sketches: small interfaces drawn in code, palette colours only */
+.sketch {
+  width: 100%; max-width: 15rem; aspect-ratio: 16 / 10; margin: .25rem auto .25rem;
+  display: flex; flex-direction: column; overflow: hidden;
+  background: var(--bg); border: 1px solid var(--line); border-radius: .875rem;
+}
+.sk-bar { display: flex; gap: .3rem; padding: .45rem .6rem; background: var(--window-bar); border-bottom: 1px solid var(--window-edge); }
+.sk-bar i { width: .4rem; height: .4rem; border-radius: 50%; background: var(--window-edge); }
+
+/* Web app: a dashboard */
+.sk-body { flex: 1; display: grid; grid-template-columns: 22% 1fr; min-height: 0; }
+.sk-side { display: grid; gap: .45rem; align-content: start; padding: .65rem .5rem; background: var(--ink); }
+.sk-side b { height: .3rem; border-radius: .2rem; background: var(--line-dark); }
+.sk-side b:first-child { background: var(--spark); }
+.sk-main { display: grid; grid-template-rows: auto 1fr auto; gap: .5rem; padding: .6rem; min-height: 0; }
+.sk-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: .35rem; }
+.sk-stats span { height: 1.1rem; border-radius: .3rem; background: var(--surface); border: 1px solid var(--line); }
+.sk-chart { display: flex; align-items: flex-end; gap: .3rem; min-height: 0; }
+.sk-chart em { flex: 1; height: 100%; border-radius: .2rem .2rem 0 0; background: var(--primary); transform-origin: 50% 100%; transition: transform var(--open) var(--ease-soft); }
+.sk-chart em:nth-child(1) { transform: scaleY(.35); }
+.sk-chart em:nth-child(2) { transform: scaleY(.6); }
+.sk-chart em:nth-child(3) { transform: scaleY(.45); }
+.sk-chart em:nth-child(4) { transform: scaleY(.75); }
+.sk-chart em:nth-child(5) { transform: scaleY(.6); }
+.sk-chart em:nth-child(6) { transform: scaleY(.9); background: var(--spark); }
+.sk-rows { display: grid; gap: .3rem; }
+.sk-rows b { height: .3rem; border-radius: .2rem; background: var(--line); }
+.sk-rows b:last-child { width: 70%; }
+
+/* Website: a small page */
+.sketch-site { background: var(--surface); border-color: var(--line-dark); }
+.sk-page { flex: 1; display: grid; grid-template-rows: auto 1fr; }
+.sk-nav { display: flex; align-items: center; gap: .4rem; padding: .5rem .7rem; border-bottom: 1px solid var(--line); }
+.sk-nav b { width: 1.4rem; height: .35rem; margin-right: auto; border-radius: .2rem; background: var(--ink); }
+.sk-nav span { width: .9rem; height: .2rem; border-radius: .2rem; background: var(--line); }
+.sk-hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: .6rem; align-items: center; padding: .6rem .7rem; }
+.sk-copy { display: grid; gap: .3rem; justify-items: start; }
+.sk-copy b { width: 100%; height: .45rem; border-radius: .2rem; background: var(--ink); }
+.sk-copy b + b { width: 70%; }
+.sk-copy span { width: 90%; height: .2rem; border-radius: .2rem; background: var(--line); }
+.sk-copy span + span { width: 60%; }
+.sk-copy em { width: 2.6rem; height: .75rem; margin-top: .2rem; border-radius: 1rem; background: var(--primary); transition: background-color var(--open) var(--ease); }
+.sk-img { height: 100%; min-height: 3rem; border-radius: .4rem; background: linear-gradient(160deg, var(--glow), var(--spark)); transition: filter var(--open) var(--ease); }
+
+/* Mobile app: a phone */
+.sketch-phone { align-items: center; justify-content: center; background: transparent; border: 0; }
+.sk-device { height: 100%; aspect-ratio: 9 / 18; padding: .3rem; border-radius: 1.1rem; background: var(--ink); }
+.sk-screen { height: 100%; display: flex; flex-direction: column; gap: .35rem; padding: .55rem .45rem; border-radius: .85rem; background: var(--surface); }
+.sk-screen b { height: 1rem; border-radius: .35rem; background: var(--glow); }
+.sk-screen span { height: .6rem; border-radius: .25rem; background: var(--bg); border: 1px solid var(--line); transition: background-color var(--open) var(--ease); }
+.sk-screen em { height: .7rem; margin-top: auto; border-radius: 1rem; background: var(--primary); }
+
+/* The champagne rule over the points: full width everywhere; on screens with a mouse it draws across on hover */
+.tag .service-features { border-top: 0; background: linear-gradient(var(--spark), var(--spark)) 50% 0 / 100% 1px no-repeat; transition: background-size var(--open) var(--ease-soft); }
+
+@media (hover: hover) {
+  .tag .service-features { background-size: 30% 1px; }
+  .tag:hover .service-features { background-size: 100% 1px; }
+  .tag:hover > .label { color: var(--glow); }                                   /* the number fills softly */
+  .bookmark:nth-child(2) .tag:hover > .label { color: var(--line-dark); }
+  .tag:hover .btn-link span[aria-hidden] { display: inline-block; transform: translateX(.25rem); transition: transform var(--fast); }
+  /* each sketch comes alive a little */
+  .tag:hover .sk-chart em:nth-child(1) { transform: scaleY(.55); }
+  .tag:hover .sk-chart em:nth-child(2) { transform: scaleY(.4); }
+  .tag:hover .sk-chart em:nth-child(3) { transform: scaleY(.7); }
+  .tag:hover .sk-chart em:nth-child(4) { transform: scaleY(.6); }
+  .tag:hover .sk-chart em:nth-child(5) { transform: scaleY(.85); }
+  .tag:hover .sk-chart em:nth-child(6) { transform: scaleY(1); }
+  .tag:hover .sk-copy em { background: var(--spark); }
+  .tag:hover .sk-img { filter: saturate(1.25); }
+  .tag:hover .sk-screen span:nth-of-type(2) { background: var(--glow); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tag > .label, .tag .service-features, .sk-chart em, .sk-copy em, .sk-img, .sk-screen span { transition: none; }
+}
+@media (max-width: 55rem) {
+  .tag > .label { font-size: 4rem; }
+}
+.tag > .label { top: auto; left: auto; bottom: .5rem; right: 1.25rem; }   /* moved the same day: at the top they hid behind the sketches */
+/* The number on top, half out of the card, solid bold gold (2026-11-02, Krishna). Was the same day: an outline in the bottom right corner */
+.tag > .label {
+  top: -2.4rem; left: 1.5rem; bottom: auto; right: auto;
+  font: 600 clamp(4rem, 5.5vw, 5rem)/1 var(--display); letter-spacing: -.04em;
+  color: var(--spark); -webkit-text-stroke: 0;
+}
+@media (hover: hover) {
+  .tag:hover > .label,
+  .bookmark:nth-child(2) .tag:hover > .label { color: var(--spark-deep); }   /* deepens on hover; was a soft fill of the outline */
+}
+.bookmarks { padding-top: 1rem; }                                              /* room for the numbers above the cards */
+@media (max-width: 55rem) {
+  .bookmarks { gap: 3.5rem; padding-top: 2rem; }                               /* the next card's number never touches the card above */
+  .tag > .label { font-size: 4rem; top: -2rem; }
+}
+/* More stylish numbers (2026-11-02, Krishna): italic display cut with a polished gold sheen (champagne, a pale highlight,
+   deep champagne), like gold leaf. Was the same day: solid bold upright champagne. */
+.tag > .label {
+  font: italic 500 clamp(4.5rem, 6vw, 5.75rem)/1 var(--display); letter-spacing: -.05em;
+  font-variation-settings: "opsz" 144;
+  top: -2.75rem; left: 1.25rem; padding-right: .15em;   /* the italic's last stroke is never clipped */
+  background: linear-gradient(165deg, var(--spark) 15%, var(--glow) 45%, var(--spark) 62%, var(--spark-deep) 95%);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+}
+@media (hover: hover) {
+  .tag:hover > .label,
+  .bookmark:nth-child(2) .tag:hover > .label { color: transparent; filter: brightness(.88); }   /* the gold deepens on hover */
+  .tag > .label { transition: filter var(--open) var(--ease); }
+}
+@media (max-width: 55rem) {
+  .tag > .label { font-size: 4.5rem; top: -2.4rem; }
+}
+/* No pale band through the middle (2026-11-02, Krishna: the light made the numbers look broken): one smooth gold, champagne to deep champagne.
+   Was the same day: linear-gradient(165deg, var(--spark) 15%, var(--glow) 45%, var(--spark) 62%, var(--spark-deep) 95%) */
+.tag > .label { background-image: linear-gradient(170deg, var(--spark) 20%, var(--spark-deep) 100%); }

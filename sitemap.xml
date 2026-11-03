@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Only indexable, canonical pages (RFA §5.11). Never the 404 page, archive/ or test pages. Update lastmod when a page changes. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.aaurigotech.com/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://www.aaurigotech.com/services</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://www.aaurigotech.com/websites</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://www.aaurigotech.com/web-apps</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://www.aaurigotech.com/mobile-apps</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://www.aaurigotech.com/work</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://www.aaurigotech.com/case-study-parktag</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://www.aaurigotech.com/case-study-pathmole</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://www.aaurigotech.com/case-study-dr-arpan-gandhi</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://www.aaurigotech.com/about</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://www.aaurigotech.com/contact</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://www.aaurigotech.com/privacy</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://www.aaurigotech.com/terms</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://www.aaurigotech.com/accessibility</loc><lastmod>2026-11-03</lastmod></url>
+</urlset>

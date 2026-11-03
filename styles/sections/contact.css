@@ -1,0 +1,42 @@
+/* Contact page (WEB-12.1, 12.2, copy contact.md): book a call, the Start a project form, what happens next. */
+
+.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: var(--space-md); align-items: start; }
+
+.contact-option { display: grid; gap: 1rem; padding-top: 1.5rem; border-top: var(--rule-strong); }
+.contact-option h2 { font: 600 var(--text-h3)/1.15 var(--display); }
+.contact-option > p { color: var(--muted); }
+
+.contact-form { display: grid; gap: 1.25rem; }
+.contact-form textarea.field-input { min-height: 9rem; resize: vertical; }
+.field-hint { font-weight: 400; color: var(--muted); }
+.form-note { font-size: var(--text-sm); color: var(--muted); }
+
+/* What happens next: 4 steps */
+.next-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+.next-list li { display: grid; gap: .5rem; align-content: start; padding-top: 1.25rem; border-top: var(--rule-strong); }
+.next-list h3 { font: 600 var(--text-h3)/1.15 var(--display); }
+.next-list p { font-size: .9375rem; color: var(--muted); }
+
+/* 2026-11-02 (Krishna: improve the Contact page): the two options become cards with round corners like Services.
+   Book a call is pale champagne and stays in view while the form scrolls; the form is a white card. Titles get the
+   site's italic second half. The steps below are white cards on the sand. The hairline versions above stay as the base. */
+.contact-option.contact-call, .contact-option.contact-write { padding: clamp(1.5rem, 3vw, 2.5rem); border-top: 0; border-radius: var(--radius-card); }
+.contact-call { background: var(--glow); }
+.contact-write { background: var(--surface); }
+.contact-option h2 { font-size: clamp(1.625rem, 2.6vw, 2.125rem); letter-spacing: var(--tracking-title); text-wrap: balance; }
+.contact-option h2 em { font-style: italic; font-weight: 500; color: var(--spark-deep); }
+.contact-call > p { color: var(--ink); }
+.contact-call .form-note { color: var(--muted-deep); }
+.contact-who { padding-top: 1rem; border-top: 1px solid var(--spark); font-weight: 600; }
+.contact-write .field-input { background-color: var(--bg); }   /* soft stone fields on the white card; the border keeps --muted so each field stays easy to see (3:1) */
+.contact-write .field-input:focus-visible { border-color: var(--primary); }
+@media (min-width: 55.01rem) { .contact-call { position: sticky; top: 6rem; } }
+.next-list li { padding: 1.5rem; border-top: 0; border-radius: var(--radius-card); background: var(--surface); }
+
+@media (max-width: 55rem) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .next-list { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 35rem) {
+  .next-list { grid-template-columns: 1fr; }
+}

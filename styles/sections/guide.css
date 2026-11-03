@@ -1,0 +1,22 @@
+/* Free guide (WEB-8.7, copy home.md §8): text left, one email field right.
+   2026-11-02 (Krishna): his photo on the left, facing the text; heading and form stacked on the right. */
+
+/* was until 2026-11-02 (no photo yet):
+.guide-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-md); align-items: end; }
+*/
+.guide-grid {
+  display: grid; grid-template-columns: minmax(14rem, 24rem) minmax(0, 1fr);
+  gap: var(--space-md) clamp(2rem, 6vw, 5rem); align-items: center;
+}
+.guide-photo { margin: 0; }
+.guide-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius-card); }   /* round corners: 2026-11-02, Krishna */
+.guide-main { display: grid; gap: var(--space-md); }
+.guide-head { margin-bottom: 0; }
+.guide-body { max-width: var(--measure); color: var(--muted); }
+
+.guide-form { display: grid; gap: 1rem; padding-top: 1.5rem; border-top: var(--rule-strong); }
+
+@media (max-width: 55rem) {
+  .guide-grid { grid-template-columns: 1fr; }
+  .guide-photo { max-width: 20rem; }
+}

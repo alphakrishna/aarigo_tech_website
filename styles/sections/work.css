@@ -1,0 +1,72 @@
+/* Selected work (WEB-8.12, WEB-6.6, copy home.md §5): three case-study cards, image first. */
+
+.work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem 2rem; }
+
+.work-card a { display: grid; gap: .75rem; text-decoration: none; }
+.work-media { aspect-ratio: 4 / 3; border: var(--rule-strong); border-radius: var(--radius); }
+img.work-media { display: block; width: 100%; height: auto; object-fit: cover; object-position: top; }   /* live site screenshots (2026-10-17) */
+.work-title { font: 600 var(--text-h3)/1.15 var(--display); }
+.work-result { color: var(--muted); }
+.work-card a:hover .work-title { text-decoration: underline; text-underline-offset: .2em; text-decoration-thickness: 1px; }
+
+/* Case study cards: Before and After, no screenshot (2026-10-17, Krishna). Used on Work and on each case study page. */
+.case-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 2rem; }   /* row gap 0: the subgrid rows hold the spacing */
+/* Subgrid: label, issue, what changed, brand and link line up across the cards (2026-10-17) */
+.case-card { display: grid; grid-row: span 5; grid-template-rows: subgrid; }
+.case-card a { display: grid; grid-row: 1 / -1; grid-template-rows: subgrid; row-gap: .75rem; padding-top: 1.25rem; border-top: var(--rule-strong); text-decoration: none; }
+.case-card-after, .case-card-brand { align-content: start; }
+/* was until 2026-10-17: .case-card a { display: grid; grid-template-rows: auto 1fr auto auto auto; gap: .75rem; height: 100%; padding-top: 1.25rem; border-top: var(--rule-strong); text-decoration: none; } */
+.case-card-issue { max-width: 18ch; font: 600 var(--text-fact)/1.05 var(--display); letter-spacing: var(--tracking-title); text-wrap: balance; }   /* short, bigger headline (2026-10-17) */ /* was until 2026-10-17: .case-card-issue { font: 600 var(--text-h3)/1.2 var(--display); } */
+.case-card-after, .case-card-brand { display: grid; gap: .375rem; padding-top: 1rem; border-top: var(--rule); }
+.case-card-after p { color: var(--muted); }
+.case-card-brand { font-weight: 600; }
+/* was until 2026-10-17 (Before and After rows): .case-card-rows { display: grid; gap: 1rem; margin-top: .5rem; }
+.case-card-rows div { display: grid; gap: .375rem; padding-top: 1rem; border-top: var(--rule); }
+.case-card-rows dd { margin: 0; color: var(--muted); } */
+.case-card-number { display: block; font: 600 var(--text-fact)/1.05 var(--display); color: var(--ink); }
+.case-card-link { margin-top: .5rem; font-weight: 600; }
+.case-card a:hover .case-card-link, .case-card a:hover .case-card-issue { text-decoration: underline; text-underline-offset: .2em; text-decoration-thickness: 1px; }
+
+/* All projects list on the Work page (WEB-10.8): one hairline row per project */
+/* Since 2026-10-17 (Krishna): a short selection as bullet points; the detail opens on hover or keyboard focus, always open on touch screens */
+.projects { border-top: var(--rule-strong); }
+.project { padding-block: 1.25rem; border-bottom: var(--rule); }
+.project-head { position: relative; display: flex; flex-wrap: wrap; align-items: baseline; gap: .25rem 1rem; padding-left: 1.0625rem; }   /* type and year line up under the name when they wrap */ /* was until 2026-10-17: .project-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: .25rem 1rem; } */
+.project-name { font: 600 var(--text-h3)/1.15 var(--display); } /* was until 2026-10-17: .project-name { display: flex; align-items: baseline; gap: .75rem; font: 600 var(--text-h3)/1.15 var(--display); } */
+.project-name::before { content: ""; position: absolute; left: 0; top: .55em; width: .3125rem; height: .3125rem; background: var(--spark); } /* was until 2026-10-17: .project-name::before { content: ""; flex: none; width: .3125rem; height: .3125rem; background: var(--spark); transform: translateY(-.25em); } */
+.project-type { font-size: var(--text-sm); color: var(--muted); }
+.project-more { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows var(--open) var(--ease), opacity var(--open) var(--ease); }
+.project-more > div { display: grid; gap: .75rem; overflow: hidden; padding-left: 1.0625rem; }   /* lines up with the name, after the square */
+.project-more > div > :first-child { margin-top: .75rem; }
+.project-result { max-width: var(--measure); color: var(--muted); }
+.project-points { max-width: var(--measure); font-size: .9375rem; color: var(--muted); }   /* 2026-10-17: a few points under each project */
+/* Screenshot in the open detail, to the right of the text on wider screens (2026-10-17, Krishna) */
+.project-more > div:has(.project-shot) { grid-template-columns: minmax(0, 1fr) minmax(0, 22rem); grid-template-rows: auto auto auto 1fr; column-gap: 2.5rem; }   /* the empty last row takes the image height, so the link stays under the text (a row added for the points, 2026-10-17) */
+.project-more > div:has(.project-shot) > :not(.project-shot) { grid-column: 1; }
+.project-shot { grid-column: 2; grid-row: 1 / -1; align-self: start; margin-top: .75rem; }   /* framed by .shot-frame */
+/* was until 2026-10-18 (Krishna: the same frame for every screenshot on the site): .project-shot { grid-column: 2; grid-row: 1 / -1; align-self: start; width: 100%; height: auto; margin-top: .75rem; border: var(--rule-strong); border-radius: var(--radius); } */
+.project:hover .project-more, .project:focus-within .project-more { grid-template-rows: 1fr; opacity: 1; }
+@media (hover: none) { .project-more { grid-template-rows: 1fr; opacity: 1; transition: none; } }   /* always open, no animation on touch screens */
+/* was until 2026-10-17 (one table row per project):
+.projects { border-top: var(--rule-strong); }
+.projects li {
+  display: grid; grid-template-columns: 1.4fr 1fr .5fr 2fr; gap: .25rem 2rem;
+  padding-block: 1.25rem;
+  border-bottom: var(--rule);
+}
+.project-name { font-weight: 600; }
+.project-result { color: var(--muted); }
+*/
+
+@media (max-width: 55rem) {
+  .case-cards { grid-template-columns: minmax(0, 1fr); row-gap: 2.5rem; }
+  .case-card { display: block; }   /* one column: no subgrid needed */
+  .case-card a { grid-template-rows: none; }
+  .work-grid { grid-template-columns: 1fr 1fr; }
+  /* was until 2026-10-17: .projects li { grid-template-columns: 1fr; } */
+}
+@media (max-width: 35rem) {
+  .project-more > div:has(.project-shot) { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; }
+  .project-shot { grid-column: 1; grid-row: auto; }
+  .work-grid { grid-template-columns: 1fr; }
+}

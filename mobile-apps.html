@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mobile App Development for iPhone and Android | Aaurigo Tech</title>
+  <meta name="description" content="One app for iPhone and Android, built in milestones with a test version on your own phone, published on both app stores, with two weeks of care included after launch."> <!-- was until 2026-11-02 (Krishna: the two weeks are the care plan, included): two weeks of support after launch -->
+  <link rel="canonical" href="https://www.aaurigotech.com/mobile-apps"> <!-- 2026-11-03: self canonical on the final www address (RFA §5.11) -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.aaurigotech.com/"}, {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.aaurigotech.com/services"}, {"@type": "ListItem", "position": 3, "name": "Mobile apps", "item": "https://www.aaurigotech.com/mobile-apps"}]}</script> <!-- 2026-11-03: BreadcrumbList on inner pages (RFA §5.11) -->
+  <!-- 2026-10-31 (Krishna: a page for each service, linked as "Know more" from Services). Structure borrowed from the reference
+       service page (what you get, the steps, investment, questions, call), our own words. Header and footer are copies until the Astro port (WEB-3.2). -->
+
+  <!-- Google Fonts for now; self-host before launch (WEB-4.4). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+
+  <!-- Order matters: tokens → base → components → sections (in page order) -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/sections/header.css">
+  <link rel="stylesheet" href="styles/sections/packages.css">
+  <!-- was until 2026-11-02 (the steps section moved to archive): [link rel="stylesheet" href="styles/sections/phases.css"] -->
+  <link rel="stylesheet" href="styles/sections/faq.css">
+  <link rel="stylesheet" href="styles/sections/service-cards.css">
+  <link rel="stylesheet" href="styles/sections/app-show.css">
+  <link rel="stylesheet" href="styles/sections/cta.css">
+  <link rel="stylesheet" href="styles/sections/footer.css">
+
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="scripts/site.js" defer></script>
+</head>
+<body class="cards-page" data-enter="cards">
+  <!-- [PLACEHOLDER] Every href="#" Book a call link becomes the booking page (WEB-14.8.6). -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="announce">
+    <div class="container">
+      <p class="announce-inner">
+        <span class="announce-label label label-accent"><span class="announce-dot" aria-hidden="true"></span>Now booking</span>
+        <span class="announce-text">Talk to us in as little as 30 minutes.</span>
+        <a href="#" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </p>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Aaurigo Tech</a>
+      <nav aria-label="Main">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menu</button>
+        <ul class="nav-list list-plain" id="main-menu">
+          <li><a href="services.html" aria-current="true">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-sm header-cta" href="#" target="_blank" rel="noopener">
+        Book a call<span class="sr-only"> (opens in a new tab)</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-intro intro-glow">
+      <div class="container reveal">
+        <h1 class="page-title">One app for iPhone <em>and Android.</em></h1>
+        <p class="page-lead">From the first sketch to both app stores, we build it with you at every step.</p>
+      </div>
+    </section>
+
+    <!-- What you get: the Services card, with the full list -->
+    <section class="section" aria-label="What you get">
+      <div class="container reveal-scroll">
+        <article class="offer offer-has-media" aria-labelledby="included-title">
+          <!-- was until 2026-11-01 (Krishna: two demo phones with a little animation, app-show.css): [div class="offer-media offer-photo"][img src="media/services/mobile-apps.webp" srcset="media/services/mobile-apps-720.webp 720w, media/services/mobile-apps.webp 1100w" sizes="(max-width: 55rem) 100vw, 40vw" alt="Krishna laughing on the grass outdoors, hand in his hair." width="1100" height="1497" loading="lazy" decoding="async"][/div] -->
+          <!-- 2026-11-01 (Krishna: yes): our own café booking demo, built in code. Never shown as client work; swap in a real app's screens once a client says yes in writing. -->
+          <div class="offer-media app-show">
+            <div class="app-stage" role="img" aria-label="Two phones showing a demo café app we designed: today's menu, booking a table for two, the booking confirmed and the loyalty points.">
+              <div class="app-words"><span class="app-word app-word-1">Book.</span><span class="app-word app-word-2">Booked.</span><span class="app-word app-word-3">Rewarded.</span></div>
+              <div class="phone phone-back">
+                <div class="phone-screen">
+                  <div class="app-screen">
+                    <p class="app-top"><span class="app-brand">Your café</span><span class="app-avatar"></span></p>
+                    <p class="app-title">Today's menu</p>
+                    <div class="app-chips"><span class="is-on">Coffee</span><span>Food</span><span>Sweet</span></div>
+                    <ul class="app-menu">
+                      <li>Flat white</li>
+                      <li>Iced latte</li>
+                      <li>Cardamom bun</li>
+                      <li>Avocado toast</li>
+                      <li>Banana bread</li>
+                      <li>Masala chai</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="phone phone-front">
+                <div class="phone-screen">
+                  <div class="app-screen app-screen-1">
+                    <p class="app-top"><span class="app-brand">Your café</span><span class="app-avatar"></span></p>
+                    <p class="app-hello">Good evening</p>
+                    <p class="app-title">Book a table</p>
+                    <p class="app-label">Day</p>
+                    <div class="app-chips"><span class="is-on">Today</span><span>Tomorrow</span><span>Sat</span></div>
+                    <p class="app-label">Guests</p>
+                    <div class="app-chips"><span>1</span><span class="is-on">2</span><span>3</span><span>4</span></div>
+                    <p class="app-label">Time</p>
+                    <div class="app-chips"><span>18:30</span><span class="is-on app-pick">19:00</span><span>19:30</span></div>
+                    <span class="app-btn app-press">Book a table</span>
+                    <span class="app-tap app-tap-1"></span><span class="app-tap app-tap-2"></span>
+                  </div>
+                  <div class="app-screen app-screen-next app-screen-2 app-done">
+                    <span class="app-tick"></span>
+                    <p class="app-title">You're booked.</p>
+                    <p class="app-note">Table for 2, today at 19:00. We'll save you a seat by the window.</p>
+                    <span class="app-btn">Add to calendar</span>
+                  </div>
+                  <div class="app-screen app-screen-next app-screen-3">
+                    <p class="app-top"><span class="app-brand">Your café</span><span class="app-avatar"></span></p>
+                    <p class="app-label">Your points</p>
+                    <p class="app-points"></p>
+                    <div class="app-bar"><span></span></div>
+                    <p class="app-note">60 more for a free coffee.</p>
+                    <div class="app-stamps"><span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span></span><span></span></div>
+                    <p class="app-note">Every visit adds a stamp.</p>
+                    <span class="app-btn app-btn-quiet">See rewards</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="label app-caption">A demo app we designed</p>
+          </div>
+          <div class="offer-main">
+            <p class="label label-accent">Mobile apps</p>
+            <h2 class="offer-name" id="included-title">Everything included.</h2>
+            <p class="offer-line">Bookings, orders, loyalty, field teams or a product of your own.</p>
+            <p class="offer-path label"><span>Prep</span><span aria-hidden="true">→</span><span>Build in milestones</span><span aria-hidden="true">→</span><span>Launch</span></p>
+            <p class="offer-who">For businesses that want to be with their customers wherever they go.</p>
+          </div>
+          <div class="offer-side">
+            <p class="offer-price"><span class="label">From</span><span class="offer-amount" data-price="mobile">A$34,999</span></p>
+            <p class="offer-pay">Pay in one go, or split it into 2 or 3 payments. <a class="btn-link" href="services.html#pay-instalments">Get more information <span aria-hidden="true">→</span></a></p> <!-- 2026-11-02 (Krishna: under each card's price, like "Investment ... (split into ... payments)" with a Get more information link) -->
+            <!-- was until 2026-11-02 (Krishna: written in detail, polished and oriented towards results, like the website and web app cards): one line each:
+            [li]One build that feels at home on each platform[/li] [li]Secure sign in and safe handling of your data[/li] [li]A connection to one tool you already use, like payments or maps[/li] [li]Tested on real phones of different sizes[/li] [li]Notifications and usage insight built in[/li] [li]Unlimited changes across three review rounds[/li] [li]VIP support by email and video call while we build[/li] -->
+            <ul class="offer-specs offer-specs-detail list-plain">
+              <li><strong>At home on both platforms</strong><span>One build that feels natural on each, so every customer gets the same smooth experience, whichever phone they carry.</span></li>
+              <li><strong>Safe from the first tap</strong><span>Secure sign in and careful handling of your data, so customers trust you with their details.</span></li>
+              <li><strong>Works with what you use</strong><span>Connected to one tool you already rely on, like payments or maps, so orders, bookings and directions simply work.</span></li>
+              <li><strong>Right in every hand</strong><span>Tested on real phones, from small to large, so it looks and works as it should for everyone.</span></li>
+              <li><strong>Brings customers back</strong><span>Notifications reach people at the right moment, and built in insight shows what they use most.</span></li>
+              <li><strong>Shaped until it's right</strong><span>Unlimited changes across three review rounds. You launch an app you're proud to share.</span></li>
+              <!-- was until 2026-11-02 (moved under the price): [li]Pay in one go, or in two or three parts[/li] (was until 2026-11-02 (Krishna: a very small message): Pay in one go, or in two or three payments across the project) --> <!-- 2026-11-02 (Krishna: one payment, two or three instalments, for all three services) -->
+              <li><strong>With you all the way</strong><span>VIP support by email and video call in your business hours, from the first call to launch day.</span></li>
+            </ul>
+            <div class="offer-actions">
+              <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call about an app <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- was until 2026-11-02 (Krishna: this section looked extra, the Services page already has every step): the steps section, now in archive/service-steps-2026-11-02/mobile-apps-steps.html -->
+
+    <!-- What we need, said up front (2026-10-31, Krishna) -->
+    <section class="section section-alt" aria-labelledby="ready-title">
+      <div class="container text-block reveal-scroll">
+        <header class="section-head">
+          <h2 class="section-title" id="ready-title">Ready before <em>we build.</em></h2>
+        </header>
+        <div>
+          <p>Before we start, we send you one simple checklist: your brand files, the words and images for each screen with the quality they need, and the accounts your app connects to. We walk you through setting up anything you don't have yet.</p>
+          <p>Your first milestone is booked once everything is in. If something is still on its way, your project waits safely with us and starts at the next free slot.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- After launch (2026-10-31, Krishna: two weeks of free support for small changes; bigger changes billed separately) -->
+    <section class="section" aria-labelledby="after-title">
+      <div class="container text-block reveal-scroll">
+        <header class="section-head">
+          <h2 class="section-title" id="after-title">Two weeks of care, <em>included.</em> <!-- was until 2026-11-02 (Krishna: never say free; two weeks of the care plan are included in the main package after launch): Two weeks of support, [em]on us.[/em] --></h2>
+        </header>
+        <div>
+          <p>Your package includes two weeks of our care plan after launch. In that time we make the small changes for you: updating text or images, or adding and removing something on a screen. <!-- was until 2026-11-02 (Krishna: never say free; two weeks of the care plan are included in the main package after launch): [p]For two weeks after launch, we make the small changes for free: updating text or images, or adding and removing something on a screen. --> A new feature or a new look becomes its own milestone, with a clear price first.</p>
+          <!-- was until 2026-11-02 (Krishna: keep only what is relevant and not repeated; the Services page has the full care plan card): [p]After that, our [a class="btn-link" href="services.html#care-plan"]care plan[/a] keeps your app current with every phone update and every change you need.[/p] -->
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="faq-title">
+      <div class="container faq-grid reveal-scroll">
+        <header class="section-head">
+          <h2 class="section-title" id="faq-title">Mobile app questions.</h2>
+          <p class="section-intro">Don't see yours? Book a call and ask us directly.</p>
+        </header>
+        <div class="faq-list">
+          <details><summary>How long does a mobile app take?</summary><p>It depends on what it needs to do. Once the plan is ready, you get a date for every milestone.</p></details>
+          <details><summary>Do I need my own app store accounts?</summary><p>Yes, so the app is always yours. Each store charges its own fee, which you pay directly. We walk you through the setup.</p></details>
+          <details><summary>What if a store asks for changes?</summary><p>We prepare everything to their rules and handle anything they come back with, so you don't have to.</p></details>
+          <details><summary>Can it do more later?</summary><p>Yes. <a class="btn-link" href="services.html#premium-upgrade">Premium</a> adds areas for each type of user, maps or AI features, subscriptions and usage dashboards, and we can add more in later milestones.</p></details>
+          <details><summary>Who pays for the servers and services it uses?</summary><p>You do, directly to each provider. Every account is in your name, so nothing is ever locked to us.</p></details>
+          <details><summary>Who owns the code?</summary><p>You do. Once it's paid for, the code, the design and every account are yours.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta cta-glow" aria-labelledby="cta-title">
+      <div class="container reveal-scroll">
+        <h2 class="cta-title" id="cta-title">Ready to be on your customer's home screen?</h2>
+        <p class="cta-body">Book a call and we'll tell you what your first version should do, in as little as 30 minutes.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+          <a class="btn-link" href="services.html">See all services</a>
+        </div>
+        <p class="cta-closing label">Enable businesses to do more.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">Aaurigo Tech</p>
+          <p class="footer-tagline">Launch fast. Learn faster. Grow smarter.</p>
+        </div>
+        <nav aria-labelledby="footer-nav">
+          <p class="footer-heading label" id="footer-nav">Navigate</p>
+          <ul class="footer-links list-plain">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-work">
+          <p class="footer-heading label" id="footer-work">Work with us</p>
+          <ul class="footer-links list-plain">
+            <li><a href="websites.html">Websites</a></li>
+            <li><a href="web-apps.html">Web apps</a></li>
+            <li><a href="mobile-apps.html">Mobile apps</a></li>
+            <li><a href="#" target="_blank" rel="noopener">Book a call<span class="sr-only"> (opens in a new tab)</span></a></li>
+          </ul>
+        </nav>
+        <div class="footer-news">
+          <p class="footer-heading label">Newsletter</p>
+          <p>Short notes on building and launching faster. One email a month.</p>
+          <!-- Posts to Zoho Campaigns once NEWS-1.11 is set up. -->
+          <form action="#" method="post">
+            <div class="field">
+              <label class="field-label" for="news-email">Your email address</label>
+              <div class="form-row">
+                <input class="field-input" id="news-email" name="email" type="email" autocomplete="email" required>
+                <button class="btn btn-primary" type="submit">Join</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> Aaurigo Tech. All rights reserved.</p>
+        <ul class="list-plain" aria-label="Legal">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="accessibility.html">Accessibility Statement</a></li>
+        </ul>
+      </div>
+      <p class="footer-mark" aria-hidden="true">Aaurigo Tech</p>
+    </div>
+  </footer>
+</body>
+</html>

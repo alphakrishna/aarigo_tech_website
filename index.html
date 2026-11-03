@@ -1,0 +1,1392 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fast Web &amp; Mobile App Development | Aaurigo Tech</title> <!-- 2026-10-21: mobile apps off and back the same day; Brand tried as a separate service and taken off (Krishna: brand will be combined with every service) -->
+  <meta name="description" content="Premium websites, web apps and mobile apps, built in weeks, not months. Launch fast, learn from real users and grow smarter with Aaurigo Tech."> <!-- 2026-10-21: mobile apps off and back the same day; Brand tried as a separate service and taken off (Krishna: brand will be combined with every service) -->
+  <link rel="canonical" href="https://www.aaurigotech.com/"> <!-- 2026-11-03: self canonical on the final www address (RFA §5.11) -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://www.aaurigotech.com/#organization", "name": "Aaurigo Tech", "url": "https://www.aaurigotech.com/", "slogan": "The best quality, in the shortest time.", "description": "Aaurigo Tech builds websites, web apps and mobile apps that help businesses grow.", "founder": {"@type": "Person", "name": "Krishna Singh"}, "knowsAbout": ["Website design and development", "Web app development", "Mobile app development"]}, {"@type": "WebSite", "@id": "https://www.aaurigotech.com/#website", "name": "Aaurigo Tech", "url": "https://www.aaurigotech.com/", "inLanguage": "en", "publisher": {"@id": "https://www.aaurigotech.com/#organization"}}]}</script> <!-- 2026-11-03: Organization and WebSite schema on Home only (RFA §5.11). Add "logo" with the favicon (WEB-16.4), "email" once the address is live, and "sameAs" with the social profiles (WEB-1.4). No FAQ schema. -->
+  <!-- 2026-11-03 Google Search Console (WEB-18.5): best verified with a DNS TXT record at GoDaddy (a Domain property covers www and the bare domain, no code on the site). If the URL prefix method is used instead, paste the code from Search Console here and uncomment: [meta name="google-site-verification" content="PASTE_CODE_HERE"]. Bing Webmaster Tools can import the property from Search Console. -->
+  <!-- tried and reversed 2026-10-14 (Krishna: "reverse it"): <meta name="description" content="Fast, custom websites, web apps and mobile apps for established businesses. Your business, seen as it really is, live in weeks, not months."> -->
+
+  <!-- Google Fonts for now; self-host before launch (WEB-4.4). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+
+  <!-- Order matters: tokens → base → components → sections (in page order) -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <!-- Commented out 2026-10-12, not deleted: hero.css moved into styles/sections/.
+  <link rel="stylesheet" href="styles/hero.css">
+  -->
+  <link rel="stylesheet" href="styles/sections/header.css">
+  <link rel="stylesheet" href="styles/sections/hero.css">
+  <!-- <link rel="stylesheet" href="styles/sections/daily.css"> section commented out 2026-10-15; file in archive/styles -->
+  <link rel="stylesheet" href="styles/sections/reach.css">
+  <link rel="stylesheet" href="styles/sections/pain.css">
+  <!-- <link rel="stylesheet" href="styles/sections/guesswork.css"> section commented out 2026-10-15 -->
+  <!-- tried and reversed 2026-10-14 (Krishna: "reverse it"): growth.css and fit.css (sections commented out below)
+  <link rel="stylesheet" href="styles/sections/growth.css">
+  <link rel="stylesheet" href="styles/sections/fit.css">
+  -->
+  <link rel="stylesheet" href="styles/sections/services.css">
+  <!-- <link rel="stylesheet" href="styles/sections/work.css"> Selected work removed from Home 2026-10-17; work.html still uses it -->
+  <!-- <link rel="stylesheet" href="styles/sections/process.css"> was until 2026-11-01: How we work on Home moved to cards (journey.css); About still uses process.css -->
+  <link rel="stylesheet" href="styles/sections/journey.css">   <!-- 2026-11-01 (Krishna: How we work as cards) -->
+
+  <!-- <link rel="stylesheet" href="styles/sections/values.css"> section moved off Home 2026-10-12 -->
+  <link rel="stylesheet" href="styles/sections/guide.css">
+  <!-- <link rel="stylesheet" href="styles/sections/founder.css"> section moved off Home 2026-10-12 -->
+  <link rel="stylesheet" href="styles/sections/testimonials.css">
+  <!-- <link rel="stylesheet" href="styles/sections/faq.css"> section moved off Home 2026-10-12 -->
+  <link rel="stylesheet" href="styles/sections/cta.css">
+  <link rel="stylesheet" href="styles/sections/footer.css">
+
+  <!-- Marks that JavaScript runs, before first paint, so scroll fades never flash. -->
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="scripts/site.js" defer></script>
+</head>
+<body class="home-page">   <!-- 2026-11-02 (Krishna: more premium): larger, slightly darker body text on Home, base.css -->
+  <!-- [PLACEHOLDER] Every href="#" Book a call link becomes the booking page (WEB-14.8.6). Page links (services.html etc.) exist once those pages are built. -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- 1. Announcement bar (home.md §1) -->
+  <div class="announce">
+    <div class="container">
+      <!-- was until 2026-10-13:
+      <p>Now booking new projects. Talk to us in as little as 30 minutes.
+        <a href="#" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </p>
+      -->
+      <p class="announce-inner">
+        <span class="announce-label label label-accent"><span class="announce-dot" aria-hidden="true"></span>Now booking</span>
+        <span class="announce-text">Talk to us in as little as 30 minutes.</span>
+        <a href="#" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Site header (WEB-5) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Aaurigo Tech</a>
+      <nav aria-label="Main">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menu</button>
+        <ul class="nav-list list-plain" id="main-menu">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li> <!-- was until 2026-10-12: href="#work" -->
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-sm header-cta" href="#" target="_blank" rel="noopener">
+        Book a call<span class="sr-only"> (opens in a new tab)</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero (copy: doc/copy/home.md §2) -->
+    <section class="hero" aria-labelledby="hero-title"> <!-- back to light 2026-10-21 (Krishna: keep the black off the Home page) --> <!-- was until 2026-10-21 (Krishna: black on every page): [section class="hero" aria-labelledby="hero-title"] -->
+      <div class="container">
+
+        <!-- was until 2026-10-13 (removed on Krishna's request: the name was already in the header):
+        <p class="hero-label label reveal">
+          <span>Aaurigo Tech</span>
+          <span>Websites · Web apps · Mobile apps</span>
+        </p>
+        -->
+        <!-- was until 2026-10-13: the line now sits on the header itself (header.css), right under the nav bar:
+        <div class="hero-rule reveal" aria-hidden="true"></div>
+        -->
+
+        <!-- 2026-11-01 (Krishna: his photo in the hero): the headline and the founder photo side by side; the white
+             behind him melts into the stone page (mix-blend-mode in hero.css), so he stands on the hairline below.
+             Master media-originals/home/hero-krishna.png. -->
+        <!-- 2026-11-01 (Krishna: align the text with the image): the headline, the line under it and the buttons now
+             stack in one column beside the photo; the photo figure moved below the text row in this markup. -->
+        <div class="hero-top">
+        <div class="hero-text">
+        <h1 class="hero-title reveal" id="hero-title" style="--d: 1">
+          <span class="line">Built right.</span>
+          <span class="line line-italic">Built fast.</span>
+        </h1>
+        <!-- was until 2026-11-01 (Krishna: align the text with the image): the photo sat here, right after the headline, and the text row ran full width below
+        [figure class="hero-photo reveal" style="--d: 2"] ... [/figure]
+        [/div] -->
+
+        <!-- tried and reversed 2026-10-14 (Krishna: "reverse it") (clarity rewrite, ikon.london structure):
+        <p class="hero-label label label-accent reveal">Websites and apps for established businesses</p>
+        <h1 class="hero-title reveal" id="hero-title">
+          <span class="line">Your business,</span>
+          <span class="line line-italic">seen as it really is.</span>
+        </h1>
+        -->
+
+        <div class="hero-row reveal" style="--d: 2">
+          <div>
+            <p class="hero-sub">Premium websites and apps, live in weeks, not months.</p>
+            <p class="hero-intro">We launch early, so every next step follows what your customers actually do, not guesswork.</p>
+            <!-- was until 2026-11-01 (Krishna: make it a little clean):
+            [p class="hero-intro"]We ship early, so you get real data from real users fast, and every decision after that is backed by evidence instead of guesswork.[/p] -->
+            <!-- tried and reversed 2026-10-14 (Krishna: "reverse it"):
+            <p class="hero-sub">A founder-led studio building fast websites and apps for businesses that have outgrown the one they have.</p>
+            <p class="hero-intro">Built right. Built fast. Live in weeks, not months.</p>
+            -->
+          </div>
+
+          <div class="hero-actions">
+            <!-- [PLACEHOLDER] Replace # with the booking link (WEB-14.8.6). Opens in a new tab. -->
+            <a class="btn btn-primary" href="#" target="_blank" rel="noopener">
+              Book a call <span class="arrow" aria-hidden="true">→</span>
+              <span class="sr-only">(opens in a new tab)</span>
+            </a>
+            <a class="btn-link" href="work.html">See our work</a> <!-- was until 2026-10-17: href="#work" (section removed from Home) -->
+            <!-- was until 2026-11-01 (Krishna: make it a little clean; the bar above the header already says it): [p class="hero-note"]Talk in as little as 30 minutes, during your business hours.[/p] -->
+          </div>
+        </div>
+        </div>
+        <figure class="hero-photo reveal" style="--d: 2">
+          <img src="media/home/hero-krishna.webp" srcset="media/home/hero-krishna-600.webp 600w, media/home/hero-krishna.webp 1000w" sizes="(max-width: 55rem) 24rem, 28rem" alt="Krishna Pratap Singh, founder of Aaurigo Tech, arms crossed and smiling." width="1000" height="1249" fetchpriority="high" decoding="async">
+        </figure>
+        </div>
+
+        <!-- Hidden 2026-10-13 on Krishna's request: an empty mockup looks unfinished. SWITCH: bring it back with a real
+             project screenshot (linked to its case study) once the first case study is ready (WEB-2.1 to WEB-2.6).
+        Decorative: one calm, static product screen
+        <figure class="hero-screen reveal" style="--d: 3" aria-hidden="true">
+          <div class="screen-bar"><i></i><i></i><i></i><span class="label">yourbusiness.com</span></div>
+          <div class="screen-body">
+            <div class="screen-text">
+              <span class="sk sk-label"></span>
+              <span class="sk sk-title"></span>
+              <span class="sk sk-title short"></span>
+              <span class="sk sk-line"></span>
+              <span class="sk sk-line short"></span>
+              <span class="sk sk-btn"></span>
+            </div>
+            <div class="screen-image media-blank"></div>
+          </div>
+        </figure>
+        -->
+
+        <!-- was until 2026-10-13 (same day): the pain points sat here inside the hero; now their own section after "A normal working day" below.
+        [ Pain points (home.md §2a, WEB-8.14), moved into the hero 2026-10-13 on Krishna's request, where the product screen was.
+             The client's worry in their words, then our answer (RFA §2.3 PP-1, PP-3, PP-6). ]
+        <div class="pain reveal" style="--d: 3">
+          <h2 class="pain-title" id="pain-title">You're busy. Your website shouldn't keep you waiting.</h2>
+          <ol class="pain-list list-plain">
+            <li>
+              <p class="pain-quote">“By the time it launches, the market has moved on.”</p>
+              <p class="pain-answer">We launch a working first version in weeks, not months, while competitors are still planning.</p>
+            </li>
+            <li>
+              <p class="pain-quote">“Once I paid, the agency went quiet.”</p>
+              <p class="pain-answer">You get a live preview link as soon as the build starts, and a review call at every milestone.</p>
+            </li>
+            <li>
+              <p class="pain-quote">“Every small tweak becomes a new invoice.”</p>
+              <p class="pain-answer">Unlimited changes across 3 review rounds, agreed in writing before we start.</p>
+            </li>
+          </ol>
+          <p class="pain-cta"><a class="btn-link" href="#how-we-work">See how we work <span aria-hidden="true">→</span></a></p>
+        </div>
+
+        -->
+
+        <!-- Spec sheet facts -->
+        <ol class="hero-facts list-plain reveal" style="--d: 3"> <!-- was until 2026-10-13: style="--d: 4" while the pain points sat above -->
+          <li><span class="label label-accent">01 · Speed</span><strong>Weeks</strong><span class="fact-text">to your first real users</span></li> <!-- tried and reversed 2026-10-14 (Krishna: "reverse it"): <span class="fact-text">from first call to launch, not months</span> -->
+          <li><span class="label label-accent">02 · Range</span><strong>One team</strong><span class="fact-text">Website, web apps and mobile apps</span></li> <!-- 2026-10-21: mobile apps off and back the same day; Brand tried as a separate service and taken off (Krishna: brand will be combined with every service) -->
+          <li><span class="label label-accent">03 · Reach</span><strong>Global</strong><span class="fact-text">Clients in any time zone</span></li>
+        </ol>
+
+      </div>
+    </section>
+
+    <!-- 2b. Pain section (home.md §2b, WEB-8.14), right after the hero. Since 2026-10-14: ONE pain point, little text.
+         Layout tactic borrowed from the Honeywave "We Value Time" section (full width photo, one panel with a two line
+         heading, two short paragraphs, one bold line, one button); our own words and style (RFA §5.2, borrow the tactic, never the wording). -->
+    <section class="pain" aria-labelledby="pain-title">
+      <!-- [PLACEHOLDER] Photo: a real, self hosted photo of a business owner at work (WEB-2, home.md §2b). No stock watermark, no tracking embed. -->
+      <!-- was until 2026-11-02: [div class="pain-photo media-blank placeholder" role="img" aria-label="[PLACEHOLDER] A business owner at work"][/div] -->
+      <!-- 2026-11-02 (Krishna's choice): a street cafe with a waiter serving guests. STOCK STOPGAP, not our own photo: Unsplash,
+           photo by Dustin Bowdige (PT3B7BfXgE8), Unsplash licence (commercial use allowed, no credit required). Cropped so the
+           cafe's name and the awning signs never show; the name on three small window plaques painted out with the
+           plaques' own yellow (master media-originals/home/pain-cafe-clean.jpg). Replace with a real photo of a business we know, with permission.
+           Master in media-originals/home/. Wide 2:1 on desktop (the panel covers the right), 4:3 on phones (waiter centred). -->
+      <!-- was until 2026-11-02 (Krishna chose the baristas photo below; files in archive/media/pain-2026-11-02/):
+      [picture class="pain-photo"]
+        [source media="(max-width: 55rem)" srcset="media/home/pain-cafe-phone.webp"]
+        [img src="media/home/pain-cafe.webp" srcset="media/home/pain-cafe-1600.webp 1600w, media/home/pain-cafe.webp 2400w" sizes="100vw"
+             width="2400" height="1200" alt="A waiter carries drinks to guests at a busy street cafe" loading="lazy" decoding="async"]
+      [/picture] -->
+      <!-- 2026-11-02 (Krishna's choice, same day): baristas at work behind a cafe counter. STOCK STOPGAP, not our own photo:
+           Unsplash, photo by Camille Chen (vNqE2R7hSoc), Unsplash licence. Mirrored on Krishna's request, so the baristas sit
+           on the left. The price board's text (prices and the names of other coffee brands) painted out with the board's own
+           cream before mirroring, so no reversed lettering shows. Desktop file carries a gentle camera style blur toward the
+           card. Masters in media-originals/home/ (pain-baristas-clean.jpg). Replace with a real photo, with permission. -->
+      <picture class="pain-photo">
+        <source media="(max-width: 55rem)" srcset="media/home/pain-baristas-phone.webp">
+        <img src="media/home/pain-baristas.webp" srcset="media/home/pain-baristas-1600.webp 1600w, media/home/pain-baristas.webp 2400w" sizes="100vw"
+             width="2400" height="1200" alt="Baristas pour coffee behind a busy cafe counter" loading="lazy" decoding="async">
+      </picture>
+      <div class="container pain-inner">
+        <div class="pain-panel reveal-scroll">
+          <!-- Since 2026-10-14 (Krishna: "change the second section", after the full clarity rewrite was reversed): only this
+               section uses the gap message (how good the business is against what its website shows; ikon.london tactic, our words). -->
+          <h2 class="pain-title" id="pain-title">
+            <span class="line">Your business is better</span>
+            <span class="line line-italic">than your website says.</span>
+          </h2>
+          <p class="pain-text">The work is good and your customers are happy. But online, a slow page and a vague form tell a different story, and that quietly costs you customers.</p>
+          <p class="pain-strong">We close that gap.</p>
+          <!-- was until 2026-10-14:
+          <h2 class="pain-title" id="pain-title">
+            <span class="line">You're busy.</span>
+            <span class="line line-italic">Your website shouldn't keep you waiting.</span>
+          </h2>
+          <p class="pain-text">Your website should bring you customers. Instead it loads slowly, sends enquiries you can't use, and doesn't look like the business you've built.</p>
+          <p class="pain-text">We build fast, custom websites around how you win customers, so every visitor sees you at your best.</p>
+          <p class="pain-strong">Fast to load. Clear to act on. Unmistakably you.</p>
+          -->
+          <p class="pain-cta">
+            <!-- [PLACEHOLDER] Replace # with the booking link (WEB-14.8.6). Opens in a new tab. -->
+            <a class="btn btn-primary" href="#" target="_blank" rel="noopener">
+              Book a call <span class="arrow" aria-hidden="true">→</span>
+              <span class="sr-only">(opens in a new tab)</span>
+            </a>
+          </p>
+          <!-- Live proof (scripts/site.js): this page's real load time on the visitor's device; nothing is sent anywhere.
+               Shown only with JavaScript and under 2.5 seconds. -->
+          <p class="pain-speed label" data-load-time hidden>Measured live: this page loaded in <span data-load-value>0.5</span> seconds on your device.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. What we build (home.md §4, WEB-8.4). Moved up 2026-10-14 to right after the pain section (Krishna):
+         the visitor who just felt the pain sees the answer next. Owner language, less text, no jargon.
+         On sand so the backgrounds keep alternating (was class="section" on stone). -->
+    <section class="section section-alt build" id="what-we-build" aria-labelledby="build-title"> <!-- "build": everything centred (2026-10-14, Krishna) -->
+      <div class="container reveal-scroll">
+        <header class="section-head">
+          <!-- was until 2026-10-15 (Krishna: the label and the heading right after each other did not feel good): <p class="label label-accent">What we build</p> -->
+          <h2 class="section-title" id="build-title">Three ways we close the gap.</h2> <!-- 2026-10-21: mobile apps off and back the same day; Brand tried as a separate service and taken off (Krishna: brand will be combined with every service) --> <!-- was until 2026-10-15: Three ways we help you grow. (now follows the pain panel's "We close that gap.") -->
+        </header>
+        <!-- Three hang tags (2026-10-14, Krishna, from a "tag" reference image): each service is a tag with clipped top corners and
+             a punched hole, hanging on a thin string from one ink rail; strings differ a little in length. Static: nothing swings (RFA §7).
+             Was until 2026-10-14: bookmark ribbons with a V notch at the bottom. Timelines stay off until WEB-1.12. -->
+        <!-- Websites in the middle (2026-10-14, Krishna): the middle tag hangs lowest, so the main service stands out.
+             Was until 2026-10-14: Websites 01, Web apps 02, Mobile apps 03, left to right. -->
+        <ul class="bookmarks list-plain">
+          <li class="bookmark">
+            <!-- Twine loop (2026-10-14, Krishna: make the thread realistic): a cord loop rises above the hole, the knot sits on the hole,
+                 the two loose ends hang down over the tag (gravity). Drawn at true size, never stretched. Decorative.
+            was until 2026-10-14: [ Free string loop (2026-10-14, Krishna: not linked to the ink line): through the hole, knotted above it, two loose ends.
+            was until 2026-10-14: [ Looped string (2026-10-14): pin on the rail, a small knot, two strands down through the hole ]
+            <svg class="tag-string" viewBox="0 0 20 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M10 2 Q 6 48 5.5 97 Q 10.5 104 14.5 97 Q 13.5 52 10 2" /> [ one strand, U turn inside the hole; was until 2026-10-14: two separate strands ]
+              <ellipse class="tag-knot" cx="10" cy="9" rx="1.6" ry="2.2" />
+              <circle class="tag-pin" cx="10" cy="2" r="2" />
+            </svg> ]
+            <svg class="tag-string" viewBox="0 0 60 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M30 42 Q 23 72 25.5 97 Q 30.5 104 34.5 97 Q 37.5 70 30 42" />
+              <path d="M30 42 C 26 30 18 26 13 16 C 10 10 12 4 16 2" />
+              <path d="M30 42 C 35 31 43 28 47 19 C 50 13 47 7 43 5" />
+              <ellipse class="tag-knot" cx="30" cy="42" rx="2.4" ry="2.8" />
+            </svg> -->
+            <svg class="tag-string" viewBox="0 0 60 96" aria-hidden="true" focusable="false">
+              <path class="cord" d="M27.5 72 C 16 52 13 16 30 6 C 47 16 44 52 32.5 72" />
+              <path class="cord-twist" d="M27.5 72 C 16 52 13 16 30 6 C 47 16 44 52 32.5 72" />
+              <path class="cord" d="M29 66 C 26 75 24 83 21.5 92" />
+              <path class="cord-twist" d="M29 66 C 26 75 24 83 21.5 92" />
+              <path class="cord" d="M31 66 C 35 74 38 81 41.5 88" />
+              <path class="cord-twist" d="M31 66 C 35 74 38 81 41.5 88" />
+              <ellipse class="tag-knot" cx="30" cy="66" rx="3.2" ry="2.6" />
+            </svg>
+            <div class="tag">
+              <span class="label label-accent">01</span>
+              <!-- Sketch of a web app (2026-11-02, Krishna: hold attention here): a small dashboard drawn in code, our colours,
+                   decorative only, never shown as client work. Styles at the end of services.css. -->
+              <div class="sketch sketch-app" aria-hidden="true">
+                <div class="sk-bar"><i></i><i></i><i></i></div>
+                <div class="sk-body">
+                  <div class="sk-side"><b></b><b></b><b></b><b></b></div>
+                  <div class="sk-main">
+                    <div class="sk-stats"><span></span><span></span><span></span></div>
+                    <div class="sk-chart"><em></em><em></em><em></em><em></em><em></em><em></em></div>
+                    <div class="sk-rows"><b></b><b></b></div>
+                  </div>
+                </div>
+              </div>
+              <h3 class="bookmark-title">Web apps</h3>
+              <p class="bookmark-text">Booking systems, client portals and dashboards that take manual work off your plate.</p>
+              <ul class="service-features list-plain">
+                <li>Less admin, fewer phone calls</li> <!-- was until 2026-10-15: First version live fast -->
+                <li>Works the way your team works</li> <!-- was until 2026-10-15: Grows with real use -->
+                <li>You see progress every week</li>
+              </ul>
+              <a class="btn-link" href="web-apps.html">Get details <span aria-hidden="true">→</span><span class="sr-only"> on web apps</span></a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#web-applications -->
+            </div>
+          </li>
+          <li class="bookmark">
+            <!-- Twine loop (2026-10-14, Krishna: make the thread realistic): a cord loop rises above the hole, the knot sits on the hole,
+                 the two loose ends hang down over the tag (gravity). Drawn at true size, never stretched. Decorative.
+            was until 2026-10-14: [ Free string loop (2026-10-14, Krishna: not linked to the ink line): through the hole, knotted above it, two loose ends.
+            was until 2026-10-14: [ Looped string (2026-10-14): pin on the rail, a small knot, two strands down through the hole ]
+            <svg class="tag-string" viewBox="0 0 20 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M10 2 Q 6 48 5.5 97 Q 10.5 104 14.5 97 Q 13.5 52 10 2" /> [ one strand, U turn inside the hole; was until 2026-10-14: two separate strands ]
+              <ellipse class="tag-knot" cx="10" cy="9" rx="1.6" ry="2.2" />
+              <circle class="tag-pin" cx="10" cy="2" r="2" />
+            </svg> ]
+            <svg class="tag-string" viewBox="0 0 60 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M30 42 Q 23 72 25.5 97 Q 30.5 104 34.5 97 Q 37.5 70 30 42" />
+              <path d="M30 42 C 26 30 18 26 13 16 C 10 10 12 4 16 2" />
+              <path d="M30 42 C 35 31 43 28 47 19 C 50 13 47 7 43 5" />
+              <ellipse class="tag-knot" cx="30" cy="42" rx="2.4" ry="2.8" />
+            </svg> -->
+            <svg class="tag-string" viewBox="0 0 60 96" aria-hidden="true" focusable="false">
+              <path class="cord" d="M27.5 72 C 16 52 13 16 30 6 C 47 16 44 52 32.5 72" />
+              <path class="cord-twist" d="M27.5 72 C 16 52 13 16 30 6 C 47 16 44 52 32.5 72" />
+              <path class="cord" d="M29 66 C 26 75 24 83 21.5 92" />
+              <path class="cord-twist" d="M29 66 C 26 75 24 83 21.5 92" />
+              <path class="cord" d="M31 66 C 35 74 38 81 41.5 88" />
+              <path class="cord-twist" d="M31 66 C 35 74 38 81 41.5 88" />
+              <ellipse class="tag-knot" cx="30" cy="66" rx="3.2" ry="2.6" />
+            </svg>
+            <!-- "Most popular" stamp (2026-10-14, Krishna; idea from Honeywave's "Our Tailored Solutions"). Static, never spins.
+                 [KRISHNA] keep it only while it is true; before launch confirm which service clients pick most (RFA §8.2). -->
+            <!-- was until 2026-10-14 (simple disc; Krishna asked for a polished, royal looking seal):
+            <svg class="stamp" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
+              <defs><path id="stamp-ring" d="M40 13 a27 27 0 1 1 0 54 a27 27 0 1 1 0 -54" /></defs>
+              <circle class="stamp-disc" cx="40" cy="40" r="38" />
+              <circle class="stamp-line" cx="40" cy="40" r="34.5" />
+              <text class="stamp-text"><textPath href="#stamp-ring" textLength="166" lengthAdjust="spacing">MOST POPULAR · MOST POPULAR · </textPath></text>
+              <circle class="stamp-dot" cx="40" cy="40" r="2.5" />
+            </svg>
+            -->
+            <!-- was until 2026-10-14 (gold royal seal; Krishna asked for an old style red wax seal):
+            <svg class="stamp" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <defs>
+                <radialGradient id="stamp-gold" cx="40%" cy="35%" r="70%">
+                  <stop offset="0%" class="stamp-gold-light" />
+                  <stop offset="100%" class="stamp-gold-deep" />
+                </radialGradient>
+                <linearGradient id="stamp-sheen" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" class="stamp-sheen-off" />
+                  <stop offset="45%" class="stamp-sheen-on" />
+                  <stop offset="60%" class="stamp-sheen-off" />
+                </linearGradient>
+                <path id="stamp-top" d="M22 60 A38 38 0 0 1 98 60" />
+                <path id="stamp-bottom" d="M15 60 A45 45 0 0 0 105 60" />
+              </defs>
+              <polygon class="stamp-edge" points="118.00,60.00 114.38,63.56 117.50,67.57 113.45,70.63 116.02,75.01 111.61,77.52 113.59,82.20 108.88,84.10 110.23,89.00 105.32,90.28 106.01,95.31 100.98,95.93 101.01,101.01 95.93,100.98 95.31,106.01 90.28,105.32 89.00,110.23 84.10,108.88 82.20,113.59 77.52,111.61 75.01,116.02 70.63,113.45 67.57,117.50 63.56,114.38 60.00,118.00 56.44,114.38 52.43,117.50 49.37,113.45 44.99,116.02 42.48,111.61 37.80,113.59 35.90,108.88 31.00,110.23 29.72,105.32 24.69,106.01 24.07,100.98 18.99,101.01 19.02,95.93 13.99,95.31 14.68,90.28 9.77,89.00 11.12,84.10 6.41,82.20 8.39,77.52 3.98,75.01 6.55,70.63 2.50,67.57 5.62,63.56 2.00,60.00 5.62,56.44 2.50,52.43 6.55,49.37 3.98,44.99 8.39,42.48 6.41,37.80 11.12,35.90 9.77,31.00 14.68,29.72 13.99,24.69 19.02,24.07 18.99,18.99 24.07,19.02 24.69,13.99 29.72,14.68 31.00,9.77 35.90,11.12 37.80,6.41 42.48,8.39 44.99,3.98 49.37,6.55 52.43,2.50 56.44,5.62 60.00,2.00 63.56,5.62 67.57,2.50 70.63,6.55 75.01,3.98 77.52,8.39 82.20,6.41 84.10,11.12 89.00,9.77 90.28,14.68 95.31,13.99 95.93,19.02 101.01,18.99 100.98,24.07 106.01,24.69 105.32,29.72 110.23,31.00 108.88,35.90 113.59,37.80 111.61,42.48 116.02,44.99 113.45,49.37 117.50,52.43 114.38,56.44" />
+              <circle class="stamp-sheen" cx="60" cy="60" r="54" />
+              <circle class="stamp-ring" cx="60" cy="60" r="51" />
+              <circle class="stamp-dots" cx="60" cy="60" r="48.5" />
+              <text class="stamp-text"><textPath href="#stamp-top" startOffset="50%" text-anchor="middle">MOST POPULAR</textPath></text>
+              <text class="stamp-text stamp-text-small"><textPath href="#stamp-bottom" startOffset="50%" text-anchor="middle">AAURIGO TECH</textPath></text>
+              <polygon class="stamp-star" points="17.50,57.80 18.26,59.95 20.54,60.01 18.74,61.40 19.38,63.59 17.50,62.30 15.62,63.59 16.26,61.40 14.46,60.01 16.74,59.95" />
+              <polygon class="stamp-star" points="102.50,57.80 103.26,59.95 105.54,60.01 103.74,61.40 104.38,63.59 102.50,62.30 100.62,63.59 101.26,61.40 99.46,60.01 101.74,59.95" />
+              <circle class="stamp-ring" cx="60" cy="60" r="26" />
+              <circle class="stamp-ring stamp-ring-thin" cx="60" cy="60" r="23.5" />
+              <polygon class="stamp-emblem" points="60.00,48.00 63.17,56.63 72.36,56.98 65.14,62.67 67.64,71.52 60.00,66.40 52.36,71.52 54.86,62.67 47.64,56.98 56.83,56.63" />
+            </svg>
+            -->
+            <!-- was until 2026-10-14 (brick red wax with an "A" and gold lettering; replaced after Krishna's reference image):
+            <svg class="stamp seal" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <defs>
+                <radialGradient id="wax-body" cx="38%" cy="32%" r="75%">
+                  <stop offset="0%" class="wax-stop-light" />
+                  <stop offset="55%" class="wax-stop" />
+                  <stop offset="100%" class="wax-stop-deep" />
+                </radialGradient>
+                <radialGradient id="wax-press" cx="60%" cy="65%" r="70%">
+                  <stop offset="0%" class="wax-stop" />
+                  <stop offset="100%" class="wax-stop-deep" />
+                </radialGradient>
+                <path id="seal-top" d="M31 60 A29 29 0 0 1 89 60" />
+                [ Gold leaf for the lettering (2026-10-14, Krishna: write it in gold, make it realistic) ]
+                <linearGradient id="gold-leaf" x1="0" y1="0" x2="0.35" y2="1">
+                  <stop offset="0%" class="gold-stop-hi" />
+                  <stop offset="45%" class="gold-stop" />
+                  <stop offset="70%" class="gold-stop-hi" />
+                  <stop offset="100%" class="gold-stop-deep" />
+                </linearGradient>
+                [ Faint wax texture so the surface isn't flat ]
+                <filter id="wax-grain" x="-5%" y="-5%" width="110%" height="110%">
+                  <feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="2" seed="4" result="noise" />
+                  <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .14 0" result="grain" />
+                  <feComposite in="grain" in2="SourceGraphic" operator="in" result="grainIn" />
+                  <feMerge><feMergeNode in="SourceGraphic" /><feMergeNode in="grainIn" /></feMerge>
+                </filter>
+              </defs>
+              <path class="wax-blob" filter="url(#wax-grain)" d="M111.61 60.00 C111.71 64.73 109.70 69.45 108.59 74.27 C107.48 79.08 107.58 84.95 104.96 88.89 C102.34 92.84 96.40 94.07 92.88 97.94 C89.35 101.81 88.05 109.89 83.80 112.12 C79.55 114.35 72.53 111.74 67.38 111.32 C62.22 110.90 57.74 110.19 52.87 109.61 C47.99 109.04 42.40 109.85 38.13 107.88 C33.86 105.91 30.93 101.07 27.25 97.80 C23.57 94.52 18.63 92.18 16.06 88.24 C13.49 84.29 12.90 78.85 11.84 74.14 C10.78 69.43 10.01 64.81 9.69 60.00 C9.37 55.19 9.81 50.61 9.94 45.30 C10.06 39.99 7.59 32.05 10.42 28.14 C13.26 24.23 22.21 24.27 26.93 21.84 C31.66 19.41 34.55 16.00 38.79 13.56 C43.04 11.13 47.57 8.58 52.41 7.23 C57.25 5.88 62.59 5.38 67.84 5.45 C73.09 5.53 79.53 5.13 83.90 7.67 C88.27 10.21 90.30 16.94 94.07 20.68 C97.83 24.43 104.17 25.92 106.49 30.12 C108.82 34.32 107.18 40.92 108.03 45.90 C108.89 50.88 111.52 55.27 111.61 60.00 Z" />
+              <circle class="wax-press" cx="60" cy="60" r="40" />
+              <path class="wax-rim-light" d="M31.7 88.3 A40 40 0 0 1 88.3 31.7" />
+              <path class="wax-rim-dark" d="M88.3 31.7 A40 40 0 0 1 31.7 88.3" />
+              <circle class="wax-ring" cx="60" cy="60" r="35.5" />
+              <text class="seal-text seal-text-hi" dx=".6" dy=".9"><textPath href="#seal-top" startOffset="50%" text-anchor="middle">MOST POPULAR</textPath></text>
+              <text class="seal-text seal-gold"><textPath href="#seal-top" startOffset="50%" text-anchor="middle">MOST POPULAR</textPath></text>
+              <text class="seal-mono seal-mono-hi" x="60.9" y="78" text-anchor="middle">A</text>
+              <text class="seal-mono seal-gold" x="60" y="77" text-anchor="middle">A</text>
+              <polygon class="seal-star seal-gold" points="60.00,83.40 60.65,85.11 62.47,85.20 61.05,86.34 61.53,88.10 60.00,87.10 58.47,88.10 58.95,86.34 57.53,85.20 59.35,85.11" />
+              <ellipse class="wax-gloss" cx="25" cy="38" rx="7" ry="3.2" transform="rotate(-55 25 38)" /> [ was until 2026-10-14: cx 40 cy 30 rx 11 ry 5, it covered the lettering ]
+            </svg>
+            -->
+            <svg class="stamp seal" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <!-- Wax seal with a gold crest, after Krishna's reference image (2026-10-14; lighting, off centre press and bubbles added the same day): wine wax, a thick raised rim,
+                   a sunken smooth centre, a raised gold crest (crown, shield with the "A", wings, a laurel swag), "MOST POPULAR" in gold. -->
+              <defs>
+                <radialGradient id="wax-rim" cx="50%" cy="50%" r="50%">
+                  <stop offset="62%" class="wax-stop-deep" />
+                  <stop offset="74%" class="wax-stop" />
+                  <stop offset="84%" class="wax-stop-light" />
+                  <stop offset="100%" class="wax-stop-deep" />
+                </radialGradient>
+                <radialGradient id="wax-centre" cx="58%" cy="62%" r="60%">
+                  <stop offset="0%" class="wax-stop" />
+                  <stop offset="100%" class="wax-stop-deep" />
+                </radialGradient>
+                <linearGradient id="gold-leaf" x1="0" y1="0" x2="0.35" y2="1">
+                  <stop offset="0%" class="gold-stop-hi" />
+                  <stop offset="45%" class="gold-stop" />
+                  <stop offset="70%" class="gold-stop-hi" />
+                  <stop offset="100%" class="gold-stop-deep" />
+                </linearGradient>
+                <!-- was until 2026-10-14 (Krishna preferred the version before this lighting pass): 
+                [ Realistic lighting (2026-10-14, Krishna: a little more realistic): a bevel lit from the top left ]
+                <filter id="wax-bevel" x="-10%" y="-10%" width="120%" height="120%">
+                  <feGaussianBlur in="SourceAlpha" stdDeviation="2.6" result="height" />
+                  <feSpecularLighting in="height" class="seal-light" surfaceScale="5" specularConstant=".85" specularExponent="18" result="spec">
+                    <feDistantLight azimuth="225" elevation="38" />
+                  </feSpecularLighting>
+                  <feComposite in="spec" in2="SourceAlpha" operator="in" result="shine" />
+                  <feComposite in="SourceGraphic" in2="shine" operator="arithmetic" k1="0" k2="1" k3=".38" k4="0" /> [ was k3 .55 until 2026-10-14: too pink ]
+                </filter>
+                <filter id="gold-bevel" x="-10%" y="-10%" width="120%" height="120%">
+                  <feGaussianBlur in="SourceAlpha" stdDeviation=".55" result="height" />
+                  <feSpecularLighting in="height" class="seal-light" surfaceScale="2.2" specularConstant="1.1" specularExponent="26" result="spec">
+                    <feDistantLight azimuth="225" elevation="45" />
+                  </feSpecularLighting>
+                  <feComposite in="spec" in2="SourceAlpha" operator="in" result="glint" />
+                  <feComposite in="SourceGraphic" in2="glint" operator="arithmetic" k1="0" k2="1" k3=".7" k4="0" />
+                </filter>
+                -->
+                <filter id="seal-soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.4" /></filter>
+                <filter id="seal-shadow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.6" /></filter>
+                <path id="seal-top" d="M31 60 A29 29 0 0 1 89 60" />
+                <g id="seal-crest" transform="translate(60 64) scale(.76) translate(-60 -60)">
+                  <path d="M49.5 50 C 44 49 40 46 38 41 C 42 44 46 45 49.5 46 Z" />
+                  <path d="M 70.5 50 C 76 49 80 46 82 41 C 78 44 74 45 70.5 46 Z" />
+                  <path d="M49.5 46 C 45 44.5 42 40.5 41.5 35.5 C 44.5 39.5 47 41.5 50 42.5 Z" />
+                  <path d="M 70.5 46 C 75 44.5 78 40.5 78.5 35.5 C 75.5 39.5 73 41.5 70 42.5 Z" />
+                  <path d="M50 54 C 45 54 41 52 39 48 C 43 50 46.5 51 50 51 Z" />
+                  <path d="M 70 54 C 75 54 79 52 81 48 C 77 50 73.5 51 70 51 Z" />
+                  <path d="M51 44 L50.5 37.5 L55 41 L60 34.5 L65 41 L69.5 37.5 L69 44 Z" />
+                  <circle cx="50.5" cy="36.6" r="1.3" /><circle cx="60" cy="33.4" r="1.4" /><circle cx="69.5" cy="36.6" r="1.3" />
+                  <path d="M50.5 45.5 H69.5 V58 Q69.5 69.5 60 74.5 Q50.5 69.5 50.5 58 Z" />
+                  <ellipse cx="55" cy="79" rx="2.7" ry="1.15" transform="rotate(-12 55 79)" />
+                  <ellipse cx="65" cy="79" rx="2.7" ry="1.15" transform="rotate(12 65 79)" />
+                  <ellipse cx="51" cy="77.6" rx="2.7" ry="1.15" transform="rotate(-32 51 77.6)" />
+                  <ellipse cx="69" cy="77.6" rx="2.7" ry="1.15" transform="rotate(32 69 77.6)" />
+                  <ellipse cx="47.6" cy="75.2" rx="2.7" ry="1.15" transform="rotate(-52 47.6 75.2)" />
+                  <ellipse cx="72.4" cy="75.2" rx="2.7" ry="1.15" transform="rotate(52 72.4 75.2)" />
+                  <ellipse cx="44.8" cy="72" rx="2.7" ry="1.15" transform="rotate(-68 44.8 72)" />
+                  <ellipse cx="75.2" cy="72" rx="2.7" ry="1.15" transform="rotate(68 75.2 72)" />
+                </g>
+              </defs>
+              <path class="seal-cast" filter="url(#seal-shadow)" transform="translate(2.5 3.5)" d="M113.21 60.00 C113.53 64.54 112.73 69.29 111.81 73.88 C110.90 78.47 110.07 83.59 107.72 87.55 C105.36 91.51 101.16 94.54 97.66 97.66 C94.16 100.78 90.56 103.48 86.72 106.27 C82.87 109.07 79.04 113.45 74.58 114.43 C70.13 115.41 64.74 112.61 60.00 112.14 C55.26 111.67 50.66 112.53 46.17 111.63 C41.67 110.72 37.17 108.87 33.04 106.70 C28.91 104.52 24.39 102.06 21.41 98.59 C18.43 95.12 17.20 90.05 15.16 85.89 C13.12 81.73 10.33 77.93 9.18 73.62 C8.03 69.30 8.56 64.63 8.24 60.00 C7.91 55.37 6.42 50.37 7.22 45.86 C8.03 41.34 10.67 36.94 13.08 32.91 C15.50 28.89 18.49 25.17 21.70 21.70 C24.91 18.23 28.34 14.60 32.34 12.08 C36.34 9.57 41.09 7.64 45.70 6.62 C50.31 5.61 55.29 5.76 60.00 5.98 C64.71 6.21 69.39 6.86 73.94 7.97 C78.49 9.09 83.57 10.08 87.31 12.69 C91.06 15.30 93.22 20.19 96.39 23.61 C99.56 27.04 104.10 29.41 106.34 33.24 C108.59 37.08 108.73 42.18 109.88 46.64 C111.02 51.09 112.89 55.46 113.21 60.00 Z" />
+              <path class="seal-rim" d="M113.21 60.00 C113.53 64.54 112.73 69.29 111.81 73.88 C110.90 78.47 110.07 83.59 107.72 87.55 C105.36 91.51 101.16 94.54 97.66 97.66 C94.16 100.78 90.56 103.48 86.72 106.27 C82.87 109.07 79.04 113.45 74.58 114.43 C70.13 115.41 64.74 112.61 60.00 112.14 C55.26 111.67 50.66 112.53 46.17 111.63 C41.67 110.72 37.17 108.87 33.04 106.70 C28.91 104.52 24.39 102.06 21.41 98.59 C18.43 95.12 17.20 90.05 15.16 85.89 C13.12 81.73 10.33 77.93 9.18 73.62 C8.03 69.30 8.56 64.63 8.24 60.00 C7.91 55.37 6.42 50.37 7.22 45.86 C8.03 41.34 10.67 36.94 13.08 32.91 C15.50 28.89 18.49 25.17 21.70 21.70 C24.91 18.23 28.34 14.60 32.34 12.08 C36.34 9.57 41.09 7.64 45.70 6.62 C50.31 5.61 55.29 5.76 60.00 5.98 C64.71 6.21 69.39 6.86 73.94 7.97 C78.49 9.09 83.57 10.08 87.31 12.69 C91.06 15.30 93.22 20.19 96.39 23.61 C99.56 27.04 104.10 29.41 106.34 33.24 C108.59 37.08 108.73 42.18 109.88 46.64 C111.02 51.09 112.89 55.46 113.21 60.00 Z" />
+              <!-- was until 2026-10-14 (Krishna preferred the version before this lighting pass): <path class="seal-rim-lit" filter="url(#wax-bevel)" fill-rule="evenodd" d="M113.21 60.00 C113.53 64.54 112.73 69.29 111.81 73.88 C110.90 78.47 110.07 83.59 107.72 87.55 C105.36 91.51 101.16 94.54 97.66 97.66 C94.16 100.78 90.56 103.48 86.72 106.27 C82.87 109.07 79.04 113.45 74.58 114.43 C70.13 115.41 64.74 112.61 60.00 112.14 C55.26 111.67 50.66 112.53 46.17 111.63 C41.67 110.72 37.17 108.87 33.04 106.70 C28.91 104.52 24.39 102.06 21.41 98.59 C18.43 95.12 17.20 90.05 15.16 85.89 C13.12 81.73 10.33 77.93 9.18 73.62 C8.03 69.30 8.56 64.63 8.24 60.00 C7.91 55.37 6.42 50.37 7.22 45.86 C8.03 41.34 10.67 36.94 13.08 32.91 C15.50 28.89 18.49 25.17 21.70 21.70 C24.91 18.23 28.34 14.60 32.34 12.08 C36.34 9.57 41.09 7.64 45.70 6.62 C50.31 5.61 55.29 5.76 60.00 5.98 C64.71 6.21 69.39 6.86 73.94 7.97 C78.49 9.09 83.57 10.08 87.31 12.69 C91.06 15.30 93.22 20.19 96.39 23.61 C99.56 27.04 104.10 29.41 106.34 33.24 C108.59 37.08 108.73 42.18 109.88 46.64 C111.02 51.09 112.89 55.46 113.21 60.00 Z M60.8 23.4 A36 36 0 1 0 60.8 95.4 A36 36 0 1 0 60.8 23.4 Z" /> -->
+              <path class="seal-rim-light" filter="url(#seal-soft)" d="M16.53 48.35 A45 45 0 0 1 75.39 17.71" />
+              <path class="seal-rim-dark" filter="url(#seal-soft)" d="M105.40 72.16 A47 47 0 0 1 43.93 104.17" />
+              <!-- was until 2026-10-14 (Krishna preferred the version before this lighting pass): 
+              <circle class="seal-bubble" cx="24" cy="70" r="0.9" />
+              <circle class="seal-bubble" cx="88" cy="28.5" r="0.7" />
+              <circle class="seal-bubble" cx="95" cy="77" r="0.8" />
+              <circle class="seal-bubble" cx="41" cy="99" r="0.6" />
+              <circle class="seal-bubble" cx="29" cy="40" r="1.0" />
+              -->
+              <circle class="seal-centre" cx="60" cy="60" r="36" /> <!-- was until 2026-10-14 (Krishna preferred the version before this lighting pass): cx 60.8 cy 59.4 -->
+              <path class="seal-wall-dark" filter="url(#seal-soft)" d="M25.13 63.05 A35 35 0 0 1 77.50 29.69" />
+              <path class="seal-wall-light" filter="url(#seal-soft)" d="M94.96 66.16 A35.5 35.5 0 0 1 42.25 90.74" />
+              <use href="#seal-crest" class="seal-emboss" transform="translate(.6 .9)" />
+              <use href="#seal-crest" class="seal-gold" /> <!-- was until 2026-10-14 (Krishna preferred the version before this lighting pass): filter gold-bevel -->
+              <text class="seal-shield-a" x="60" y="68.3" text-anchor="middle">A</text>
+              <text class="seal-text seal-text-hi" dx=".6" dy=".9"><textPath href="#seal-top" startOffset="50%" text-anchor="middle">MOST POPULAR</textPath></text>
+              <text class="seal-text seal-gold"><textPath href="#seal-top" startOffset="50%" text-anchor="middle">MOST POPULAR</textPath></text>
+            </svg>
+            <div class="tag">
+              <span class="label label-accent">02</span>
+              <!-- Sketch of a website (2026-11-02): a small web page drawn in code, decorative only -->
+              <div class="sketch sketch-site" aria-hidden="true">
+                <div class="sk-bar"><i></i><i></i><i></i></div>
+                <div class="sk-page">
+                  <div class="sk-nav"><b></b><span></span><span></span><span></span></div>
+                  <div class="sk-hero">
+                    <div class="sk-copy"><b></b><b></b><span></span><span></span><em></em></div>
+                    <div class="sk-img"></div>
+                  </div>
+                </div>
+              </div>
+              <h3 class="bookmark-title">Websites<span class="sr-only"> (most popular)</span></h3>
+              <p class="bookmark-text">A website that brings you customers, not just visitors.</p>
+              <ul class="service-features list-plain">
+                <li>Designed around your brand</li>
+                <li>Fast on every phone</li>
+                <li>Set up to be found in search and AI answers</li> <!-- was until 2026-10-21 (Krishna: say it plainly, set up to be found): [li]Ready for Google from day one[/li] -->
+              </ul>
+              <a class="btn-link" href="websites.html">Get details <span aria-hidden="true">→</span><span class="sr-only"> on websites</span></a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#web-development -->
+            </div>
+          </li>
+          <li class="bookmark">
+            <svg class="tag-string" viewBox="0 0 60 96" aria-hidden="true" focusable="false">
+              <path class="cord" d="M27.5 72 C 16 52 13 16 30 6 C 47 16 44 52 32.5 72" />
+              <path class="cord-twist" d="M27.5 72 C 16 52 13 16 30 6 C 47 16 44 52 32.5 72" />
+              <path class="cord" d="M29 66 C 26 75 24 83 21.5 92" />
+              <path class="cord-twist" d="M29 66 C 26 75 24 83 21.5 92" />
+              <path class="cord" d="M31 66 C 35 74 38 81 41.5 88" />
+              <path class="cord-twist" d="M31 66 C 35 74 38 81 41.5 88" />
+              <ellipse class="tag-knot" cx="30" cy="66" rx="3.2" ry="2.6" />
+            </svg>
+            <div class="tag">
+              <span class="label label-accent">03</span>
+              <!-- Sketch of a mobile app (2026-11-02): a small phone drawn in code, plain frame (no maker's shape), decorative only -->
+              <div class="sketch sketch-phone" aria-hidden="true">
+                <div class="sk-device"><div class="sk-screen"><b></b><span></span><span></span><span></span><em></em></div></div>
+              </div>
+              <h3 class="bookmark-title">Mobile apps</h3>
+              <p class="bookmark-text">Your business in your customer's pocket.</p>
+              <ul class="service-features list-plain">
+                <li>iPhone and Android from one build</li>
+                <li>Launched on both app stores</li>
+                <li>See how customers use it</li>
+              </ul>
+              <a class="btn-link" href="mobile-apps.html">Get details <span aria-hidden="true">→</span><span class="sr-only"> on mobile apps</span></a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#mobile-apps -->
+            </div>
+          </li>
+          <!-- was until 2026-10-21 (Krishna: brand combined with every service, not its own option): Brand tag
+ Brand tag added 2026-10-21 (Krishna: brand added as a service) 
+          [li class="bookmark"]
+            [svg class="tag-string" viewBox="0 0 60 96" aria-hidden="true" focusable="false"]
+              [path class="cord" d="M27.5 72 C 16 52 13 16 30 6 C 47 16 44 52 32.5 72" /]
+              [path class="cord-twist" d="M27.5 72 C 16 52 13 16 30 6 C 47 16 44 52 32.5 72" /]
+              [path class="cord" d="M29 66 C 26 75 24 83 21.5 92" /]
+              [path class="cord-twist" d="M29 66 C 26 75 24 83 21.5 92" /]
+              [path class="cord" d="M31 66 C 35 74 38 81 41.5 88" /]
+              [path class="cord-twist" d="M31 66 C 35 74 38 81 41.5 88" /]
+              [ellipse class="tag-knot" cx="30" cy="66" rx="3.2" ry="2.6" /]
+            [/svg]
+            [div class="tag"]
+              [span class="label label-accent"]03[/span]
+              [h3 class="bookmark-title"]Brand[/h3]
+              [p class="bookmark-text"]A look people remember, everywhere they see you.[/p]
+              [ul class="service-features list-plain"]
+                [li]Logo, colours and fonts[/li]
+                [li]Business cards and social media covers[/li]
+                [li]Icons, patterns and stickers[/li]
+              [/ul]
+              [a class="btn-link" href="services.html#brand"]Get details [span aria-hidden="true"]→[/span][span class="sr-only"] on brand[/span][/a]
+            [/div]
+          [/li]
+          -->
+
+
+        </ul>
+
+        <!-- was until 2026-10-14 (rows; Krishna: structure not good, wants hanging bookmarks):
+        [ Timelines stay off until WEB-1.12 is approved. No badges (RFA §7). ]
+        <ol class="services-list list-plain">
+          <li class="service">
+            <span class="label label-accent">01</span>
+            <div>
+              <h3 class="service-title">Websites</h3>
+              <p class="service-text">A website that brings you customers, not just visitors.</p>
+            </div>
+            <ul class="service-features list-plain">
+              <li>Designed around your brand</li>
+              <li>Fast on every phone</li>
+              <li>Ready for Google from day one</li>
+            </ul>
+            <a class="btn-link service-link" href="services.html#web-development">Get details <span aria-hidden="true">→</span><span class="sr-only"> on websites</span></a>
+          </li>
+          <li class="service">
+            <span class="label label-accent">02</span>
+            <div>
+              <h3 class="service-title">Web apps</h3>
+              <p class="service-text">Booking systems, client portals and dashboards that take manual work off your plate.</p>
+            </div>
+            <ul class="service-features list-plain">
+              <li>First version live fast</li>
+              <li>Grows with real use</li>
+              <li>You see progress every week</li>
+            </ul>
+            <a class="btn-link service-link" href="services.html#web-applications">Get details <span aria-hidden="true">→</span><span class="sr-only"> on web apps</span></a>
+          </li>
+          <li class="service">
+            <span class="label label-accent">03</span>
+            <div>
+              <h3 class="service-title">Mobile apps</h3>
+              <p class="service-text">Your business in your customer's pocket.</p>
+            </div>
+            <ul class="service-features list-plain">
+              <li>iPhone and Android from one build</li>
+              <li>Launched on both app stores</li>
+              <li>See how customers use it</li>
+            </ul>
+            <a class="btn-link service-link" href="services.html#mobile-apps">Get details <span aria-hidden="true">→</span><span class="sr-only"> on mobile apps</span></a>
+          </li>
+        </ol>
+        -->
+        <!-- Care plan in public wording only (RFA §4.3 private vs public; no price, REQ-BIZ-7) -->
+        <!-- was until 2026-10-14 (Krishna: two separate rows did not look good; now one row, side by side):
+        <p class="services-after"><strong>After launch, we look after it.</strong> Every change is made and tested by us.</p>
+        <div class="custom-strip">
+          <p><strong>Need something bigger or different?</strong> Custom platforms, integrations and technical consulting.</p>
+          <a class="btn-link" href="contact.html">Tell us what you need <span aria-hidden="true">→</span></a>
+        </div>
+        -->
+        <!-- was until 2026-10-14 (same day; Krishna: still looks a little off, the two halves were uneven):
+        <div class="build-close">
+          <p class="build-close-item"><strong>After launch, we look after it.</strong> Every change is made and tested by us.</p>
+          <p class="build-close-item"><strong>Need something bigger or different?</strong> Custom platforms, integrations and technical consulting.<br><a class="btn-link" href="contact.html">Tell us what you need <span aria-hidden="true">→</span></a></p>
+          [ was until 2026-10-14 (Krishna: not every section needs the call button):
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+          ]
+        </div>
+        -->
+        <!-- One quiet closing line under the tags (2026-10-14). "Custom platforms, integrations and technical consulting." moved out: the Services page custom section says it -->
+        <p class="build-close">
+          <span class="build-close-item"><strong>After launch, we look after it.</strong> Every change is made and tested by us.</span>
+          <span class="build-close-item"><strong>Need something bigger or different?</strong> <a class="btn-link" href="contact.html">Tell us what you need <span aria-hidden="true">→</span></a></span>
+        </p>
+      </div>
+    </section>
+
+    <!-- tried and reversed 2026-10-14 (Krishna: "reverse it"):
+    [ 3. What changes for you (home.md §3, added 2026-10-14; replaces "Stop paying for guesswork", which spoke to startups).
+         One outcome for each problem owners told us about (RFA PP-8): not like the business, slow, enquiries they can't use.
+         Tactic from ikon.london "Where this drives growth"; our own words. No numbers until real audits give them. ]
+    <section class="section growth" aria-labelledby="growth-title">
+      <div class="container reveal-scroll">
+        <header class="section-head">
+          <p class="label label-accent">What changes for you</p>
+          <h2 class="section-title" id="growth-title">Where it shows.</h2>
+        </header>
+        <ol class="growth-list list-plain">
+          <li class="growth-item">
+            <span class="label label-accent">01</span>
+            <h3 class="growth-name">Seen as you really are.</h3>
+            <p class="growth-text">A website that looks and sounds like the business you've built, not a template.</p>
+          </li>
+          <li class="growth-item">
+            <span class="label label-accent">02</span>
+            <h3 class="growth-name">Loaded in seconds.</h3>
+            <p class="growth-text">Visitors stay and look around, on any phone, instead of leaving before the page appears.</p>
+          </li>
+          <li class="growth-item">
+            <span class="label label-accent">03</span>
+            <h3 class="growth-name">Enquiries you can act on.</h3>
+            <p class="growth-text">Forms that ask the right questions, so every message tells you who they are and what they need.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+    -->
+
+    <!-- was until 2026-10-14 (developer language, more text; sat after "Stop paying for guesswork"):
+    [ 4. What we build (home.md §4, WEB-8.4) ]
+    <section class="section" id="what-we-build" aria-labelledby="build-title">
+      <div class="container reveal-scroll">
+        <header class="section-head">
+          <p class="label label-accent">What we build</p>
+          <h2 class="section-title" id="build-title">Three ways we help you grow.</h2>
+          <p class="section-intro">Every project starts with one question: what is the fastest route to real users and real results?</p>
+        </header>
+
+        [ Timelines commented out until WEB-1.12 is approved:
+             Web ~1 to 3 weeks · Web app MVP ~4 to 8 weeks · Mobile MVP ~6 to 10 weeks.
+             Badge "Most requested" on Web Applications commented out: no badges in the style mix (RFA §7). ]
+        <ol class="services-list list-plain">
+          <li class="service">
+            <span class="label label-accent">01</span>
+            <div>
+              <h3 class="service-title">Web Development</h3>
+              <p class="service-text">Fast, high-converting websites and landing pages that make your business look as good as it is.</p>
+            </div>
+            <ul class="service-features list-plain">
+              <li>Custom design, no templates</li>
+              <li>Mobile-first and fast-loading</li>
+              <li>SEO and analytics set up from day one</li>
+            </ul>
+            <a class="btn-link service-link" href="services.html#web-development">Get details <span aria-hidden="true">→</span><span class="sr-only"> on Web Development</span></a>
+          </li>
+          <li class="service">
+            <span class="label label-accent">02</span>
+            <div>
+              <h3 class="service-title">Web Applications</h3>
+              <p class="service-text">Dashboards, portals, SaaS products and internal tools, shipped as an MVP first and grown on real usage.</p>
+            </div>
+            <ul class="service-features list-plain">
+              <li>MVP scoped around one core outcome</li>
+              <li>Built to scale, not to be rebuilt</li>
+              <li>Weekly demos, no silent months</li>
+            </ul>
+            <a class="btn-link service-link" href="services.html#web-applications">Get details <span aria-hidden="true">→</span><span class="sr-only"> on Web Applications</span></a>
+          </li>
+          <li class="service">
+            <span class="label label-accent">03</span>
+            <div>
+              <h3 class="service-title">Mobile Apps</h3>
+              <p class="service-text">Your business in your customer's pocket. iOS and Android apps that feel native and ship fast.</p>
+            </div>
+            <ul class="service-features list-plain">
+              <li>One codebase, both platforms</li>
+              <li>App Store and Play Store launch</li>
+              <li>Usage analytics built in</li>
+            </ul>
+            <a class="btn-link service-link" href="services.html#mobile-apps">Get details <span aria-hidden="true">→</span><span class="sr-only"> on Mobile Apps</span></a>
+          </li>
+        </ol>
+
+        <div class="custom-strip">
+          <p><strong>Need something bigger or different?</strong> Custom platforms, integrations and technical consulting.</p>
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+        </div>
+      </div>
+    </section>
+    -->
+
+    <!-- was until 2026-10-14 (too much text; Krishna asked for a section like Honeywave's "We Value Time"):
+    [ 2b. Pain points (home.md §2b, WEB-8.14): an owner's real worries about their business online, in their words, then our answer.
+         Changed 2026-10-13: credibility (PP-8), being found (PP-8, services: SEO basics from day one), no time (PP-5, client effort rule §4.4).
+         Right after the hero since 2026-10-13 (Krishna's request), on sand; was after "A normal working day" earlier that day. ]
+    <section class="section section-alt pain" aria-labelledby="pain-title">
+      <div class="container reveal-scroll">
+        <h2 class="section-title pain-title" id="pain-title">You're busy. Your website shouldn't keep you waiting.</h2>
+        [ was until 2026-10-13: three worries about agencies (PP-1, PP-3, PP-6); Krishna: they don't match the real issues owners face.
+        <ol class="pain-list list-plain">
+          <li>
+            <p class="pain-quote">“By the time it launches, the market has moved on.”</p>
+            <p class="pain-answer">We launch a working first version in weeks, not months, while competitors are still planning.</p>
+          </li>
+          <li>
+            <p class="pain-quote">“Once I paid, the agency went quiet.”</p>
+            <p class="pain-answer">You get a live preview link as soon as the build starts, and a review call at every milestone.</p>
+          </li>
+          <li>
+            <p class="pain-quote">“Every small tweak becomes a new invoice.”</p>
+            <p class="pain-answer">Unlimited changes across 3 review rounds while we build, agreed in writing before we start.</p> [ was until 2026-10-13: Unlimited changes across 3 review rounds, agreed in writing before we start. ("while we build" added: changes after handover are paid, REQ-BIZ-7) ]
+          </li>
+        </ol>
+        ]
+        [ Show, don't tell (2026-10-13, Krishna): we never say "choose us"; every answer comes with proof the visitor can check. ]
+        [ was until 2026-10-14 (removed: it told instead of showing; the proof lines and live load time do the showing):
+        <p class="pain-intro">We won't ask you to take our word for it. Every answer below comes with something you can check yourself.</p>
+        ]
+
+        [ was until 2026-10-14: three worries (your website, being found, your time), each with a proof line.
+             Krishna: focus on one pain point only, and make it hit hard.
+        <ol class="pain-list list-plain">
+          <li>
+            [ Krishna's field observation 2026-10-13 (RFA PP-8): sites that load slowly, send random leads and don't represent the business.
+                 No load time number here: numbers only from a real audit of the visitor's own site (RFA §7). ]
+            <p class="pain-num label label-accent">01 · Your website</p>
+            <p class="pain-quote">“Our website is slow, the leads are random, and it doesn't look like us.”</p> [ was until 2026-10-14: We have a website. It's slow, the leads are random, and it doesn't show who we really are. ]
+            <p class="pain-answer">A fast, custom website built around how you win customers, with enquiry forms that ask the right questions, so every lead is one you can act on.</p>
+            <p class="pain-proof">[ was until 2026-10-14: <span class="label">Check it</span> ]Before we even talk, we audit your current website and show you what is costing you customers.</p>
+          </li>
+          <li>
+            <p class="pain-num label label-accent">02 · Being found</p>
+            <p class="pain-quote">“New customers can't find us on Google.”</p>
+            <p class="pain-answer">A fast website with the search basics set up from day one, so Google can understand it and show it.</p>
+            <p class="pain-proof">[ was until 2026-10-14: <span class="label">Check it</span> ]Google Search Console is set up in your name, so you see for yourself how people find you.</p>
+          </li>
+          <li>
+            <p class="pain-num label label-accent">03 · Your time</p>
+            <p class="pain-quote">“I don't have time to manage a website project.”</p>
+            <p class="pain-answer">We do the thinking and bring you only the few decisions that matter, each one a simple as yes or no.</p>
+            <p class="pain-proof">You get one clear recommendation from us, not a list of options to research.</p> [ was until 2026-10-14: <span class="label">Check it</span> Book a call and count the questions. Most need only a yes or no. (it gave the visitor a task) ]
+          </li>
+        </ol>
+        ]
+
+        [ One pain point (2026-10-14, Krishna): the website that is slow, sends random leads and doesn't look like the business.
+             Krishna's field observation (RFA PP-8). Spec-sheet rows: the problem, what it costs you, what we build. No invented numbers. ]
+        <div class="pain-focus">
+          <p class="pain-big">“Our website is slow, the leads are random, and it doesn't look like us.”</p>
+
+          <dl class="pain-rows">
+            <div class="pain-row">
+              <dt class="label label-accent">01 · Slow</dt>
+              <dd class="pain-cost">Visitors leave before the page has even loaded. Every one of them could have been a customer.</dd>
+              <dd class="pain-fix">A custom website that loads fast on any phone, measured before we launch it.</dd>
+            </div>
+            <div class="pain-row">
+              <dt class="label label-accent">02 · Random leads</dt>
+              <dd class="pain-cost">Your day goes on enquiries you can't use, while the right customers never get in touch.</dd>
+              <dd class="pain-fix">Enquiry forms that ask the right questions, so every lead is one you can act on.</dd>
+            </div>
+            <div class="pain-row">
+              <dt class="label label-accent">03 · Not you</dt>
+              <dd class="pain-cost">Customers judge your business by its website long before they meet you.</dd>
+              <dd class="pain-fix">A design built around your brand and how you win customers. No templates.</dd>
+            </div>
+          </dl>
+        </div>
+
+        [ Live proof: this page's real load time on the visitor's device (scripts/site.js). Nothing is sent anywhere.
+             Shown only when JavaScript runs and the page loaded in under 2.5 seconds (was 3 until 2026-10-14); otherwise it stays hidden. ]
+        <div class="pain-speed" data-load-time hidden>
+          <p class="label label-accent">Measured live, on your device</p>
+          <p class="pain-speed-line">This page loaded in <strong><span data-load-value>0.5</span> seconds</strong>.</p>
+          <p class="pain-speed-note">That is the standard we build to. Is your website this fast? Book a call and we will check it together.</p>
+        </div>
+
+        <div class="section-cta pain-actions">
+          [ [PLACEHOLDER] Replace # with the booking link (WEB-14.8.6). Opens in a new tab. ]
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener">
+            Book a call <span class="arrow" aria-hidden="true">→</span>
+            <span class="sr-only">(opens in a new tab)</span>
+          </a>
+          <a class="btn-link" href="#how-we-work">See how we work <span aria-hidden="true">→</span></a>
+        </div>
+        <p class="pain-note">Before the call, we audit your current website and show you what is costing you customers.</p>
+
+        [ was until 2026-10-13 (before the proof lines, live speed and Book a call were added):
+        <ol class="pain-list list-plain">
+          <li>
+            [ Krishna's field observation 2026-10-13 (RFA PP-8): sites that load slowly, send random leads and don't represent the business.
+                 No load time number here: numbers only from a real audit of the visitor's own site (RFA §7).
+            was until 2026-10-13:
+            <p class="pain-quote">“Our competitors look better online, and we're better than them.”</p>
+            <p class="pain-answer">A custom design that shows your business as good as it really is. No templates.</p>
+            ]
+            <p class="pain-quote">“We have a website. It's slow, the leads are random, and it doesn't show who we really are.”</p>
+            <p class="pain-answer">A fast, custom website built around how you win customers, with enquiry forms that ask the right questions, so every lead is one you can act on.</p>
+          </li>
+          <li>
+            <p class="pain-quote">“New customers can't find us on Google.”</p>
+            <p class="pain-answer">A fast website with the search basics set up from day one, so Google can understand it and show it.</p>
+          </li>
+          <li>
+            <p class="pain-quote">“I don't have time to manage a website project.”</p>
+            <p class="pain-answer">We do the thinking and bring you only the few decisions that matter, each one a simple yes or no.</p>
+          </li>
+        </ol>
+        <p class="section-cta"><a class="btn-link" href="#how-we-work">See how we work <span aria-hidden="true">→</span></a></p>
+      </div>
+            ]
+      </div>
+    </section>
+    -->
+
+    <!-- was until 2026-10-15 (Krishna: comment out; real case studies from finished projects replace it later, WEB-2.1 to 2.6):
+    [ 2a. A normal working day (home.md §2a, added 2026-10-13): everyday website problems an owner meets, each with what we build to fix it.
+         Draft for approval (WEB-2.9). Fixes match the services on offer (home.md §4, services.md); no numbers, no timelines.
+         After the pain section since 2026-10-13, on stone (was class="section section-alt daily" while it came first). ]
+    <section class="section daily" aria-labelledby="daily-title"> [ tried and reversed 2026-10-14 (Krishna: "reverse it"): class="section section-alt daily" ]
+      <div class="container reveal-scroll">
+        <header class="section-head">
+          <p class="label label-accent">A normal working day</p>
+          <h2 class="section-title" id="daily-title">Sound familiar?</h2>
+          <p class="section-intro">Small website problems eat into your day, every day. Here is how it often looks, and what we do about it.</p>
+        </header>
+
+        <ol class="daily-list list-plain">
+          <li>
+            <span class="daily-time label">08:45</span>
+            <div class="daily-moment">
+              <p class="daily-issue">A customer rings to ask your opening hours.</p>
+              <p class="daily-detail">They are on your website, but on a phone nobody can find them.</p>
+            </div>
+            <p class="daily-fix">A fast website built for phones first, with the basics one tap away.</p>
+          </li>
+          <li>
+            <span class="daily-time label">11:30</span>
+            <div class="daily-moment">
+              <p class="daily-issue">You need to change one price on your website.</p>
+              <p class="daily-detail">So you email the developer, and wait.</p>
+            </div>
+            <p class="daily-fix">Send us the change. We make it, test it and keep your site as fast as launch day.</p> [ was until 2026-10-13: A website your team can update, with training and a written guide at handover. (no editing panel for clients, REQ-BIZ-7) ]
+          </li>
+          <li>
+            <span class="daily-time label">14:15</span>
+            <div class="daily-moment">
+              <p class="daily-issue">Your ads bring visitors in all day.</p>
+              <p class="daily-detail">Hardly any of them call or book.</p>
+            </div>
+            <p class="daily-fix">A website built to turn the visitors you already pay for into enquiries.</p>
+          </li>
+          <li>
+            <span class="daily-time label">17:40</span>
+            <div class="daily-moment">
+              <p class="daily-issue">An enquiry from your website form lands in spam.</p>
+              <p class="daily-detail">By the time you see it, the customer has gone elsewhere.</p>
+            </div>
+            <p class="daily-fix">Every form is tested to reach your inbox before we launch.</p>
+          </li>
+          <li>
+            <span class="daily-time label">21:00</span>
+            <div class="daily-moment">
+              <p class="daily-issue">After hours, you are still answering booking messages.</p> [ was until 2026-10-13: The shop is closed, and you are still answering booking messages. (not every client has a shop) ]
+              <p class="daily-detail">Calls, texts and a notebook, all by hand.</p>
+            </div>
+            <p class="daily-fix">A booking web app or mobile app that takes bookings for you, day and night.</p>
+          </li>
+        </ol>
+
+        [ How fast they can reach us (2026-10-15, Krishna: show how quickly they can connect, by call or message).
+             Real promises only: booking minimum notice 30 minutes (RFA §5.3), reply within one business day (RFA RG-4).
+             Big numbers carry the emphasis; quiet text links, so the Book a call button stays at the key points only (RFA §7). ]
+        <div class="reach">
+          <p class="reach-lead">Fixing it starts with one conversation.</p>
+          <ul class="reach-list list-plain">
+            <li class="reach-item">
+              <span class="label label-accent">Book a call</span>
+              <strong class="reach-number">30 minutes</strong>
+              <span class="reach-text">The soonest you can talk to us, during your business hours.</span>
+              [ [PLACEHOLDER] Replace # with the booking link (WEB-14.8.6). Opens in a new tab. ]
+              <a class="btn-link" href="#" target="_blank" rel="noopener">Pick a time <span aria-hidden="true">→</span><span class="sr-only"> to book a call (opens in a new tab)</span></a>
+            </li>
+            <li class="reach-item">
+              <span class="label label-accent">Send a message</span>
+              <strong class="reach-number">1 business day</strong>
+              <span class="reach-text">The longest you wait for a real reply from the person who builds it.</span>
+              <a class="btn-link" href="contact.html">Write to us <span aria-hidden="true">→</span></a>
+            </li>
+          </ul>
+        </div>
+
+        [ was until 2026-10-14 (Krishna: not every section needs the call button):
+        <p class="section-cta">
+          [ [PLACEHOLDER] Replace # with the booking link (WEB-14.8.6). Opens in a new tab. ]
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener">
+            Book a call <span class="arrow" aria-hidden="true">→</span>
+            <span class="sr-only">(opens in a new tab)</span>
+          </a>
+        </p>
+        ]
+      </div>
+    </section>
+    -->
+
+    <!-- How fast you can reach us (2026-10-15, Krishna). Was the end of "Sound familiar?"; kept as its own short section when that was commented out. -->
+    <section class="section reach-section" aria-labelledby="reach-title">
+      <div class="container reveal-scroll">
+        <!-- How fast they can reach us (2026-10-15, Krishna: show how quickly they can connect, by call or message).
+             Real promises only: booking minimum notice 30 minutes (RFA §5.3), reply within one business day (RFA RG-4).
+             Big numbers carry the emphasis; quiet text links, so the Book a call button stays at the key points only (RFA §7). -->
+        <div class="reach">
+          <h2 class="reach-lead" id="reach-title">Fixing it starts with one conversation.</h2>
+          <ul class="reach-list list-plain">
+            <li class="reach-item">
+              <span class="label label-accent">Book a call</span>
+              <strong class="reach-number">30 minutes</strong>
+              <span class="reach-text">The soonest you can talk to us, during your business hours.</span>
+              <!-- [PLACEHOLDER] Replace # with the booking link (WEB-14.8.6). Opens in a new tab. -->
+              <a class="btn-link" href="#" target="_blank" rel="noopener">Pick a time <span aria-hidden="true">→</span><span class="sr-only"> to book a call (opens in a new tab)</span></a>
+            </li>
+            <li class="reach-item">
+              <span class="label label-accent">Send a message</span>
+              <strong class="reach-number">1 business day</strong>
+              <span class="reach-text">The longest you wait for a real reply from the person who builds it.</span>
+              <a class="btn-link" href="contact.html">Write to us <span aria-hidden="true">→</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. How we work (home.md §6, WEB-8.5) + explainer video (WEB-8.15). Since 2026-10-15 right after "one conversation": it answers "what happens after the call?" -->
+    <section class="section section-alt" id="how-we-work" aria-labelledby="process-title">
+      <div class="container journey-layout reveal-scroll"> <!-- was until 2026-11-01: class="container reveal-scroll" -->
+        <div class="journey-aside">
+        <header class="section-head">
+          <p class="label label-accent">How we work</p>
+          <h2 class="section-title" id="process-title">Focus. Build. Grow.</h2>
+          <p class="section-intro">From the first call to launch day, here is how it goes, and how little of your time it takes.</p> <!-- was until 2026-10-15 (Krishna: write it like a story): Five clear steps, and very little of your time. Before that: Your project journey in five clear steps, built for speed and no surprises. -->
+        </header>
+        <!-- Photo slot (2026-11-01, Krishna: suggest adding my image here): his photo goes here under the intro once he picks one. -->
+        </div>
+
+        <!-- 2026-11-01 (Krishna: cards with concise text without missing anything). Every fact from the hairline version
+             below is kept, in fewer words; each step now carries its phase. Styles: sections/journey.css. -->
+        <!-- 2026-11-02 (Krishna: the water and its animation do not fit; cards that complement the site colours): the cards
+             deepen with the journey, all in the site palette: Focus on stone, Build on champagne, Grow on ink (like the
+             footer). The section uses the site's own entrance. Styles: sections/journey.css. Same day (Krishna: a little more innovative): the cards stack into a deck as you scroll, name and phase on one line in .journey-top. The water pool version is in
+             archive/journey-water-pools-2026-11-01.css and archive/home-how-we-work-steps-2026-11-01.html -->
+        <ol class="journey-cards list-plain">
+          <li class="journey-card card-focus">
+            <div class="journey-top"><h3 class="journey-name">Onboard</h3><p class="label journey-when">01 · Focus</p></div>
+            <p class="journey-line">You tell us once.</p>
+            <ul class="list-plain service-features journey-list"><li>Your website reviewed before we talk</li><li>One 30 minute call, one package to say yes or no to</li><li>A written agreement of exactly what's included</li><li>Everything asked for at once, no passwords shared</li></ul>
+          </li>
+          <li class="journey-card card-focus">
+            <div class="journey-top"><h3 class="journey-name">Prep</h3><p class="label journey-when">02 · Focus</p></div>
+            <p class="journey-line">You see it take shape.</p>
+            <ul class="list-plain service-features journey-list"><li>Never a template: you describe the feel, we recommend the colours</li><li>Every page planned in one document you approve</li><li>You send only your logo, photos and what only you know</li><li>For apps, one short call per feature</li><li>Nothing built until you agree</li></ul>
+          </li>
+          <li class="journey-card card-build">
+            <div class="journey-top"><h3 class="journey-name">Build</h3><p class="label journey-when">03 · Build</p></div>
+            <p class="journey-line">You steer, we build.</p>
+            <ul class="list-plain service-features journey-list"><li>Milestones, so you see progress early</li><li>A live preview link as we build</li><li>One short call per milestone to sign off</li><li>You say what to change, we write it down</li><li>Unlimited changes across three review rounds</li></ul>
+          </li>
+          <li class="journey-card card-build">
+            <div class="journey-top"><h3 class="journey-name">Launch</h3><p class="label journey-when">04 · Build</p></div>
+            <p class="journey-line">The real you goes live.</p>
+            <ul class="list-plain service-features journey-list"><li>Checked page by page before your final yes</li><li>Set up to be found in search and AI answers from day one</li><li>Your business online, the way it really is</li></ul>
+          </li>
+          <li class="journey-card card-grow">
+            <div class="journey-top"><h3 class="journey-name">Handover</h3><p class="label journey-when">05 · Grow</p></div>
+            <p class="journey-line">You get back to your business.</p>
+            <ul class="list-plain service-features journey-list"><li>One training session for your team</li><li>A written guide to keep</li><li>Ownership and access handed to you</li><li>A monthly care plan: every change made, tested and kept fast</li><li>You talk to the person who built it</li></ul>
+          </li>
+        </ol>
+
+        <!-- was until 2026-11-01 (Krishna: cards with concise text): the five hairline columns below (process.css)
+        Since 2026-10-17 (Krishna: show the client journey, what you do and what you get at each step; design document in Google Docs, GitHub Pages preview, one short call per milestone). Step durations are added only after the timeline study WEB-1.12 is approved. -->
+        <!-- the old step list (ol.steps) is in archive/home-how-we-work-steps-2026-11-01.html -->
+        <!-- was until 2026-10-17:
+        <ol class="steps list-plain">
+          <li><span class="label label-accent">01</span><h3 class="step-name">Onboard</h3><p class="step-line">You tell us once.</p><ul class="list-plain service-features step-text"><li>You share your goals on the first call</li><li>We ask for everything we need in one go</li><li>Nobody chases you for logins later</li></ul></li> [ was until 2026-10-15 (Krishna: each step as bullet points): <p class="step-text">On the first call you share your goals. After that, we ask for everything we need in one go: access, accounts and content. Nobody chases you for logins later.</p> ] [ was until 2026-10-15 (Krishna: the step names were not noticeable enough): <span class="label label-accent">01 · Onboard</span><h3 class="step-name">You tell us once.</h3> ] [ was until 2026-10-15 (Krishna: write it like a story): <span class="label label-accent">01</span><h3 class="step-name">Onboard</h3><p class="step-text">We make it official and collect everything we need in one go: access, accounts and your goals. No chasing you for logins later.</p> ]
+          <li><span class="label label-accent">02</span><h3 class="step-name">Prep</h3><p class="step-line">You see it take shape.</p><ul class="list-plain service-features step-text"><li>A private preview link to watch the work live</li><li>One short call per feature</li><li>Never one long meeting</li></ul></li> [ was until 2026-10-15 (Krishna: each step as bullet points): <p class="step-text">You get a private preview link and watch the work happen live. We agree each feature in a short call of its own, never one long meeting.</p> ] [ was until 2026-10-15 (Krishna: the step names were not noticeable enough): <span class="label label-accent">02 · Prep</span><h3 class="step-name">You see it take shape.</h3> ] [ was until 2026-10-15 (Krishna: write it like a story): <span class="label label-accent">02</span><h3 class="step-name">Prep</h3><p class="step-text">You get a private preview link to watch progress live. We lock the scope in short, focused calls, one per feature, instead of one long meeting.</p> ]
+          <li><span class="label label-accent">03</span><h3 class="step-name">Build</h3><p class="step-line">You steer, we build.</p><ul class="list-plain service-features step-text"><li>A short review call at every milestone</li><li>Your changes go in early, not at the end</li><li>Unlimited changes across three review rounds</li></ul></li> [ was until 2026-10-15 (Krishna: each step as bullet points): <p class="step-text">At every milestone we walk you through the work on a short review call, so your changes go in early. Unlimited changes across three review rounds.</p> ] [ was until 2026-10-15 (Krishna: the step names were not noticeable enough): <span class="label label-accent">03 · Build</span><h3 class="step-name">You steer, we build.</h3> ] [ was until 2026-10-15 (Krishna: write it like a story): <span class="label label-accent">03</span><h3 class="step-name">Build</h3><p class="step-text">Built in the open. A review call at every milestone lets you steer early, not at the very end.</p> ]
+          <li><span class="label label-accent">04</span><h3 class="step-name">Launch</h3><p class="step-line">The real you goes live.</p><ul class="list-plain service-features step-text"><li>Every page, form and load time checked first</li><li>Then we switch it on</li><li>Your business looks online the way it really is</li></ul></li> [ was until 2026-10-15 (Krishna: each step as bullet points): <p class="step-text">Before anything goes live, we check every page, form and load time. Then we switch it on, and your business finally looks online the way it really is.</p> ] [ was until 2026-10-15 (Krishna: the step names were not noticeable enough): <span class="label label-accent">04 · Launch</span><h3 class="step-name">The real you goes live.</h3> ] [ was until 2026-10-15 (Krishna: write it like a story): <span class="label label-accent">04</span><h3 class="step-name">Launch</h3><p class="step-text">We check every page, form and load time before going live, so your customers see you at your best from day one.</p> ] [ was until 2026-10-15: We go live early, so real users and real data start shaping what comes next. ]
+          <li><span class="label label-accent">05</span><h3 class="step-name">Handover</h3><p class="step-line">You get back to your business.</p><ul class="list-plain service-features step-text"><li>Your learns how everything works</li><li>A written guide to keep</li><li>Every later change, made by us</li></ul></li> [ was until 2026-10-15 (Krishna: each step as bullet points): <p class="step-text">We show your team how everything works and hand over a written guide. When something needs to change later, we make the change for you.</p> ] [ was until 2026-10-15 (Krishna: the step names were not noticeable enough): <span class="label label-accent">05 · Handover</span><h3 class="step-name">You get back to your business.</h3> ] [ was until 2026-10-15 (Krishna: write it like a story): <span class="label label-accent">05</span><h3 class="step-name">Handover</h3><p class="step-text">We train your team to run the new system with confidence, then keep improving it with you.</p> ]
+        </ol>
+        -->
+
+        <!-- Explainer video (WEB-7.11). Swap the placeholder for this once WEB-2.23 and WEB-2.24 are done:
+        <video controls preload="none" poster="media/how-we-work-poster.jpg" width="1280" height="720">
+          <source src="media/how-we-work.mp4" type="video/mp4">
+          <track kind="captions" src="media/how-we-work.vtt" srclang="en" label="English" default>
+        </video>
+        <a href="how-we-work-transcript.html">Read the transcript</a>
+        -->
+<!-- was until 2026-10-17 (Krishna: make the section clean; the empty video placeholder comes back with the real video, WEB-8.15):
+        <figure class="video">
+          <div class="video-frame media-blank placeholder">
+            <span class="label">[PLACEHOLDER] How we work video, 60 to 90 seconds</span>
+          </div>
+          <figcaption class="video-caption">See how a project runs with us, in about a minute.</figcaption>
+        </figure>
+        -->
+
+        <!-- was until 2026-10-14 (Krishna: not every section needs the call button):
+        <p class="section-cta"><a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a></p>
+        -->
+      </div>
+    </section>
+
+
+    <!-- was until 2026-10-13: 2a. Pain section (home.md §2a, WEB-8.14), now inside the hero above.
+    <section class="section pain" aria-labelledby="pain-title">
+      <div class="container pain-grid reveal-scroll">
+        <h2 class="section-title" id="pain-title">You're busy. Your website shouldn't keep you waiting.</h2>
+        <div>
+          <p class="pain-body">Long projects cost you time, money and momentum. We launch fast, so you can get back to running your business.</p>
+          <p class="section-cta"><a class="btn-link" href="#how-we-work">See how we work <span aria-hidden="true">→</span></a></p>
+        </div>
+      </div>
+    </section>
+    -->
+
+    <!-- was until 2026-10-15 (startup language; Krishna chose "How we work" as the next section):
+    [ 3. Stop paying for guesswork (home.md §3, WEB-8.3). Clarity rewrite that replaced it reversed 2026-10-14 (Krishna: "reverse it"). ]
+    <section class="section section-alt" aria-labelledby="guess-title">
+      <div class="container reveal-scroll">
+        <header class="section-head">
+          <p class="label label-accent">Every second counts</p>
+          <h2 class="section-title" id="guess-title">Stop paying for guesswork.</h2>
+        </header>
+
+        <div class="guess-grid">
+          <div>
+            <p class="guess-lead">The most expensive mistake in software is building for months before a single real customer has used what you built. By launch day the budget is gone, and only then do you find out what your users actually want.</p>
+            <p class="guess-body">We do it the other way round. We put a working, high-quality version in front of real users early. You see what they click, what they ignore and what they pay for. Your money then goes into what works, and not into features nobody needs.</p>
+          </div>
+          <blockquote class="guess-quote quote">Speed isn't a shortcut. It's how you stop paying for guesswork.</blockquote>
+        </div>
+
+        [ Chart (WEB-7.4). Exact durations are commented out until the timeline study is approved (WEB-1.12):
+             "The usual way: ~6 months" · "Aaurigo Tech: ~4 weeks ... Real data from week four." ]
+        <figure class="chart" aria-labelledby="chart-title">
+          <figcaption class="chart-title label" id="chart-title">Time to real user data</figcaption>
+          <p class="sr-only">The usual way takes months before real users give you data. With Aaurigo Tech you get real user data in weeks.</p>
+          <div class="chart-rows" aria-hidden="true">
+            <div class="chart-row">
+              <span class="chart-name">The usual way</span>
+              <span class="chart-track">
+                <span class="chart-bar chart-bar-slow"></span>
+                <span class="chart-note">Months. Launch, then ask: "is this what users wanted?"</span>
+              </span>
+            </div>
+            <div class="chart-row">
+              <span class="chart-name">Aaurigo Tech</span>
+              <span class="chart-track">
+                <span class="chart-bar chart-bar-fast"></span>
+                <span class="chart-note">Weeks. Build, launch, learn, then improve and grow.</span>
+              </span>
+            </div>
+          </div>
+        </figure>
+
+        <p class="section-cta"><a class="btn-link" href="#what-we-build">What we build <span aria-hidden="true">→</span></a></p>
+      </div>
+    </section>
+    -->
+
+
+    <!-- removed from Home 2026-10-17 (Krishna: "remove the project from the landing page"; projects live on the Work page, the header and footer link to it):
+    [ 5. Selected work (home.md §5, WEB-8.12). Placeholders until WEB-2.1 to WEB-2.6. ]
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="container reveal-scroll">
+        <header class="section-head">
+          <p class="label label-accent">Selected work</p>
+          <h2 class="section-title" id="work-title">Launched fast. Built to last.</h2>
+          <p class="section-intro">A few projects we've taken from idea to real users.</p>
+        </header>
+
+        <ul class="work-grid list-plain">
+          <li class="work-card placeholder">
+            <a href="work.html">
+              <span class="work-media media-blank"></span>
+              <span class="label label-accent">[PLACEHOLDER] Type · Year</span>
+              <h3 class="work-title">[PLACEHOLDER] Project name</h3>
+              <span class="work-result">[PLACEHOLDER] One line result with a number.</span>
+            </a>
+          </li>
+          <li class="work-card placeholder">
+            <a href="work.html">
+              <span class="work-media media-blank"></span>
+              <span class="label label-accent">[PLACEHOLDER] Type · Year</span>
+              <h3 class="work-title">[PLACEHOLDER] Project name</h3>
+              <span class="work-result">[PLACEHOLDER] One line result with a number.</span>
+            </a>
+          </li>
+          <li class="work-card placeholder">
+            <a href="work.html">
+              <span class="work-media media-blank"></span>
+              <span class="label label-accent">[PLACEHOLDER] Type · Year</span>
+              <h3 class="work-title">[PLACEHOLDER] Project name</h3>
+              <span class="work-result">[PLACEHOLDER] One line result with a number.</span>
+            </a>
+          </li>
+        </ul>
+
+        <p class="section-cta"><a class="btn-link" href="work.html">See all work <span aria-hidden="true">→</span></a></p>
+      </div>
+    </section>
+    -->
+
+    <!-- 6. How we work: moved up 2026-10-15 to right after the reach section (Krishna: next, a short look at how our process works). -->
+
+    <!-- tried and reversed 2026-10-14 (Krishna: "reverse it"):
+    [ 7b. Who we work best with (home.md §7b, added 2026-10-14; tactic from ikon.london, our own words).
+         Short version of the About page section (WEB-2.20). ]
+    <section class="section fit" aria-labelledby="fit-title">
+      <div class="container reveal-scroll">
+        <p class="label label-accent">Who we work best with</p>
+        <h2 class="fit-title" id="fit-title">Owners who have built something real <em>and want it seen that way.</em></h2>
+        <p class="fit-text">You know your business is good. You want a website that proves it in seconds, and someone who looks after it so you don't have to.</p>
+      </div>
+    </section>
+    -->
+
+    <!-- MOVED 2026-10-12 to about.html (Home kept clean). Commented out, not deleted:
+    <section class="section" aria-labelledby="values-title">
+      <div class="container reveal-scroll">
+        <header class="section-head">
+          <p class="label label-accent">Why Aaurigo Tech</p>
+          <h2 class="section-title" id="values-title">What we value.</h2>
+          <p class="section-intro">We value your time. We value quality. And we value doing the work properly, even when nobody is checking.</p>
+        </header>
+
+        <ol class="values-list list-plain">
+          <li class="value"><span class="label label-accent">01</span><h3 class="value-name">Ship fast, learn faster</h3><p class="value-text">Build fast, deploy fast, so you can test your idea in the real world before betting big. <em class="value-note">Speed is a growth tool, not a shortcut.</em></p></li>
+          <li class="value"><span class="label label-accent">02</span><h3 class="value-name">Top quality, record time</h3><p class="value-text">We compress the timeline without ever compressing the craft. <em class="value-note">No trade-off between fast and good.</em></p></li>
+          <li class="value"><span class="label label-accent">03</span><h3 class="value-name">The work is the standard</h3><p class="value-text">We give 100% to every task because it has to look right to our own eye first. <em class="value-note">Integrity of craft over performance.</em></p></li>
+          <li class="value"><span class="label label-accent">04</span><h3 class="value-name">Total focus wins</h3><p class="value-text">Full attention on the point that matters most, because that produces the best outcome. <em class="value-note">Leverage over effort.</em></p></li>
+          <li class="value"><span class="label label-accent">05</span><h3 class="value-name">We build it. You run it.</h3><p class="value-text">We ship your website or app fast, train your team, and hand over a written guide, so you can run and grow it without waiting on us. <em class="value-note">No lock-in. The value keeps growing after launch day.</em></p></li>
+        </ol>
+
+        <div class="values-cta">
+          <div>
+            <p class="values-cta-title">Ready to do more?</p>
+            <p class="values-cta-text">Talk to us in as little as 30 minutes.</p>
+          </div>
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+        </div>
+      </div>
+    </section>
+    -->
+
+    <!-- 8. Free guide (home.md §8, WEB-8.7). Form posts to Zoho Campaigns once NEWS-2.9 is set up. -->
+    <section class="section section-alt" id="free-guide" aria-labelledby="guide-title">
+      <!-- 2026-11-02 (Krishna: put my photo in the free guide section, mirror it if that fits): his own photo on the left,
+           not mirrored, so he faces and points toward the heading and the form. Same day (Krishna: add the laptop, without it the
+           pointing is misleading): 4:5 crop with his laptop lid in the corner (its picture stickers show; the company logo
+           sticker, the keyboard and the branded cup stay below the crop); the cafe's slogan sign on the wall painted over with
+           the plain wall beside it; the brand logo on his sweatshirt painted out with its own green.
+           was until 2026-11-02: a crop without the laptop (wall sign, cup and stickers all outside).
+           Master media-originals/home/newsletter-krishna.png, cleaned newsletter-krishna-clean.jpg.
+           was until 2026-11-02: [div class="container guide-grid reveal-scroll"] holding the head and the form side by side -->
+      <div class="container guide-grid reveal-scroll">
+        <figure class="guide-photo">
+          <img src="media/home/guide-krishna.webp" srcset="media/home/guide-krishna-480.webp 480w, media/home/guide-krishna.webp 800w"
+               sizes="(max-width: 55rem) 20rem, 24rem" width="800" height="1000" loading="lazy" decoding="async"
+               alt="Krishna, our founder, smiles and points at his laptop while working in a cafe">
+        </figure>
+        <div class="guide-main">
+        <div class="section-head guide-head">
+          <p class="label label-accent">Free guide</p>
+          <h2 class="section-title" id="guide-title">From idea to real users, without wasting a month.</h2>
+          <p class="guide-body">The checklist we use before every build: what to prepare, what to cut from version one, and what to measure after launch. Drop your email and it's yours.</p>
+        </div>
+        <form class="guide-form" action="#" method="post">
+          <p class="label">The Launch-Ready Checklist</p>
+          <div class="field">
+            <label class="field-label" for="guide-email">Your email address</label>
+            <div class="form-row">
+              <input class="field-input" id="guide-email" name="email" type="email" autocomplete="email" required>
+              <button class="btn btn-primary" type="submit">Send me the checklist</button>
+            </div>
+          </div>
+        </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOVED 2026-10-12 to about.html (Home kept clean). Commented out, not deleted:
+    <section class="section" aria-labelledby="founder-title">
+      <div class="container founder-grid reveal-scroll">
+        <div class="founder-photo media-blank placeholder" role="img" aria-label="[PLACEHOLDER] Krishna Singh, founder of Aaurigo Tech"></div>
+        <div class="founder-text">
+          <p class="label label-accent">Meet the founder</p>
+          <h2 class="section-title" id="founder-title">Hi, I'm Krishna Singh.</h2>
+          <blockquote class="quote">"Every second counts, so use it to its fullest. Don't just develop the product. Live it."</blockquote>
+          <p>I started Aaurigo Tech to help businesses grow with technology. When we work together, your product gets my full focus. We build it fast so you can test it in the real world, and we build it well so you never have to rebuild it.</p>
+          <p>I believe a business can only do as much as it is enabled to do. The right technology raises that limit: more reach, more involvement, more of what you set out to achieve. That's the work we do.</p>
+          <p><a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call with me <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a></p>
+        </div>
+      </div>
+    </section>
+    -->
+
+    <!-- 10. Kind words (home.md §10, WEB-8.9). SWITCH: remove "hidden" only when real, approved quotes replace the placeholders. -->
+    <!-- KEEP (2026-10-17, Krishna): hidden on purpose, never remove this section, testimonials.css or its link in any cleanup. It comes back when real quotes with written permission exist (WEB-2.2). -->
+    <section class="section" aria-labelledby="quotes-title" hidden>
+      <div class="container reveal-scroll">
+        <header class="section-head">
+          <p class="label label-accent">Kind words</p>
+          <h2 class="section-title" id="quotes-title">What clients say.</h2>
+        </header>
+        <div class="quotes">
+          <figure><blockquote>[PLACEHOLDER] Quote</blockquote><figcaption>[PLACEHOLDER] Name, role, company</figcaption></figure>
+          <figure><blockquote>[PLACEHOLDER] Quote</blockquote><figcaption>[PLACEHOLDER] Name, role, company</figcaption></figure>
+          <figure><blockquote>[PLACEHOLDER] Quote</blockquote><figcaption>[PLACEHOLDER] Name, role, company</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOVED 2026-10-12 to services.html (Home kept clean). Commented out, not deleted:
+    <section class="section section-alt" aria-labelledby="faq-title">
+      <div class="container faq-grid reveal-scroll">
+        <header class="section-head">
+          <p class="label label-accent">FAQ</p>
+          <h2 class="section-title" id="faq-title">Questions, answered.</h2>
+          <p class="section-intro">Don't see yours? Book a call and ask us directly.</p>
+        </header>
+        <div class="faq-list">
+          <details><summary>How can you deliver this fast without cutting quality?</summary><p>We scope tightly around one core outcome, work in focused sprints and reuse proven building blocks. We cut scope from version one, never quality.</p></details>
+          <details><summary>How does launching early save me money?</summary><p>Real users show you what matters. Instead of paying to build every feature up front, you invest in what the data proves people use and pay for.</p></details>
+          <details><summary>How much does it cost?</summary><p>Every project is different, so we quote after a short call once we understand what you need. You get a clear price and timeline before any work starts.</p></details>
+          <details><summary>How quickly can we talk?</summary><p>In as little as 30 minutes. Book a call and pick any open slot during your business hours, shown in your own time zone.</p></details>
+          <details><summary>How involved do I need to be?</summary><p>A kickoff, a few short calls to lock the scope, and a review call at each milestone. You can watch progress on your preview link any time. We handle the rest.</p></details>
+          <details><summary>Do you work with clients in other countries?</summary><p>Yes. Aaurigo Tech is a global company, and we work across time zones with clear updates.</p></details>
+          <details><summary>What happens after launch?</summary><p>We train your team to run the new system day to day, review the real data with you, and keep improving it with ongoing support.</p></details>
+          <details><summary>Who owns the code?</summary><p>You do. Once the project is paid for, the code, designs and accounts are yours.</p></details>
+        </div>
+      </div>
+    </section>
+    -->
+
+    <!-- 12. Final call to action (home.md §12, WEB-8.11) -->
+    <section class="section cta" aria-labelledby="cta-title"> <!-- back to light 2026-10-21 (Krishna: keep the black off the Home page) --> <!-- was until 2026-10-21 (Krishna: black on every page): [section class="section cta" aria-labelledby="cta-title"] -->
+      <div class="container reveal-scroll">
+        <!-- was until 2026-10-17 (Krishna: remove it): <p class="label label-accent">Start a project</p> -->
+        <h2 class="cta-title" id="cta-title">Let's take the next step, together.</h2> <!-- was until 2026-10-17 (Krishna: yes to the warmer heading that ends the story): Ready to do more? -->
+        <p class="cta-body">Book a call and talk in as little as 30 minutes. Or send us a message and we'll reply within one business day.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+          <a class="btn-link" href="contact.html">Or send us a message</a>
+        </div>
+        <p class="cta-closing label">Enable businesses to do more.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 13. Footer (home.md §13, WEB-5.7). No Client login link until BIZ-3.10. -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">Aaurigo Tech</p>
+          <p class="footer-tagline">Launch fast. Learn faster. Grow smarter.</p>
+        </div>
+        <nav aria-labelledby="footer-nav">
+          <p class="footer-heading label" id="footer-nav">Navigate</p>
+          <ul class="footer-links list-plain">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-work">
+          <p class="footer-heading label" id="footer-work">Work with us</p>
+          <ul class="footer-links list-plain">
+            <li><a href="websites.html">Websites</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#web-development --></li>
+            <li><a href="web-apps.html">Web apps</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#web-applications --></li>
+            <!-- was until 2026-10-21 (Krishna: brand combined with every service, not its own option): [li][a href="services.html#brand"]Brand[/a][/li] -->
+            <li><a href="mobile-apps.html">Mobile apps</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#mobile-apps --></li> <!-- was until 2026-10-14: Web Development · Web Applications · Mobile Apps -->
+            <li><a href="#" target="_blank" rel="noopener">Book a call<span class="sr-only"> (opens in a new tab)</span></a></li>
+          </ul>
+        </nav>
+        <div class="footer-news">
+          <p class="footer-heading label">Newsletter</p>
+          <p>Short notes on building and launching faster. One email a month.</p>
+          <!-- Posts to Zoho Campaigns once NEWS-1.11 is set up. -->
+          <form action="#" method="post">
+            <div class="field">
+              <label class="field-label" for="news-email">Your email address</label>
+              <div class="form-row">
+                <input class="field-input" id="news-email" name="email" type="email" autocomplete="email" required>
+                <button class="btn btn-primary" type="submit">Join</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> Aaurigo Tech. All rights reserved.</p>
+        <ul class="list-plain" aria-label="Legal">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="accessibility.html">Accessibility Statement</a></li>
+        </ul>
+        <!-- [PLACEHOLDER] Social links (LinkedIn, Instagram, GitHub, X) once WEB-1.4 is done. -->
+      </div>
+      <p class="footer-mark" aria-hidden="true">Aaurigo Tech</p> <!-- 2026-10-25 (Krishna: polish): the name set large and quiet as the closing moment; decorative, the brand is already named above -->
+    </div>
+  </footer>
+</body>
+</html>

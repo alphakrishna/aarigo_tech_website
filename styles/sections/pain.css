@@ -1,0 +1,170 @@
+/* Pain section (WEB-8.14, copy home.md §2b), right after the hero. Since 2026-10-14: one pain point, little text.
+   Layout tactic from the Honeywave "We Value Time" section: a full width photo with one panel over it.
+   Our style: sharp corners, hairline, no shadow, teal only on the button. */
+
+.pain { position: relative; padding-block: var(--section); }
+.pain-photo { position: absolute; inset: 0; display: block; overflow: hidden; }   /* the photo fills the section; the panel sits over it. overflow: the blur's soft edge stays inside */
+/* 2026-11-02: the photo crops to the section's shape (about 2.8:1 on very wide screens, 4:3 on phones); 35% keeps the waiter's head in view.
+   Same day (Krishna: make the image a little blurry): a soft blur, scaled up a touch so the blurred edges never show. */
+/* was until 2026-11-02 (an even blur looked like a filter): filter: blur(.1875rem); transform: scale(1.04);
+   Now the desktop file carries a camera style blur of its own: the waiter sharp, softer toward the card on the right.
+   Same day (Krishna: the photo took too much attention): re-exported softer everywhere, the baristas gently soft too, the phone file lightly soft;
+   the sharper files are in archive/media/pain-2026-11-02-sharper/. */
+.pain-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; }
+.pain-inner { position: relative; display: flex; justify-content: flex-end; }
+
+.pain-panel {
+  max-width: 36rem;
+  padding: clamp(1.75rem, 4vw, 3.5rem);
+  background: var(--surface);
+  border-radius: var(--radius-card);   /* 2026-11-02 (Krishna: make this card a little curved) */
+  /* was until 2026-11-02 (a straight ink line looks wrong over round corners): border-top: var(--rule-strong); */
+}
+.pain-title {
+  font: 600 var(--text-quote)/1.1 var(--display);
+  letter-spacing: var(--tracking-title);
+}
+.pain-title .line { display: block; }
+.pain-title .line-italic { font-weight: 500; font-style: italic; color: var(--primary); }
+
+.pain-text { margin-top: 1.25rem; color: var(--muted); }
+.pain-text + .pain-text { margin-top: .875rem; }
+.pain-strong { margin-top: 1.5rem; font-weight: 600; }
+.pain-cta { margin-top: 1.75rem; }
+.pain-speed { margin-top: 1.25rem; color: var(--spark-deep); }
+.pain-speed[hidden] { display: none; }
+
+@media (max-width: 55rem) {
+  .pain { padding-block: 0; }
+  .pain-photo { position: static; aspect-ratio: 4 / 3; }
+  .pain-inner { display: block; padding-inline: 0; }
+  .pain-panel { max-width: none; border-top: 0; border-radius: 0; }   /* full width under the photo, so square like the page edge */
+  /* was until 2026-11-02 (the phone photo stays sharp; no text sits on it): .pain-photo img { filter: blur(.0625rem); } */
+}
+
+/* was until 2026-10-14 (one pain point with spec rows and a large live speed block; too much text):
+[ Pain section (WEB-8.14, copy home.md §2b): right after the hero.
+   Since 2026-10-14: ONE pain point (slow website, random leads, doesn't look like the business), spec-sheet rows,
+   live load time as proof, Book a call. The three-worry styles below are commented out, not deleted. ]
+
+.pain-title { max-width: 18ch; }
+[ was until 2026-10-14 (intro line removed): .pain-intro { margin-top: 1.25rem; max-width: var(--measure); font-size: var(--text-intro); color: var(--muted); } ]
+
+[ was until 2026-10-14 (one pain point now): the three-worry columns
+[ ---------- Each worry: number, quote, answer, proof (show, don't tell; 2026-10-13) ---------- ]
+[ Subgrid lines up label, quote, answer and proof across the three columns (2026-10-14) ]
+.pain-list li { display: grid; grid-row: span 4; grid-template-rows: subgrid; align-content: start; }
+[ was until 2026-10-14: .pain-list li { display: flex; flex-direction: column; } ]
+.pain-num { margin-bottom: 1rem; }
+[ Proof line: no label, a short champagne hairline above it (2026-10-14; the intro already says it can be checked) ]
+.pain-proof {
+  padding-top: 1.5rem; [ rows line up through the subgrid, so no margin-top: auto ]
+  font-weight: 500;
+}
+.pain-proof::before {
+  content: ""; display: block;
+  width: 2.5rem; margin-bottom: .875rem;
+  border-top: 1px solid var(--spark);
+}
+]
+
+[ was until 2026-10-14: "Check it" mono label over a full-width ink rule
+.pain-proof {
+  margin-top: auto; padding-top: 1.25rem;
+  font-size: var(--text-sm);
+}
+.pain-proof .label { display: block; margin-bottom: .375rem; padding-top: .75rem; border-top: var(--rule-strong); }
+]
+
+[ ---------- One pain point, made to hit hard (2026-10-14) ----------
+   A big quote, then spec-sheet rows: label · what it costs you · what we build. ]
+.pain-focus { margin-top: var(--space-md); }
+.pain-big {
+  max-width: 24ch;
+  font: italic 500 var(--text-h2)/1.05 var(--display);
+  letter-spacing: var(--tracking-title);
+  color: var(--primary);
+}
+.pain-rows { margin-top: var(--space-lg); border-top: var(--rule-strong); }
+.pain-row {
+  display: grid; grid-template-columns: 10rem 1fr 1fr; gap: .5rem clamp(1.5rem, 4vw, 3rem);
+  align-items: baseline;
+  padding-block: 1.5rem;
+  border-bottom: var(--rule);
+}
+.pain-row dd { margin: 0; } [ no browser indent on the description list ]
+.pain-cost { font: 600 var(--text-h3)/1.25 var(--display); letter-spacing: -.01em; }
+.pain-fix { padding-left: 1.25rem; border-left: 1px solid var(--spark); }
+.pain-note { margin-top: 1rem; font-size: var(--text-sm); color: var(--muted); }
+
+[ ---------- Live load time: real proof, measured on the visitor's device ---------- ]
+.pain-speed {
+  display: grid; grid-template-columns: auto 1fr; gap: .75rem clamp(2rem, 6vw, 5rem);
+  align-items: end;
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: var(--rule-strong);
+}
+.pain-speed[hidden] { display: none; }
+.pain-speed .label { grid-column: 1 / -1; }
+.pain-speed-line { font: 600 var(--text-quote)/1.1 var(--display); letter-spacing: var(--tracking-title); }
+.pain-speed-line strong { color: var(--primary); font-style: italic; font-weight: 500; }
+.pain-speed-note { max-width: var(--measure); color: var(--muted); }
+
+.pain-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm) 1.75rem; }
+
+[ was until 2026-10-13 (same day): styles while the block sat inside the hero
+.pain {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: var(--rule-strong);
+}
+.pain-title {
+  max-width: 22ch;
+  font: 600 var(--text-quote)/1.1 var(--display);
+  letter-spacing: var(--tracking-title);
+}
+]
+
+[ was until 2026-10-14 (one pain point now):
+.pain-list {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  margin-top: var(--space-md);
+}
+.pain-list li { padding-right: 1.5rem; }
+.pain-list li + li { padding-left: 1.5rem; border-left: var(--rule); }
+.pain-quote {
+  font: italic 500 var(--text-h3)/1.25 var(--display);
+  letter-spacing: -.01em;
+}
+.pain-answer { margin-top: .75rem; color: var(--muted); }
+]
+
+[ was until 2026-10-13: .pain-cta { margin-top: var(--space-md); } (the section now uses .section-cta) ]
+
+@media (max-width: 55rem) {
+  .pain-speed { grid-template-columns: 1fr; }
+  .pain-row { grid-template-columns: 1fr; gap: .75rem; }
+  [ was until 2026-10-14:
+  .pain-list { grid-template-columns: 1fr; }
+  .pain-list li { padding: var(--space-sm) 0; }
+  .pain-list li + li { padding-left: 0; border-left: 0; border-top: var(--rule); }
+  ]
+}
+
+[ was until 2026-10-13: the pain section stood on its own below the hero
+.pain { border-top: var(--rule-strong); }
+
+.pain-grid {
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-md);
+  align-items: end;
+}
+.pain-body { max-width: var(--measure); font-size: var(--text-intro); color: var(--muted); }
+.pain .section-cta { margin-top: 1.25rem; }
+
+@media (max-width: 55rem) {
+  .pain-grid { grid-template-columns: 1fr; }
+}
+]
+
+*/

@@ -1,0 +1,193 @@
+/* Demo phones on the Mobile apps card (2026-11-01, Krishna: like a two phone app visual, with a little animation).
+   Built in code, not a picture: sharp on every screen and almost no weight. The app is our own café booking demo,
+   never shown as client work. Plain phone frames with a round camera, so no phone maker's shape or logo.
+   Motion (only once the card has arrived, scripts/site.js adds .card-in): the back phone slides in from the side, the
+   front phone rises and settles into its tilt, then its screen moves on twice (booked, then points).
+   It repeats (2026-11-01, Krishna), with a Pause demo button; with reduced motion both phones stand still on the
+   booking screen. (Was until 2026-11-01: "...and stops. Nothing floats or loops.") */
+
+.app-show { container-type: inline-size; align-items: center; }
+/* 2026-11-01 (Krishna: more stylish, like his app demo reference; black with champagne glow, two phones kept): the demo
+   half is true black with a soft champagne glow behind the phones, like the page heading bands. Was the champagne half. */
+.cards-page .offer-media.app-show {
+  background:
+    radial-gradient(50% 38% at 58% 52%, var(--glow-warm), transparent 72%),
+    radial-gradient(70% 55% at 100% 0%, var(--glow-dark), transparent 70%),
+    var(--black);
+  color: var(--on-dark);
+}
+.app-show :focus-visible { outline-color: var(--spark); }
+.app-stage {
+  position: relative;
+  width: min(96cqi, 31rem); aspect-ratio: 1 / 1.12;
+  font-size: calc(min(96cqi, 31rem) / 40);   /* every size inside is in em, so the whole app scales with the stage */
+}
+.app-caption { color: var(--spark); }   /* was until 2026-11-01 (black background): var(--spark-deep) */
+
+/* Big italic words gliding behind the phones, one for each moment: Book. Booked. Rewarded. (2026-11-01) */
+/* They sit fully above the phones, clear of the tilted phone tops (2026-11-01, Krishna: the moving text must not be cut by the phones) */
+/* was until 2026-11-01: .app-stage { margin-top: 7em; } .app-words { ... bottom: calc(100% - 1.4em); } (the phone tops overlapped the words a little) */
+.app-stage { margin-top: 11em; }
+.app-words { position: absolute; left: -10%; right: -10%; bottom: calc(100% + 2em); display: grid; pointer-events: none; }
+.app-word {
+  grid-area: 1 / 1; justify-self: center; white-space: nowrap;
+  font: italic 500 7.5em/1 var(--display); letter-spacing: var(--tracking-display);
+  color: var(--spark); opacity: 0;
+}
+.app-word-1 { opacity: 1; }   /* without motion, the word that matches the booking screen */
+
+/* Phones */
+.phone {
+  position: absolute; aspect-ratio: 9 / 19;
+  padding: .55em;
+  background: var(--ink); border-radius: var(--radius-phone);
+  border: 1px solid var(--line-dark);   /* the frame's edge, so it still reads on black */
+}
+.phone::before {   /* the round front camera */
+  content: ""; position: absolute; z-index: 2; top: 1.35em; left: 50%; translate: -50% 0;
+  width: .9em; height: .9em; border-radius: 50%; background: var(--ink);
+}
+.phone-back { left: 2%; top: 9%; width: 45%; rotate: -8deg; }
+.phone-front { left: 41%; top: 1%; width: 50%; rotate: 6deg; }
+.phone-screen { position: relative; height: 100%; overflow: hidden; border-radius: var(--radius-screen); background: var(--surface); }
+.phone-back .phone-screen { background: var(--bg); }
+
+/* One app screen */
+.app-screen {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; gap: .7em;
+  padding: 3.4em 1.4em 1.6em;
+  font: 400 1em/1.3 var(--body); color: var(--ink);
+  background: inherit;
+}
+.app-top { display: flex; justify-content: space-between; align-items: center; margin: 0; }
+.app-brand { font: italic 500 1.25em/1 var(--display); }
+.app-avatar { width: 1.9em; height: 1.9em; border-radius: 50%; background: var(--glow); }
+.app-hello { margin: .4em 0 0; font-size: .95em; color: var(--muted); }
+.app-title { margin: 0; font: 600 2.1em/1.05 var(--display); letter-spacing: var(--tracking-title); }
+.app-label { margin: .3em 0 0; font: 500 .75em/1 var(--mono); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--spark-deep); }
+.app-chips { display: flex; flex-wrap: wrap; gap: .45em; }
+.app-chips span { padding: .45em .8em; border: 1px solid var(--line); border-radius: 1em; font-size: .95em; }
+.phone-back .app-chips { flex-wrap: nowrap; gap: .35em; }
+.phone-back .app-chips span { padding: .4em .6em; font-size: .9em; }
+.app-chips .is-on { background: var(--primary); border-color: var(--primary); color: var(--on-primary); }
+.app-btn {
+  margin-top: auto; padding: .95em; border-radius: 1.4em; text-align: center;
+  font-weight: 600; background: var(--primary); color: var(--on-primary);
+}
+.app-btn-quiet { background: var(--soft); color: var(--ink); }
+
+/* Back phone: today's menu */
+.app-menu { display: grid; gap: .2em; margin: 0; padding: 0; list-style: none; }
+.app-menu li { display: flex; align-items: center; gap: .8em; padding: .55em 0; border-bottom: var(--rule); font-size: 1.05em; }
+.app-menu li::before { content: ""; flex: none; width: 2.4em; height: 2.4em; border-radius: .7em; background: var(--glow); }
+.app-menu li:nth-child(even)::before { background: var(--soft); }
+.app-menu li::after { content: "+"; margin-left: auto; color: var(--primary); font-weight: 600; }
+
+/* Front phone, screen 2: booked */
+.app-done { justify-content: center; text-align: center; align-items: center; }
+.app-tick {
+  position: relative; width: 4.4em; height: 4.4em; border-radius: 50%; background: var(--primary);
+}
+.app-tick::after {   /* the tick, drawn from two borders */
+  content: ""; position: absolute; left: 50%; top: 45%; width: 1.1em; height: 2em;
+  border: solid var(--on-primary); border-width: 0 .3em .3em 0;
+  translate: -50% -50%; rotate: 45deg;
+}
+.app-done .app-btn { width: 100%; }
+.app-note { margin: 0; color: var(--muted); }
+
+/* Front phone, screen 3: loyalty points */
+.app-points { margin: 0; font: 600 4.4em/1 var(--display); letter-spacing: var(--tracking-display); color: var(--primary); }
+.app-bar { height: .6em; border-radius: .3em; background: var(--soft); overflow: hidden; }
+.app-bar span { display: block; width: 80%; height: 100%; background: var(--spark); }
+.app-stamps { display: grid; grid-template-columns: repeat(5, 1fr); gap: .6em; margin-top: .4em; }
+.app-stamps span { aspect-ratio: 1; border-radius: 50%; border: 1px solid var(--spark); }
+.app-stamps .is-on { background: var(--spark); }
+
+/* Screens 2 and 3 wait hidden until their turn; without motion the booking screen stays */
+.app-screen-next { opacity: 0; }
+/* was until 2026-11-01 (Krishna: like an app demo video, someone using it): screens only faded in turn
+.app-screen-2 { --n: 1; }
+.app-screen-3 { --n: 2; }
+.js .card-in .app-screen-next {
+  animation: screen-in var(--screen-fade) var(--ease-soft) both;
+  animation-delay: calc(var(--phone-wait) * 2 + var(--enter) + var(--screen-stay) * var(--n));
+}
+*/
+
+/* Points count up through a counter, so the number needs no text in the page (the stage is one image to screen readers) */
+@property --pts { syntax: "<integer>"; inherits: false; initial-value: 240; }
+.app-points::after { counter-reset: pts var(--pts); content: counter(pts); }
+
+/* The tap: a soft teal spot where a finger lands, gone a moment later */
+.app-tap {
+  position: absolute; z-index: 3; width: 3.4em; height: 3.4em; translate: -50% -50%;
+  border-radius: 50%; background: var(--spark); opacity: 0;   /* champagne shows on white and on the teal button */
+}
+.app-tap-1 { left: 43.2%; top: 56.8%; }   /* on 19:00, measured in the screen */
+.app-tap-2 { left: 49.8%; top: 92.3%; }   /* on Book a table */
+
+/* Motion, only once the card has arrived. One timeline: phones arrive, two taps, booked, points. */
+.app-stage {
+  --t0: calc(var(--phone-wait) * 2 + var(--enter));   /* the front phone has settled */
+  --t1: calc(var(--t0) + var(--tap-gap) * .6);         /* tap 19:00 */
+  --t2: calc(var(--t1) + var(--tap-gap));              /* tap Book a table */
+  --t3: calc(var(--t2) + var(--tap-gap) * .5);         /* booked */
+  --t4: calc(var(--t3) + var(--screen-stay));          /* points */
+}
+.js .card-in .phone-back { animation: phone-back-in var(--enter) var(--ease-soft) var(--phone-wait) both; }
+.js .card-in .phone-front { animation: phone-front-in var(--enter) var(--ease-soft) calc(var(--phone-wait) * 2) both; }
+/* 2026-11-01 (Krishna: make sure it goes on): the demo now repeats. scripts/site.js adds .app-play once the card has
+   arrived, and after the last stamp (and a pause) covers the screen, restarts with .app-again and uncovers it. A Pause
+   demo button stops it (WCAG 2.2.2), and it rests while off screen. Was keyed to .card-in and played once. */
+.app-again { --t0: .6s; }   /* later rounds start without waiting for the phones */
+.js .app-play .app-tap-1 { animation: tap .7s var(--ease-soft) var(--t1) both; }
+.js .app-play .app-tap-2 { animation: tap .7s var(--ease-soft) var(--t2) both; }
+.js .app-play .app-pick { animation: pick .3s var(--ease-soft) calc(var(--t1) + .15s) both; }
+.js .app-play .app-press { animation: press .35s var(--ease-soft) calc(var(--t2) + .1s) both; }
+/* was until 2026-11-01 (smoother: the old screen now slides away as the new one comes in): .js .app-play .app-screen-2 { animation: screen-in var(--screen-fade) var(--ease-soft) var(--t3) both; } */
+.js .app-play .app-screen-1 { animation: screen-out var(--screen-fade) var(--ease-soft) var(--t3) forwards; }
+.js .app-play .app-screen-2 {
+  animation: screen-in var(--screen-fade) var(--ease-soft) var(--t3) both,
+             screen-out var(--screen-fade) var(--ease-soft) var(--t4) forwards;
+}
+/* The words: each glides slowly right to left while its moment lasts */
+.js .app-play .app-word { animation: word var(--d-word) linear var(--t-word) both; }
+.js .app-play .app-word-1 { --t-word: calc(var(--t0) - .4s); --d-word: calc(var(--t3) - var(--t0) + .8s); }
+.js .app-play .app-word-2 { --t-word: calc(var(--t3) + .2s); --d-word: calc(var(--t4) - var(--t3) + .2s); }
+.js .app-play .app-word-3 { --t-word: calc(var(--t4) + .2s); --d-word: 5s; }
+.js .app-play .app-screen-2 .app-tick { animation: pop .6s var(--ease-soft) calc(var(--t3) + .3s) both; }
+.js .app-play .app-screen-3 { animation: screen-in var(--screen-fade) var(--ease-soft) var(--t4) both; }
+.js .app-play .app-points::after { animation: count var(--count-up) var(--ease-soft) calc(var(--t4) + .3s) both; }
+.js .app-play .app-bar span { animation: fill var(--count-up) var(--ease-soft) calc(var(--t4) + .3s) both; }
+.js .app-play .app-stamps .is-on { animation: stamp .4s var(--ease-soft) both; animation-delay: calc(var(--t4) + .4s + var(--k) * .12s); }
+/* Between rounds the front screen softly whites out and comes back on the booking screen */
+.phone-front .phone-screen::after { content: ""; position: absolute; inset: 0; z-index: 4; background: var(--surface); opacity: 0; pointer-events: none; }
+/* was until 2026-11-01 (one name for both, so from round 2 the white out never started and rounds waited for the backup timer):
+.js .app-reset .phone-front .phone-screen::after { animation: cover var(--screen-fade) var(--ease-soft) both; }
+.js .app-again.app-play .phone-front .phone-screen::after { animation: cover var(--screen-fade) var(--ease-soft) reverse both; } */
+.js .app-again.app-play .phone-front .phone-screen::after { animation: uncover var(--screen-fade) var(--ease-soft) both; }
+.js .app-play.app-reset .phone-front .phone-screen::after { animation: cover var(--screen-fade) var(--ease-soft) both; }   /* after the rule above, so it wins */
+.app-paused, .app-paused * , .app-paused *::before, .app-paused *::after { animation-play-state: paused !important; }
+/* Pause demo button removed 2026-11-01 (Krishna); kept for when it returns */
+.app-toggle { align-self: center; padding: 0; border: 0; background-color: transparent; color: inherit; font: inherit; font-weight: 600; cursor: pointer; }
+.app-stamps span:nth-child(1) { --k: 0; }  .app-stamps span:nth-child(2) { --k: 1; }
+.app-stamps span:nth-child(3) { --k: 2; }  .app-stamps span:nth-child(4) { --k: 3; }
+.app-stamps span:nth-child(5) { --k: 4; }  .app-stamps span:nth-child(6) { --k: 5; }
+.app-stamps span:nth-child(7) { --k: 6; }  .app-stamps span:nth-child(8) { --k: 7; }
+@keyframes phone-back-in { from { opacity: 0; translate: calc(var(--slide) * -1.5) 0; } }
+@keyframes phone-front-in { from { opacity: 0; translate: 0 calc(var(--slide) * 1.5); rotate: 0deg; } }
+/* was until 2026-11-01 (two screens showed at once while fading): @keyframes screen-in { from { opacity: 0; translate: 0 1.5em; } to { opacity: 1; translate: 0 0; } } */
+@keyframes screen-in { from { opacity: 1; translate: 100% 0; } to { opacity: 1; translate: 0 0; } }   /* the next screen slides in from the right, as in a real app */
+@keyframes tap { 0% { opacity: 0; scale: 1.5; } 35% { opacity: .6; scale: .8; } 100% { opacity: 0; scale: 1.1; } }
+@keyframes pick { from { background: var(--surface); border-color: var(--line); color: var(--ink); } }
+@keyframes press { 50% { scale: .95; } }
+@keyframes pop { from { opacity: 0; scale: .4; } }
+@keyframes count { from { --pts: 0; } }
+@keyframes fill { from { width: 0; } }
+@keyframes cover { to { opacity: 1; } }
+@keyframes uncover { from { opacity: 1; } to { opacity: 0; } }
+@keyframes screen-out { to { translate: -30% 0; opacity: .25; } }
+@keyframes word { 0% { opacity: 0; translate: 1.2em 0; } 15%, 80% { opacity: .9; } 100% { opacity: 0; translate: -1.2em 0; } }
+@keyframes stamp { from { background: transparent; scale: .6; } }

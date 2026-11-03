@@ -1,0 +1,12 @@
+/* Final call to action (WEB-8.11, copy home.md §12): one big line, the main button, a quiet second link. */
+
+.cta { border-top: var(--rule-strong); }
+.cta-title {
+  max-width: 14ch;
+  font: 600 var(--text-display)/.95 var(--display);
+  letter-spacing: var(--tracking-display);
+  font-variation-settings: "opsz" 144;
+}
+.cta-body { margin-top: 1.5rem; max-width: var(--measure); font-size: var(--text-intro); color: var(--muted); }
+.cta-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; margin-top: 2rem; }
+.cta-closing { margin-top: var(--space-lg); }

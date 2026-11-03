@@ -1,0 +1,210 @@
+/* About page (WEB-11.1, 11.2, copy about.md Â§2, Â§3): purpose facts and the founder's words. */
+
+.about-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.about-facts div { display: grid; gap: .5rem; align-content: start; padding-top: 1.25rem; border-top: var(--rule-strong); }
+.about-facts dd { margin: 0; font: 600 var(--text-h3)/1.2 var(--display); }
+
+/* was until 2026-10-25 (three beliefs layout below): .drives { display: grid; gap: 1.5rem; max-width: 52rem; } */
+/* was until 2026-10-25: .drives cite { font-style: normal; color: var(--muted); } */
+
+/* What drives us (2026-10-25): label and signature on the left, the founder's words as three beliefs on hairlines. */
+.drives-grid { display: grid; grid-template-columns: 1fr 2.4fr; grid-template-rows: auto 1fr auto; gap: 0 var(--space-lg); } /* was until 2026-10-25 (even spacing above the grey line): gap: var(--space-md) var(--space-lg); */
+.drives-label { grid-column: 1; grid-row: 1; }
+.drives-quote { grid-column: 2; grid-row: 1 / 3; margin: 0; }
+/* was until 2026-10-25 (signature moved to the founder section): .drives-sign { grid-column: 1; grid-row: 2 / 4; align-self: end; position: relative; top: 6rem; ( 2026-10-25 (Krishna: clear space between the heading and the signature, doubled); was top: 3rem, 1.5rem, .75rem ) ( 2026-10-25 (Krishna: a little higher; spans the empty row above so it rises instead of making the section taller); was: grid-row: 3; ) display: grid; gap: .35rem; } */
+/* was until 2026-10-25 (signature moved to the founder section): .drives-signature { display: block; width: min(22rem, 100%); height: auto; margin-bottom: .75rem; color: var(--ink); } */
+/* was until 2026-10-25 (signature moved to the founder section): .drives-name { font: italic 500 var(--text-h3)/1.2 var(--display); } */
+.drives-quote p {
+  /* was until 2026-10-25 (numbers removed): display: grid; grid-template-columns: 2.5rem 1fr; align-items: baseline; */
+  padding-block: 1.5rem; border-top: var(--rule-strong);
+  font: 600 var(--text-quote)/1.15 var(--display); letter-spacing: var(--tracking-title);
+}
+.drives-quote p:first-child { padding-top: 0; border-top: 0; }
+/* was until 2026-10-25 (even spacing): .drives-quote p:last-child { padding-bottom: 0; } */
+/* was until 2026-10-25 (numbers removed): .drives-quote .label { color: var(--spark-deep); } */
+.drives-quote em { font-weight: 500; color: var(--spark-deep); }
+/* Stock image under the heading (2026-10-25, Krishna); placeholder until the image is chosen */
+/* was until 2026-10-30 (Krishna's own photo, portrait, shown whole): .drives-photo { grid-column: 1; grid-row: 2 / 4; align-self: end; display: grid; place-items: end start; width: 100%; aspect-ratio: 4 / 3; margin-top: var(--space-md); padding: 1rem; border: var(--rule-strong); border-radius: var(--radius); } */
+/* was until 2026-10-30 (offset hairline trial: the photo now sits in a wrapper): .drives-photo { grid-column: 1; grid-row: 2 / 4; align-self: end; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; margin-top: var(--space-md); border: var(--rule-strong); border-radius: var(--radius); } */
+.drives-photo { grid-column: 1; grid-row: 2 / 4; align-self: end; width: 100%; margin-top: var(--space-md); }
+/* the cut out photo gets the section colour behind it, so the offset line never shows through */
+.drives-photo img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border: var(--rule-strong); border-radius: var(--radius); background: var(--soft); }
+/* was until 2026-10-30 (now the site wide entrances in base.css and scripts/site.js do this): the three beliefs fading in one after another
+.js .drives-quote p, .js .drives-note { opacity: 0; transition: opacity var(--fade) var(--ease); }
+.js .is-visible .drives-quote p, .js .is-visible .drives-note { opacity: 1; }
+.js .is-visible .drives-quote p:nth-child(1) { transition-delay: calc(var(--stagger) * 2); }
+.js .is-visible .drives-quote p:nth-child(2) { transition-delay: calc(var(--stagger) * 4); }
+.js .is-visible .drives-quote p:nth-child(3) { transition-delay: calc(var(--stagger) * 6); }
+.js .is-visible .drives-note { transition-delay: calc(var(--stagger) * 8); }
+@media (prefers-reduced-motion: reduce) {
+  .js .drives-quote p, .js .drives-note { opacity: 1; }
+}
+*/
+.drives-note { grid-column: 2; grid-row: 3; padding-top: 1.5rem; border-top: var(--rule-strong); font: italic 500 var(--text-h3)/1.35 var(--display); color: var(--muted); } /* 2026-10-25 (Krishna): one grey line for all three beliefs */
+/* was until 2026-10-25 (grey line under each belief taken off): .drives-close { display: block; margin-top: 1rem; font: italic 500 var(--text-h3)/1.35 var(--display); letter-spacing: 0; color: var(--muted); } */
+
+/* First screen (2026-10-25, Krishna: a lasting impression): fills the screen below the header, a soft champagne glow top right
+   like the How we work band, one big two line statement, and purpose, vision and promise as a strip on fine dark lines. */
+.about-hero { display: flex; min-height: calc(100svh - var(--top-h)); padding-block: var(--space-lg); border-bottom: 0; background: radial-gradient(70% 60% at 100% 0%, var(--glow-dark), transparent 70%), var(--black); }
+.about-hero-inner { display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-md); } /* was until 2026-10-25 (three line heading, keep the strip in view): gap: var(--space-lg); */
+.about-hero-title {
+  font: 600 var(--text-statement)/.95 var(--display);
+  letter-spacing: var(--tracking-display);
+  font-variation-settings: "opsz" 144;
+}
+.about-hero-title .line { display: block; }
+.about-hero-title em { font-weight: 500; color: var(--spark); }
+.about-hero-foot { display: grid; gap: var(--space-md); }
+.about-hero-foot .page-lead { margin-top: 0; }
+.intro-glow .about-hero-lead { max-width: 40rem; font-size: var(--text-lead); line-height: 1.55; color: var(--on-dark); } /* 2026-10-25 (Krishna: sub text): larger and in stone so it holds its own under the big heading */
+.about-hero-lead strong { font-weight: 600; color: var(--spark); } /* 2026-10-25 (Krishna: highlight key words): champagne like the italic heading line */
+.about-hero-facts div { border-top: 1px solid var(--line-dark); }
+.about-hero-facts dt { color: var(--spark); }
+.about-hero-facts dd { font-size: var(--text-h3); color: var(--on-dark); }
+/* The building photo behind the heading (2026-11-02, Krishna: the photo in black and white instead of plain black).
+   The file itself is black and white; a dark wash keeps the stone text easy to read, deeper toward the facts strip.
+   Black stays underneath, so the page reads the same while the photo loads. */
+/* was until 2026-11-02 (Krishna: put it on the right side instead of behind the heading):
+.about-hero.has-photo { position: relative; isolation: isolate; overflow: hidden; }
+.about-hero-photo { position: absolute; inset: 0; z-index: -1; }
+.about-hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+.about-hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, var(--photo-shade) 0%, var(--photo-shade) 45%, var(--photo-shade-deep) 100%); }
+*/
+/* The photo on the right of the heading (2026-11-02, Krishna): black and white portrait, round corners like the other photos;
+   the heading takes the left column, the lead and the facts strip run full width below */
+/* was until 2026-11-02 (Krishna: the wide crop instead, beside the text; the heading keeps its full size):
+.about-hero-inner.has-side { display: grid; grid-template-columns: minmax(0, 1fr) minmax(14rem, 22rem); align-content: space-between; gap: var(--space-md) var(--space-lg); }
+.has-side .about-hero-title { align-self: center; font-size: clamp(3rem, 6.6vw, 6.75rem); }
+.has-side .about-hero-foot { grid-column: 1 / -1; }
+.about-hero-side img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: var(--radius-card); }
+@media (max-width: 55rem) {
+  .about-hero-inner.has-side { grid-template-columns: minmax(0, 1fr); }
+  .about-hero-side { max-width: 20rem; }
+}
+*/
+/* Now (2026-11-02, Krishna: the wide crop on the right): the heading on the left, set a little smaller so it keeps its
+   three lines, the wide photo on the right of it; the lead and the facts strip run full width below */
+.about-hero-inner.has-side { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); align-content: space-between; gap: var(--space-md) var(--space-lg); }
+.has-side .about-hero-title { align-self: center; font-size: clamp(3.25rem, 6.4vw, 6.5rem); }   /* was clamp(3rem, 5.6vw, 5.75rem) until 2026-11-02 (Krishna: heading and image a little larger) */
+.has-side .about-hero-side { align-self: center; }
+.has-side .about-hero-foot { grid-column: 1 / -1; }
+.about-hero-side img { width: 100%; height: auto; aspect-ratio: 1600 / 1014; object-fit: cover; border-radius: var(--radius-card); }
+@media (max-width: 55rem) {
+  .about-hero-inner.has-side { grid-template-columns: minmax(0, 1fr); }
+}
+/* was until 2026-11-02 (rules replaced by the tidy block below; kept for the record):
+( The cut-out (2026-11-02, Krishna removed the sky himself): the building stands straight on the black band, no frame )
+.about-hero-side.is-cutout img { aspect-ratio: auto; border-radius: 0; }
+( the hard cuts at the foot and the sides melt into the black, and the building is lifted a touch so it reads on black )
+( the colour cut-out (2026-11-02, Krishna: a little larger): a tall picture, right aligned, wider than the first cut-out )
+.about-hero-side.is-tall { justify-self: end; width: clamp(17rem, 35vw, 31rem); }   ( was clamp(16rem, 30vw, 26rem) until 2026-11-02 (Krishna: a little larger) )
+( Both larger again (2026-11-02, Krishna: heading and image a little larger, hide no more of the image): the heading may
+   run over the empty, faded left edge of the picture, so both can grow; the heading sits on top, the image stays whole )
+@media (min-width: 55.01rem) {
+  .has-side .about-hero-title { grid-column: 1 / -1; grid-row: 1; position: relative; z-index: 1; max-width: 6.6em; font-size: clamp(3.5rem, 7vw, 7.25rem); }   ( max-width keeps the three lines, so no words run across the building )
+  .has-side .about-hero-side { grid-column: 2; grid-row: 1; }
+  .about-hero-side.is-tall { width: clamp(18rem, 39vw, 35rem); }
+}
+( Larger again and clearer (2026-11-02, Krishna: both larger, the image fades and is hard to notice): the heading grows,
+   the picture runs off the right edge of the screen (its top is empty sky, so the first heading line can pass over it),
+   and the fade is much lighter: a short one at the foot and a thin one on the left, none on the right )
+@media (min-width: 55.01rem) {
+  .has-side .about-hero-title { font-size: clamp(3.5rem, 8vw, 8.25rem); }
+  .about-hero-side.is-tall { width: clamp(20rem, 44vw, 42rem); margin-right: calc((100vw - min(100vw, var(--container))) / -2 - var(--gutter)); }
+}
+.about-hero-side.is-tall img {
+  -webkit-mask: linear-gradient(to top, transparent 0%, var(--black) 14%), linear-gradient(to right, transparent 0%, var(--black) 6%);
+  -webkit-mask-composite: source-in;
+  mask: linear-gradient(to top, transparent 0%, var(--black) 14%) intersect, linear-gradient(to right, transparent 0%, var(--black) 6%);
+}
+( The building larger and taller (2026-11-02, Krishna: make it feel a little larger and taller): the empty sky above it is
+   cropped away so the building fills the picture, the picture is wider, and it is drawn a touch taller (8%) from its foot )
+.about-hero-side.is-tall img { aspect-ratio: 270 / 178; object-position: 50% 58%; transform: scaleY(1.08); transform-origin: 50% 100%; }
+@media (min-width: 55.01rem) {
+  .about-hero-side.is-tall { width: clamp(20rem, 47vw, 46rem); align-self: start; }
+  .has-side .about-hero-title { align-self: start; margin-top: clamp(1rem, 4vw, 4rem); }   ( heading and building start near the top, no empty band above them )
+  .about-hero-inner.has-side { align-content: start; }
+}
+( Heading and building larger again, the rest of the text a little smaller (2026-11-02, Krishna). The building starts one
+   heading line lower, so "A growth partner" stays on the black; the heading sits on top where the two meet. )
+@media (min-width: 55.01rem) {
+  .has-side .about-hero-title { font-size: clamp(3.75rem, 8.75vw, 9rem); }
+  .about-hero-side.is-tall { width: clamp(22rem, 52vw, 50rem); margin-top: clamp(4rem, 8vw, 8.5rem); }
+  ( where the heading's last words pass over the building's left edge, that edge fades into the black so the gold reads )
+  .about-hero-side.is-tall img {
+    -webkit-mask: linear-gradient(to top, transparent 0%, var(--black) 14%), linear-gradient(to right, transparent 0%, var(--black) 34%);
+    -webkit-mask-composite: source-in;
+    mask: linear-gradient(to top, transparent 0%, var(--black) 14%) intersect, linear-gradient(to right, transparent 0%, var(--black) 34%);
+  }
+}
+.has-side ~ .about-hero-foot .about-hero-lead, .has-side .about-hero-lead { font-size: var(--text-intro); }   ( was var(--text-lead) )
+.has-side .about-hero-facts dd { font-size: clamp(1.125rem, 1.6vw, 1.375rem); }   ( was var(--text-h3) )
+( phones: the picture full width, its empty sky tucked into the gap under the heading )
+@media (max-width: 55rem) {
+  .about-hero-side.is-tall { justify-self: stretch; width: 100%; }   ( was until 2026-11-02 (the sky is cropped now): margin-top: calc(var(--space-md) * -1); )
+}
+.about-hero-side.is-cutout img {
+  filter: brightness(1.2);
+  -webkit-mask: linear-gradient(to top, transparent 0%, var(--black) 30%), linear-gradient(to right, transparent 0%, var(--black) 8%, var(--black) 92%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask: linear-gradient(to top, transparent 0%, var(--black) 30%) intersect, linear-gradient(to right, transparent 0%, var(--black) 8%, var(--black) 92%, transparent 100%);
+}
+( the colour cut-out keeps its own colours (no lift), and the road in its lower part is trimmed off )
+.about-hero-side.is-tall img { object-fit: cover; filter: none; }   ( was until 2026-11-02 (the sky crop above takes over): aspect-ratio: 270 / 285; object-position: 50% 0; )
+*/
+
+/* The building beside the heading (2026-11-02, Krishna). One block, in order; earlier steps of the same day are in the comments.
+   Steps: his black and white cut-out (lifted with brightness, faded 30% at the foot and 8% at each side), then his colour cut-out
+   at 26rem with the road trimmed, then larger (31rem, 35rem, 42rem running off the right edge), then the sky cropped away and the
+   building drawn 8% taller, then the heading and building larger again with the other text a little smaller. */
+/* was until 2026-11-02 (the black and white cut-out, now in archive/media/about-2026-11-02/):
+.about-hero-side.is-cutout img { filter: brightness(1.2); -webkit-mask: linear-gradient(to top, transparent 0%, var(--black) 30%), linear-gradient(to right, transparent 0%, var(--black) 8%, var(--black) 92%, transparent 100%); -webkit-mask-composite: source-in; mask: linear-gradient(to top, transparent 0%, var(--black) 30%) intersect, linear-gradient(to right, transparent 0%, var(--black) 8%, var(--black) 92%, transparent 100%); }
+.about-hero-side.is-tall img { aspect-ratio: 270 / 285; object-fit: cover; object-position: 50% 0; filter: none; }
+*/
+.about-hero-side.is-cutout img { aspect-ratio: auto; border-radius: 0; }   /* a cut-out: no frame, it stands straight on the black */
+.about-hero-side.is-tall { justify-self: stretch; width: 100%; }   /* phones: full width under the heading */
+/* the sky is cropped away so the building fills the picture, drawn a touch taller (8%) from its foot; a short fade at the foot only */
+.about-hero-side.is-tall img {
+  aspect-ratio: 226 / 206; object-fit: cover;   /* 2026-11-02 (Krishna: the small building on the right cut, a little of the road shown): the crop is in the file now; was aspect-ratio: 270 / 178; object-position: 50% 58%; */
+  transform: scaleY(1.08); transform-origin: 50% 100%;
+  -webkit-mask: linear-gradient(to top, transparent 0%, var(--black) 14%);
+  mask: linear-gradient(to top, transparent 0%, var(--black) 14%);
+}
+@media (min-width: 55.01rem) {
+  /* the heading spans the row and sits on top; three lines kept by its width */
+  .has-side .about-hero-title { grid-column: 1 / -1; grid-row: 1; align-self: start; position: relative; z-index: 1; max-width: 6.6em; margin-top: clamp(1rem, 4vw, 4rem); font-size: clamp(3.75rem, 8.75vw, 9rem); }
+  .about-hero-inner.has-side { align-content: start; }
+  /* the building on the right, running off the right edge of the screen; its roof level with the top of the heading (2026-11-02, Krishna; margin-top was clamp(1.5rem, 3vw, 3rem)) */
+  .has-side .about-hero-side { grid-column: 2; grid-row: 1; }
+  .about-hero-side.is-tall { justify-self: end; align-self: start; width: clamp(22rem, 44vw, 42rem); margin-top: clamp(2rem, 6.5vw, 6.5rem); margin-right: calc((100vw - min(100vw, var(--container))) / -2 - var(--gutter)); }
+  /* where the heading's last words pass over the building's left edge, that edge fades into the black so the gold reads */
+  .about-hero-side.is-tall img {
+    -webkit-mask: linear-gradient(to top, transparent 0%, var(--black) 14%), linear-gradient(to right, transparent 0%, var(--black) 34%);
+    -webkit-mask-composite: source-in;
+    mask: linear-gradient(to top, transparent 0%, var(--black) 14%) intersect, linear-gradient(to right, transparent 0%, var(--black) 34%);
+  }
+}
+/* the rest of the first screen's text a little smaller, so the heading and the building lead (2026-11-02, Krishna) */
+.has-side .about-hero-lead { font-size: var(--text-intro); }   /* was var(--text-lead) */
+.has-side .about-hero-facts dd { font-size: clamp(1.125rem, 1.6vw, 1.375rem); }   /* was var(--text-h3) */
+
+/* Who we love working with (2026-10-25): three kinds of client on hairlines, then one closing line. */
+.who-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.who-list li { display: grid; gap: .75rem; align-content: start; padding-top: 1.25rem; border-top: var(--rule-strong); }
+.who-name { font: italic 500 var(--text-h3)/1.2 var(--display); }
+.who-list p { color: var(--muted); }
+.section-title em { font-style: italic; font-weight: 500; color: var(--spark-deep); }
+.who-close { max-width: 48rem; margin-top: var(--space-md); font: 600 var(--text-quote)/1.2 var(--display); letter-spacing: var(--tracking-title); }
+.who-close em { font-weight: 500; color: var(--spark-deep); }
+
+@media (max-width: 55rem) {
+  .about-facts { grid-template-columns: 1fr; gap: 1.25rem; }
+  .who-list { grid-template-columns: 1fr; gap: 1.5rem; }
+  .drives-grid { grid-template-columns: 1fr; grid-template-rows: none; }
+  .drives-grid { row-gap: var(--space-md); }
+  .drives-quote p:last-child { padding-bottom: 0; }
+  .drives-label, .drives-quote, .drives-note, .drives-photo { grid-column: 1; grid-row: auto; }
+  /* was until 2026-10-30 (portrait photo, shown whole): .drives-photo { width: 100%; aspect-ratio: 3 / 2; } */
+  .drives-photo { max-width: 24rem; }
+/* was until 2026-10-25 (signature moved to the founder section):   .drives-sign { margin-bottom: 0; top: 0; } */
+}

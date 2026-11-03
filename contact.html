@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book a Call or Start a Project | Aaurigo Tech</title>
+  <meta name="description" content="Book a call and talk in as little as 30 minutes, or tell us what you're building. Get next steps and a clear price for your website or app."> <!-- was until 2026-10-17 (Krishna: update the sub pages to match Home; no timeline until WEB-1.12): a clear timeline -->
+  <link rel="canonical" href="https://www.aaurigotech.com/contact"> <!-- 2026-11-03: self canonical on the final www address (RFA §5.11) -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.aaurigotech.com/"}, {"@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.aaurigotech.com/contact"}]}</script> <!-- 2026-11-03: BreadcrumbList on inner pages (RFA §5.11) -->
+  <!-- Copy: doc/copy/contact.md (draft until approved). Header and footer are copies of index.html until the Astro port (WEB-3.2). -->
+
+  <!-- Google Fonts for now; self-host before launch (WEB-4.4). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+
+  <!-- Order matters: tokens → base → components → sections (in page order) -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/sections/header.css">
+  <link rel="stylesheet" href="styles/sections/contact.css">
+  <link rel="stylesheet" href="styles/sections/footer.css">
+
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="scripts/site.js" defer></script>
+</head>
+<body>
+  <!-- [PLACEHOLDER] Every href="#" Book a call link becomes the booking page (WEB-14.8.6). -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- 1. Announcement bar (home.md §1) -->
+  <div class="announce">
+    <div class="container">
+      <!-- was until 2026-10-13:
+      <p>Now booking new projects. Talk to us in as little as 30 minutes.
+        <a href="#" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </p>
+      -->
+      <p class="announce-inner">
+        <span class="announce-label label label-accent"><span class="announce-dot" aria-hidden="true"></span>Now booking</span>
+        <span class="announce-text">Talk to us in as little as 30 minutes.</span>
+        <a href="#" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Site header (WEB-5) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Aaurigo Tech</a>
+      <nav aria-label="Main">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menu</button>
+        <ul class="nav-list list-plain" id="main-menu">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-sm header-cta" href="#" target="_blank" rel="noopener">
+        Book a call<span class="sr-only"> (opens in a new tab)</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-intro intro-glow"> <!-- was until 2026-10-21 (Krishna: black on every page): [section class="page-intro"] -->
+      <div class="container reveal">
+        <!-- was until 2026-10-21 (Krishna: remove the page name above the heading): [p class="label label-accent"]Contact[/p] -->
+        <h1 class="page-title">Let's talk about <em>what you're building.</em></h1> <!-- was until 2026-10-21 (Krishna: black on every page): [h1 class="page-title"]Let's talk about what you're building.[/h1] -->
+        <p class="page-lead">The fastest way is a quick call. Prefer to write? Use the form and we'll reply within one business day.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Ways to contact us">
+      <div class="container contact-grid reveal-scroll">
+
+        <!-- Option 1: Book a call (contact.md §2) -->
+        <!-- 2026-11-02 (Krishna: improve the Contact page): both options are cards like Services; the call card is pale champagne and stays in view beside the form -->
+        <div class="contact-option contact-call">
+          <p class="label label-accent">Option 1</p>
+          <h2>Book a call. <em>Talk in as little as 30 minutes.</em></h2> <!-- was until 2026-11-02: [h2]Book a call. Talk in as little as 30 minutes.[/h2] -->
+          <p>A free 30 minute discovery video call. Tell us your idea or problem, and leave with a clear next step.</p> <!-- was until 2026-11-02 (no other brands): A free 30 minute discovery call on Google Meet. Tell us your idea or problem, and leave with a clear next step. -->
+          <p class="contact-who">You talk with Krishna Singh, our founder, from the very first call.</p>
+          <p class="label">What we'll cover</p>
+          <ul class="service-features list-plain">
+            <li>What you want to achieve, and by when</li>
+            <li>The fastest route to real users</li>
+            <li>What we recommend, and what happens next</li> <!-- was until 2026-10-17 (Krishna: update the sub pages to match Home; no timeline until WEB-1.12): A rough timeline, and what happens next -->
+          </ul>
+          <p><a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a></p>
+          <p class="form-note">Calls during your business hours. Times are shown in your own time zone.</p>
+        </div>
+
+        <!-- Option 2: Start a project form (contact.md §3, WEB-12.2). Connects to the form service at WEB-14. -->
+        <div class="contact-option contact-write">
+          <p class="label label-accent">Option 2</p>
+          <h2>Or tell us <em>about your project.</em></h2> <!-- was until 2026-11-02: [h2]Or tell us about your project.[/h2] -->
+          <form class="contact-form" action="#" method="post">
+            <div class="field"><label class="field-label" for="c-name">Name</label><input class="field-input" id="c-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label class="field-label" for="c-email">Email</label><input class="field-input" id="c-email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field"><label class="field-label" for="c-company">Company or website <span class="field-hint">(optional)</span></label><input class="field-input" id="c-company" name="company" autocomplete="organization"></div>
+            <div class="field"><label class="field-label" for="c-what">What are you building?</label>
+              <select class="field-input field-select" id="c-what" name="building"><option>Website</option><option>Web app</option><option>Mobile app</option><!-- 2026-10-21: mobile apps off and back the same day; Brand tried as a separate service and taken off (Krishna: brand will be combined with every service) --><option>Something else</option></select></div>
+            <div class="field"><label class="field-label" for="c-when">When do you want to launch?</label>
+              <select class="field-input field-select" id="c-when" name="launch"><option>As soon as possible</option><option>Within 1 month</option><option>1 to 3 months</option><option>Just exploring</option></select></div>
+            <!-- Budget range (optional): ranges not decided yet (contact.md §3 placeholder). -->
+            <div class="field"><label class="field-label" for="c-more">Tell us a little more</label><textarea class="field-input" id="c-more" name="message" placeholder="Your idea, your goal and any deadline"></textarea></div>
+            <div><button class="btn btn-primary" type="submit">Send message <span class="arrow" aria-hidden="true">→</span></button></div>
+            <p class="form-note">We only use your details to reply to you. See our <a href="privacy.html">Privacy Policy</a>.</p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- What happens next (contact.md §4) -->
+    <section class="section section-alt" aria-labelledby="next-title">
+      <div class="container reveal-scroll">
+        <header class="section-head">
+          <p class="label label-accent">What happens next</p>
+          <h2 class="section-title" id="next-title">Four simple steps.</h2>
+        </header>
+        <ol class="next-list list-plain">
+          <li><span class="label label-accent">01</span><h3>We reply</h3><p>Within one business day, or we talk on the call you booked.</p></li>
+          <li><span class="label label-accent">02</span><h3>One 30 minute call</h3><p>We review your website before we talk, then focus on your goal and what "done" looks like.</p></li> <!-- was until 2026-10-17 (Krishna: update the sub pages to match Home; no timeline until WEB-1.12): <li><span class="label label-accent">02</span><h3>Short call</h3><p>To understand your goal and what "done" looks like.</p></li> -->
+          <li><span class="label label-accent">03</span><h3>One clear proposal</h3><p>One package we recommend, with the price, before any work starts. You say yes or no.</p></li> <!-- was until 2026-10-17 (Krishna: update the sub pages to match Home; no timeline until WEB-1.12): <li><span class="label label-accent">03</span><h3>Clear proposal</h3><p>Scope, timeline and price, before any work starts.</p></li> -->
+          <li><span class="label label-accent">04</span><h3>Onboarding</h3><p>Once you say yes, a written agreement of exactly what is included, then everything we need asked for in one go.</p></li> <!-- was until 2026-10-17 (Krishna: update the sub pages to match Home; no timeline until WEB-1.12): <li><span class="label label-accent">04</span><h3>Onboarding</h3><p>Once you say yes, we collect everything we need in one go and your project begins.</p></li> -->
+        </ol>
+        <!-- Other ways to reach us (contact.md §5): email and LinkedIn once WEB-2.14 and WEB-1.4 are done. -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 13. Footer (home.md §13, WEB-5.7). No Client login link until BIZ-3.10. -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">Aaurigo Tech</p>
+          <p class="footer-tagline">Launch fast. Learn faster. Grow smarter.</p>
+        </div>
+        <nav aria-labelledby="footer-nav">
+          <p class="footer-heading label" id="footer-nav">Navigate</p>
+          <ul class="footer-links list-plain">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-work">
+          <p class="footer-heading label" id="footer-work">Work with us</p>
+          <ul class="footer-links list-plain">
+            <li><a href="websites.html">Websites</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#web-development --></li>
+            <li><a href="web-apps.html">Web apps</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#web-applications --></li>
+            <!-- was until 2026-10-21 (Krishna: brand combined with every service, not its own option): [li][a href="services.html#brand"]Brand[/a][/li] -->
+            <li><a href="mobile-apps.html">Mobile apps</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#mobile-apps --></li> <!-- was until 2026-10-14: Web Development · Web Applications · Mobile Apps -->
+            <li><a href="#" target="_blank" rel="noopener">Book a call<span class="sr-only"> (opens in a new tab)</span></a></li>
+          </ul>
+        </nav>
+        <div class="footer-news">
+          <p class="footer-heading label">Newsletter</p>
+          <p>Short notes on building and launching faster. One email a month.</p>
+          <!-- Posts to Zoho Campaigns once NEWS-1.11 is set up. -->
+          <form action="#" method="post">
+            <div class="field">
+              <label class="field-label" for="news-email">Your email address</label>
+              <div class="form-row">
+                <input class="field-input" id="news-email" name="email" type="email" autocomplete="email" required>
+                <button class="btn btn-primary" type="submit">Join</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> Aaurigo Tech. All rights reserved.</p>
+        <ul class="list-plain" aria-label="Legal">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="accessibility.html">Accessibility Statement</a></li>
+        </ul>
+        <!-- [PLACEHOLDER] Social links (LinkedIn, Instagram, GitHub, X) once WEB-1.4 is done. -->
+      </div>
+      <p class="footer-mark" aria-hidden="true">Aaurigo Tech</p> <!-- 2026-10-25 (Krishna: polish): the name set large and quiet as the closing moment; decorative, the brand is already named above -->
+    </div>
+  </footer>
+</body>
+</html>

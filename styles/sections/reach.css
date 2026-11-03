@@ -1,0 +1,23 @@
+/* How fast you can reach us (home.md §2a, 2026-10-15, Krishna): its own short section on Home since
+   "Sound familiar?" was commented out (daily.css moved to archive/styles). */
+
+/* ---------- How fast they can reach us (2026-10-15, Krishna) ----------
+   Two options side by side, big Fraunces numbers as the emphasis, quiet text links. */
+.reach-lead { font: italic 500 var(--text-h3)/1.2 var(--display); color: var(--primary); }
+.reach-list {
+  display: grid; grid-template-columns: 1fr 1fr;
+  margin-top: 1.25rem;
+  border-top: var(--rule-strong);
+}
+.reach-item { display: grid; justify-items: start; gap: .5rem; padding: 1.75rem 2rem 0 0; }
+.reach-item + .reach-item { padding-left: 2rem; border-left: var(--rule); }
+.reach-number { font: 600 var(--text-h2)/1 var(--display); letter-spacing: var(--tracking-title); }
+.reach-text { max-width: 24rem; color: var(--muted); }
+.reach .btn-link { margin-top: .5rem; }
+
+@media (max-width: 55rem) {
+  .reach-list { grid-template-columns: 1fr; }
+  .reach-item,
+  .reach-item + .reach-item { padding: 1.5rem 0; border-left: 0; }
+  .reach-item + .reach-item { border-top: var(--rule); }
+}

@@ -1,0 +1,13 @@
+# The GitHub repo is PUBLIC (2026-11-03): only the live website goes up.
+# Old versions of pages and photos, never deployed
+archive/
+# Stray files in media (a saved search results page, a cut-out master, a zip)
+media/about/aaurigo Tech - Google Search.html
+media/about/aaurigo Tech - Google Search_files/
+media/about/about-building-removebg-preview.png
+media/home/background-remover.zip
+# System and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.wrangler/

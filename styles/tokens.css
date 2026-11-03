@@ -1,0 +1,139 @@
+/* Aaurigo Tech design tokens: Stone Teal (locked 2026-09-25), style mix 60% tech, 40% luxury fashion (RFA §7).
+   The only file with raw colour values. Other files use these tokens, never hex.
+   Breakpoints can't be tokens in plain CSS media queries; use these values: 35rem (phone), 55rem (tablet, menu switch). */
+
+:root {
+  /* Colour */
+  --bg: #F5F3EE;          /* stone */
+  --surface: #FFFFFF;
+  --soft: #EDE9E1;        /* sand */
+  --tint: #E2EEF0;
+  --glow: #EBDBC0;   /* was until 2026-10-18 (Krishna: a little more): #EFE3CF */         /* pale champagne, only for the soft wash behind page headings (2026-10-18, Krishna: trial) */
+  /* was until 2026-10-18 (Krishna: black): --band: #D6E7EA;        ( pale teal, the solid band behind page headings and the final call to action (2026-10-18, Krishna: try a different solid colour); gold, muted text and teal pass 4.5:1 on it ) */
+  --line: #E4E0D8;
+  --ink: #132227;
+  --black: #0A0A0A;       /* true black, only for the heading band and the final call to action (2026-10-18, Krishna: make it black, not ink) */
+  --glow-dark: rgba(176, 141, 87, .16);   /* champagne at low strength, only for the soft corner glow on the black How we work band (2026-10-22) and the About first screen (2026-10-25) */
+  --glow-warm: rgba(176, 141, 87, .3);   /* champagne, stronger: only the glow behind the demo phones on black (2026-11-01, Krishna: more stylish) */
+  /* was until 2026-11-02 (the water pools left Home How we work, Krishna: cards that complement the site colours):
+  --water-text: #CFE6EE;   ( pale blue words in the black water, 13:1 on black )
+  --water-glow: rgba(120, 190, 220, .55);   ( the soft blue glow around them ) */
+  /* was until 2026-11-02 (the About photo moved to the right of the heading, no wash needed):
+  --photo-shade: rgba(10, 10, 10, .72);       ( the dark wash over the black and white photo behind the About heading )
+  --photo-shade-deep: rgba(10, 10, 10, .9);   ( deeper at the foot, where the facts strip sits ) */
+  --mark-gold: rgba(176, 141, 87, .45);   /* champagne for the top of the large closing name in the footer (2026-11-02, Krishna: one tone more gold) */
+  --muted: #566469;
+  --muted-deep: #47555A;  /* a touch darker grey for the larger body text on Home (2026-11-02, Krishna: more premium); 7.5:1 on stone */
+  --text-body-home: 1.0625rem;  /* 17px body text on Home (2026-11-02) */
+  --primary: #0E4D5C;     /* teal: actions and links only */
+  --primary-deep: #0A3945;
+  --spark: #B08D57;       /* champagne: fine lines only */
+  --spark-deep: #7A5C30;  /* champagne for text, passes 4.5:1 on stone */
+  --pop: #F0BFAE;         /* blush coral, rare */
+  /* was until 2026-10-18 (Krishna: Work page black too): --blush: #F6D6CA;       ( soft coral, the solid band behind the Work page heading and its final call to action (2026-10-18, Krishna: solid pink); muted text, gold and teal pass 4.5:1 on it ) */
+  /* was until 2026-10-18 (Krishna: remove the blue and pink, gold only): --blush: #F6D6CA;       ( soft coral, only for the wash behind the final call to action (2026-10-18, Krishna: trial); muted text and gold labels pass 4.5:1 on it ) */
+  /* was until 2026-10-18 (Krishna: remove the blue and pink, gold only): --mist: #D6E7EA;        ( pale teal, only for the wash behind page headings (2026-10-18, Krishna: bluish, not pink); muted text and gold pass 4.5:1 on it ) */
+  --on-primary: #FFFFFF;
+  /* Wax seal red, only for the one "Most popular" seal on Home (2026-10-14, Krishna) */
+  --wax: #7A1626;          /* wine burgundy, from Krishna's reference (2026-10-14); was #8C2522 */
+  --wax-light: #A93A4E;    /* was #B4423A */
+  --wax-deep: #450A14;     /* was #561311 */
+  --gold-hi: #EBD7A4;      /* gold leaf highlight, only for the wax seal lettering */
+  /* Screenshot window, in the style of a desktop app window (2026-10-18, Krishna): only for .shot-frame */
+  --window-bar: #ECEBEA;
+  --window-edge: #D6D3CE;
+  --window-close: #FF5F57;
+  --window-min: #FEBC2E;
+  --window-max: #28C840;
+
+  /* Type families */
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --body: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+
+  /* Type scale (rem only) */
+  --text-xs: .75rem;      /* mono labels */
+  --text-sm: .875rem;
+  --text-md: 1rem;
+  --text-lead: clamp(1.125rem, 2vw, 1.375rem);
+  --text-fact: clamp(1.5rem, 3vw, 2.25rem);
+  --text-display: clamp(3.25rem, 12vw, 9.5rem);
+  --text-display-side: clamp(3.25rem, 8.5vw, 8.5rem);   /* the Home headline in its column beside the founder photo (2026-11-01) */
+  --text-intro: 1.125rem;
+  --text-h3: clamp(1.375rem, 2.4vw, 1.75rem);
+  --text-quote: clamp(1.5rem, 3.4vw, 2.5rem);
+  --text-h2: clamp(2.25rem, 6vw, 4.5rem);
+  --text-page: clamp(2.75rem, 8vw, 6rem);  /* H1 on inner pages */
+  --text-statement: clamp(3rem, 10vw, 8.5rem);  /* the one big statement on the About first screen (2026-10-25) */
+  --text-mark: clamp(3rem, 18.5vw, 14.6rem);  /* the large quiet name across the bottom of the footer (2026-10-25) */
+  --top-h: 7.25rem;  /* announcement bar plus header, so a first screen can fill the rest (2026-10-25) */
+  --tracking-label: .14em;
+  --tracking-display: -.04em;
+  --tracking-title: -.03em;
+
+  /* Dark footer (the only dark area, RFA §7) */
+  --on-dark: #F5F3EE;
+  --on-dark-muted: #A3B2B6;  /* 7:1 on ink */
+  --line-dark: #2C3D42;
+
+  /* Space */
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --space-sm: 1rem;
+  --space-md: clamp(2rem, 5vw, 3.5rem);
+  --space-lg: clamp(2.5rem, 7vw, 5rem);
+  --section: clamp(4.5rem, 10vw, 8rem);  /* vertical space around each section */
+  --container: 75rem;
+  --measure: 38rem;      /* comfortable line length for body text */
+  --tap: 3rem;            /* minimum tap target height */
+
+  /* Shape: sharp corners, hairlines instead of cards and shadows */
+  --radius: .125rem;
+  --radius-frame: .625rem;   /* was until 2026-10-18: .875rem */   /* the one soft corner: framed screenshots on case studies (2026-10-18, Krishna) */
+  --radius-frame-in: .5rem;
+  --radius-card: 1.5rem;     /* the cards on Services and the service pages (2026-11-01, Krishna: round every card's corners, more) */
+  --radius-control: 1.5rem;  /* every button and form field, the same rounding as the cards (2026-11-02, Krishna) */
+  --radius-phone: 2.6em;    /* the demo phones on the Mobile apps card (2026-11-01, Krishna): a device, so round like one; em, so it scales with the phone */
+  --radius-screen: 2.2em;
+  --rule: 1px solid var(--line);
+  --rule-strong: 1px solid var(--ink);
+
+  /* Motion: slow, soft fades only; nothing floats, pulses or loops. One exception: the demo phones on the Mobile apps card repeat, with a Pause button (2026-11-01, Krishna) */
+  --ease: ease-out;
+  --fast: .2s;
+  --fade: 1.2s;
+  --open: .45s;   /* a detail opening on hover (Work page projects, 2026-10-17) */
+  --stagger: .15s;
+  /* Section entrances (2026-10-30, Krishna: a subtle, premium animation, alternating section by section) */
+  /* was until 2026-10-30 (Krishna: smoother): --ease-soft: cubic-bezier(.22, .61, .36, 1); --enter: 1.1s; --unveil: 1.6s; --rise: 1.25rem; --focus-blur: 6px; */
+  --ease-soft: cubic-bezier(.33, 1, .68, 1);     /* a long, even glide that settles without a snap */
+  --ease-unveil: cubic-bezier(.65, 0, .35, 1);   /* a photo uncovers gently at both ends */
+  --enter: 1.4s;      /* one piece arriving */
+  --unveil: 1.2s;     /* a photo uncovering from the top (was 1.8s until 2026-10-30, Krishna: photos felt slow) */
+  --slide: 2.5rem;    /* how far a piece travels when it slides in from the side (2026-10-30, Krishna) */
+  /* Services entrances (2026-10-30, Krishna: each page its own) */
+  --lift: 2rem;           /* how far a card rises into place */
+  --lift-scale: .96;      /* how small a card starts as it rises */
+  --settle-scale: 1.04;   /* how large a piece starts before it settles */
+  --step: .12s;           /* the wait between FAQ questions stepping in */
+  /* First screen of every page (2026-10-30, Krishna: start with the first sections) */
+  --word-step: .07s;      /* the wait between headline words rising into view */
+  --word-rise: 1.3em;     /* how far below its line a word starts, fully hidden */
+  --intro-wait: .6s;      /* the text under the headline starts once the headline is under way */
+  /* Demo phones on the Mobile apps card (2026-11-01, Krishna): the phones arrive, then the front screen moves on twice and stops */
+  --phone-wait: .35s;     /* the back phone follows its card */
+  --screen-stay: 2.4s;    /* how long each screen shows before the next fades in */
+  --screen-fade: .9s;
+  --tap-gap: 1s;          /* the time between two taps on the demo screen (2026-11-01, Krishna: like an app demo video) */
+  --count-up: 1.2s;       /* the loyalty points counting up */
+  /* was until 2026-10-30 (Krishna: side slides replace rise and focus): --rise: .875rem; --focus-blur: 3px; */
+}
+
+/* Commented out 2026-10-10, not deleted (style mix: sharp corners, no shadows, RFA §7).
+:root {
+  --radius: 1.125rem;
+  --radius-pill: 999px;
+  --radius-sharp: .125rem;
+  --shadow: 0 1.5rem 3.75rem -2rem rgba(19, 34, 39, .32);
+  --shadow-soft: 0 .75rem 2rem -1.25rem rgba(19, 34, 39, .28);
+}
+*/

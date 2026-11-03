@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PathMole Expert Lab Case Study: Brand and Website | Aaurigo Tech</title>
+  <meta name="description" content="How we gave a new business with no brand and no website a way to be found: a brand, a 20+ page website, email and a newsletter, all built from scratch."> <!-- was until 2026-10-18 (Krishna: less about the lab, follow the opening line): [meta name="description" content="How we gave a pathology lab with no website a brand, a 20+ page website, email and a newsletter, all built from scratch."] -->
+  <link rel="canonical" href="https://www.aaurigotech.com/case-study-pathmole"> <!-- 2026-11-03: self canonical on the final www address (RFA §5.11) -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.aaurigotech.com/"}, {"@type": "ListItem", "position": 2, "name": "Work", "item": "https://www.aaurigotech.com/work"}, {"@type": "ListItem", "position": 3, "name": "PathMole Expert Lab", "item": "https://www.aaurigotech.com/case-study-pathmole"}]}</script> <!-- 2026-11-03: BreadcrumbList on inner pages (RFA §5.11) -->
+  <!-- Copy: doc/copy/case-study-pathmole.md (draft until approved, WEB-2.3 to WEB-2.5). Built 2026-10-17; version 2 the same day (issue first, process, brand at the end), version 3 the same day (told as a story in chapters, like ParkTag); earlier versions in archive/. Header and footer are copies of index.html until the Astro port (WEB-3.2). -->
+
+  <!-- Google Fonts for now; self-host before launch (WEB-4.4). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+
+  <!-- Order matters: tokens → base → components → sections (in page order) -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/sections/header.css">
+  <link rel="stylesheet" href="styles/sections/work.css">
+  <link rel="stylesheet" href="styles/sections/case.css">
+  <link rel="stylesheet" href="styles/sections/cta.css">
+  <link rel="stylesheet" href="styles/sections/footer.css">
+
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="scripts/site.js" defer></script>
+</head>
+<body>
+  <!-- [PLACEHOLDER] Every href="#" Book a call link becomes the booking page (WEB-14.8.6). -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- 1. Announcement bar (home.md §1) -->
+  <div class="announce">
+    <div class="container">
+      <!-- was until 2026-10-13:
+      <p>Now booking new projects. Talk to us in as little as 30 minutes.
+        <a href="#" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </p>
+      -->
+      <p class="announce-inner">
+        <span class="announce-label label label-accent"><span class="announce-dot" aria-hidden="true"></span>Now booking</span>
+        <span class="announce-text">Talk to us in as little as 30 minutes.</span>
+        <a href="#" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Site header (WEB-5) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Aaurigo Tech</a>
+      <nav aria-label="Main">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menu</button>
+        <ul class="nav-list list-plain" id="main-menu">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html" aria-current="page">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-sm header-cta" href="#" target="_blank" rel="noopener">
+        Book a call<span class="sr-only"> (opens in a new tab)</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+  <!-- 2026-10-17 (Krishna: no other brands on our website): WhatsApp, Google, LinkedIn, AWS and EditTree Technologies taken out of the project text; the client company stays internal (doc/copy/all-projects.md). -->
+
+    <section class="page-intro intro-glow story-hero">
+      <div class="container reveal">
+        <p class="label label-accent"><a href="work.html">Work</a> · Case study · Brand and website</p>
+        <h1 class="page-title case-issue">From a new venture <em>to the people it serves.</em></h1> <!-- was until 2026-10-17 (Krishna: connect the new venture with its people, not just be found): From opening day to being found online. --> <!-- was until 2026-10-17 (Krishna: we are not promoting doctors, labs or their ideas; the heading is about the problem we solved): From a brand new lab to the doctors who need it. -->
+        <p class="story-dek">The story of a new business with real expertise, and how we helped it reach the people it serves.</p> <!-- was until 2026-10-18 (Krishna: less about the lab, follow the opening line): [p class="story-dek"]The story of a new lab with real expertise, and how we helped it reach the people it was built for.[/p] -->
+      </div>
+    </section>
+
+    <article class="section story" aria-label="The PathMole Expert Lab story">
+      <div class="container">
+
+        <section class="story-chapter reveal-scroll" aria-labelledby="ch1">
+          <header class="story-head"><span class="label label-accent">Chapter 01</span><h2 class="story-title" id="ch1">The start</h2></header>
+          <div class="story-body">
+            <p class="story-drop">A new venture opened its doors with real expertise and no way to be found. No brand, no website, and no way for customers to get in touch online.</p> <!-- was until 2026-10-18 (Krishna: a new venture, customers, not the lab): A new lab opened its doors with real expertise and no way to be found. No brand, no website, and no way for doctors or patients to get in touch online. -->
+            <blockquote class="story-quote"><p>Great work only matters if people can find it.</p></blockquote>
+          </div>
+        </section>
+
+        <section class="story-chapter reveal-scroll" aria-labelledby="ch2">
+          <header class="story-head"><span class="label label-accent">Chapter 02</span><h2 class="story-title" id="ch2">The wall</h2></header>
+          <div class="story-body">
+            <p>Opening a new business brings a hundred questions at once:</p>
+            <ul class="story-questions list-plain">
+              <li>What should the brand look and feel like?</li> <!-- was until 2026-10-18 (Krishna: less about the lab, follow the opening line): [li]How should the brand look and feel?[/li] -->
+              <li>Who builds the website, and where do you even start?</li> <!-- was until 2026-10-18 (Krishna: less about the lab, follow the opening line): [li]What do doctors need to see before they trust a lab?[/li] -->
+              <li>How do people get in touch, quickly and safely?</li> <!-- was until 2026-10-18 (Krishna: less about the lab, follow the opening line): [li]How do patients get in touch without sharing private details?[/li] -->
+              <li>How do people even find you online?</li>
+            </ul>
+            <p class="story-stop"><span class="story-star" aria-hidden="true"></span><span>This is where good work goes <em>unseen.</em></span> <!-- was until 2026-10-18 (Krishna: less about the lab, follow the opening line): [span]This is where new labs go [em]unseen.[/em][/span] --><span class="story-star" aria-hidden="true"></span></p> <!-- was until 2026-10-17 (too long for one line): This is where most new businesses stay [em]invisible.[/em] -->
+          </div>
+        </section>
+
+        <section class="story-chapter reveal-scroll" aria-labelledby="ch3">
+          <header class="story-head"><span class="label label-accent">Chapter 03</span><h2 class="story-title" id="ch3">Why us</h2></header>
+          <div class="story-body">
+            <p>It didn't need a website alone. It needed one team to shape the brand, build the site, open every way to get in touch and make it easy to find, all in one plan.</p> <!-- was until 2026-10-18 (Krishna: less about the lab, follow the opening line): [p]The lab didn't need a website alone. It needed one team to shape the brand, build the site, connect email and a newsletter, and make it easy to find, all in one plan.[/p] -->
+            <p class="story-stop story-answer"><span class="story-star" aria-hidden="true"></span><span>That's where <em>we</em> came in.</span><span class="story-star" aria-hidden="true"></span></p>
+          </div>
+        </section>
+
+        <section class="story-chapter reveal-scroll" aria-labelledby="ch4">
+          <header class="story-head"><span class="label label-accent">Chapter 04</span><h2 class="story-title" id="ch4">Making it real</h2></header>
+          <div class="story-body">
+            <ol class="story-steps list-plain">
+              <li><h3>We gave it a brand</h3><p>How it looks, sounds and presents itself, from the very first visit.</p></li> <!-- was until 2026-10-18 (Krishna: less about the lab, follow the opening line): [li][h3]We shaped the brand[/h3][p]How the lab looks, sounds and presents itself to doctors and patients.[/p][/li] -->
+              <li><h3>We built the website from scratch</h3><p>20+ clear pages, easy to use even on the smallest phones.</p></li> <!-- was until 2026-10-18 (Krishna: less about the lab, follow the opening line): [li][h3]We built 20+ pages from scratch[/h3][p]With a helper that guides visitors to the right test, and a library of case studies and research.[/p][/li] -->
+              <li><h3>We opened every way in</h3><p>An enquiry form that stores no private details, plus chat and click to call.</p></li> <!-- was until 2026-10-18 (Krishna: less about the lab, follow the opening line): [li][h3]We kept patient data safe[/h3][p]An enquiry form that stores no patient data, plus chat and click to call.[/p][/li] -->
+              <li><h3>We made it easy to find</h3><p>Set up to be found in search and AI answers from day one, <!-- was until 2026-10-21 (Krishna: say it plainly, set up to be found): Ready for search and AI answers from day one, --> with email and a newsletter to stay in touch.</p></li> <!-- was until 2026-10-18 (Krishna: less about the lab, follow the opening line): [li][h3]We connected everything[/h3][p]Email and a newsletter connected to the website, ready for search and AI answers from day one, and easy to use on the smallest phones.[/p][/li] -->
+            </ol>
+          </div>
+        </section>
+
+        <section class="story-chapter reveal-scroll" aria-labelledby="ch5">
+          <header class="story-head"><span class="label label-accent">Chapter 05</span><h2 class="story-title" id="ch5">Today</h2></header>
+          <div class="story-body">
+            <dl class="case-stats story-stats">
+              <div><dt>20+</dt><dd>pages, built from scratch</dd></div>
+              <div><dt>3</dt><dd>ways to get in touch: form, chat and call</dd></div>
+              <div><dt>Under&nbsp;0.7&nbsp;s</dt><dd>to load, images and videos included</dd></div> <!-- 2026-11-02 (Krishna: still loading fast with images, videos and 20+ pages, under 0.70 s) --> <!-- was until 2026-10-18 (Krishna: less about the lab, follow the opening line): [div][dt]0[/dt][dd]patient records stored by the enquiry form[/dd][/div] -->
+            </dl>
+            <!-- was until 2026-11-02 (Krishna: what is happening now, clean rows like ParkTag): [p]Where there was no brand, no website and no way in, there is now one place people can find, trust and reach, with email and a newsletter that keep them close.[/p] -->
+            <p class="story-lead">A new venture with no way in <em>is now found, trusted and reaching more people.</em></p> <!-- was until 2026-11-02 (Krishna: more premium): the whole line in one italic -->
+            <ul class="story-now list-plain">
+              <li><strong>The work</strong><span>The lab is busy doing what it does best, helping the people it serves thrive.</span></li>
+              <li><strong>Teaching</strong><span>11 teaching cases and 4 guides published, so people learn first and come back.</span></li>
+              <li><strong>Search</strong><span>A business profile we set up, so people find it in search and on maps.</span></li>
+              <li><strong>AI answers</strong><span>It now shows up in local AI search, when people nearby ask where to go.</span></li> <!-- was until 2026-11-02 (Krishna: it reaches their local AI searches): It now shows up when people ask AI search for help. -->
+            </ul>
+            <p class="story-close">Behind every row is the strategy we shaped together: each new page and profile brings it in front of more people.</p> <!-- was until 2026-10-18 (Krishna: less about the lab, follow the opening line): [p]A new lab now has a presence it never had: a brand doctors recognise, a website they can trust, and email and a newsletter that keep them close.[/p] -->
+            <!-- 2026-10-23 (Krishna: security point as a placeholder until he confirms the site runs no server code; doc/copy/security-angle-2026-10.md §3) -->
+            <!-- was until 2026-11-02 (Krishna: replaced by the care plan; the stack was never confirmed): [p class="placeholder"][PLACEHOLDER: confirm the stack and the enquiry form] [strong]Built to stay safe.[/strong] Plain pages served from the cloud, with no server code to patch, so the site keeps working without urgent fixes.[/p] -->
+            <!-- was until 2026-11-02 (Krishna: more premium): [p][strong]Still with us.[/strong] After launch they chose our monthly care plan, so we keep their content and every regular update moving for them.[/p] -->
+            <div class="story-keep">
+              <p class="story-keep-title">Still with us.</p>
+              <p>After launch they chose our monthly care plan, so we keep their content and every regular update moving for them.</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </article>
+
+    <section class="section section-alt case-reveal" aria-labelledby="brand-title">
+      <div class="container reveal-scroll">
+        <p class="label label-accent">The brand</p>
+        <h2 class="case-brand" id="brand-title">PathMole Expert Lab</h2>
+        <p class="case-brand-about">A brand, a 20+ page website, email and a newsletter, all built from scratch. <span class="case-brand-services">What we did: brand and positioning, website, email and newsletter, search and AI search readiness.</span></p>
+        <p><a class="btn-link" href="https://www.pathmoleexpert.com/" target="_blank" rel="noopener">Visit PathMole Expert Lab <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a></p>
+        <div class="shot-frame case-frame">
+          <img src="media/work/pathmole.webp" alt="PathMole Expert Lab home page." width="1200" height="900" loading="lazy">
+        </div> <!-- was until 2026-10-18 (Krishna: polish the screenshot, softly rounded corners): the image alone, no frame -->
+        <!-- Client quote goes here when it arrives (Krishna will send it; WEB-2.7), with saved permission. -->
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="more-title">
+      <div class="container reveal-scroll">
+        <header class="section-head">
+          <p class="label label-accent">More case studies</p>
+          <h2 class="section-title" id="more-title">More problems we've solved.</h2>
+        </header>
+        <ul class="case-cards case-related list-plain">
+          <li class="case-card">
+            <a href="case-study-parktag.html">
+              <span class="label label-accent">Brand and web app</span>
+              <h3 class="case-card-issue">From a great idea <em>to its first 1,000+ users.</em></h3> <!-- was until 2026-10-17 (Krishna: a great idea to its first 1,000+ users): A great idea, but no brand, no product, no website. We built all three. --> <!-- was until 2026-10-17 (shorter; the 10,000+ shows just below): A great idea, but no brand, no product and no website. Now 10,000+ people use it. --> <!-- was until 2026-10-17 (Krishna: tell the ParkTag story of how we helped, not what the product does): No private way to reach a vehicle owner. Now there is. --> <!-- was until 2026-10-17 (Krishna: headings were product based; focus on the problem we solved): A strong idea. Nothing built yet. --> <!-- was until 2026-10-17 (Krishna: make the heading clean and attractive): A good idea, but no brand, no product and no private way to reach a vehicle owner. -->
+              <div class="case-card-after"><span class="label">What changed</span><p>No brand, no product, no website at the start. We built all three.</p> <!-- was until 2026-10-17 (Krishna: a great idea to its first 1,000+ users): 1,000+ people use the brand and web app we built from scratch. --> <!-- was until 2026-10-17 (Krishna: tell the ParkTag story of how we helped, not what the product does): [p][strong class="case-card-number"]10,000+[/strong] tag users now, and nobody ever sees anyone's number.[/p] --></div>
+              <p class="case-card-brand"><span class="label">The brand</span>ParkTag</p>
+              <span class="case-card-link">Read the case study <span aria-hidden="true">→</span></span>
+            </a>
+          </li>
+          <li class="case-card">
+            <a href="case-study-dr-arpan-gandhi.html">
+              <span class="label label-accent">Website</span>
+              <h3 class="case-card-issue">From a slow site <em>to a story told in full.</em></h3> <!-- was until 2026-10-18 (Krishna: speak to many fields, not one senior person): [h3 class="case-card-issue"]From a slow site [em]to decades of work in full view.[/em][/h3] --> <!-- was until 2026-10-17 (Krishna: same journey pattern as ParkTag): A slow site hid decades of work. Now it loads fast. --> <!-- was until 2026-10-17 (Krishna: headings were product based; focus on the problem we solved): Decades of work, hidden by a slow website. --> <!-- was until 2026-10-17 (Krishna: make the heading clean and attractive): Nearly three decades of work, hidden behind a slow website. -->
+              <div class="case-card-after"><span class="label">What changed</span><p>A site that took over 7 seconds to load. We rebuilt it and wrote every page.</p> <!-- was until 2026-10-17 (Krishna: same journey pattern as ParkTag): [p]A fast site that tells the full story of his work, every page written by us.[/p] --></div>
+              <p class="case-card-brand"><span class="label">The brand</span>Dr. Arpan Gandhi</p>
+              <span class="case-card-link">Read the case study <span aria-hidden="true">→</span></span>
+            </a>
+          </li>
+        </ul>
+        <!-- was until 2026-10-17 (Krishna: cards follow the case study pages, issue first and the brand last):
+        <ul class="case-cards case-related list-plain">
+          <li class="case-card">
+            <a href="case-study-parktag.html">
+              <span class="label label-accent">Brand and web app</span>
+              <h3 class="work-title">ParkTag</h3>
+              <dl class="case-card-rows">
+                <div><dt class="label">Before</dt><dd>An idea with no brand, no product and no private way to reach a vehicle owner.</dd></div>
+                <div><dt class="label">After</dt><dd><strong class="case-card-number">10,000+</strong> tag users, and both phone numbers stay private.</dd></div>
+              </dl>
+              <span class="case-card-link">Read the case study <span aria-hidden="true">→</span></span>
+            </a>
+          </li>
+          <li class="case-card">
+            <a href="case-study-dr-arpan-gandhi.html">
+              <span class="label label-accent">Website</span>
+              <h3 class="work-title">Dr. Arpan Gandhi</h3>
+              <dl class="case-card-rows">
+                <div><dt class="label">Before</dt><dd>A website that took over 7 seconds to load and hid nearly three decades of work.</dd></div> [ was until 2026-10-17 (Krishna: never make the old tool look bad): A WordPress site that took over 7 seconds to load and hid his achievements. ]
+                <div><dt class="label">After</dt><dd>A fast site, rebuilt from scratch, that tells the full story of his work.</dd></div>
+              </dl>
+              <span class="case-card-link">Read the case study <span aria-hidden="true">→</span></span>
+            </a>
+          </li>
+        </ul>
+        -->
+        <!-- was until 2026-10-17 (Krishna: the cards did not look good; show the issue and what changed instead):
+        <ul class="work-grid case-related list-plain">
+          <li class="work-card">
+            <a href="case-study-parktag.html">
+              <img class="work-media" src="media/work/parktag.webp" alt="ParkTag home page: Be reachable. Stay private." width="1200" height="900" loading="lazy">
+              <span class="label label-accent">Brand and web app</span>
+              <h3 class="work-title">ParkTag</h3>
+              <span class="work-result">10,000+ vehicle owners, reachable without sharing a number.</span>
+            </a>
+          </li>
+          <li class="work-card">
+            <a href="case-study-dr-arpan-gandhi.html">
+              <img class="work-media" src="media/work/drarpangandhi.webp" alt="Dr. Arpan Gandhi home page, with his roles as a healthcare advisor and his photo." width="1200" height="900" loading="lazy">
+              <span class="label label-accent">Website</span>
+              <h3 class="work-title">Dr. Arpan Gandhi</h3>
+              <span class="work-result">Nearly three decades of work, finally shown in full.</span>
+            </a>
+          </li>
+        </ul>
+        -->
+      </div>
+    </section>
+
+    <section class="section cta cta-glow" aria-labelledby="cta-title">
+      <div class="container reveal-scroll">
+        <h2 class="cta-title" id="cta-title">Like what you see?</h2>
+        <p class="cta-body">Book a call and talk in as little as 30 minutes.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+        </div>
+        <p class="cta-closing label">Enable businesses to do more.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 13. Footer (home.md §13, WEB-5.7). No Client login link until BIZ-3.10. -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">Aaurigo Tech</p>
+          <p class="footer-tagline">Launch fast. Learn faster. Grow smarter.</p>
+        </div>
+        <nav aria-labelledby="footer-nav">
+          <p class="footer-heading label" id="footer-nav">Navigate</p>
+          <ul class="footer-links list-plain">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-work">
+          <p class="footer-heading label" id="footer-work">Work with us</p>
+          <ul class="footer-links list-plain">
+            <li><a href="websites.html">Websites</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#web-development --></li>
+            <li><a href="web-apps.html">Web apps</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#web-applications --></li>
+            <!-- was until 2026-10-21 (Krishna: brand combined with every service, not its own option): [li][a href="services.html#brand"]Brand[/a][/li] -->
+            <li><a href="mobile-apps.html">Mobile apps</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#mobile-apps --></li> <!-- was until 2026-10-14: Web Development · Web Applications · Mobile Apps -->
+            <li><a href="#" target="_blank" rel="noopener">Book a call<span class="sr-only"> (opens in a new tab)</span></a></li>
+          </ul>
+        </nav>
+        <div class="footer-news">
+          <p class="footer-heading label">Newsletter</p>
+          <p>Short notes on building and launching faster. One email a month.</p>
+          <!-- Posts to Zoho Campaigns once NEWS-1.11 is set up. -->
+          <form action="#" method="post">
+            <div class="field">
+              <label class="field-label" for="news-email">Your email address</label>
+              <div class="form-row">
+                <input class="field-input" id="news-email" name="email" type="email" autocomplete="email" required>
+                <button class="btn btn-primary" type="submit">Join</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> Aaurigo Tech. All rights reserved.</p>
+        <ul class="list-plain" aria-label="Legal">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="accessibility.html">Accessibility Statement</a></li>
+        </ul>
+        <!-- [PLACEHOLDER] Social links (LinkedIn, Instagram, GitHub, X) once WEB-1.4 is done. -->
+      </div>
+      <p class="footer-mark" aria-hidden="true">Aaurigo Tech</p> <!-- 2026-10-25 (Krishna: polish): the name set large and quiet as the closing moment; decorative, the brand is already named above -->
+    </div>
+  </footer>
+</body>
+</html>

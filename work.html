@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Our Work and Case Studies | Aaurigo Tech</title>
+  <meta name="description" content="Websites, web apps and mobile apps we've taken from idea to real users, fast."> <!-- 2026-10-21: mobile apps off and back the same day; Brand tried as a separate service and taken off (Krishna: brand will be combined with every service) -->
+  <link rel="canonical" href="https://www.aaurigotech.com/work"> <!-- 2026-11-03: self canonical on the final www address (RFA §5.11) -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.aaurigotech.com/"}, {"@type": "ListItem", "position": 2, "name": "Work", "item": "https://www.aaurigotech.com/work"}]}</script> <!-- 2026-11-03: BreadcrumbList on inner pages (RFA §5.11) -->
+  <!-- Copy: doc/copy/home.md §5 (work copy file comes with WEB-2.21) (draft until approved). Header and footer are copies of index.html until the Astro port (WEB-3.2). -->
+
+  <!-- Google Fonts for now; self-host before launch (WEB-4.4). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+
+  <!-- Order matters: tokens → base → components → sections (in page order) -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/sections/header.css">
+  <link rel="stylesheet" href="styles/sections/work.css">
+  <link rel="stylesheet" href="styles/sections/cta.css">
+  <link rel="stylesheet" href="styles/sections/footer.css">
+
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="scripts/site.js" defer></script>
+</head>
+<body>
+  <!-- [PLACEHOLDER] Every href="#" Book a call link becomes the booking page (WEB-14.8.6). -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- 1. Announcement bar (home.md §1) -->
+  <div class="announce">
+    <div class="container">
+      <!-- was until 2026-10-13:
+      <p>Now booking new projects. Talk to us in as little as 30 minutes.
+        <a href="#" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </p>
+      -->
+      <p class="announce-inner">
+        <span class="announce-label label label-accent"><span class="announce-dot" aria-hidden="true"></span>Now booking</span>
+        <span class="announce-text">Talk to us in as little as 30 minutes.</span>
+        <a href="#" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Site header (WEB-5) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Aaurigo Tech</a>
+      <nav aria-label="Main">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menu</button>
+        <ul class="nav-list list-plain" id="main-menu">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html" aria-current="page">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-sm header-cta" href="#" target="_blank" rel="noopener">
+        Book a call<span class="sr-only"> (opens in a new tab)</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+  <!-- 2026-10-17 (Krishna: no other brands on our website): WhatsApp, Google, LinkedIn, AWS and EditTree Technologies taken out of the project text; the client company stays internal (doc/copy/all-projects.md). -->
+
+    <section class="page-intro intro-glow"> <!-- black 2026-10-18 (Krishna: make it black); was solid pink [band-blush] until 2026-10-18; was until 2026-10-18 (Krishna: no black band on Work): [section class="page-intro intro-glow" -->
+      <div class="container reveal">
+        <!-- was until 2026-10-18 (Krishna: remove Work from the heading): <p class="label label-accent">Work</p> -->
+        <h1 class="page-title">Launched fast. <em>Built to last.</em></h1> <!-- was until 2026-10-18 (Krishna: colour in the main heading, the italic half in gold): [h1 class="page-title"]Launched fast. Built to last.[/h1] -->
+        <p class="page-lead">A few projects we've taken from idea to real users.</p>
+      </div>
+    </section>
+
+    <!-- Case studies (WEB-10.1). Filters All · Web · Web App · Mobile come with WEB-10.2. Real projects since 2026-10-17 (WEB-2.1); case study pages with WEB-2.3 to WEB-2.6. -->
+    <section class="section" aria-labelledby="cases-title">
+      <div class="container reveal-scroll">
+        <header class="section-head">
+          <p class="label label-accent">Case studies</p> <!-- was until 2026-10-17 (Krishna: the top cards become case studies; the list keeps Selected projects): Past projects -->
+          <h2 class="section-title" id="cases-title">Problems we've solved.</h2> <!-- was until 2026-10-17 (Selected projects is the list below): Selected work. -->
+        </header>
+        <!-- Case studies since 2026-10-17: each card opens its case study page (case-study-*.html). Screenshots of the live sites taken 2026-10-17. Years and a result with a number to add (all-projects.md); case study pages come with WEB-10.4 to 10.6. -->
+        <ul class="case-cards list-plain">
+          <li class="case-card">
+            <a href="case-study-parktag.html">
+              <span class="label label-accent">Brand and web app</span>
+              <h3 class="case-card-issue">From a great idea <em>to its first 1,000+ users.</em></h3> <!-- was until 2026-10-17 (Krishna: a great idea to its first 1,000+ users): A great idea, but no brand, no product, no website. We built all three. --> <!-- was until 2026-10-17 (shorter; the 10,000+ shows just below): A great idea, but no brand, no product and no website. Now 10,000+ people use it. --> <!-- was until 2026-10-17 (Krishna: tell the ParkTag story of how we helped, not what the product does): No private way to reach a vehicle owner. Now there is. --> <!-- was until 2026-10-17 (Krishna: headings were product based; focus on the problem we solved): A strong idea. Nothing built yet. --> <!-- was until 2026-10-17 (Krishna: make the heading clean and attractive): A good idea, but no brand, no product and no private way to reach a vehicle owner. -->
+              <div class="case-card-after"><span class="label">What changed</span><p>No brand, no product, no website at the start. We built all three.</p> <!-- was until 2026-10-17 (Krishna: a great idea to its first 1,000+ users): 1,000+ people use the brand and web app we built from scratch. --> <!-- was until 2026-10-17 (Krishna: tell the ParkTag story of how we helped, not what the product does): [p][strong class="case-card-number"]10,000+[/strong] tag users now, and nobody ever sees anyone's number.[/p] --></div>
+              <p class="case-card-brand"><span class="label">The brand</span>ParkTag</p>
+              <span class="case-card-link">Read the case study <span aria-hidden="true">→</span></span>
+            </a>
+          </li>
+          <li class="case-card">
+            <a href="case-study-pathmole.html">
+              <span class="label label-accent">Brand and website</span>
+              <h3 class="case-card-issue">From a new venture <em>to the people it serves.</em></h3> <!-- was until 2026-10-17 (Krishna: connect the new venture with its people, not just be found): From opening day to being found online. --> <!-- was until 2026-10-17 (Krishna: we are not promoting doctors, labs or their ideas; the heading is about the problem we solved): From a brand new lab to the doctors who need it. --> <!-- was until 2026-10-17 (Krishna: PathMole was a new business that did not know how to reach people): [h3 class="case-card-issue"]From no website to a lab doctors can find online.[/h3] --> <!-- was until 2026-10-17 (Krishna: same journey pattern as ParkTag): Doctors couldn't find the lab online. Now they can. --> <!-- was until 2026-10-17 (Krishna: headings were product based; focus on the problem we solved): A trusted lab, invisible online. --> <!-- was until 2026-10-17 (Krishna: make the heading clean and attractive): A specialist lab that doctors and patients couldn't find, check or contact online. -->
+              <div class="case-card-after"><span class="label">What changed</span><p>A new business with no brand, no website and no way to reach people. We built the brand, the website, email and a newsletter.</p> <!-- was until 2026-10-17 (Krishna: PathMole was a new business that did not know how to reach people): [p]No brand and no website at the start. We built both, plus email and a newsletter.[/p] --> <!-- was until 2026-10-17 (Krishna: same journey pattern as ParkTag): [p][strong class="case-card-number"]20+[/strong] pages built from scratch, connected to email and a newsletter.[/p] --></div>
+              <p class="case-card-brand"><span class="label">The brand</span>PathMole Expert Lab</p>
+              <span class="case-card-link">Read the case study <span aria-hidden="true">→</span></span>
+            </a>
+          </li>
+          <li class="case-card">
+            <a href="case-study-dr-arpan-gandhi.html">
+              <span class="label label-accent">Website</span>
+              <h3 class="case-card-issue">From a slow site <em>to a story told in full.</em></h3> <!-- was until 2026-10-18 (Krishna: speak to many fields, not one senior person): [h3 class="case-card-issue"]From a slow site [em]to decades of work in full view.[/em][/h3] --> <!-- was until 2026-10-17 (Krishna: same journey pattern as ParkTag): A slow site hid decades of work. Now it loads fast. --> <!-- was until 2026-10-17 (Krishna: headings were product based; focus on the problem we solved): Decades of work, hidden by a slow website. --> <!-- was until 2026-10-17 (Krishna: make the heading clean and attractive): Nearly three decades of work, hidden behind a slow website. -->
+              <div class="case-card-after"><span class="label">What changed</span><p>A site that took over 7 seconds to load. We rebuilt it and wrote every page.</p> <!-- was until 2026-10-17 (Krishna: same journey pattern as ParkTag): [p]A fast site that tells the full story of his work, every page written by us.[/p] --></div>
+              <p class="case-card-brand"><span class="label">The brand</span>Dr. Arpan Gandhi</p>
+              <span class="case-card-link">Read the case study <span aria-hidden="true">→</span></span>
+            </a>
+          </li>
+        </ul>
+        <!-- was until 2026-10-17 (Krishna: cards follow the case study pages, issue first and the brand last):
+        <ul class="case-cards list-plain">
+          <li class="case-card">
+            <a href="case-study-parktag.html">
+              <span class="label label-accent">Brand and web app</span>
+              <h3 class="work-title">ParkTag</h3>
+              <dl class="case-card-rows">
+                <div><dt class="label">Before</dt><dd>An idea with no brand, no product and no private way to reach a vehicle owner.</dd></div>
+                <div><dt class="label">After</dt><dd><strong class="case-card-number">10,000+</strong> tag users, and both phone numbers stay private.</dd></div>
+              </dl>
+              <span class="case-card-link">Read the case study <span aria-hidden="true">→</span></span>
+            </a>
+          </li>
+          <li class="case-card">
+            <a href="case-study-pathmole.html">
+              <span class="label label-accent">Brand and website</span>
+              <h3 class="work-title">PathMole Expert Lab</h3>
+              <dl class="case-card-rows">
+                <div><dt class="label">Before</dt><dd>No website, so doctors and patients could not check its tests or get in touch online.</dd></div>
+                <div><dt class="label">After</dt><dd><strong class="case-card-number">20+</strong> pages built from scratch, connected to email and a newsletter.</dd></div>
+              </dl>
+              <span class="case-card-link">Read the case study <span aria-hidden="true">→</span></span>
+            </a>
+          </li>
+          <li class="case-card">
+            <a href="case-study-dr-arpan-gandhi.html">
+              <span class="label label-accent">Website</span>
+              <h3 class="work-title">Dr. Arpan Gandhi</h3>
+              <dl class="case-card-rows">
+                <div><dt class="label">Before</dt><dd>A website that took over 7 seconds to load and hid nearly three decades of work.</dd></div> [ was until 2026-10-17 (Krishna: never make the old tool look bad): A WordPress site that took over 7 seconds to load and hid his achievements. ]
+                <div><dt class="label">After</dt><dd>A fast site, rebuilt from scratch, that tells the full story of his work.</dd></div>
+              </dl>
+              <span class="case-card-link">Read the case study <span aria-hidden="true">→</span></span>
+            </a>
+          </li>
+        </ul>
+        -->
+        <!-- was until 2026-10-17 (Krishna: the cards did not look good; show the issue and what changed instead):
+        <ul class="work-grid list-plain">
+          <li class="work-card">
+            <a href="case-study-parktag.html"> [ was until 2026-10-17: link to the live site in a new tab ]
+              <img class="work-media" src="media/work/parktag.webp" alt="ParkTag home page." width="1200" height="900" loading="lazy">
+              <span class="label label-accent">Brand and web app</span> [ was until 2026-10-17: App and product ]
+              <h3 class="work-title">ParkTag</h3>
+              <span class="work-result">Used by 10,000+ vehicle owners. We shaped the brand with the owner, then built the web app from scratch. The scan page opens in under half a second.</span> [ was until 2026-10-17 (Krishna told the story behind each project): Reach a vehicle owner by scanning a QR tag, with no numbers shared. The scan page opens in under half a second, and a private call connects in under three. Built from scratch. ] [ was until 2026-10-17 (Krishna shared his old portfolio; real numbers from it): <span class="work-result">A QR tag that lets anyone reach a vehicle owner without seeing their number. We built the whole product from scratch.</span> ]
+            </a>
+          </li>
+          <li class="work-card">
+            <a href="case-study-dr-arpan-gandhi.html"> [ was until 2026-10-17: link to the live site in a new tab ]
+              <img class="work-media" src="media/work/drarpangandhi.webp" alt="Dr. Arpan Gandhi home page, with his roles as a healthcare advisor and his photo." width="1200" height="900" loading="lazy">
+              <span class="label label-accent">Website</span>
+              <h3 class="work-title">Dr. Arpan Gandhi</h3>
+              <span class="work-result">Replaced a WordPress site that took over 7 seconds to load, with text we wrote from his research and LinkedIn posts.</span> [ was until 2026-10-17 (Krishna told the story behind each project): Website for a diagnostic medicine advisor, with consulting pages, a blog and an enquiry form. ]
+            </a>
+          </li>
+          <li class="work-card">
+            <a href="case-study-pathmole.html"> [ was until 2026-10-17: link to the live site in a new tab ]
+              <img class="work-media" src="media/work/pathmole.webp" alt="PathMole Expert Lab home page." width="1200" height="900" loading="lazy">
+              <span class="label label-accent">Brand and website</span> [ was until 2026-10-17: Website ]
+              <h3 class="work-title">PathMole Expert Lab</h3>
+              <span class="work-result">No website before. We shaped the brand, built a 20+ page website and connected email and a newsletter.</span> [ was until 2026-10-17 (Krishna told the story behind each project): A 20+ page website for a pathology lab, with a helper that guides visitors to the right test and an enquiry form that stores no patient data. ] [ was until 2026-10-17 (Krishna shared his old portfolio; real numbers from it): <span class="work-result">Website for a pathology lab, with services, a test list, an enquiry form and WhatsApp.</span> ]
+            </a>
+          </li>
+        </ul>
+        -->
+        <!-- removed 2026-10-17 (Krishna: show the projects on our site, not as his old portfolio; all eight are in All projects): [ Krishna's earlier portfolio (2026-10-17, Krishna: "add my portfolio here also"). Before launch it must lose its placeholder testimonials (all-projects.md). ]
+        <p class="section-cta"><a class="btn-link" href="https://alphakrishna.github.io/portfolio_my_website/" target="_blank" rel="noopener">See Krishna's earlier work <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a></p> -->
+        <!-- was until 2026-10-17 (Krishna: put the real projects on the Work page; clients gave permission):
+        <ul class="work-grid list-plain">
+          <li class="work-card placeholder">
+            <a href="#">
+              <span class="work-media media-blank"></span>
+              <span class="label label-accent">[PLACEHOLDER] Type · Year</span>
+              <h3 class="work-title">[PLACEHOLDER] Case study 1</h3>
+              <span class="work-result">[PLACEHOLDER] One line result with a number.</span>
+            </a>
+          </li>
+          <li class="work-card placeholder">
+            <a href="#">
+              <span class="work-media media-blank"></span>
+              <span class="label label-accent">[PLACEHOLDER] Type · Year</span>
+              <h3 class="work-title">[PLACEHOLDER] Case study 2</h3>
+              <span class="work-result">[PLACEHOLDER] One line result with a number.</span>
+            </a>
+          </li>
+          <li class="work-card placeholder">
+            <a href="#">
+              <span class="work-media media-blank"></span>
+              <span class="label label-accent">[PLACEHOLDER] Type · Year</span>
+              <h3 class="work-title">[PLACEHOLDER] Case study 3</h3>
+              <span class="work-result">[PLACEHOLDER] One line result with a number.</span>
+            </a>
+          </li>
+        </ul>
+        -->
+      </div>
+    </section>
+
+    <!-- hidden 2026-10-17 (Krishna: these are past projects; case studies are written later); it repeated the same three projects. Comes back with the case studies (WEB-10.8):
+    [ All projects (WEB-2.21, WEB-10.8): every past project, client names only with permission. ]
+    <section class="section section-alt" aria-labelledby="all-title">
+      <div class="container reveal-scroll">
+        <header class="section-head">
+          <p class="label label-accent">All projects</p>
+          <h2 class="section-title" id="all-title">Everything we've shipped.</h2>
+        </header>
+        <ul class="projects list-plain">
+          <li><a class="project-name" href="https://parktag.me/" target="_blank" rel="noopener">ParkTag<span class="sr-only"> (opens in a new tab)</span></a><span>App and product</span><span class="placeholder">[Year]</span><span class="project-result">A QR tag that lets anyone reach a vehicle owner without seeing their number. We built the whole product from scratch.</span></li>
+          <li><a class="project-name" href="https://www.drarpangandhi.com/" target="_blank" rel="noopener">Dr. Arpan Gandhi<span class="sr-only"> (opens in a new tab)</span></a><span>Website</span><span class="placeholder">[Year]</span><span class="project-result">Website for a diagnostic medicine advisor, with consulting pages, a blog and an enquiry form.</span></li>
+          <li><a class="project-name" href="https://www.pathmoleexpert.com/" target="_blank" rel="noopener">PathMole Expert Lab<span class="sr-only"> (opens in a new tab)</span></a><span>Website</span><span class="placeholder">[Year]</span><span class="project-result">Website for a pathology lab, with services, a test list, an enquiry form and WhatsApp.</span></li>
+        </ul>
+        [ was until 2026-10-17 (Krishna: put the real projects on the Work page; clients gave permission):
+        <ul class="projects list-plain">
+          <li class="placeholder"><span class="project-name">[PLACEHOLDER] Project</span><span>[Type]</span><span>[Year]</span><span class="project-result">[One line result]</span></li>
+          <li class="placeholder"><span class="project-name">[PLACEHOLDER] Project</span><span>[Type]</span><span>[Year]</span><span class="project-result">[One line result]</span></li>
+          <li class="placeholder"><span class="project-name">[PLACEHOLDER] Project</span><span>[Type]</span><span>[Year]</span><span class="project-result">[One line result]</span></li>
+        </ul>
+        ]
+      </div>
+    </section>
+    -->
+
+    <!-- All projects (WEB-2.21, WEB-10.8), back on 2026-10-17 (Krishna: "add all the project in the website"): every project from Krishna's old portfolio. Years to confirm. -->
+    <section class="section section-alt" aria-labelledby="all-title">
+      <div class="container reveal-scroll">
+        <header class="section-head">
+          <p class="label label-accent">Selected projects</p> <!-- was until 2026-10-17: All projects -->
+          <h2 class="section-title" id="all-title">More of what we've built.</h2> <!-- was until 2026-10-17 (now a selection, not everything): Everything we've shipped. -->
+        </header>
+        <!-- Five chosen projects as bullet points; each opens on hover, keyboard focus or tap (2026-10-17). Always open on touch screens. Screenshots in the open detail where we have one (2026-10-17). -->
+        <ul class="projects list-plain">
+          <li class="project">
+            <p class="project-head"><span class="project-name">ParkTag</span><span class="project-type">Brand and web app<!-- was until 2026-10-17: App and product --><!-- was until 2026-10-17 (Krishna: remove the year placeholders): · [Year] --></span></p>
+            <div class="project-more">
+              <div>
+                <p class="project-result">A founder's idea, taken from nothing to a brand and web app with 1,000+ users.</p>
+                <ul class="list-plain service-features project-points"><li>We worked through every part of the idea with the founder</li><li>Brand and positioning, then the first version built from scratch</li><li>Opens in under half a second, with nothing to install</li><li>Still getting better every day, shaped by feedback from real users</li></ul> <!-- was until 2026-10-17 (Krishna: never explain a client's product idea on our site): [p class="project-result"]A QR tag for vehicles, now used by 1,000+ owners, that lets anyone reach the owner while both phone numbers stay private.[/p]
+                [ul class="list-plain service-features project-points"][li]We sat with the owner, shaped the brand and how it stands out, then built the first version from scratch[/li][li]The scan page opens in the phone's browser in under half a second, with no app and no sign up[/li][li]A private call connects in under three seconds, and neither person sees the other's number[/li][li]Owners turn the tag on or off and see every scan from a web app dashboard, with instant alerts[/li][li]Still getting better every day, shaped by feedback from real users[/li][/ul] --> <!-- was until 2026-10-17 (Krishna told the story behind each project): A QR tag for vehicles that lets anyone reach the owner, while both phone numbers stay private. <li>The scan page opens in the phone's browser in under half a second, with no app and no sign up</li><li>A private call connects in under three seconds, and neither person sees the other's number</li><li>Owners turn the tag on or off and see every scan from a simple dashboard</li><li>Scan alerts on WhatsApp, plans and online ordering, all built from scratch</li> -->
+                <p><a class="btn-link" href="https://parktag.me/" target="_blank" rel="noopener">Visit the live site <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a></p>
+                <div class="shot-frame project-shot">
+                  <img src="media/work/parktag.webp" alt="ParkTag home page." width="1200" height="900" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="project">
+            <p class="project-head"><span class="project-name">PathMole Expert Lab</span><span class="project-type">Brand and website<!-- was until 2026-10-17: Website --><!-- was until 2026-10-17 (Krishna: remove the year placeholders): · [Year] --></span></p>
+            <div class="project-more">
+              <div>
+                <p class="project-result">A new business with no brand, no website and no way to be found. We built everything from scratch.</p> <!-- was until 2026-10-18 (Krishna: less about the lab, follow the opening line): [p class="project-result"]A pathology lab with no website before. We shaped its brand and built everything from scratch.[/p] -->
+                <ul class="list-plain service-features project-points"><li>Brand and positioning first, then a 20+ page website</li><li>Three ways to get in touch: an enquiry form that stores no private details, chat and click to call</li> <!-- was until 2026-10-18 (Krishna: less about the lab, follow the opening line): [li]A built in helper that guides visitors to the right test, and a library of case studies and research[/li][li]An enquiry form that stores no patient data, plus chat and click to call[/li] --><li>Email and a newsletter set up and connected to the website</li><li>Easy to find in search and AI answers, and works well on the smallest phones</li></ul> <!-- was until 2026-10-17 (Krishna told the story behind each project): A 20+ page website for a pathology lab, built to load fast and earn the trust of doctors and patients. <li>A built in helper that guides visitors to the right test</li><li>A library of case studies and research</li><li>An enquiry form that stores no patient data, plus WhatsApp and click to call</li><li>Works well on the smallest phones, easy to find on Google, in the lab's own brand</li> -->
+                <p><a class="btn-link" href="https://www.pathmoleexpert.com/" target="_blank" rel="noopener">Visit the live site <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a></p>
+                <div class="shot-frame project-shot">
+                  <img src="media/work/pathmole.webp" alt="PathMole Expert Lab home page." width="1200" height="900" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="project">
+            <p class="project-head"><span class="project-name">Dr. Arpan Gandhi</span><span class="project-type">Website<!-- was until 2026-10-17: Website --><!-- was until 2026-10-17 (Krishna: remove the year placeholders): · [Year] --></span></p>
+            <div class="project-more">
+              <div>
+                <p class="project-result">An old website that took over 7 seconds to load and didn't show the full story of the work. We rebuilt it from scratch.</p> <!-- was until 2026-10-18 (Krishna: speak to many fields, not one senior person): [p class="project-result"]His old website took over 7 seconds to load and didn't show the full story of his work. We rebuilt it from scratch.[/p] --> <!-- was until 2026-10-17 (Krishna: never make the old tool look bad): His old WordPress site ... -->
+                <ul class="list-plain service-features project-points"><li>We wrote the text from everything published, posts online and the old site</li><li>Opens with a moving headline and a running list of highlights</li><li>Each part of the work appearing gently as you scroll</li> <!-- was until 2026-10-18 (Krishna: speak to many fields, not one senior person): [li]We wrote the text from his published research, his posts online and his old site[/li][li]Opens with a moving headline and a running list of career highlights[/li][li]His story, consulting, journey, academic work and blog, each section appearing gently as you scroll[/li] --><li>Fast on every screen, and one step to get in touch</li></ul> <!-- was until 2026-10-17 (Krishna told the story behind each project): A personal website for a senior healthcare leader, built to turn visitors into consulting enquiries. <li>Opens with a moving headline and a running list of career highlights</li><li>His story, consulting, journey, academic work and blog, each section appearing gently as you scroll</li><li>Fast on every screen, easy to find online, and one step to get in touch</li> -->
+                <p><a class="btn-link" href="https://www.drarpangandhi.com/" target="_blank" rel="noopener">Visit the live site <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a></p>
+                <div class="shot-frame project-shot">
+                  <img src="media/work/drarpangandhi.webp" alt="Dr. Arpan Gandhi home page, with his roles as a healthcare advisor and his photo." width="1200" height="900" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="project">
+            <p class="project-head"><span class="project-name">Krishna Singh portfolio</span><span class="project-type">Website</span></p>
+            <div class="project-more">
+              <div>
+                <p class="project-result">Our founder's own portfolio, built from scratch: a space themed site that shows his work, skills and case studies.</p>
+                <ul class="list-plain service-features project-points"><li>An illustrated night sky on the opening screen</li><li>Work, skills, case studies and a contact form on one page</li></ul>
+                <p><a class="btn-link" href="https://alphakrishna.github.io/portfolio_my_website/" target="_blank" rel="noopener">Visit the live site <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a></p>
+                <div class="shot-frame project-shot">
+                  <img src="media/work/portfolio.webp" alt="Krishna Singh portfolio home page: I build software that raises what a business is capable of." width="1200" height="900" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="project" tabindex="0">
+            <p class="project-head"><span class="project-name">Employee Activity Monitoring</span><span class="project-type">Web app<!-- was until 2026-10-17 (Krishna: remove the year placeholders): · [Year] --></span></p>
+            <div class="project-more">
+              <div>
+                <p class="project-result">Dashboards that show activity for individuals and teams across 100+ employees.</p>
+                <ul class="list-plain service-features project-points"><li>Made the dashboards load 40% faster, across 100+ different views</li><li>Secure sign in that gives each person the right access for their role</li></ul> <!-- was until 2026-10-17 (Krishna: write a little more on each project): Dashboards for individuals and teams across 100+ employees, made 40% faster, with secure sign in that gives each person the right access. -->
+              </div>
+            </div>
+          </li>
+          <li class="project" tabindex="0">
+            <p class="project-head"><span class="project-name">Data Visualization Platform</span><span class="project-type">Web app<!-- was until 2026-10-17 (Krishna: remove the year placeholders): · [Year] --></span></p>
+            <div class="project-more">
+              <div>
+                <p class="project-result">An app that turns complex transport data into clear visuals.</p>
+                <ul class="list-plain service-features project-points"><li>Maps 1,000+ connections in detail</li><li>Stays fast and smooth as the data grows</li><li>Hosted in the cloud, so it stays quick as more people use it</li></ul> <!-- was until 2026-10-17 (Krishna: write a little more on each project): Complex transport data turned into clear visuals, mapping 1,000+ connections and staying fast as the data grows. Hosted on AWS. -->
+              </div>
+            </div>
+          </li>
+        </ul>
+        <!-- was until 2026-10-17 (Krishna: show a selection as bullet points that open on hover); Startup Acquisition Predictor, InCITe 2023 Conference Site and TeachAR left out:
+        <ul class="projects list-plain">
+          <li><a class="project-name" href="https://parktag.me/" target="_blank" rel="noopener">ParkTag<span class="sr-only"> (opens in a new tab)</span></a><span>App and product</span><span class="placeholder">[Year]</span><span class="project-result">Reach a vehicle owner by scanning a QR tag, with no numbers shared. Scan page opens in under half a second.</span></li>
+          <li><a class="project-name" href="https://www.drarpangandhi.com/" target="_blank" rel="noopener">Dr. Arpan Gandhi<span class="sr-only"> (opens in a new tab)</span></a><span>Website</span><span class="placeholder">[Year]</span><span class="project-result">Personal website for a healthcare leader, with consulting pages, a blog and an enquiry form.</span></li>
+          <li><a class="project-name" href="https://www.pathmoleexpert.com/" target="_blank" rel="noopener">PathMole Expert Lab<span class="sr-only"> (opens in a new tab)</span></a><span>Website</span><span class="placeholder">[Year]</span><span class="project-result">A 20+ page lab website with a helper that guides visitors to the right test.</span></li>
+          <li><span class="project-name">Employee Activity Monitoring</span><span>Web app</span><span class="placeholder">[Year]</span><span class="project-result">Dashboards for 100+ employees, made 40% faster, with secure sign in by role.</span></li>
+          <li><span class="project-name">Data Visualization Platform</span><span>Web app</span><span class="placeholder">[Year]</span><span class="project-result">Transport data as clear visuals, mapping 1,000+ connections and staying fast as the data grows.</span></li>
+          <li><span class="project-name">Startup Acquisition Predictor</span><span>Machine learning</span><span class="placeholder">[Year]</span><span class="project-result">Predicts how likely a startup is to be acquired, learned from 500+ real startup records.</span></li>
+          <li><span class="project-name">InCITe 2023 Conference Site</span><span>Website</span><span>2023</span><span class="project-result">The official conference website, easy to use on any device. Attendee engagement up 30%.</span></li>
+          <li><span class="project-name">TeachAR</span><span>Augmented reality app</span><span>2023</span><span class="project-result">Lessons that come to life in 3D from a printed image. First prize at InCITe 2023.</span></li>
+        </ul>
+        -->
+      </div>
+    </section>
+
+    <section class="section cta cta-glow" aria-labelledby="cta-title"> <!-- black 2026-10-18 (Krishna: make it black); was solid pink [band-blush] until 2026-10-18; was until 2026-10-18 (Krishna: no black band on Work): [section class="section cta cta-glow" aria-labelledby="cta-title"> -->
+      <div class="container reveal-scroll">
+        <h2 class="cta-title" id="cta-title">Got a great idea, but nothing built yet?</h2> <!-- was until 2026-10-17 (Krishna: yes to the idea line after the case studies): [h2 class="cta-title" id="cta-title"]Like what you see?[/h2] -->
+        <p class="cta-body">No brand, no product, no website? We'll build all three and put your idea in front of real users fast, so you learn what works before you spend big.</p> <!-- was until 2026-10-17 (Krishna: yes to the idea line after the case studies): [p class="cta-body"]Book a call and talk in as little as 30 minutes.[/p] -->
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+        </div>
+        <p class="cta-closing label">Enable businesses to do more.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 13. Footer (home.md §13, WEB-5.7). No Client login link until BIZ-3.10. -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">Aaurigo Tech</p>
+          <p class="footer-tagline">Launch fast. Learn faster. Grow smarter.</p>
+        </div>
+        <nav aria-labelledby="footer-nav">
+          <p class="footer-heading label" id="footer-nav">Navigate</p>
+          <ul class="footer-links list-plain">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-work">
+          <p class="footer-heading label" id="footer-work">Work with us</p>
+          <ul class="footer-links list-plain">
+            <li><a href="websites.html">Websites</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#web-development --></li>
+            <li><a href="web-apps.html">Web apps</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#web-applications --></li>
+            <!-- was until 2026-10-21 (Krishna: brand combined with every service, not its own option): [li][a href="services.html#brand"]Brand[/a][/li] -->
+            <li><a href="mobile-apps.html">Mobile apps</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#mobile-apps --></li> <!-- was until 2026-10-14: Web Development · Web Applications · Mobile Apps -->
+            <li><a href="#" target="_blank" rel="noopener">Book a call<span class="sr-only"> (opens in a new tab)</span></a></li>
+          </ul>
+        </nav>
+        <div class="footer-news">
+          <p class="footer-heading label">Newsletter</p>
+          <p>Short notes on building and launching faster. One email a month.</p>
+          <!-- Posts to Zoho Campaigns once NEWS-1.11 is set up. -->
+          <form action="#" method="post">
+            <div class="field">
+              <label class="field-label" for="news-email">Your email address</label>
+              <div class="form-row">
+                <input class="field-input" id="news-email" name="email" type="email" autocomplete="email" required>
+                <button class="btn btn-primary" type="submit">Join</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> Aaurigo Tech. All rights reserved.</p>
+        <ul class="list-plain" aria-label="Legal">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="accessibility.html">Accessibility Statement</a></li>
+        </ul>
+        <!-- [PLACEHOLDER] Social links (LinkedIn, Instagram, GitHub, X) once WEB-1.4 is done. -->
+      </div>
+      <p class="footer-mark" aria-hidden="true">Aaurigo Tech</p> <!-- 2026-10-25 (Krishna: polish): the name set large and quiet as the closing moment; decorative, the brand is already named above -->
+    </div>
+  </footer>
+</body>
+</html>

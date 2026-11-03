@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terms of Use | Aaurigo Tech</title>
+  <meta name="description" content="The terms for using the Aaurigo Tech website: how you can use the site, what our prices mean, and who owns the content.">
+  <link rel="canonical" href="https://www.aaurigotech.com/terms"> <!-- 2026-11-03: self canonical on the final www address (RFA §5.11) -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.aaurigotech.com/"}, {"@type": "ListItem", "position": 2, "name": "Terms of Use", "item": "https://www.aaurigotech.com/terms"}]}</script> <!-- 2026-11-03: BreadcrumbList on inner pages (RFA §5.11) -->
+  <!-- Header and footer are copies of index.html until the Astro port (WEB-3.2). -->
+
+  <!-- Google Fonts for now; self-host before launch (WEB-4.4). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+
+  <!-- Order matters: tokens → base → components → sections (in page order) -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/sections/header.css">
+  <link rel="stylesheet" href="styles/sections/legal.css">
+  <link rel="stylesheet" href="styles/sections/footer.css">
+
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="scripts/site.js" defer></script>
+</head>
+<body>
+  <!-- 2026-11-03: Terms of Use, copy from doc/copy/terms.md (draft for approval). Covers the website only; client work is covered by each proposal and agreement (BIZ-1.6). Legal review before launch (BIZ-2.8). -->
+  <!-- [PLACEHOLDER] Every href="#" Book a call link becomes the booking page (WEB-14.8.6). -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- 1. Announcement bar (home.md §1) -->
+  <div class="announce">
+    <div class="container">
+      <!-- was until 2026-10-13:
+      <p>Now booking new projects. Talk to us in as little as 30 minutes.
+        <a href="#" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </p>
+      -->
+      <p class="announce-inner">
+        <span class="announce-label label label-accent"><span class="announce-dot" aria-hidden="true"></span>Now booking</span>
+        <span class="announce-text">Talk to us in as little as 30 minutes.</span>
+        <a href="#" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Site header (WEB-5) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Aaurigo Tech</a>
+      <nav aria-label="Main">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menu</button>
+        <ul class="nav-list list-plain" id="main-menu">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-sm header-cta" href="#" target="_blank" rel="noopener">
+        Book a call<span class="sr-only"> (opens in a new tab)</span>
+      </a>
+    </div>
+  </header>
+
+    <main id="main">
+
+    <section class="page-intro intro-glow">
+      <div class="container reveal">
+        <h1 class="page-title">Terms of <em>Use</em></h1>
+        <p class="page-lead">The simple rules for using this website. Work we do for you is covered by your own proposal and agreement.</p>
+      </div>
+    </section>
+
+    <!-- Full terms (terms.md). Styles: sections/legal.css -->
+    <section class="section legal" aria-label="Full text">
+      <div class="container legal-grid">
+        <nav class="legal-toc" aria-labelledby="legal-toc-title">
+          <p class="label" id="legal-toc-title">On this page</p>
+          <ol class="list-plain">
+            <li><a href="#who">Who we are</a></li>
+            <li><a href="#use">Using this website</a></li>
+            <li><a href="#prices">Prices on this site</a></li>
+            <li><a href="#projects">When we work together</a></li>
+            <li><a href="#results">Our case studies</a></li>
+            <li><a href="#content">Who owns what</a></li>
+            <li><a href="#links">Links to other websites</a></li>
+            <li><a href="#liability">Our responsibility</a></li>
+            <li><a href="#law">Governing law</a></li>
+            <li><a href="#changes">Changes to these terms</a></li>
+          </ol>
+        </nav>
+        <div class="legal-body">
+          <p class="legal-updated">Last updated: <span class="placeholder">[PLACEHOLDER date]</span></p>
+          <p class="legal-summary">In short: browse and share freely, don't copy our work, and treat our prices as a guide until your proposal confirms them.</p>
+
+          <h2 id="who">Who we are</h2>
+          <p>This website is run by Aaurigo Tech <span class="placeholder">[PLACEHOLDER legal entity name]</span>, <span class="placeholder">[PLACEHOLDER postal address]</span>.</p>
+          <p>Questions about these terms: <span class="placeholder">[PLACEHOLDER email address]</span>, or use the form on our <a href="contact.html">Contact page</a>.</p>
+
+          <h2 id="use">Using this website</h2>
+          <p>You're welcome to browse, read and share links to any page. Please don't:</p>
+          <ul>
+            <li>copy our text, design, photos or code for your own website or materials;</li>
+            <li>try to break, overload or get around the security of the site;</li>
+            <li>use our forms to send spam or anything unlawful.</li>
+          </ul>
+
+          <h2 id="prices">Prices on this site</h2>
+          <p>Our prices are starting prices, shown in your local currency. They are a guide, not an offer. Your price depends on what you need and is confirmed in a written proposal before any work starts.</p>
+
+          <h2 id="projects">When we work together</h2>
+          <p>Project work is covered by your own proposal and agreement. They set out what we build, the payments and the review rounds. If anything there differs from this website, your proposal and agreement apply.</p>
+
+          <h2 id="results">Our case studies</h2>
+          <p>The results in our case studies are real results for those projects. Every business is different, so they show what we have done, not a promise of the same results for yours.</p>
+
+          <h2 id="content">Who owns what</h2>
+          <p>The text, design, photos and code of this website belong to Aaurigo Tech unless we say otherwise. The names and work of our clients belong to our clients.</p>
+
+          <h2 id="links">Links to other websites</h2>
+          <p>Some pages link to other websites, including our clients' sites. We don't control them and aren't responsible for what they show.</p>
+
+          <h2 id="liability">Our responsibility</h2>
+          <p>We work hard to keep this website accurate and available, but we can't promise it will always be free of errors or online. As far as the law allows, we are not liable for any loss that comes from using this website. Nothing in these terms limits the rights you have by law.</p>
+
+          <h2 id="law">Governing law</h2>
+          <p>These terms are governed by the laws of <span class="placeholder">[PLACEHOLDER country or state]</span>, and its courts deal with any dispute about them.</p>
+
+          <h2 id="changes">Changes to these terms</h2>
+          <p>If we change these terms, we'll update the date at the top of this page.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 13. Footer (home.md §13, WEB-5.7). No Client login link until BIZ-3.10. -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">Aaurigo Tech</p>
+          <p class="footer-tagline">Launch fast. Learn faster. Grow smarter.</p>
+        </div>
+        <nav aria-labelledby="footer-nav">
+          <p class="footer-heading label" id="footer-nav">Navigate</p>
+          <ul class="footer-links list-plain">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-work">
+          <p class="footer-heading label" id="footer-work">Work with us</p>
+          <ul class="footer-links list-plain">
+            <li><a href="websites.html">Websites</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#web-development --></li>
+            <li><a href="web-apps.html">Web apps</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#web-applications --></li>
+            <!-- was until 2026-10-21 (Krishna: brand combined with every service, not its own option): [li][a href="services.html#brand"]Brand[/a][/li] -->
+            <li><a href="mobile-apps.html">Mobile apps</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#mobile-apps --></li> <!-- was until 2026-10-14: Web Development · Web Applications · Mobile Apps -->
+            <li><a href="#" target="_blank" rel="noopener">Book a call<span class="sr-only"> (opens in a new tab)</span></a></li>
+          </ul>
+        </nav>
+        <div class="footer-news">
+          <p class="footer-heading label">Newsletter</p>
+          <p>Short notes on building and launching faster. One email a month.</p>
+          <!-- Posts to Zoho Campaigns once NEWS-1.11 is set up. -->
+          <form action="#" method="post">
+            <div class="field">
+              <label class="field-label" for="news-email">Your email address</label>
+              <div class="form-row">
+                <input class="field-input" id="news-email" name="email" type="email" autocomplete="email" required>
+                <button class="btn btn-primary" type="submit">Join</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> Aaurigo Tech. All rights reserved.</p>
+        <ul class="list-plain" aria-label="Legal">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="accessibility.html">Accessibility Statement</a></li>
+        </ul>
+        <!-- [PLACEHOLDER] Social links (LinkedIn, Instagram, GitHub, X) once WEB-1.4 is done. -->
+      </div>
+      <p class="footer-mark" aria-hidden="true">Aaurigo Tech</p> <!-- 2026-10-25 (Krishna: polish): the name set large and quiet as the closing moment; decorative, the brand is already named above -->
+    </div>
+  </footer>
+</body>
+</html>

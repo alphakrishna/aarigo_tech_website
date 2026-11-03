@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About: Your Growth Partner in Tech | Aaurigo Tech</title>
+  <meta name="description" content="Aaurigo Tech helps businesses grow with technology. Meet founder Krishna Singh and the principles behind building right and building fast.">
+  <link rel="canonical" href="https://www.aaurigotech.com/about"> <!-- 2026-11-03: self canonical on the final www address (RFA §5.11) -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.aaurigotech.com/"}, {"@type": "ListItem", "position": 2, "name": "About", "item": "https://www.aaurigotech.com/about"}]}</script> <!-- 2026-11-03: BreadcrumbList on inner pages (RFA §5.11) -->
+  <!-- Copy: doc/copy/about.md (draft until approved). Header and footer are copies of index.html until the Astro port (WEB-3.2). -->
+
+  <!-- Google Fonts for now; self-host before launch (WEB-4.4). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+
+  <!-- Order matters: tokens → base → components → sections (in page order) -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/sections/header.css">
+  <link rel="stylesheet" href="styles/sections/about.css">
+  <link rel="stylesheet" href="styles/sections/values.css">
+  <link rel="stylesheet" href="styles/sections/founder.css">
+  <!-- <link rel="stylesheet" href="styles/sections/packages.css"> not needed: .text-block is now in components.css -->
+  <link rel="stylesheet" href="styles/sections/cta.css">
+  <link rel="stylesheet" href="styles/sections/footer.css">
+
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="scripts/site.js" defer></script>
+</head>
+<body>
+  <!-- [PLACEHOLDER] Every href="#" Book a call link becomes the booking page (WEB-14.8.6). -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- 1. Announcement bar (home.md §1) -->
+  <div class="announce">
+    <div class="container">
+      <!-- was until 2026-10-13:
+      <p>Now booking new projects. Talk to us in as little as 30 minutes.
+        <a href="#" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </p>
+      -->
+      <p class="announce-inner">
+        <span class="announce-label label label-accent"><span class="announce-dot" aria-hidden="true"></span>Now booking</span>
+        <span class="announce-text">Talk to us in as little as 30 minutes.</span>
+        <a href="#" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Site header (WEB-5) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Aaurigo Tech</a>
+      <nav aria-label="Main">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menu</button>
+        <ul class="nav-list list-plain" id="main-menu">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-sm header-cta" href="#" target="_blank" rel="noopener">
+        Book a call<span class="sr-only"> (opens in a new tab)</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- was until 2026-10-25 (Krishna: the first section must make a lasting impression):
+    [section class="page-intro intro-glow"]
+      [div class="container reveal"]
+        [h1 class="page-title"]A growth partner [em]who happens to build technology.[/em][/h1]
+        [p class="page-lead"]Aaurigo Tech is a global technology company. We build websites, web apps and mobile apps, but what we really deliver is growth: products that reach real users fast and get better with every week of real data.[/p]
+      [/div]
+    [/section]
+    -->
+    <!-- First screen (2026-10-25, Krishna): one statement from the founder's belief "a business can only do as much as it is enabled to do", purpose, vision and promise as a spec strip. Styles: sections/about.css -->
+    <!-- was until 2026-11-02 (Krishna: on the right side, not behind the heading): [section class="page-intro intro-glow about-hero has-photo"] with [picture class="about-hero-photo" aria-hidden="true"][source media="(max-width: 35rem)" srcset="media/about/about-building-phone.webp"][img src="media/about/about-building.webp" alt="" width="1600" height="1014"][/picture]; files in archive/media/about-2026-11-02/ -->
+    <section class="page-intro intro-glow about-hero">
+      <div class="container about-hero-inner has-side">
+        <h1 class="about-hero-title reveal"><span class="line">A growth partner</span> <em class="line">who happens to build technology.</em></h1> <!-- 2026-10-25 (Krishna: keep this heading; tried the same day: [span]Your business,[/span] [em]enabled to do more.[/em]) -->
+        <!-- was until 2026-11-02 (Krishna: use the wide crop, beside the text): [figure class="about-hero-side reveal" style="--d: 1" aria-hidden="true"][img src="media/about/about-building-portrait.webp" alt="" width="765" height="1020"][/figure] beside the heading -->
+        <!-- 2026-11-02 (Krishna): the wide black and white building photo on the right of the heading; decorative -->
+        <!-- was until 2026-11-02 (Krishna: his cut-out with the sky removed): [img src="media/about/about-building-wide.webp" alt="" width="1600" height="1014"], file in archive/media/about-2026-11-02/ -->
+        <!-- was until 2026-11-02 (Krishna: this colour cut-out, a little larger): [img src="media/about/about-building-cutout.webp" alt="" width="628" height="398"], file in archive/media/about-2026-11-02/ -->
+        <figure class="about-hero-side is-cutout is-tall reveal" style="--d: 1" aria-hidden="true">
+          <img src="media/about/about-building-crop.webp" alt="" width="226" height="206"> <!-- was until 2026-11-02 (Krishna: cut the small building on the right side, show a little of the road): about-building-colour.webp 270 by 360, cropped in CSS; file in archive/media/about-2026-11-02/ -->
+        </figure>
+        <div class="about-hero-foot">
+          <p class="page-lead about-hero-lead reveal" style="--d: 1">We build websites, web apps and mobile apps, but what we really deliver is <strong>growth</strong>. We get your product to <strong>real people fast</strong>, then keep making it better with <strong>every week of real data</strong>.</p> <!-- 2026-10-25 (Krishna: highlight the key words) --> <!-- was until 2026-10-25 (Krishna: sub text, lead with what we deliver, partner voice): Aaurigo Tech is a global technology company. We build websites, web apps and mobile apps, but what we really deliver is growth: products that reach real users fast and get better with every week of real data. -->
+          <dl class="about-facts about-hero-facts reveal" style="--d: 2">
+            <div><dt class="label">Our purpose</dt><dd>We help businesses grow with technology.</dd></div>
+            <div><dt class="label">Our vision</dt><dd>To enable every business to do more than it could alone.</dd></div> <!-- was until 2026-10-25 (Krishna): To enable businesses to do more in the world. -->
+            <div><dt class="label">Our promise</dt><dd>The best quality, in the shortest time.</dd></div> <!-- was until 2026-10-25 (Krishna: use the locked core promise; "record time" cannot be proven): Top quality. Record time. -->
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- was until 2026-10-25 (moved into the first screen, about-hero-facts): Purpose and vision (about.md §2)
+    [section class="section" aria-label="Purpose and vision"]
+      [div class="container reveal-scroll"]
+        [dl class="about-facts"]
+          [div][dt class="label label-accent"]Our purpose[/dt][dd]We help businesses grow with technology.[/dd][/div]
+          [div][dt class="label label-accent"]Our vision[/dt][dd]To enable businesses to do more in the world.[/dd][/div]
+          [div][dt class="label label-accent"]Our promise[/dt][dd]Top quality. Record time.[/dd][/div]
+        [/dl]
+      [/div]
+    [/section]
+    -->
+
+    <!-- What drives us (about.md §3) -->
+    <!-- was until 2026-10-25 (Krishna: next part; the heading repeated the quote's first words, straight quote marks, half the screen empty):
+    [section class="section section-alt" aria-labelledby="drives-title"]
+      [div class="container reveal-scroll"]
+        [header class="section-head"]
+          [p class="label label-accent"]What drives us[/p]
+          [h2 class="section-title" id="drives-title"]Every second counts.[/h2]
+        [/header]
+        [figure class="drives"]
+          [blockquote class="quote"]"Every second counts, so use it to its fullest. Don't just develop the product. Live it. A business can only do as much as it is enabled to do. That's what I want technology to do for every business we work with."[/blockquote]
+          [figcaption][cite]Krishna Singh, Founder[/cite][/figcaption]
+        [/figure]
+      [/div]
+    [/section]
+    -->
+    <!-- 2026-10-25: the founder's words as three beliefs on hairlines, the label and signature on the left. Words unchanged (about.md §3). -->
+    <section class="section section-alt" aria-labelledby="drives-title">
+      <div class="container drives-grid reveal-scroll">
+        <h2 class="section-title drives-label" id="drives-title">What <em>drives</em> us.</h2> <!-- was until 2026-10-25 (Krishna: too small, not noticed): [h2 class="label label-accent drives-label" id="drives-title"]What drives us[/h2] -->
+        <blockquote class="drives-quote">
+          <p><!-- was until 2026-10-25 (Krishna: remove the numbering): [span class="label" aria-hidden="true"]01[/span] --><span>Every second counts, so use it to its fullest.</span></p> <!-- tried 2026-10-25 and taken off (Krishna: too cluttered, one grey line for all): [span class="drives-close"]For you, that means a clear plan and no week of your project wasted.[/span] -->
+          <p><!-- was until 2026-10-25 (Krishna: remove the numbering): [span class="label" aria-hidden="true"]02[/span] --><span>Don&#8217;t just develop the product. <em>Live it.</em></span></p> <!-- tried 2026-10-25 and taken off (Krishna: too cluttered): [span class="drives-close"]We use your product the way your customers will, before they ever see it.[/span] -->
+          <p><!-- was until 2026-10-25 (Krishna: remove the numbering): [span class="label" aria-hidden="true"]03[/span] --><span>A business can only do as much as it is enabled to do. <!-- taken off 2026-10-25 (Krishna: one grey line for all three, below): [span class="drives-close"]So I want technology to enable every business we work with to do more.[/span] --> <!-- 2026-10-25: no quote marks now that the "for you" lines sit inside; was until 2026-10-25 (Krishna: clearer): That&#8217;s what I want technology to do for every business we work with. --></span></p>
+        </blockquote>
+        <p class="drives-note">These three shape every project we take on.</p> <!-- was until 2026-10-25 (Krishna: do not repeat on the same page); do more is the vision: These three shape every project we take on, so your business can do more. --> <!-- 2026-10-25 (Krishna: one grey line that relates to all) -->
+        <!-- was until 2026-10-25 (Krishna: moved under the founder photo): the signature, Krishna Singh, Founder, Aaurigo Tech -->
+        <!-- 2026-10-25 (Krishna: stock image under the heading). Rules and subject: doc/copy/about.md §3 Images. Decorative, so alt="" once the real image is in -->
+        <!-- was until 2026-10-30 (Krishna: his own photo instead of stock, DSC_0640, background removed with AI, warm black and white): [div class="drives-photo media-blank placeholder" aria-hidden="true"][span class="label"][PLACEHOLDER] Stock image: close up of a watch movement, warm light[/span][/div] -->
+        <!-- 2026-10-30 (Krishna: trial): offset champagne hairline, the wrapper carries it; was [img class="drives-photo" ...] on its own -->
+        <div class="drives-photo photo-offset"><img src="media/about/drives-krishna.webp" srcset="media/about/drives-krishna-480.webp 480w, media/about/drives-krishna.webp 800w" sizes="(max-width: 55rem) 24rem, 22rem" width="800" height="1000" loading="lazy" decoding="async" alt="Krishna at a table, hands resting on a closed laptop, a watch on the wrist and glasses beside it"></div>
+
+      </div>
+    </section>
+
+    <!-- Who we love working with (WEB-2.20, WEB-11.6; 2026-10-25, Krishna: anyone ready to bring their business online with the will to grow) -->
+    <!-- was until 2026-10-25 (two flat paragraphs; now three kinds of client and a closing line):
+    [section class="section" aria-labelledby="who-title"]
+      [div class="container text-block reveal-scroll"]
+        [header class="section-head"][p class="label label-accent"]Who we love working with[/p][h2 class="section-title" id="who-title"]Ready to grow.[/h2][/header]
+        [div][p]Anyone ready to bring their business online, show it at its best, and grow what it can do. Opening your doors for the first time or already running ads, you know where you want to go.[/p]
+        [p]You bring the goal and what only you know. We take the load off you and build what takes you there.[/p][/div]
+      [/div]
+    [/section]
+    -->
+    <section class="section" aria-labelledby="who-title">
+      <div class="container reveal-scroll">
+        <header class="section-head">
+          <!-- was until 2026-10-25 (Krishna: refine; the small label went unnoticed, same fix as What drives us): [p class="label label-accent"]Who we love working with[/p] [h2 class="section-title" id="who-title"]Ready to [em]grow.[/em][/h2] -->
+          <h2 class="section-title" id="who-title">Who we <em>love</em> working with.</h2>
+          <p class="section-intro">Anyone ready to bring their business online, show it at its best, and grow what it can do.</p>
+        </header>
+        <ol class="who-list list-plain">
+          <li><!-- was until 2026-10-25 (no numbers, like What drives us): [span class="label label-accent"]01[/span] --><h3 class="who-name">Opening your doors</h3><p>You're starting out and want to be found and trusted from day one.</p></li>
+          <li><!-- [span class="label label-accent"]02[/span] --><h3 class="who-name">Already growing</h3><p>Customers are coming in, maybe from your ads, and your website needs to keep up with them.</p></li>
+          <li><!-- [span class="label label-accent"]03[/span] --><h3 class="who-name">Ready for more</h3><p>You know your business inside out and want technology to take it further.</p> <!-- was until 2026-10-25 (Krishna: do not repeat on the same page): ...want technology to raise what it can do. --></li>
+        </ol>
+        <p class="who-close">Wherever you are, you bring the goal and what only you know. <em>We take the load off you.</em></p>
+      </div>
+    </section>
+
+    <!-- Principles (moved from Home 2026-10-12, about.md §4) -->
+    <section class="section section-alt" aria-labelledby="values-title"> <!-- was until 2026-10-25 (bands keep alternating after the new section): [section class="section" aria-labelledby="values-title"] -->
+      <div class="container reveal-scroll">
+        <header class="section-head">
+          <!-- was until 2026-10-25 (Krishna: refine; small labels go unnoticed): [p class="label label-accent"]Why Aaurigo Tech[/p] [h2 class="section-title" id="values-title"]What we value.[/h2] -->
+          <h2 class="section-title" id="values-title">What we <em>value.</em></h2>
+          <p class="section-intro">Four things we hold to on every project.</p> <!-- was until 2026-10-25 (Krishna: do not repeat on the same page); it restated the values below: We value your time. We value quality. And we value doing the work properly, even when nobody is checking. -->
+        </header>
+
+        <ol class="values-list list-plain">
+          <!-- was until 2026-10-25 (Krishna: merge the two speed values into one): [li class="value"][ was until 2026-10-25 (no numbers, like the other sections): [span class="label label-accent"]01[/span] ][h3 class="value-name"]Ship fast, learn faster[/h3][p class="value-text"]Build fast, deploy fast, so you can test your idea in the real world before betting big. [em class="value-note"]Speed is a growth tool, not a shortcut.[/em][/p][/li] [li class="value"][ was until 2026-10-25 (no numbers, like the other sections): [span class="label label-accent"]02[/span] ][h3 class="value-name"]Fast, never rushed[/h3][ was until 2026-10-25 ("record" cannot be proven and it repeated the promise): Top quality, record time ][p class="value-text"]We compress the timeline without ever compressing the craft. [em class="value-note"]Fast and good, never one or the other.[/em] [ was until 2026-10-23 (no hyphenated words): [em class="value-note"]No trade off between fast and good.[/em] ][/p][/li] -->
+          <!-- was until 2026-10-30 (Krishna: speed said three times, "compressing" not the right word): [li class="value"][h3 class="value-name"]Ship fast, learn faster[/h3][p class="value-text"]Build fast, deploy fast, so you can test your idea in the real world before betting big, without ever compressing the craft. [em class="value-note"]Fast and good, never one or the other.[/em][/p][/li] -->
+          <li class="value"><h3 class="value-name">Ship fast, learn faster</h3><p class="value-text">We get your idea into the real world early, so you see what works before betting big, and we never cut corners to get there. <em class="value-note">Fast and good, never one or the other.</em></p></li>
+          <!-- was until 2026-10-30 (Krishna: values 2 and 3 read alike, both "we give it everything"): [li class="value"][h3 class="value-name"]The work is the standard[/h3][p class="value-text"]We give 100% to every task because it has to look right to our own eye first. [em class="value-note"]Integrity of craft over performance.[/em][/p][/li] -->
+          <li class="value"><!-- was until 2026-10-25 (no numbers, like the other sections): [span class="label label-accent"]03[/span] --><h3 class="value-name">The work is the standard</h3><p class="value-text">Every detail has to pass our own eye before it reaches yours, whether anyone would notice or not. <em class="value-note">Integrity of craft over performance.</em></p></li>
+          <!-- was until 2026-10-30 (Krishna: values 2 and 3 read alike): [li class="value"][h3 class="value-name"]Total focus wins[/h3][p class="value-text"]Full attention on the point that matters most, because that produces the best outcome. [em class="value-note"]Leverage over effort.[/em][/p][/li] -->
+          <li class="value"><!-- was until 2026-10-25 (no numbers, like the other sections): [span class="label label-accent"]04[/span] --><h3 class="value-name">Total focus wins</h3><p class="value-text">We find the one thing that will move your business most, and put our attention there first. <em class="value-note">Leverage over effort.</em></p></li>
+          <!-- was until 2026-10-25 (Krishna: it must not feel like they depend on us; the care plan keeps the site growing): [li class="value"][span class="label label-accent"]05[/span][h3 class="value-name"]We build it. You run it.[/h3][p class="value-text"]We ship your website or app fast, train your team, and hand over a written guide, so you can run and grow it without waiting on us. [em class="value-note"]No lock in. The value keeps growing after launch day.[/em][/p][/li] -->
+          <li class="value"><!-- was until 2026-10-25 (no numbers, like the other sections): [span class="label label-accent"]05[/span] --><h3 class="value-name">Built to keep growing</h3><p class="value-text">Launch day is the start. It's yours from day one, with a written guide and the keys. We keep it fast and current, tune it for the way people search today, and help it grow with your business. <em class="value-note">The value keeps growing long after launch.</em></p></li>
+        </ol>
+
+        <!-- was until 2026-10-14 (Krishna: not every section needs the call button; the founder section keeps Book a call with me):
+        <div class="values-cta">
+          <div>
+            <p class="values-cta-title">Ready to do more?</p>
+            <p class="values-cta-text">Talk to us in as little as 30 minutes.</p>
+          </div>
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+        </div>
+        -->
+      </div>
+    </section>
+
+
+    <!-- Founder story (moved from Home 2026-10-12, about.md §5) -->
+    <section class="section" aria-labelledby="founder-title">
+      <div class="container founder-grid reveal-scroll">
+        <div class="founder-media"> <!-- 2026-10-25 (Krishna): photo on the left, his signature and name under it -->
+          <!-- was until 2026-10-30 (Krishna's own photo, DSC_0714, background cleaned with AI, warm black and white): [div class="founder-photo media-blank placeholder" role="img" aria-label="[PLACEHOLDER] Krishna Singh, founder of Aaurigo Tech"][/div] -->
+          <!-- 2026-10-30 (Krishna: trial): offset champagne hairline via the wrapper, matching What drives us -->
+          <div class="photo-offset"><img class="founder-photo" src="media/about/founder-krishna.webp" srcset="media/about/founder-krishna-720.webp 720w, media/about/founder-krishna.webp 1080w" sizes="(max-width: 55rem) 24rem, 32rem" width="1080" height="1350" loading="lazy" decoding="async" alt="Krishna Singh, founder of Aaurigo Tech, leaning on a wall, arms crossed"></div>
+          <p class="founder-sign"><svg class="founder-signature" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Krishna Singh's signature" focusable="false" viewBox="30 -54 758 393"><path fill="currentColor" d="M40.9 212.8 L90.9 125.6 L162.0 5.7 L177.3 -18.1 L187.2 -31.1 L195.9 -41.4 L192.1 -43.0 L177.6 -25.6 L166.1 -9.7 L149.4 17.2 L88.3 120.4 L66.6 158.3 L40.3 212.3 L41.0 212.6 L91.0 125.5 L162.1 5.5 L177.4 -18.2 L187.4 -31.3 L195.0 -40.4 L193.0 -44.0 L181.2 -30.2 L170.3 -15.8 L161.9 -3.2 L149.3 17.3 L87.4 121.9 L70.9 150.5 L62.5 166.5 L40.3 212.4Z M259.3 14.6 L235.2 39.3 L222.1 51.4 L204.4 65.2 L186.0 78.0 L163.1 92.1 L139.4 104.7 L132.7 107.8 L127.3 109.7 L112.5 112.7 L109.2 115.0 L111.4 120.0 L117.2 120.9 L130.5 121.5 L134.6 122.2 L139.5 123.9 L146.5 128.2 L150.8 131.6 L155.8 136.5 L159.2 140.8 L162.8 146.6 L164.5 150.4 L169.4 165.6 L173.7 185.3 L173.1 199.1 L173.7 201.5 L175.5 203.9 L178.0 205.3 L180.5 205.5 L182.7 205.1 L187.5 202.2 L192.1 197.1 L196.6 188.8 L202.4 173.4 L211.6 151.5 L214.7 147.5 L213.0 147.5 L213.7 150.5 L216.0 153.8 L218.6 155.4 L221.8 155.4 L223.9 154.2 L229.6 148.6 L234.5 146.3 L233.9 146.7 L234.5 155.4 L233.7 165.3 L226.9 192.9 L226.3 197.7 L226.4 200.4 L230.7 202.9 L233.1 200.8 L239.4 190.0 L246.7 176.8 L257.6 153.7 L260.5 148.9 L259.5 149.0 L256.5 147.3 L249.2 177.4 L247.8 194.5 L249.4 200.2 L251.8 202.6 L255.3 202.7 L257.4 201.6 L270.0 187.5 L276.8 177.2 L288.9 153.1 L291.4 149.8 L288.6 149.0 L287.0 170.7 L287.2 188.2 L286.2 193.0 L282.8 197.2 L278.0 199.9 L273.3 200.4 L265.5 195.6 L263.8 199.7 L267.9 199.9 L279.7 201.8 L288.7 205.3 L292.3 206.0 L296.3 205.6 L299.9 204.0 L304.7 199.0 L309.9 191.2 L326.7 154.3 L381.3 50.9 L377.5 47.2 L321.3 153.3 L302.3 192.7 L301.0 197.5 L301.1 200.6 L304.9 202.6 L307.3 201.2 L347.7 156.4 L352.1 152.9 L354.6 152.0 L357.0 151.7 L359.3 152.0 L362.0 153.3 L363.9 155.0 L364.5 156.2 L364.7 162.5 L359.9 193.7 L360.0 197.0 L360.2 199.2 L362.8 202.7 L366.9 201.4 L379.3 179.7 L390.4 156.7 L393.4 152.2 L391.6 152.4 L389.7 151.3 L385.8 176.7 L381.9 192.7 L381.3 197.4 L381.4 200.4 L386.5 201.9 L388.1 199.7 L399.2 176.7 L403.0 170.5 L413.9 156.5 L417.1 153.7 L420.5 152.3 L422.3 152.7 L424.1 154.2 L425.8 156.5 L426.7 159.1 L426.0 165.7 L422.3 180.7 L421.5 193.2 L422.1 198.4 L422.9 200.5 L424.5 202.7 L427.2 204.1 L429.9 204.3 L432.0 203.6 L443.7 195.2 L461.0 180.4 L469.2 171.3 L476.6 160.8 L477.9 156.8 L477.6 154.3 L475.3 150.1 L473.7 148.7 L470.3 146.9 L464.7 146.0 L459.1 147.3 L453.5 150.7 L444.9 157.4 L439.4 163.3 L435.7 170.5 L432.8 181.1 L431.9 189.3 L432.9 195.0 L433.8 196.9 L436.6 200.1 L440.3 202.0 L442.4 202.5 L444.4 202.5 L448.4 201.6 L451.5 199.5 L455.1 196.2 L461.5 189.7 L467.4 182.7 L473.9 174.2 L478.7 166.3 L482.6 158.0 L484.8 152.3 L480.6 148.6 L468.8 173.6 L462.5 184.5 L461.7 188.6 L462.2 192.5 L463.6 196.0 L465.9 199.2 L470.7 202.6 L478.6 205.1 L484.8 206.4 L489.7 206.7 L494.8 206.2 L501.2 203.5 L504.0 201.4 L507.3 197.4 L509.8 193.2 L511.6 188.9 L518.1 169.1 L520.2 163.9 L523.1 159.2 L525.0 157.1 L527.2 155.6 L532.4 153.3 L537.9 151.8 L564.2 147.5 L574.7 144.8 L603.1 134.3 L620.1 126.7 L621.9 125.3 L623.3 122.6 L623.0 119.4 L621.8 117.2 L619.2 114.3 L613.1 111.1 L604.8 109.3 L596.9 109.0 L587.5 109.9 L581.2 111.5 L575.5 114.1 L567.5 119.3 L562.6 123.6 L559.7 128.1 L558.6 131.4 L558.0 134.8 L558.1 139.9 L558.9 144.8 L560.5 149.6 L562.7 154.1 L567.1 160.7 L577.5 173.8 L593.3 191.5 L596.8 197.3 L600.0 205.0 L602.1 214.3 L602.0 220.9 L599.9 229.0 L597.6 234.2 L594.7 239.2 L589.1 245.8 L580.9 251.8 L569.1 257.5 L562.2 259.6 L556.5 260.7 L542.1 261.7 L530.8 260.6 L525.8 258.9 L519.8 255.8 L513.6 251.8 L514.1 250.0 L516.9 247.9 L521.6 247.7 L548.0 255.9 L576.3 260.7 L576.6 259.6 L550.6 252.4 L530.1 243.3 L523.8 241.6 L518.3 242.0 L511.9 245.2 L509.0 247.8 L507.7 249.7 L507.1 252.4 L507.8 255.2 L508.9 257.2 L512.8 261.0 L518.5 264.3 L526.3 267.1 L532.8 268.1 L542.2 268.2 L549.9 267.6 L557.6 266.3 L565.1 264.1 L573.6 260.4 L580.3 256.6 L587.8 251.3 L593.7 246.2 L598.1 241.7 L602.6 235.3 L606.3 228.3 L608.8 220.6 L609.5 213.9 L608.1 204.2 L604.9 195.1 L602.9 190.8 L599.3 185.2 L584.9 169.5 L570.7 151.0 L568.6 147.5 L566.6 142.7 L565.4 137.5 L565.0 133.6 L565.2 129.9 L566.3 126.3 L568.8 123.1 L573.4 119.9 L578.7 117.6 L584.1 116.2 L592.5 115.6 L601.1 116.0 L607.7 117.3 L616.8 122.1 L617.3 121.8 L613.6 124.8 L594.3 132.6 L573.2 139.8 L567.6 141.1 L547.0 144.3 L536.5 146.8 L530.6 149.1 L522.4 154.2 L518.9 157.6 L516.1 161.5 L513.0 167.0 L510.7 172.8 L503.3 195.1 L501.1 198.2 L499.0 199.5 L496.6 200.3 L488.8 199.9 L482.1 198.3 L475.4 195.9 L472.0 193.5 L470.2 191.0 L468.8 188.0 L468.6 186.2 L469.7 182.6 L474.1 174.5 L484.6 152.1 L479.8 150.4 L472.8 166.6 L467.6 175.4 L461.4 183.7 L454.8 191.6 L451.5 194.5 L448.0 196.3 L444.9 196.0 L441.2 193.3 L439.6 190.0 L439.2 184.9 L440.3 176.4 L442.5 168.2 L444.8 163.3 L448.4 159.0 L451.8 156.3 L455.6 154.2 L459.5 152.7 L463.1 152.4 L467.2 154.0 L470.6 156.5 L470.8 158.7 L469.5 162.5 L465.8 168.7 L461.3 174.5 L451.0 185.1 L444.1 190.7 L438.1 195.0 L432.9 197.5 L429.6 197.9 L428.8 190.0 L429.1 180.1 L430.2 174.5 L433.8 161.0 L434.0 157.0 L433.0 153.0 L430.7 149.6 L427.3 147.1 L422.9 146.2 L418.8 147.3 L415.8 149.5 L406.1 159.6 L396.7 171.6 L392.0 179.5 L385.5 193.1 L383.3 196.8 L387.2 198.2 L392.7 175.0 L396.0 155.5 L395.8 150.0 L392.8 146.4 L388.9 148.4 L374.8 177.3 L366.4 193.1 L363.1 197.1 L364.8 197.1 L366.3 198.0 L369.0 176.7 L372.0 160.2 L372.1 154.8 L371.5 152.5 L369.0 148.8 L365.5 146.4 L361.6 145.4 L357.8 145.6 L354.2 146.8 L351.2 148.6 L347.5 151.7 L339.9 159.4 L308.8 193.8 L304.1 197.5 L306.4 198.7 L313.0 182.6 L330.0 147.6 L382.0 49.6 L376.8 48.5 L321.4 153.3 L316.1 164.2 L305.4 188.8 L302.1 195.3 L299.6 198.5 L297.5 199.7 L295.5 200.0 L286.0 195.8 L282.6 194.8 L264.0 192.6 L260.9 192.8 L258.3 197.8 L260.1 200.8 L264.2 204.3 L269.1 206.4 L273.2 206.9 L277.1 205.7 L283.9 201.1 L288.8 196.9 L292.0 192.7 L293.3 189.4 L294.2 184.5 L294.3 168.1 L295.6 153.0 L295.0 147.7 L293.4 144.6 L288.8 144.2 L286.0 147.8 L268.1 182.4 L259.3 194.1 L257.0 195.9 L254.1 197.1 L255.3 197.2 L255.4 196.5 L255.3 187.0 L256.3 175.4 L262.3 149.1 L262.4 146.9 L258.7 143.2 L255.8 145.7 L255.0 147.2 L240.1 178.4 L232.2 192.8 L228.9 197.3 L232.0 198.6 L232.3 198.4 L240.2 166.5 L241.4 158.8 L241.8 149.1 L241.0 145.5 L240.1 143.5 L238.2 141.4 L235.0 140.3 L232.3 141.3 L226.3 147.0 L221.4 149.5 L220.7 149.6 L221.3 149.1 L220.7 147.2 L217.2 142.3 L213.3 141.3 L210.5 143.2 L205.1 153.4 L197.2 171.3 L188.2 194.8 L186.8 196.9 L184.8 198.5 L182.6 199.3 L180.4 198.9 L180.9 181.7 L177.1 163.6 L174.7 154.7 L171.5 145.9 L168.8 140.0 L164.2 133.3 L159.9 128.5 L153.8 123.2 L148.4 119.6 L142.6 116.7 L139.2 115.6 L131.1 114.5 L114.3 114.3 L115.0 117.4 L114.5 118.5 L124.4 115.9 L131.7 113.3 L159.9 98.6 L174.2 90.1 L188.0 81.0 L206.4 67.9 L223.9 53.5 L236.8 40.9 L259.7 15.0Z M277.1 118.6 L280.2 116.8 L277.6 117.9 L277.5 118.9 L278.9 119.9 L280.8 120.7 L284.0 119.3 L284.5 115.9 L283.0 113.3 L279.2 112.9 L277.6 115.0 L276.6 118.1Z M578.2 260.7 L589.4 246.5 L594.5 238.9 L601.3 226.1 L597.9 225.4 L593.6 241.2 L590.7 259.3 L591.3 265.4 L595.5 267.8 L598.2 265.7 L599.1 264.2 L608.2 248.2 L615.4 233.5 L611.3 232.4 L606.7 263.4 L608.4 267.7 L613.0 266.1 L620.8 251.0 L623.8 246.1 L630.5 238.3 L633.8 235.4 L636.2 234.0 L638.4 233.5 L639.6 234.0 L641.6 238.1 L641.4 243.0 L637.8 259.1 L637.5 262.7 L638.1 265.7 L641.4 268.0 L644.3 267.4 L645.9 266.5 L662.9 253.4 L678.1 240.4 L680.5 237.7 L681.5 235.8 L681.9 233.0 L680.9 230.1 L679.2 228.2 L675.8 226.2 L672.3 225.2 L668.7 225.1 L664.9 225.8 L661.6 227.5 L654.5 234.1 L650.3 238.9 L647.2 244.7 L645.1 250.9 L644.3 256.0 L644.8 260.3 L646.1 262.6 L647.9 264.3 L651.8 266.0 L655.8 266.3 L659.5 265.3 L662.7 263.5 L665.3 261.3 L672.8 253.5 L679.7 245.2 L682.9 239.6 L685.2 233.8 L679.5 232.0 L667.7 268.9 L656.8 295.0 L651.6 305.6 L646.3 314.3 L641.7 319.8 L637.2 323.3 L634.6 324.3 L631.5 324.5 L629.6 322.1 L629.1 319.4 L629.8 315.7 L631.4 311.7 L638.7 299.1 L644.8 290.9 L649.1 287.0 L685.6 263.5 L691.6 258.6 L697.9 251.8 L705.0 241.9 L716.0 223.9 L734.7 189.8 L750.7 166.4 L747.8 162.8 L730.5 187.5 L716.7 211.0 L709.8 224.4 L698.8 247.5 L693.8 258.6 L692.8 264.1 L694.9 267.7 L698.5 266.8 L714.2 249.9 L723.0 241.9 L729.0 237.9 L731.5 237.1 L733.6 237.2 L735.8 238.4 L737.2 240.3 L736.9 245.1 L734.9 252.5 L733.7 260.5 L734.5 265.0 L737.0 267.5 L740.2 267.9 L742.3 267.3 L749.2 263.6 L760.3 258.8 L764.4 257.5 L767.9 257.3 L773.2 259.8 L772.3 263.1 L771.0 265.5 L769.1 267.6 L765.8 270.2 L759.4 273.1 L745.3 277.2 L732.2 279.7 L719.0 281.7 L677.4 286.4 L638.6 289.3 L605.8 290.0 L560.9 289.0 L472.6 285.2 L304.9 276.0 L244.8 275.2 L244.7 276.2 L304.5 282.8 L326.9 284.1 L460.3 291.4 L547.2 295.2 L584.8 296.4 L617.9 296.4 L660.0 294.1 L712.3 288.6 L727.3 286.5 L740.7 283.9 L756.8 279.1 L761.1 277.4 L766.6 274.2 L771.6 270.3 L777.5 264.5 L779.5 261.1 L779.8 258.4 L778.9 255.6 L775.6 252.4 L771.8 251.0 L767.8 250.8 L764.2 251.8 L744.6 260.5 L739.8 261.7 L740.7 262.1 L740.8 261.7 L741.3 253.8 L744.1 243.5 L744.6 239.6 L744.2 237.2 L743.1 235.0 L741.6 233.2 L739.7 231.9 L737.6 231.1 L733.3 231.0 L731.4 231.5 L728.1 233.3 L711.8 247.5 L700.4 259.4 L695.9 262.6 L698.2 263.9 L702.0 253.8 L706.8 242.9 L716.5 222.6 L723.3 209.4 L735.3 188.8 L751.3 165.4 L747.1 163.8 L729.0 189.8 L706.4 230.4 L697.1 245.7 L691.1 253.9 L688.1 257.1 L683.6 260.7 L655.7 278.1 L647.0 284.4 L640.1 290.6 L632.4 300.2 L623.7 314.9 L622.4 318.3 L622.0 322.4 L623.3 326.6 L624.8 328.4 L626.7 329.9 L628.9 330.7 L631.4 331.0 L635.3 329.5 L641.8 324.4 L649.6 316.8 L654.2 310.6 L659.5 301.3 L666.1 287.6 L673.1 270.9 L679.5 252.4 L685.3 233.6 L679.6 232.0 L676.3 241.4 L671.6 248.6 L663.9 257.4 L660.5 259.7 L658.2 260.1 L655.0 259.4 L652.0 257.4 L651.6 254.6 L651.8 250.7 L653.0 245.3 L655.1 240.2 L658.3 235.6 L661.5 232.8 L663.8 231.5 L666.0 231.1 L669.4 231.9 L675.2 234.1 L674.9 236.3 L673.7 238.7 L667.8 245.2 L658.6 252.7 L648.8 259.5 L642.5 262.1 L643.9 262.9 L645.9 251.7 L649.0 239.5 L648.9 235.4 L647.2 231.5 L643.9 228.4 L641.5 227.5 L639.0 227.5 L636.8 228.1 L633.7 230.4 L624.8 239.0 L619.6 244.7 L616.8 248.5 L608.7 262.3 L611.2 262.5 L612.8 263.8 L613.9 259.9 L617.5 237.4 L617.6 232.6 L617.2 229.6 L612.0 228.3 L610.3 230.6 L602.9 247.1 L597.3 257.6 L593.9 262.0 L596.9 262.9 L602.7 226.1 L602.3 223.0 L597.9 223.3 L590.1 241.6 L577.7 260.3Z M612.2 204.5 L614.7 203.2 L613.1 203.9 L612.9 205.0 L614.5 205.8 L617.3 205.3 L617.9 202.2 L615.9 199.6 L612.9 200.8 L611.6 204.1Z"/></svg><!-- was until 2026-10-30 (Krishna: the heading already says Hi, I'm Krishna; keep the role and company only): [span class="founder-name"]Krishna Singh[/span] --><span class="label">Founder, Aaurigo Tech</span></p>
+        </div>
+        <div class="founder-text">
+          <!-- was until 2026-10-25 (Krishna: polish and write the founder section): [p class="label label-accent"]Meet the founder[/p] [h2 class="section-title" id="founder-title"]Hi, I'm Krishna Singh.[/h2] [ was until 2026-10-25 (Krishna: the quote is already in What drives us): [blockquote class="quote"]"Every second counts, so use it to its fullest. Don't just develop the product. Live it."[/blockquote] ] [p class="placeholder"][KRISHNA: rewrite in your own words, about.md §5] I'm a software developer, and I've spent [KRISHNA: years / background] building websites and applications for businesses. Again and again I saw the same pattern: good businesses spending months and most of their budget on software before a single real customer had used it.[/p] [ was until 2026-10-25 (Krishna: do not repeat on the same page); they copied Our purpose, Ship fast learn faster, Total focus wins and What drives us 03: [p]I started Aaurigo Tech to help businesses grow with technology. When we work together, your product gets my full focus. We build it fast so you can test it in the real world, and we build it well so you never have to rebuild it.[/p] [p]I believe a business can only do as much as it is enabled to do. The right technology raises that limit: more reach, more involvement, more of what you set out to achieve. That's the work we do.[/p] ] [p class="placeholder"][KRISHNA: in your own words, the moment you decided to start Aaurigo Tech, and what you want every client to feel when we work together. Keep it personal: the purpose, values and beliefs are already said above.][/p] -->
+          <!-- Draft written by Claude 2026-10-25 for Krishna to approve (about.md §5); facts only, nothing repeated from the page -->
+          <h2 class="section-title" id="founder-title">Hi, I&#8217;m <em>Krishna.</em></h2>
+          <!-- was until 2026-10-30 (Krishna: language and typography don't look good; three equal paragraphs, two colons, "partner" already in the page heading):
+          [p]I&#8217;m a software developer, and I lead every project at Aaurigo Tech myself, from our first call to the day it goes live.[/p]
+          [p]Again and again I saw the same pattern: good businesses spending months and most of their budget on software before a single real customer had used it. So I started Aaurigo Tech, to be the partner I wished they&#8217;d had.[/p]
+          -->
+          <!-- was until 2026-10-30 (Krishna: doesn't represent me; "software developer" reads like a CV):
+          [p class="founder-lead"]I&#8217;m a software developer, and I lead every project myself, from our first call to the day it goes live.[/p]
+          [p]I kept seeing the same story. Good businesses spent months, and most of their budget, on software that no real customer had used yet.[/p]
+          [p]So I started Aaurigo Tech, to be the developer I wish they&#8217;d had.[/p]
+          -->
+          <!-- 2026-10-30 (Krishna: use the reference founder section): its structure only, never its words. Role, who it's for, the partner promise, the background that earns trust, a punchy outcome. -->
+          <!-- was until 2026-10-30 (Krishna: fill the background from the resume; must not sound like a one person agency):
+          [p class="founder-lead"]I&#8217;m the founder of Aaurigo Tech, and the one who designs and builds your website or app, from the first sketch to the day it goes live.[/p]
+          [p]I work with business owners who would rather spend their budget on customers than on guesswork. When you work with me, your business stops being a project on a list. I treat it like my own, and I&#8217;m the person you talk to at every step.[/p]
+          [p class="placeholder"][KRISHNA: one or two lines on your background ...][/p]
+          -->
+          <!-- 2026-10-30: "I" only for who Krishna is, "we" for the work. Background from his resume (doc/), facts only, no employer, client or tool names. -->
+          <!-- was until 2026-10-30 (Krishna: make it cleaner): [p class="founder-lead"]I founded Aaurigo Tech, and I lead every website and app we design and build, from the first sketch to the day it goes live.[/p] -->
+          <p class="founder-lead">I founded Aaurigo Tech, and I lead each project from the first sketch to the day it goes live.</p>
+          <!-- was until 2026-10-30 (Krishna: only the relevant info): [p]My background is in software engineering, with a degree in Information Technology. I&#8217;ve built software for businesses and their teams: dashboards for more than 100 people that I made 40% faster, a contact system that opens in under half a second, and secure sign ins that keep private data private. I&#8217;ve also helped write published research on making supply chains smarter.[/p] -->
+          <!-- was until 2026-10-30 (Krishna: more about website work, less about dashboards): [p]My background is in software engineering. I&#8217;ve built software for businesses and their teams, from dashboards used by more than 100 people, which I made 40% faster, to a contact system that opens in under half a second.[/p] -->
+          <p>My background is in software engineering. I&#8217;ve built websites and web apps for businesses and events, from a conference website that lifted visitor engagement by 30% to a web app that opens in under half a second, with nothing to download.</p>
+          <p>We work with business owners who would rather spend their budget on customers than on guesswork. With us, your business is never just a project on a list. We treat it like our own, and you always know exactly who to talk to.</p>
+          <!-- was until 2026-10-25 (Krishna: do not include it here): [p]When [a href="case-study-dr-arpan-gandhi.html"]a doctor&#8217;s practice[/a] came to us, their website took over 7 seconds to open. We rebuilt it, and today it opens in 0.28 seconds.[/p] -->
+          <!-- was until 2026-10-30 (Krishna: language and typography): [p]When we work together, I want you to feel what those businesses didn&#8217;t: that someone is [em]on your side[/em], and that you always know where your project stands.[/p] -->
+          <!-- was until 2026-10-30 (Krishna: use the reference founder section): [p class="founder-close"]Working with me, you always know where your project stands, and that someone is [em]on your side.[/em][/p] -->
+          <!-- was until 2026-10-30 (Krishna: not a one person agency): [p class="founder-close"]Looking good is the easy part. I build it to [em]work for your business,[/em] every single day.[/p] -->
+          <p class="founder-close">Looking good is the easy part. We build it to <em>work for your business,</em> every single day.</p>
+          <p><a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call with me <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a></p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- How we work, short (about.md §6) -->
+    <section class="section section-alt" aria-labelledby="process-title">
+      <div class="container text-block reveal-scroll">
+        <header class="section-head">
+          <p class="label label-accent">How we work</p>
+          <h2 class="section-title" id="process-title">Focus. Build. Grow.</h2>
+        </header>
+        <div>
+          <!-- was until 2026-10-23 (Services now has six steps in three phases): [p]Five clear steps from first call to a team that runs its new system with confidence: Onboard, Prep, Build, Launch, Handover.[/p] [p class="section-cta"][a class="btn-link" href="index.html#how-we-work"]See how we work[/a][/p] -->
+          <p>Six steps in three phases, the same for every website, web app and mobile app: Onboard, Plan and content, Prep call, Build, Launch, Handover. We walk every step with you.</p>
+          <p class="section-cta"><a class="btn-link" href="services.html#how-we-work">See how we work <span aria-hidden="true">→</span></a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta cta-glow" aria-labelledby="cta-title"> <!-- was until 2026-10-21 (Krishna: black on every page): [section class="section cta" aria-labelledby="cta-title"] -->
+      <div class="container reveal-scroll">
+        <h2 class="cta-title" id="cta-title">Let's build what's next.</h2>
+        <p class="cta-body">Talk to us in as little as 30 minutes. Tell us what you're building, and we'll show you the fastest route to real users.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+        </div>
+        <p class="cta-closing label">Enable businesses to do more.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 13. Footer (home.md §13, WEB-5.7). No Client login link until BIZ-3.10. -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">Aaurigo Tech</p>
+          <p class="footer-tagline">Launch fast. Learn faster. Grow smarter.</p>
+        </div>
+        <nav aria-labelledby="footer-nav">
+          <p class="footer-heading label" id="footer-nav">Navigate</p>
+          <ul class="footer-links list-plain">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-work">
+          <p class="footer-heading label" id="footer-work">Work with us</p>
+          <ul class="footer-links list-plain">
+            <li><a href="websites.html">Websites</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#web-development --></li>
+            <li><a href="web-apps.html">Web apps</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#web-applications --></li>
+            <!-- was until 2026-10-21 (Krishna: brand combined with every service, not its own option): [li][a href="services.html#brand"]Brand[/a][/li] -->
+            <li><a href="mobile-apps.html">Mobile apps</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#mobile-apps --></li> <!-- was until 2026-10-14: Web Development · Web Applications · Mobile Apps -->
+            <li><a href="#" target="_blank" rel="noopener">Book a call<span class="sr-only"> (opens in a new tab)</span></a></li>
+          </ul>
+        </nav>
+        <div class="footer-news">
+          <p class="footer-heading label">Newsletter</p>
+          <p>Short notes on building and launching faster. One email a month.</p>
+          <!-- Posts to Zoho Campaigns once NEWS-1.11 is set up. -->
+          <form action="#" method="post">
+            <div class="field">
+              <label class="field-label" for="news-email">Your email address</label>
+              <div class="form-row">
+                <input class="field-input" id="news-email" name="email" type="email" autocomplete="email" required>
+                <button class="btn btn-primary" type="submit">Join</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> Aaurigo Tech. All rights reserved.</p>
+        <ul class="list-plain" aria-label="Legal">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="accessibility.html">Accessibility Statement</a></li>
+        </ul>
+        <!-- [PLACEHOLDER] Social links (LinkedIn, Instagram, GitHub, X) once WEB-1.4 is done. -->
+      </div>
+      <p class="footer-mark" aria-hidden="true">Aaurigo Tech</p> <!-- 2026-10-25 (Krishna: polish): the name set large and quiet as the closing moment; decorative, the brand is already named above -->
+    </div>
+  </footer>
+</body>
+</html>

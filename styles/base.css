@@ -1,0 +1,169 @@
+/* Base: reset, element defaults and layout utilities shared by every page. No component or section styles here. */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 5rem; } /* in-page links land below the sticky header */
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 var(--text-md)/1.65 var(--body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip; /* 2026-10-30: text sliding in from the sides never makes the page scroll sideways */
+}
+
+/* Home reads a little larger and calmer (2026-11-02, Krishna: more premium): 17px body text, grey text a touch darker.
+   Only text without its own size grows; labels, buttons and headings keep theirs. */
+.home-page { font-size: var(--text-body-home); line-height: 1.7; --muted: var(--muted-deep); }
+
+img, svg { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3 { margin: 0; text-wrap: balance; }
+p, figure, ol, ul { margin: 0; }
+p, li { text-wrap: pretty; }   /* 2026-11-02 (Krishna: more premium): no single word left alone on a paragraph's last line */
+
+:focus-visible { outline: 2px solid var(--spark-deep); outline-offset: 3px; border-radius: var(--radius); }
+
+/* ---------- Utilities ---------- */
+.container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
+
+.list-plain { padding: 0; list-style: none; }
+
+/* One slow fade on load. Content stays visible without it. Stagger with style="--d: n". */
+.reveal { animation: fade var(--fade) var(--ease) both; animation-delay: calc(var(--d, 0) * var(--stagger)); }
+@keyframes fade { from { opacity: 0; } }
+
+/* Fade in when scrolled into view (scripts/site.js). Hidden only when JavaScript runs, so content shows without it. */
+.js .reveal-scroll { opacity: 0; transition: opacity var(--fade) var(--ease); }
+.js .reveal-scroll.is-visible { opacity: 1; }
+
+/* Section entrances (2026-10-30, Krishna: a different subtle animation for every other section; scripts/site.js
+   marks the pieces). Sections alternate "rise" (fade while lifting a little) and "focus" (fade from soft to sharp);
+   the pieces inside arrive one after another, photos uncover from the top. Each plays once, nothing loops. */
+/* was until 2026-10-30 (Krishna: text moving in from the sides instead):
+.js .reveal-scroll.enter-rise, .js .reveal-scroll.enter-focus { opacity: 1; }
+.js .enter-rise.is-visible .enter-part { animation-name: enter-rise; }
+.js .enter-focus.is-visible .enter-part { animation-name: enter-focus; }
+*/
+.js .reveal-scroll:not(.is-visible) .enter-part { opacity: 0; }
+.js .is-visible .enter-part { animation: var(--enter) var(--ease-soft) calc(var(--d, 0) * var(--stagger)) both; }
+/* 2026-10-30 (Krishna): sections alternate, one slides its pieces in from the left, the next from the right */
+.js .reveal-scroll.enter-left, .js .reveal-scroll.enter-right { opacity: 1; }
+.js .enter-left.is-visible .enter-part { animation-name: enter-left; }
+.js .enter-right.is-visible .enter-part { animation-name: enter-right; }
+@keyframes enter-left { from { opacity: 0; translate: calc(var(--slide) * -1) 0; } }
+@keyframes enter-right { from { opacity: 0; translate: var(--slide) 0; } }
+/* was until 2026-10-30 (Krishna: smoother): .js .is-visible .enter-part img { animation: unveil var(--unveil) var(--ease-soft) calc(var(--d, 0) * var(--stagger)) both; } */
+/* was until 2026-10-30 (Krishna: photos felt slow; the uncover ran before the photo had loaded): .js .is-visible .enter-part img { animation: unveil var(--unveil) var(--ease-unveil) calc(var(--d, 0) * var(--stagger)) both; } */
+/* 2026-10-30: a photo stays covered until it has loaded (scripts/site.js adds .is-loaded), then uncovers */
+.js .enter-part img:not(.is-loaded) { clip-path: inset(0 0 100% 0); }
+/* was until 2026-10-30 (Krishna: photos come in from the side opposite the text, not just appear): .js .is-visible .enter-part img.is-loaded { animation: unveil var(--unveil) var(--ease-unveil) calc(var(--d, 0) * var(--stagger)) both; } */
+/* 2026-10-30: where the text slides in from the left, the photo glides in from the right and uncovers from that edge, and the other way round */
+.js .is-visible .enter-part img.is-loaded { animation: var(--unveil) var(--ease-soft) calc(var(--d, 0) * var(--stagger)) both; } /* same glide as the slide, so the photo shows from the first moment */
+.js .enter-left.is-visible .enter-part.has-photo { animation-name: enter-right; }
+.js .enter-right.is-visible .enter-part.has-photo { animation-name: enter-left; }
+.js .enter-left.is-visible .enter-part img.is-loaded { animation-name: unveil-right; }
+.js .enter-right.is-visible .enter-part img.is-loaded { animation-name: unveil-left; }
+@keyframes unveil-right { from { clip-path: inset(0 0 0 100%); } }
+@keyframes unveil-left { from { clip-path: inset(0 100% 0 0); } }
+
+/* Services entrances (2026-10-30, Krishna: not the same as About; body data-enter="cards", scripts/site.js).
+   Sections alternate: "lift" (each card rises into place while growing to full size, like being set on the table)
+   and "settle" (each piece starts a touch larger and settles down to size). Photos uncover from the bottom up. */
+.js .reveal-scroll.enter-lift, .js .reveal-scroll.enter-settle { opacity: 1; }
+.js .enter-lift.is-visible .enter-part { animation-name: enter-lift; }
+.js .enter-settle.is-visible .enter-part { animation-name: enter-settle; }
+.js .enter-lift.is-visible .enter-part img.is-loaded, .js .enter-settle.is-visible .enter-part img.is-loaded { animation-name: unveil-up; }
+@keyframes enter-lift { from { opacity: 0; translate: 0 var(--lift); scale: var(--lift-scale); } }
+@keyframes enter-settle { from { opacity: 0; scale: var(--settle-scale); } }
+@keyframes unveil-up { from { clip-path: inset(100% 0 0 0); } }
+/* 2026-10-30 (Krishna: side movement on alternate cards): cards take turns gliding in from the left and the right,
+   still growing to full size as they arrive; headings and text keep the lift or settle */
+/* was until 2026-10-30 (Krishna: three different sides, each card only when it is scrolled to):
+.js .enter-lift.is-visible .enter-part.card-left, .js .enter-settle.is-visible .enter-part.card-left { animation-name: card-left; }
+.js .enter-lift.is-visible .enter-part.card-right, .js .enter-settle.is-visible .enter-part.card-right { animation-name: card-right; }
+*/
+/* 2026-10-30: each card waits, hidden, until it is scrolled to (scripts/site.js adds .card-in), then arrives from its side:
+   left, right, then up from below, in turn */
+.js .reveal-scroll .enter-part.is-card:not(.card-in) { opacity: 0; animation: none; }
+.js .reveal-scroll .enter-part.is-card:not(.card-in) img.is-loaded { animation: none; }
+.js .reveal-scroll .enter-part.is-card.card-in { animation: var(--enter) var(--ease-soft) calc(var(--d, 0) * var(--stagger)) both; }
+.js .reveal-scroll .enter-part.card-in.card-left { animation-name: card-left; }
+.js .reveal-scroll .enter-part.card-in.card-right { animation-name: card-right; }
+.js .reveal-scroll .enter-part.card-in.card-up { animation-name: card-up; }
+@keyframes card-left { from { opacity: 0; translate: calc(var(--slide) * -1) 0; scale: var(--lift-scale); } }
+@keyframes card-right { from { opacity: 0; translate: var(--slide) 0; scale: var(--lift-scale); } }
+@keyframes card-up { from { opacity: 0; translate: 0 var(--slide); scale: var(--lift-scale); } }
+/* FAQ (2026-10-30, Krishna: the questions come in as steps): each question steps in from the left and down a little,
+   one after another, so the list builds like a staircase */
+.js .reveal-scroll .enter-part.card-in.card-step { animation-name: card-step; animation-delay: calc(var(--d, 0) * var(--step)); }
+@keyframes card-step { from { opacity: 0; translate: calc(var(--slide) * -1) calc(var(--slide) * -.4); } }
+/* 2026-10-30 (Krishna: smoother): each piece gets its own layer while it waits and moves, so the page doesn't repaint
+   every frame; scripts/site.js marks it .entered when it has arrived, which hands the layer back */
+/* was until 2026-10-30 (no blur now): .js .enter-part:not(.entered) { will-change: opacity, translate, filter; } */
+.js .enter-part:not(.entered) { will-change: opacity, translate, scale; }
+.js .enter-part:not(.entered) img { will-change: clip-path; }
+.js .enter-part.entered, .js .enter-part.entered img { animation: none; }
+/* was until 2026-10-30 (side slides now):
+@keyframes enter-rise { from { opacity: 0; translate: 0 var(--rise); } }
+@keyframes enter-focus { from { opacity: 0; filter: blur(var(--focus-blur)); } }
+*/
+@keyframes unveil { from { clip-path: inset(0 0 100% 0); } }
+
+/* First screen of every page (2026-10-30, Krishna): the headline rises into view word by word, each word from behind
+   its own line, then the text under it glides up in turn. scripts/site.js splits the words and marks the parts.
+   Without JavaScript the plain .reveal fade stays. */
+.js .intro-enter .reveal { animation: none; }
+.js .intro-enter .word { display: inline-block; padding-bottom: .22em; margin-bottom: -.22em; clip-path: inset(-.5em -.3em 0 -.3em); } /* room for descenders and the italic lean, clipped only at the foot */
+.js .intro-enter .word > span { display: inline-block; animation: word-rise var(--enter) var(--ease-soft) calc(var(--d, 0) * var(--word-step)) both; }
+.js .intro-enter .intro-part { animation: intro-part var(--enter) var(--ease-soft) calc(var(--intro-wait) + var(--d, 0) * var(--stagger)) both; }
+@keyframes word-rise { from { translate: 0 var(--word-rise); } }
+@keyframes intro-part { from { opacity: 0; translate: 0 calc(var(--lift) / 2); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .reveal-scroll { opacity: 1; }
+  .js .reveal-scroll:not(.is-visible) .enter-part { opacity: 1; }
+  .js .enter-part img:not(.is-loaded) { clip-path: none; }
+  .js .reveal-scroll .enter-part.is-card:not(.card-in) { opacity: 1; }
+}
+
+/* Commented out 2026-10-10, not deleted: the previous base rules, replaced by tokens and components.css.
+body {
+  font-family: var(--body);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+:focus-visible { outline: 2px solid var(--spark-deep); outline-offset: 3px; border-radius: 4px; }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: .625rem;
+  font-size: .75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--spark-deep);
+}
+.eyebrow::before,
+.eyebrow::after { content: ""; width: 1.375rem; height: 1.5px; background: currentColor; }
+
+(Buttons: pill shape)
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  min-height: 3rem; padding: .75rem 1.625rem;
+  border: 1.5px solid transparent; border-radius: var(--radius-pill);
+  font: 600 1rem/1.2 var(--body); text-decoration: none;
+  transition: background-color .2s, color .2s, border-color .2s, transform .2s, box-shadow .2s;
+}
+.btn .arrow { transition: transform .2s; }
+.btn:hover .arrow { transform: translateX(3px); }
+
+.btn-primary { background: var(--primary); color: var(--on-primary); box-shadow: var(--shadow-soft); }
+.btn-primary:hover { background: var(--primary-deep); transform: translateY(-1px); }
+
+.btn-ghost { border-color: var(--primary); color: var(--primary); background: transparent; }
+.btn-ghost:hover { background: var(--primary); color: var(--on-primary); }
+*/

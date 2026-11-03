@@ -1,0 +1,6 @@
+# robots.txt for www.aaurigotech.com (2026-11-03, RFA §5.11)
+# Every crawler is welcome, AI search crawlers included (we never block them on our own site).
+User-agent: *
+Disallow: /archive/
+
+Sitemap: https://www.aaurigotech.com/sitemap.xml

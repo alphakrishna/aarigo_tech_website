@@ -1,0 +1,50 @@
+/* Meet the founder (WEB-8.8, copy home.md §9): photo left, story right. */
+
+/* was until 2026-10-30 (Krishna: text and photo don't start on the same line): .founder-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: var(--space-md) var(--space-lg); align-items: center; } */
+.founder-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: var(--space-md) var(--space-lg); align-items: start; } /* was until 2026-10-25: gap: var(--space-md); */
+.founder-photo { aspect-ratio: 4 / 5; border: var(--rule-strong); border-radius: var(--radius); }
+img.founder-photo { width: 100%; height: auto; object-fit: cover; } /* 2026-10-30: the real photo replaces the placeholder block */
+.founder-text { display: grid; gap: 1.25rem; }
+/* was until 2026-10-25: .founder-text p { max-width: var(--measure); color: var(--muted); } */
+/* 2026-10-25 (Krishna: typography idea from the reference founder section): one calm reading voice, a little larger,
+   airy line spacing, in ink like a personal letter; italics carry the stress; story first, photo on the right */
+/* was until 2026-10-30 (Krishna: typography doesn't look good, everything at one weight): .founder-text p { max-width: var(--measure); font-size: var(--text-intro); line-height: 1.85; color: var(--ink); } */
+/* 2026-10-30: three levels, like a letter: a lead line in the headline face, the story in calm body text, a closing promise on a hairline */
+.founder-text p { max-width: var(--measure); font-size: var(--text-intro); line-height: 1.7; color: var(--muted); }
+.founder-text .founder-lead { max-width: 28ch; font: 500 var(--text-h3)/1.35 var(--display); letter-spacing: -.01em; color: var(--ink); text-wrap: balance; }
+.founder-text .founder-close { max-width: 30ch; padding-top: 1.25rem; border-top: var(--rule-strong); font: 500 var(--text-h3)/1.35 var(--display); color: var(--ink); text-wrap: balance; }
+.founder-text .founder-close em { font-style: italic; color: var(--spark-deep); }
+/* was until 2026-10-30 (now the site wide entrances in base.css and scripts/site.js do this): the heading, then each paragraph, fading in like a letter being read
+.js .founder-text > * { opacity: 0; transition: opacity var(--fade) var(--ease); }
+.js .is-visible .founder-text > * { opacity: 1; }
+.js .is-visible .founder-text > :nth-child(2) { transition-delay: calc(var(--stagger) * 1); }
+.js .is-visible .founder-text > :nth-child(3) { transition-delay: calc(var(--stagger) * 2); }
+.js .is-visible .founder-text > :nth-child(4) { transition-delay: calc(var(--stagger) * 3); }
+.js .is-visible .founder-text > :nth-child(5) { transition-delay: calc(var(--stagger) * 4); }
+.js .is-visible .founder-text > :nth-child(6) { transition-delay: calc(var(--stagger) * 5); }
+.js .is-visible .founder-text > :nth-child(7) { transition-delay: calc(var(--stagger) * 6); }
+@media (prefers-reduced-motion: reduce) {
+  .js .founder-text > * { opacity: 1; }
+}
+*/
+.founder-text p em { font-style: italic; }
+/* was until 2026-10-25 (Krishna: photo on the left): .founder-photo { order: 2; } */
+/* 2026-10-25 (Krishna: polish): italic name like the other About headings, a larger first line, a quiet text link to the proof */
+.founder-text .section-title em { font-style: italic; font-weight: 500; color: var(--spark-deep); }
+/* was until 2026-10-25 (one reading voice now): .founder-text .founder-lead { font: italic 500 var(--text-h3)/1.35 var(--display); color: var(--ink); } */
+.founder-text a:not(.btn) { color: var(--ink); text-decoration: underline; text-decoration-color: var(--spark); text-underline-offset: .2em; }
+.founder-text a:not(.btn):hover { text-decoration-color: var(--ink); }
+
+@media (max-width: 55rem) {
+  .founder-grid { grid-template-columns: 1fr; }
+  .founder-media { max-width: 24rem; }
+}
+
+/* Photo with the signature and name under it (2026-10-25, Krishna; moved from What drives us) */
+.founder-media { display: grid; gap: 1.5rem; align-content: start; }
+/* was until 2026-10-30 (Krishna: line the role up with the signature): .founder-sign { display: grid; gap: .35rem; } */
+/* was until 2026-10-30: .founder-signature { display: block; width: min(18rem, 80%); height: auto; margin-bottom: .5rem; color: var(--ink); } */
+/* 2026-10-30: the block is as wide as the signature, so the role sits centred under it */
+.founder-sign { display: grid; gap: .35rem; justify-items: center; width: min(18rem, 80%); }
+.founder-signature { display: block; width: 100%; height: auto; margin-bottom: .5rem; color: var(--ink); }
+/* was until 2026-10-30 (Krishna: name taken off under the signature, the heading already says it): .founder-name { font: italic 500 var(--text-h3)/1.2 var(--display); } */

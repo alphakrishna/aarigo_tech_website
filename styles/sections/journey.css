@@ -1,0 +1,72 @@
+/* How we work on Home as cards (2026-11-01, Krishna: cards with concise text, nothing missed; was the five hairline
+   columns in process.css, which About still uses). The heading sits on the left and stays in view; every fact kept.
+   2026-11-02 (Krishna: cards that complement the site colours): the cards deepen with the journey, only from the
+   palette: Focus on stone, Build on champagne (like the Services add-ons), Grow on ink (like the footer).
+   Same day (Krishna: a little more innovative): the cards stack into a deck as you scroll. Each card sticks a little
+   lower than the one before, so the next card slides up over it and leaves its name showing as a strip; the deck
+   grows richer (stone, champagne, ink) as the journey goes on. Pure position: sticky, no script, nothing loops.
+   Phones and short screens: a plain stack.
+   Earlier versions: archive/journey-palette-grid-2026-11-02.css (the two column grid of the same cards),
+   archive/journey-water-pools-2026-11-01.css, archive/journey-water-ribbon-2026-11-01.css. */
+
+.journey-layout {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr);
+  gap: var(--space-md) clamp(2rem, 6vw, 5rem); align-items: start;
+}
+.journey-aside { position: sticky; top: 7rem; }   /* below the sticky site header */
+.journey-aside .section-head { margin-bottom: 0; }
+
+.journey-cards { display: grid; gap: 1rem; }   /* was until 2026-11-02 (Krishna: too long to scroll): clamp(1rem, 2vw, 1.5rem) */
+/* Compact card (2026-11-02, Krishna: too long to scroll): the top row holds the name and phase on the left and the
+   italic line on the right; the champagne rule sits above the points, which run in two columns.
+   was until 2026-11-02: one column of name, phase, line over a rule, then the points; padding clamp(1.75rem, 3vw, 2.5rem); gap 1rem */
+.journey-card {
+  display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: .875rem 1.5rem; align-items: start;   /* start: the line sits level with the name, inside the strip */
+  padding: clamp(1.25rem, 2.2vw, 1.75rem) clamp(1.5rem, 2.6vw, 2.25rem);
+  background: var(--bg); color: var(--ink);
+  border-radius: var(--radius-card);
+}
+.journey-card > * { margin: 0; }
+
+/* Name over phase: this is the strip that stays visible when the next card covers the rest */
+.journey-top { display: grid; gap: .25rem; }
+.journey-top > * { margin: 0; }
+.journey-name { font: italic 500 clamp(1.75rem, 2.8vw, 2.375rem)/1.05 var(--display); letter-spacing: var(--tracking-title); }   /* was clamp(2rem, 3.4vw, 2.75rem) */
+.journey-when { color: var(--spark-deep); }
+.journey-line { justify-self: end; margin-top: .6rem; text-align: right; font: italic 500 var(--text-intro)/1.3 var(--display); color: var(--primary); }
+.journey-list {
+  grid-column: 1 / -1; grid-template-columns: 1fr 1fr; gap: .4rem 2.5rem;
+  padding-top: .875rem; border-top: 1px solid var(--spark);
+  font-size: .9375rem; line-height: 1.5; color: var(--ink);
+}
+
+/* The journey deepens: Focus stone, Build champagne, Grow ink */
+.card-focus { background: var(--bg); }
+.card-build { background: var(--glow); }
+.card-build .journey-when, .card-build .journey-line { color: var(--ink); }          /* deep champagne and teal sit too close to the champagne ground */
+.card-build .journey-list { border-top-color: var(--spark-deep); }
+.card-build .service-features li::before { background: var(--spark-deep); }
+.card-grow { background: var(--ink); color: var(--on-dark); }
+.card-grow .journey-name { color: var(--on-dark); }
+.card-grow .journey-when, .card-grow .journey-line { color: var(--spark); }         /* champagne on ink, like the footer headings */
+.card-grow .journey-list { border-top-color: var(--line-dark); color: var(--on-dark-muted); }
+
+/* The deck: on wide, tall screens each card sticks one strip lower than the card before it */
+@media (min-width: 55.01rem) and (min-height: 46rem) {
+  .journey-cards { --stack-top: 7rem; --stack-step: 5.5rem; gap: 1rem; }   /* 5.5rem: the strip shows the name, the phase and the line whole */   /* was until 2026-11-02 (too long to scroll): --stack-step 5.25rem; gap 2rem; padding-bottom 4rem */
+  .journey-card { position: sticky; top: calc(var(--stack-top) + var(--k, 0) * var(--stack-step)); }
+  .journey-card:nth-child(2) { --k: 1; }
+  .journey-card:nth-child(3) { --k: 2; }
+  .journey-card:nth-child(4) { --k: 3; }
+  .journey-card:nth-child(5) { --k: 4; }
+}
+
+@media (max-width: 55rem) {
+  .journey-layout { grid-template-columns: 1fr; }
+  .journey-aside { position: static; }
+}
+@media (max-width: 35rem) {
+  .journey-card { grid-template-columns: 1fr; }
+  .journey-line { justify-self: start; margin-top: 0; text-align: left; }
+  .journey-list { grid-template-columns: 1fr; }
+}

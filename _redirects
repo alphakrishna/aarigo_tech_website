@@ -1,0 +1,6 @@
+# Cloudflare Pages redirects. Works once the site is deployed (WEB-3.7, WEB-18).
+# Format: from  to  status
+
+# Business card QR code (doc/print/card-qr.svg) points to /card.
+# 302 (temporary) on purpose: change the target any time without reprinting cards.
+/card  /  302

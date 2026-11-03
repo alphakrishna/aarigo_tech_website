@@ -1,0 +1,11 @@
+/* Kind words (WEB-8.9, copy home.md §10). The section stays hidden until real, approved quotes exist. */
+/* KEEP (2026-10-17, Krishna): the section is hidden on purpose; never remove these rules or the stylesheet link in a cleanup. */
+
+.quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.quotes figure { display: grid; gap: 1rem; padding-top: 1.25rem; border-top: var(--rule-strong); }
+.quotes blockquote { margin: 0; font: italic 500 1.25rem/1.4 var(--display); }
+.quotes figcaption { font-size: var(--text-sm); color: var(--muted); }
+
+@media (max-width: 55rem) {
+  .quotes { grid-template-columns: 1fr; }
+}

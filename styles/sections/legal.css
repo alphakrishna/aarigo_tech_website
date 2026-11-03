@@ -1,0 +1,107 @@
+/* Legal pages: Privacy Policy, Terms of Use, Accessibility Statement, and the 404 page (2026-11-03).
+   One calm column of reading text beside a quiet "On this page" list that stays in view on wide screens.
+   The black heading band comes from .page-intro.intro-glow in components.css. */
+
+.legal-grid {
+  display: grid;
+  grid-template-columns: minmax(11rem, 15rem) minmax(0, 1fr);
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+/* On this page */
+.legal-toc { position: sticky; top: 6rem; }
+.legal-toc .label { display: block; margin-bottom: var(--space-sm); color: var(--muted); }
+.legal-toc ol { display: grid; gap: .625rem; padding-left: 1rem; border-left: var(--rule); }
+.legal-toc a { color: var(--muted); font-size: var(--text-sm); text-decoration: none; }
+.legal-toc a:hover { color: var(--ink); text-decoration: underline; }
+
+/* Reading column */
+.legal-body { max-width: 48rem; }
+.legal-body > p, .legal-body li { max-width: var(--measure); color: var(--muted-deep); line-height: 1.7; text-wrap: pretty; }
+.legal-body > p + p, .legal-body > ul + p, .legal-body > div + p { margin-top: 1rem; }
+.legal-body strong { color: var(--ink); font-weight: 600; }
+.legal-body a { color: var(--primary); }
+.legal-body a:hover { color: var(--primary-deep); }
+
+.legal-updated {
+  margin-bottom: var(--space-sm);
+  font-family: var(--mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+.legal-body > .legal-summary {
+  max-width: none;
+  margin-bottom: var(--space-md);
+  padding: var(--space-md);
+  border-radius: var(--radius-card);
+  background: var(--glow);
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: var(--text-lead);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.legal-body h2 {
+  margin-top: var(--space-md);
+  margin-bottom: .75rem;
+  padding-top: var(--space-sm);
+  border-top: var(--rule);
+  font-family: var(--display);
+  font-size: var(--text-h3);
+  font-weight: 600;
+  letter-spacing: var(--tracking-title);
+  scroll-margin-top: 6rem;
+}
+.legal-body ul { display: grid; gap: .5rem; margin-top: 1rem; padding-left: 1.25rem; list-style: disc; }
+.legal-body ul li::marker { color: var(--spark); }
+
+/* The table in the Privacy Policy: a white card that scrolls sideways on small screens */
+.legal-table-wrap {
+  margin-block: 1rem;
+  overflow-x: auto;
+  border: var(--rule);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+}
+.legal-table { width: 100%; min-width: 40rem; border-collapse: collapse; font-size: var(--text-sm); }
+.legal-table th, .legal-table td { padding: .875rem 1rem; border-bottom: var(--rule); text-align: left; vertical-align: top; line-height: 1.55; }
+.legal-table thead th {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+.legal-table tbody td:first-child { color: var(--ink); font-weight: 600; }
+.legal-table tbody td { color: var(--muted-deep); }
+.legal-table tbody tr:last-child td { border-bottom: 0; }
+
+@media (max-width: 55rem) {
+  .legal-grid { grid-template-columns: minmax(0, 1fr); }   /* minmax keeps the wide table inside its own scroll box */
+  .legal-toc { position: static; }
+}
+
+/* 404: four white cards, each a way back in */
+.notfound-links { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.notfound-link {
+  display: grid;
+  gap: .5rem;
+  height: 100%;
+  padding: var(--space-md) 1.5rem;
+  border: var(--rule);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color var(--fast) var(--ease);
+}
+.notfound-link:hover { border-color: var(--spark); }
+.notfound-name { font-family: var(--display); font-size: var(--text-h3); font-style: italic; font-weight: 500; }
+.notfound-text { color: var(--muted); font-size: var(--text-sm); }
+@media (max-width: 55rem) { .notfound-links { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 30rem) { .notfound-links { grid-template-columns: 1fr; } }

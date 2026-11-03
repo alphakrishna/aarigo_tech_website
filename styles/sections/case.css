@@ -1,0 +1,181 @@
+/* Case study pages (WEB-10.3, copy doc/copy/case-study-*.md, 2026-10-17): facts, screenshot, problem, what we built, what changed, related. */
+
+.page-intro .label a { color: inherit; }
+
+/* Version 2 (2026-10-17, Krishna): the real issue is the heading, the process in brief, what changed, then the brand */
+.case-issue { max-width: 18ch; text-wrap: balance; }   /* was until 2026-10-17: max-width 22ch, for the longer heading */
+.case-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem; }
+.case-steps li { display: grid; gap: .5rem; align-content: start; padding-top: 1.25rem; border-top: var(--rule-strong); }
+.case-step-name { font: 600 var(--text-h3)/1.15 var(--display); }
+.case-steps p { color: var(--muted); }
+
+.case-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 1.5rem 2rem; }
+.case-stats div { padding-top: 1.25rem; border-top: var(--rule-strong); }
+.case-stats dt { font: 600 var(--text-fact)/1.05 var(--display); }
+.case-stats dd { margin: .5rem 0 0; font-size: var(--text-sm); color: var(--muted); }
+
+.case-reveal .container { display: grid; gap: 1rem; }
+.case-brand { font: 600 var(--text-display)/.95 var(--display); letter-spacing: var(--tracking-display); }
+.case-brand-about { max-width: var(--measure); font-size: var(--text-intro); }
+.case-brand-services { display: block; margin-top: .5rem; font-size: var(--text-sm); color: var(--muted); }
+/* was until 2026-10-18 (Krishna: polish the screenshot, softly rounded corners): .case-shot { display: block; width: 100%; height: auto; margin-top: var(--space-md); border: var(--rule-strong); border-radius: var(--radius); } */
+.case-frame { margin-top: var(--space-md); }   /* the frame itself is .shot-frame in components.css */
+/* was until 2026-10-18 (Krishna: the same frame for every screenshot on the site):
+.case-frame { margin-top: var(--space-md); padding: 0 .625rem .625rem; background: var(--surface); border: var(--rule); border-radius: var(--radius-frame); }
+.case-frame::before { content: ""; display: block; height: 2rem; background: radial-gradient(circle, var(--line) .25rem, transparent .3rem) 0 50% / .875rem .875rem no-repeat, radial-gradient(circle, var(--line) .25rem, transparent .3rem) 1.125rem 50% / .875rem .875rem no-repeat, radial-gradient(circle, var(--line) .25rem, transparent .3rem) 2.25rem 50% / .875rem .875rem no-repeat; }   ( three quiet dots, like a browser window )
+.case-shot { display: block; width: 100%; height: auto; border: var(--rule); border-radius: var(--radius-frame-in); }
+*/
+
+.case-cards.case-related { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+@media (max-width: 64rem) {
+  .case-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 35rem) {
+  .case-steps { grid-template-columns: minmax(0, 1fr); }
+  .case-cards.case-related { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ---------- Story layout (ParkTag, 2026-10-17, Krishna: tell it as a founder's story, with advanced typography) ---------- */
+.case-issue em, .case-card-issue em { font-style: italic; font-weight: 500; }
+.story-dek { max-width: 34ch; margin-top: 1.5rem; font: italic 500 var(--text-intro)/1.4 var(--display); color: var(--muted); text-wrap: balance; }
+.story { padding-top: 0; }
+.story-chapter { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 1rem clamp(2rem, 6vw, 6rem); padding-block: clamp(2.5rem, 5vw, 4.5rem); border-top: var(--rule); }
+.story-head { display: grid; gap: .75rem; align-content: start; position: sticky; top: 6rem; align-self: start; }
+.story-title { font: 600 var(--text-fact)/1.05 var(--display); letter-spacing: var(--tracking-title); }
+.story-body { display: grid; gap: 1.25rem; max-width: 40rem; font-size: var(--text-intro); line-height: 1.6; text-wrap: pretty; hanging-punctuation: first; }
+.story-drop::first-letter { float: left; margin: .08em .12em 0 0; font: 600 4.6em/.78 var(--display); color: var(--spark-deep); }
+.story-quote { margin: .5rem 0 0; padding-left: 1.5rem; border-left: 1px solid var(--spark); }
+.story-quote p { font: italic 500 var(--text-quote)/1.2 var(--display); text-wrap: balance; text-indent: -.4em; }
+.story-quote p::before { content: "\201C"; }
+.story-quote p::after { content: "\201D"; }
+.story-questions { display: grid; }
+.story-questions li { padding-block: .9rem; border-top: var(--rule); font: italic 500 var(--text-h3)/1.3 var(--display); text-wrap: balance; }
+.story-questions li:last-child { border-bottom: var(--rule); }
+/* The full stop of the story: big, abrupt, set apart by a heavy rule and space (2026-10-17, Krishna: make people stop, a little dangerous) */
+/* Smaller and in wax red, so it breaks the calm palette like a warning (2026-10-17, Krishna) */
+/* Elegant pause (2026-10-17, Krishna): wide space around it, a short red hairline, the line in light italic with "stop." set upright,
+   and it fades in a beat after the chapter, so the reader stops for a second */
+/* Hairlines either side, centred (2026-10-17, Krishna picked it over ~* text *~ style ornaments) */
+.story-stop { display: flex; align-items: center; justify-content: center; gap: .875rem; margin-block: clamp(2.5rem, 6vw, 4.5rem) .5rem; font: italic 400 clamp(1.375rem, 2.2vw, 1.8rem)/1.2 var(--display); letter-spacing: -.01em; color: var(--wax); text-align: center; text-wrap: balance; }
+/* A gentle wave instead of a straight hairline (2026-10-17, Krishna: "like a little wave ~"). The SVG is only a mask; the colour comes from the token. */
+.story-stop::before, .story-stop::after { content: ""; flex: 0 0 3rem; height: .75rem; background: var(--wax); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 8' preserveAspectRatio='none'%3E%3Cpath d='M0 4 Q5 -1.5 10 4 T20 4' fill='none' stroke='black' stroke-width='1.2'/%3E%3C/svg%3E") no-repeat center / 3rem .75rem; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 8' preserveAspectRatio='none'%3E%3Cpath d='M0 4 Q5 -1.5 10 4 T20 4' fill='none' stroke='black' stroke-width='1.2'/%3E%3C/svg%3E") no-repeat center / 3rem .75rem; } /* one single wave each side, like ~, deeper curve (2026-10-17, Krishna: more wave); was Q5 1.1 10 4 at .5rem tall; stretched wider, 2rem to 3rem (Krishna) */
+/* was until 2026-10-17 (repeating wave): .story-stop::before, .story-stop::after { content: ""; flex: 0 1 3.75rem; min-width: 1.25rem; height: .5rem; background: var(--wax); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 8' preserveAspectRatio='none'%3E%3Cpath d='M0 4 Q5 1.1 10 4 T20 4' fill='none' stroke='black' stroke-width='1.2'/%3E%3C/svg%3E") repeat-x left center / 1.5rem .5rem; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 8' preserveAspectRatio='none'%3E%3Cpath d='M0 4 Q5 1.1 10 4 T20 4' fill='none' stroke='black' stroke-width='1.2'/%3E%3C/svg%3E") repeat-x left center / 1.5rem .5rem; } ( wave between the two tries (2026-10-17, Krishna: less, then a little more); tried Q5 0 10 4 at 1.25rem and Q5 2.2 10 4 at 1.75rem ) */
+/* was until 2026-10-17: .story-stop::before, .story-stop::after { content: ""; flex: 0 1 3.5rem; min-width: 1.25rem; height: 1px; background: var(--wax); } */
+/* A small six petal flower between each wave and the text (2026-10-17, Krishna). Mask only; the colour comes from the token. */
+.story-star { flex: none; width: 1.05rem; height: 1.05rem; background: var(--wax); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='black'%3E%3Cellipse cx='12' cy='7' rx='3.6' ry='5' transform='rotate(0 12 12)'/%3E%3Cellipse cx='12' cy='7' rx='3.6' ry='5' transform='rotate(72 12 12)'/%3E%3Cellipse cx='12' cy='7' rx='3.6' ry='5' transform='rotate(144 12 12)'/%3E%3Cellipse cx='12' cy='7' rx='3.6' ry='5' transform='rotate(216 12 12)'/%3E%3Cellipse cx='12' cy='7' rx='3.6' ry='5' transform='rotate(288 12 12)'/%3E%3C/g%3E%3C/svg%3E") no-repeat center / contain; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='black'%3E%3Cellipse cx='12' cy='7' rx='3.6' ry='5' transform='rotate(0 12 12)'/%3E%3Cellipse cx='12' cy='7' rx='3.6' ry='5' transform='rotate(72 12 12)'/%3E%3Cellipse cx='12' cy='7' rx='3.6' ry='5' transform='rotate(144 12 12)'/%3E%3Cellipse cx='12' cy='7' rx='3.6' ry='5' transform='rotate(216 12 12)'/%3E%3Cellipse cx='12' cy='7' rx='3.6' ry='5' transform='rotate(288 12 12)'/%3E%3C/g%3E%3C/svg%3E") no-repeat center / contain; }   /* five round petals (2026-10-17) */
+/* was until 2026-10-17 (six thin petals, read as an asterisk): .story-star { flex: none; width: .9rem; height: .9rem; background: var(--wax); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='black'%3E%3Cellipse cx='12' cy='6.5' rx='2.2' ry='5' transform='rotate(0 12 12)'/%3E%3Cellipse cx='12' cy='6.5' rx='2.2' ry='5' transform='rotate(60 12 12)'/%3E%3Cellipse cx='12' cy='6.5' rx='2.2' ry='5' transform='rotate(120 12 12)'/%3E%3Cellipse cx='12' cy='6.5' rx='2.2' ry='5' transform='rotate(180 12 12)'/%3E%3Cellipse cx='12' cy='6.5' rx='2.2' ry='5' transform='rotate(240 12 12)'/%3E%3Cellipse cx='12' cy='6.5' rx='2.2' ry='5' transform='rotate(300 12 12)'/%3E%3Ccircle cx='12' cy='12' r='2.2'/%3E%3C/g%3E%3C/svg%3E") no-repeat center / contain; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='black'%3E%3Cellipse cx='12' cy='6.5' rx='2.2' ry='5' transform='rotate(0 12 12)'/%3E%3Cellipse cx='12' cy='6.5' rx='2.2' ry='5' transform='rotate(60 12 12)'/%3E%3Cellipse cx='12' cy='6.5' rx='2.2' ry='5' transform='rotate(120 12 12)'/%3E%3Cellipse cx='12' cy='6.5' rx='2.2' ry='5' transform='rotate(180 12 12)'/%3E%3Cellipse cx='12' cy='6.5' rx='2.2' ry='5' transform='rotate(240 12 12)'/%3E%3Cellipse cx='12' cy='6.5' rx='2.2' ry='5' transform='rotate(300 12 12)'/%3E%3Ccircle cx='12' cy='12' r='2.2'/%3E%3C/g%3E%3C/svg%3E") no-repeat center / contain; } */
+.story-stop em { font-style: normal; font-weight: 600; letter-spacing: var(--tracking-title); }
+.js .story-stop { opacity: 0; transition: opacity var(--fade) var(--ease) .8s; }
+.js .is-visible .story-stop { opacity: 1; }
+@media (min-width: 64rem) { .story-stop { white-space: nowrap; } }
+@media (max-width: 35rem) { .story-stop::before, .story-stop::after { display: none; } }   /* phones: flowers only, so the line keeps two lines */
+/* was until 2026-10-17 (short hairline above, left aligned):
+.story-stop { position: relative; margin-block: clamp(2.5rem, 6vw, 4.5rem) .5rem; padding-top: 1.75rem; font: italic 400 clamp(1.5rem, 2.4vw, 2.25rem)/1.2 var(--display); letter-spacing: -.01em; color: var(--wax); text-wrap: balance; }
+.story-stop::before { content: ""; position: absolute; top: 0; left: 0; width: 2.5rem; height: 1px; background: var(--wax); }
+.story-stop em { font-style: normal; font-weight: 600; letter-spacing: var(--tracking-title); }
+.js .story-stop { opacity: 0; transition: opacity var(--fade) var(--ease) .8s; }
+.js .is-visible .story-stop { opacity: 1; }
+@media (min-width: 64rem) { .story-stop { white-space: nowrap; } }
+*/
+/* was until 2026-10-17 (same day, bolder version):
+.story-stop { margin-top: clamp(1.5rem, 4vw, 3rem); padding-top: clamp(1.25rem, 3vw, 2rem); border-top: 1px solid var(--wax); font: 600 clamp(1.5rem, 2.4vw, 2.25rem)/1.1 var(--display); letter-spacing: var(--tracking-title); color: var(--wax); text-wrap: balance; }   ( one line on wide screens (2026-10-17, Krishna); was clamp(1.75rem, 4vw, 3rem)/1 )
+@media (min-width: 64rem) { .story-stop { white-space: nowrap; } }
+( was until 2026-10-17: .story-stop { margin-top: clamp(1.5rem, 4vw, 3rem); padding-top: clamp(1.5rem, 4vw, 3rem); border-top: var(--rule-strong); font: 600 clamp(2.25rem, 6vw, 4.5rem)/.95 var(--display); letter-spacing: var(--tracking-display); text-wrap: balance; } )
+.story-stop em { font-style: italic; font-weight: 500; }
+*/
+/* The turn of the story, quiet and elegant (2026-10-17, Krishna): light italic, "we" set upright, a beat of space, a slow fade */
+/* A statement, not an aside (2026-10-17, Krishna): upright, bold, large, tight; "we" in italic as the only accent */
+/* The answer to the stop line, in the same style (2026-10-17, Krishna): waves, flowers, light italic with "we" upright; ink text, champagne ornaments */
+.story-answer { color: var(--ink); }
+.story-answer::before, .story-answer::after, .story-answer .story-star { background: var(--spark-deep); }
+/* was until 2026-10-17 (.story-turn, no longer used):
+( Elegant statement (2026-10-17, Krishna): medium weight, upright, a short champagne hairline above, "we" in champagne italic )
+.story-turn { position: relative; margin-top: clamp(1.5rem, 4vw, 2.5rem); padding-top: 1.5rem; font: 500 clamp(1.875rem, 3.6vw, 3rem)/1.05 var(--display); letter-spacing: var(--tracking-title); text-wrap: balance; }
+.story-turn::before { content: ""; position: absolute; top: 0; left: 0; width: 2.5rem; height: 1px; background: var(--spark); }
+( was until 2026-10-17 (bold statement): .story-turn { margin-top: clamp(1rem, 3vw, 2rem); font: 600 clamp(2rem, 4vw, 3.25rem)/1 var(--display); letter-spacing: var(--tracking-display); text-wrap: balance; } )
+( was until 2026-10-17 (light italic): .story-turn { margin-top: clamp(1rem, 3vw, 2rem); font: italic 400 clamp(1.75rem, 3.2vw, 2.75rem)/1.15 var(--display); letter-spacing: -.01em; text-wrap: balance; } )
+.story-turn em { font-style: italic; color: var(--spark-deep); }
+( was until 2026-10-17: .story-turn em { font-style: italic; font-weight: 500; } )
+( was until 2026-10-17: .story-turn em { font-style: normal; font-weight: 600; letter-spacing: var(--tracking-title); } )
+.js .story-turn { opacity: 0; transition: opacity var(--fade) var(--ease) .6s; }
+.js .is-visible .story-turn { opacity: 1; }
+*/
+/* was until 2026-10-17: .story-turn { font: 600 var(--text-fact)/1.1 var(--display); letter-spacing: var(--tracking-title); } */
+.story-steps { display: grid; gap: 1.75rem; counter-reset: step; }
+.story-steps li { display: grid; gap: .5rem; padding-left: 3rem; position: relative; counter-increment: step; }
+.story-steps li::before { content: counter(step, decimal-leading-zero); position: absolute; left: 0; top: .3em; font: 500 var(--text-sm)/1 var(--mono); color: var(--spark-deep); }
+.story-steps h3 { font: 600 var(--text-h3)/1.2 var(--display); }
+.story-steps p { color: var(--muted); }
+.story-stats { font-variant-numeric: lining-nums; }
+/* Today, where the project stands now (2026-11-02, Krishna: clean and organised): one italic lead line, then the facts as labelled rows */
+.story-lead { font: italic 500 var(--text-h3)/1.3 var(--display); text-wrap: balance; }
+.story-now { display: grid; }
+.story-now li { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 1.25rem; padding-block: .9rem; border-top: var(--rule); }
+.story-now li:last-child { border-bottom: var(--rule); }
+.story-now strong { padding-top: .45em; font: 500 var(--text-xs)/1.4 var(--mono); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--spark-deep); }
+@media (max-width: 35rem) { .story-now li { grid-template-columns: minmax(0, 1fr); gap: .25rem; } }
+/* More premium (2026-11-02, Krishna: same details, more premium): larger figures on a champagne line, an upright lead with
+   its second half in champagne italic like the page headings, rows labelled in Fraunces italic, a quiet closing line,
+   and the care plan set apart on a pale champagne card. The first versions of these rules stay above. */
+.story-stats div { border-top-color: var(--spark); }
+.story-stats dt { font-size: clamp(1.875rem, 2.5vw, 2.25rem); letter-spacing: var(--tracking-title); }   /* was 2.75rem at most the same day: "Under 0.7 s" ran out of its column */
+.story-lead { margin-top: .75rem; font: 500 clamp(1.5rem, 2.6vw, 2.125rem)/1.2 var(--display); letter-spacing: -.01em; }
+.story-lead em { font-style: italic; color: var(--spark-deep); }
+.story-now li { padding-block: 1.15rem; align-items: baseline; }
+.story-now strong { padding-top: 0; font: italic 500 var(--text-intro)/1.3 var(--display); letter-spacing: 0; text-transform: none; }
+.story-close { font-style: italic; color: var(--muted); }
+/* Before and after figures (2026-11-02, Krishna: make clear which was wrong and which is now): a small tag above each,
+   the old figure greyed on a plain hairline, the new one in ink, the difference in champagne */
+.stat-tag { display: block; margin-bottom: .6rem; font: 500 var(--text-xs)/1.2 var(--mono); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--muted); }
+.story-compare .is-before { border-top: var(--rule); }
+.story-compare .is-before dt { color: var(--muted); }
+.story-compare .is-now .stat-tag, .story-compare .is-gain .stat-tag { color: var(--spark-deep); }
+.story-compare .is-gain dt { color: var(--spark-deep); }
+.story-keep { display: grid; gap: .5rem; margin-top: .75rem; padding: clamp(1.5rem, 3vw, 2rem); border-radius: var(--radius-card); background: var(--glow); }
+.story-keep-title { font: italic 500 var(--text-h3)/1.2 var(--display); }
+
+@media (max-width: 48rem) {
+  .story-chapter { grid-template-columns: minmax(0, 1fr); }
+  .story-head { position: static; }
+}
+
+/* was until 2026-10-17 (version 1: facts, Before and After, screenshot, What we built):
+.case-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem 2rem; margin-top: var(--space-md); padding-top: 1.25rem; border-top: var(--rule); }
+.case-facts dd { margin: .5rem 0 0; }
+
+.case-shot-section { padding-bottom: 0; }   ( screenshot sits clear of the intro line, story follows close )
+.case-shot { display: block; width: 100%; height: auto; border: var(--rule-strong); border-radius: var(--radius); }
+
+( Before and After, like the case study cards (2026-10-17, Krishna) )
+.case-ba { padding-bottom: 0; }
+.case-ba-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem clamp(2rem, 5vw, 5rem); }
+.case-ba-col { display: grid; gap: 1.25rem; align-content: start; padding-top: 1.25rem; border-top: var(--rule-strong); }
+.case-ba-text { max-width: var(--measure); font-size: var(--text-intro); }
+.case-ba-col:first-child .case-ba-text { color: var(--muted); }
+
+( Each part: title on the left, content on the right, divided by hairlines )
+.case-part { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 1rem clamp(2rem, 5vw, 5rem); padding-block: clamp(1.5rem, 3vw, 2.5rem); border-top: var(--rule); }
+.case-part:last-of-type { border-bottom: var(--rule); }
+.case-story .case-part:only-of-type { border-top: 0; }   ( only What we built is left (2026-10-17) )
+.case-part-title { font: 600 var(--text-h3)/1.15 var(--display); }
+.case-part p, .case-part ul { max-width: var(--measure); }
+
+( What changed: spec sheet numbers )
+.case-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: 1.5rem 2rem; }
+.case-stats dt { font: 600 var(--text-fact)/1.05 var(--display); }
+.case-stats dd { margin: .5rem 0 0; font-size: var(--text-sm); color: var(--muted); }
+.case-changed { margin-top: 1.5rem; }
+
+.case-cards.case-related { grid-template-columns: repeat(2, minmax(0, 1fr)); }   ( was until 2026-10-17: .case-related, for the screenshot cards )
+
+@media (max-width: 48rem) {
+  .case-facts { grid-template-columns: minmax(0, 1fr); }
+  .case-part { grid-template-columns: minmax(0, 1fr); }
+  .case-ba-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 35rem) {
+  .case-cards.case-related { grid-template-columns: minmax(0, 1fr); }
+}
+
+*/

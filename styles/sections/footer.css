@@ -1,0 +1,79 @@
+/* Footer (WEB-5.7, copy home.md §13): the only dark area on the site (RFA §7). */
+
+.site-footer {
+  padding-block: var(--space-lg) 2rem;
+  background: var(--ink); color: var(--on-dark);   /* back to ink 2026-10-21 (Krishna: keep the footer as it was); was black for a few hours that day */
+}
+.site-footer :focus-visible { outline-color: var(--spark); }
+
+.footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1.5fr; gap: 2.5rem 2rem; }
+.footer-brand { font: 600 1.75rem/1 var(--display); letter-spacing: -.02em; }
+.footer-tagline { margin-top: .75rem; color: var(--on-dark-muted); }
+
+.footer-heading { margin-bottom: 1rem; color: var(--spark); } /* was until 2026-10-25 (champagne labels like the black bands): color: var(--on-dark-muted); */
+.footer-links { display: grid; gap: .25rem; }
+.footer-links a { display: inline-flex; align-items: center; min-height: 2rem; text-decoration: none; }
+.footer-links a:hover { text-decoration: underline; text-underline-offset: .3em; }
+
+.footer-news p { color: var(--on-dark-muted); }
+.footer-news form { display: grid; gap: .75rem; margin-top: 1rem; }
+.footer-news .field-label { color: var(--on-dark); }
+.footer-news .footer-heading { color: var(--spark); } /* 2026-10-25: .footer-news p would make it grey */
+/* 2026-10-25 (polish): a quiet email field and a stone button, like the black bands; no stark white box */
+.site-footer .field-input { background: transparent; color: var(--on-dark); border-color: var(--on-dark-muted); }
+.site-footer .field-input:focus-visible { border-color: var(--spark); }
+.site-footer .btn-primary { background: var(--on-dark); color: var(--ink); }
+.site-footer .btn-primary:hover { background: var(--spark); }
+
+/* The closing moment: the name set very large and quiet across the bottom (decorative) */
+.footer-mark {
+  margin-top: var(--space-md); white-space: nowrap; overflow: hidden;
+  font: 600 var(--text-mark)/.8 var(--display); letter-spacing: var(--tracking-display);
+  font-variation-settings: "opsz" 144; color: var(--line-dark);
+}
+
+.footer-bottom {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem 2rem;
+  margin-top: var(--space-lg); padding-top: 1.5rem;
+  border-top: 1px solid var(--line-dark);
+  font-size: var(--text-sm); color: var(--on-dark-muted);
+}
+.footer-bottom ul { display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; }
+.footer-bottom a { text-decoration: none; }
+.footer-bottom a:hover { text-decoration: underline; }
+
+/* More premium (2026-11-02, Krishna: make the footer feel more premium). Styles only, so every page's footer changes at once;
+   the rules above stay as the base. Still ink, still the only dark area. */
+.site-footer {
+  padding-top: var(--section);
+  border-top: 1px solid var(--glow-dark);   /* a fine champagne line where the page meets the footer */
+  background: radial-gradient(55% 60% at 0% 0%, var(--glow-dark), transparent 70%), var(--ink);   /* a soft champagne light from the top left, like the black bands */
+}
+.footer-brand { font-size: clamp(2rem, 3vw, 2.5rem); letter-spacing: var(--tracking-title); }
+.footer-tagline { max-width: 16rem; font: italic 500 var(--text-intro)/1.4 var(--display); color: var(--spark); }
+.footer-heading { margin-bottom: 1.25rem; }
+.footer-links { gap: .4rem; }
+.footer-links a { color: var(--on-dark-muted); font-size: var(--text-intro); transition: color var(--fast) var(--ease); }
+.footer-links a:hover { color: var(--on-dark); text-decoration-color: var(--spark); text-decoration-thickness: 1px; }
+.footer-news p { max-width: 22rem; }
+/* the closing name: champagne light fading down into the ink, like engraved gold */
+.footer-mark {
+  margin-top: var(--section);
+  color: transparent;
+  background: linear-gradient(180deg, var(--glow-warm) 0%, var(--glow-dark) 55%, transparent 95%);
+  -webkit-background-clip: text; background-clip: text;
+}
+.footer-bottom { border-top-color: var(--glow-dark); }
+/* email field and Join always on one line (2026-11-02, Krishna): the field shrinks instead of pushing the button down */
+.site-footer .form-row { flex-wrap: nowrap; }
+.site-footer .form-row .field-input { flex: 1 1 auto; min-width: 0; }
+.site-footer .form-row .btn { flex: none; }
+/* the closing name one tone more gold (2026-11-02, Krishna); was linear-gradient(180deg, var(--glow-warm) 0%, var(--glow-dark) 55%, transparent 95%) */
+.footer-mark { background-image: linear-gradient(180deg, var(--mark-gold) 0%, var(--glow-warm) 50%, transparent 95%); }
+
+@media (max-width: 64rem) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 35rem) {
+  .footer-grid { grid-template-columns: 1fr; }
+}

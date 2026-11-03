@@ -1,0 +1,90 @@
+/* Skip link, announcement bar and site header with mobile menu (WEB-5, WEB-8.1). */
+
+.skip-link {
+  position: absolute; left: var(--gutter); top: -4rem; z-index: 100;
+  padding: .75rem 1rem;
+  background: var(--ink); color: var(--on-dark);
+  font-weight: 600; text-decoration: none;
+}
+.skip-link:focus { top: .5rem; }
+
+/* ---------- Announcement bar ---------- */
+/* Sand band, always on; only the link reacts to hover (2026-10-13) */
+.announce {
+  padding-block: .625rem;
+  background: var(--soft);
+  font-size: var(--text-sm); text-align: center;
+}
+.announce-inner { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .25rem 1rem; }
+.announce-label { display: inline-flex; align-items: center; gap: .5rem; }
+.announce-dot { width: .4375rem; height: .4375rem; border-radius: 50%; background: var(--spark); }
+.announce a {
+  font-weight: 600; color: var(--primary);
+  text-decoration-thickness: 1px; text-underline-offset: .25em;
+  transition: color var(--fast) var(--ease), text-decoration-thickness var(--fast) var(--ease);
+}
+.announce a:hover,
+.announce a:focus-visible { color: var(--primary-deep); text-decoration-thickness: 2px; }
+
+/* was until 2026-10-13: plain bar with a hairline, then the whole bar turned dark on hover
+.announce {
+  padding-block: .625rem;
+  border-bottom: var(--rule);
+  font-size: var(--text-sm); text-align: center;
+}
+.announce a { font-weight: 600; color: var(--primary); }
+.announce { transition: background-color var(--fast) var(--ease), color var(--fast) var(--ease); }
+.announce:hover,
+.announce:focus-within { background: var(--ink); color: var(--on-dark); border-bottom-color: var(--ink); }
+.announce:hover a,
+.announce:focus-within a { color: var(--on-dark); }
+*/
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--bg);
+  border-bottom: var(--rule-strong); /* always on: the line that divides the nav bar from the page (2026-10-13) */
+  /* was until 2026-10-13: border only after scrolling (WEB-5.4)
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--fast);
+  */
+}
+/* was until 2026-10-13: .site-header.is-scrolled { border-bottom-color: var(--line); } */
+
+.header-inner { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 2rem; min-height: 4.5rem; }
+
+.brand {
+  margin-right: auto;
+  font: 600 1.375rem/1 var(--display); letter-spacing: -.02em;
+  text-decoration: none;
+}
+
+.nav-list { display: flex; flex-wrap: wrap; gap: .25rem 2rem; }
+.nav-list a { display: inline-flex; align-items: center; min-height: var(--tap); font-weight: 500; text-decoration: none; }
+.nav-list a:hover { text-decoration: underline; text-underline-offset: .3em; }
+
+.menu-toggle { display: none; }
+
+/* ---------- Mobile menu (only when JavaScript runs; without it the links simply wrap) ---------- */
+@media (max-width: 55rem) {
+  .js .menu-toggle {
+    display: inline-flex; align-items: center; min-height: var(--tap); padding-inline: 1rem;
+    border: var(--rule-strong); border-radius: var(--radius-control);   /* was until 2026-11-02 (Krishna: round every button): var(--radius) */
+    background: transparent; color: var(--ink);
+    font: 600 var(--text-sm)/1 var(--body);
+  }
+  .js .nav-list {
+    display: none;
+    position: absolute; inset: 100% 0 auto;
+    flex-direction: column; gap: 0;
+    padding: .5rem var(--gutter) 1.5rem;
+    background: var(--bg); border-bottom: var(--rule);
+  }
+  .js .nav-list.is-open { display: flex; }
+  .js .nav-list a { display: flex; border-bottom: var(--rule); }
+}
+
+@media (max-width: 35rem) {
+  .header-cta { display: none; } /* the announcement bar and hero carry Book a call on phones */
+}

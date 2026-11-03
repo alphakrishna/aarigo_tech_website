@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Custom Website Design and Development | Aaurigo Tech</title>
+  <meta name="description" content="A custom website of up to 6 pages, built in one week after one week of prep together. Tested on every screen, set up to be found, with two weeks of care included after launch."> <!-- was until 2026-11-02 (Krishna: the two weeks are the care plan, included): two weeks of support after launch -->
+  <link rel="canonical" href="https://www.aaurigotech.com/websites"> <!-- 2026-11-03: self canonical on the final www address (RFA §5.11) -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.aaurigotech.com/"}, {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.aaurigotech.com/services"}, {"@type": "ListItem", "position": 3, "name": "Websites", "item": "https://www.aaurigotech.com/websites"}]}</script> <!-- 2026-11-03: BreadcrumbList on inner pages (RFA §5.11) -->
+  <!-- 2026-10-31 (Krishna: a page for each service, linked as "Know more" from Services). Structure borrowed from the reference
+       service page (what you get, the steps, investment, questions, call), our own words. Header and footer are copies until the Astro port (WEB-3.2). -->
+
+  <!-- Google Fonts for now; self-host before launch (WEB-4.4). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+
+  <!-- Order matters: tokens → base → components → sections (in page order) -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/sections/header.css">
+  <link rel="stylesheet" href="styles/sections/packages.css">
+  <!-- was until 2026-11-02 (the steps section moved to archive): [link rel="stylesheet" href="styles/sections/phases.css"] -->
+  <link rel="stylesheet" href="styles/sections/faq.css">
+  <link rel="stylesheet" href="styles/sections/service-cards.css">
+  <link rel="stylesheet" href="styles/sections/cta.css">
+  <link rel="stylesheet" href="styles/sections/footer.css">
+
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="scripts/site.js" defer></script>
+</head>
+<body class="cards-page" data-enter="cards">
+  <!-- [PLACEHOLDER] Every href="#" Book a call link becomes the booking page (WEB-14.8.6). -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="announce">
+    <div class="container">
+      <p class="announce-inner">
+        <span class="announce-label label label-accent"><span class="announce-dot" aria-hidden="true"></span>Now booking</span>
+        <span class="announce-text">Talk to us in as little as 30 minutes.</span>
+        <a href="#" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </p>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Aaurigo Tech</a>
+      <nav aria-label="Main">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menu</button>
+        <ul class="nav-list list-plain" id="main-menu">
+          <li><a href="services.html" aria-current="true">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-sm header-cta" href="#" target="_blank" rel="noopener">
+        Book a call<span class="sr-only"> (opens in a new tab)</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-intro intro-glow">
+      <div class="container reveal">
+        <h1 class="page-title">A website as good as <em>your business.</em></h1>
+        <p class="page-lead">One week of prep together, then one week to design and build every page. A website that finally shows people how good you are.</p>
+      </div>
+    </section>
+
+    <!-- What you get: the Services card, with the full list -->
+    <section class="section" aria-label="What you get">
+      <div class="container reveal-scroll">
+        <article class="offer offer-has-media" aria-labelledby="included-title">
+          <div class="offer-media offer-photo photo-mid"><img src="media/services/websites.webp" srcset="media/services/websites-720.webp 720w, media/services/websites.webp 1100w" sizes="(max-width: 55rem) 100vw, 40vw" alt="Krishna, our founder, smiling as he holds up a laptop to show a website we built." width="1100" height="1546" loading="lazy" decoding="async"></div>
+          <div class="offer-main">
+            <p class="label label-accent">Websites</p>
+            <h2 class="offer-name" id="included-title">Everything included.</h2>
+            <p class="offer-line">Built around your business to win you customers, never from a template.</p> <!-- was until 2026-11-02 (Krishna: oriented towards results): Built around your business, never from a template. -->
+            <p class="offer-path label"><span>Week 1 · Prep</span><span aria-hidden="true">→</span><span>Week 2 · Build</span><span aria-hidden="true">→</span><span>Live</span></p>
+            <p class="offer-who">For businesses that look better than their website.</p>
+          </div>
+          <div class="offer-side">
+            <p class="offer-price"><span class="label">From</span><span class="offer-amount" data-price="website">A$4,999</span></p>
+            <p class="offer-pay">Pay in one go, or split it into 2 or 3 payments. <a class="btn-link" href="services.html#pay-instalments">Get more information <span aria-hidden="true">→</span></a></p> <!-- 2026-11-02 (Krishna: under each card's price, like "Investment ... (split into ... payments)" with a Get more information link) -->
+            <!-- was until 2026-11-02 (Krishna: write the website card in detail, on this page): one line each:
+            [li]Up to 6 custom pages, designed around your brand[/li] [li]Tested on phones, tablets, laptops and large screens[/li] [li]Fast to load and easy for everyone to use[/li] [li]Set up to be found in search and AI answers[/li] [li]Unlimited changes across three review rounds[/li] [li]VIP support by email and video call while we build[/li] -->
+            <ul class="offer-specs offer-specs-detail list-plain">
+              <!-- 2026-11-02 (Krishna: oriented towards results, best represent your business): each point leads with what it does for the business. Same facts as the version before (in the comment above), plus one: a clear next step on every page -->
+              <!-- was until 2026-11-02 (Krishna: more polished): [Shows your real quality] Up to 6 custom pages in your colours, your fonts and your voice, so people see the real quality of your work and trust you from the first look. [Wins people on every screen] Tested on phones, tablets, laptops and large screens, so nobody leaves because a page looks wrong on their device. [Keeps visitors, instead of losing them] Pages open fast and are easy for everyone to use, built to the accessibility standard (WCAG 2.2 AA), so people stay, read and reach out. [Brings people to you] Set up from day one so search engines and AI answers can find your business, understand what you do and point people to you. [Turns visitors into enquiries] Every page leads to one clear next step: a call, a booking or a message, so interest becomes a conversation. [Exactly how you want it] Unlimited changes across three review rounds, so you launch a website you're proud to send people to. [A team beside you] VIP support by email and video call during your business hours, from the first call until launch day. -->
+              <li><strong>Your quality, on show</strong><span>Up to 6 custom pages in your colours, fonts and voice. Visitors see the standard of your work and trust you at first glance.</span></li>
+              <li><strong>Polished on every screen</strong><span>Tested on phones, tablets, laptops and large displays, so every visitor gets the same strong first impression.</span></li>
+              <li><strong>Fast, and open to everyone</strong><span>Pages load quickly and meet the accessibility standard (WCAG 2.2 AA), so people stay, read and reach out.</span></li>
+              <li><strong>Easy to find</strong><span>Set up from day one for search engines and AI answers, so they understand what you do and send people your way.</span></li>
+              <li><strong>Built to bring enquiries</strong><span>Every page guides visitors to one clear next step: a call, a booking or a message.</span></li>
+              <li><strong>Shaped until it's right</strong><span>Unlimited changes across three review rounds. You launch a website you're proud to share.</span></li>
+              <!-- was until 2026-11-02 (moved under the price): [li][strong]Flexible payments[/strong][span]Pay in one go, or in two or three parts.[/span][/li] (was until 2026-11-02 (Krishna: a very small message): [strong]Pay the way that suits you[/strong][span]One payment, or split into two or three across the project, whichever works best for your cash flow.[/span]) --> <!-- 2026-11-02 (Krishna: one payment, two or three instalments, for all three services) -->
+              <li><strong>With you all the way</strong><span>VIP support by email and video call in your business hours, from the first call to launch day.</span></li>
+            </ul>
+            <div class="offer-actions">
+              <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call about a website <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- was until 2026-11-02 (Krishna: this section looked extra, the Services page already has every step): the steps section, now in archive/service-steps-2026-11-02/websites-steps.html -->
+
+    <!-- What we need, said up front (2026-10-31, Krishna: tell clients before hand what is needed and the quality; missing materials wait in the queue) -->
+    <section class="section section-alt" aria-labelledby="ready-title">
+      <div class="container text-block reveal-scroll">
+        <header class="section-head">
+          <h2 class="section-title" id="ready-title">Ready before <em>we build.</em></h2>
+        </header>
+        <div>
+          <p>Before we start, we send you one simple checklist: every photo, text and login we need, with the size and quality each photo should have. If something is missing, we tell you where to get it.</p>
+          <p>Your build week is booked once everything is in. If something is still on its way, your project waits safely with us and starts at the next free slot.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- After launch (2026-10-31, Krishna: two weeks of free support for small changes; bigger changes billed separately) -->
+    <section class="section" aria-labelledby="after-title">
+      <div class="container text-block reveal-scroll">
+        <header class="section-head">
+          <h2 class="section-title" id="after-title">Two weeks of care, <em>included.</em> <!-- was until 2026-11-02 (Krishna: never say free; two weeks of the care plan are included in the main package after launch): Two weeks of support, [em]on us.[/em] --></h2>
+        </header>
+        <div>
+          <p>Your package includes two weeks of our care plan after launch. In that time we make the small changes for you: swapping a photo, updating some text, adding or removing something on a page. <!-- was until 2026-11-02 (Krishna: never say free; two weeks of the care plan are included in the main package after launch): [p]For two weeks after launch, we make the small changes for free: swapping a photo, updating some text, adding or removing something on a page. --> Bigger changes, like a new look or a new section, become a small project of their own, with a clear price first.</p>
+          <!-- was until 2026-11-02 (Krishna: keep only what is relevant and not repeated; the Services page has the full care plan card): [p]After that, our [a class="btn-link" href="services.html#care-plan"]care plan[/a] keeps every change coming, from [span data-price="care"]A$449[/span] a month.[/p] -->
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="faq-title">
+      <div class="container faq-grid reveal-scroll">
+        <header class="section-head">
+          <h2 class="section-title" id="faq-title">Website questions.</h2>
+          <p class="section-intro">Don't see yours? Book a call and ask us directly.</p>
+        </header>
+        <div class="faq-list">
+          <details><summary>What if I don't have photos or text yet?</summary><p>Send us the facts about your business and we shape the words with you. For photos, our checklist tells you exactly what to take and the quality each one needs.</p></details>
+          <details><summary>Can I have more than 6 pages?</summary><p>Yes. <a class="btn-link" href="services.html#premium-upgrade">Premium</a> adds up to 15 custom pages, with blog or product pages. Or tell us what you need and we quote it on top.</p></details>
+          <details><summary>Can I edit the website myself?</summary><p>We keep your website free of an editing panel, so nothing can slow it down or break it. Every change is made by us instead.</p></details>
+          <details><summary>What does it cost to run?</summary><p>Hosting and your domain. They're set up in your name and you pay the providers directly, so nothing is ever locked to us.</p></details>
+          <details><summary>Can you rebuild my current website?</summary><p>Yes. We tell you honestly whether to improve it or start fresh.</p></details>
+          <details><summary>Who owns the website?</summary><p>You do. Once it's paid for, the code, the design and every account are yours.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta cta-glow" aria-labelledby="cta-title">
+      <div class="container reveal-scroll">
+        <h2 class="cta-title" id="cta-title">Ready for a website that works as hard as you do?</h2>
+        <p class="cta-body">Book a call and we'll look at your current website before we talk.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+          <a class="btn-link" href="services.html">See all services</a>
+        </div>
+        <p class="cta-closing label">Enable businesses to do more.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">Aaurigo Tech</p>
+          <p class="footer-tagline">Launch fast. Learn faster. Grow smarter.</p>
+        </div>
+        <nav aria-labelledby="footer-nav">
+          <p class="footer-heading label" id="footer-nav">Navigate</p>
+          <ul class="footer-links list-plain">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-work">
+          <p class="footer-heading label" id="footer-work">Work with us</p>
+          <ul class="footer-links list-plain">
+            <li><a href="websites.html">Websites</a></li>
+            <li><a href="web-apps.html">Web apps</a></li>
+            <li><a href="mobile-apps.html">Mobile apps</a></li>
+            <li><a href="#" target="_blank" rel="noopener">Book a call<span class="sr-only"> (opens in a new tab)</span></a></li>
+          </ul>
+        </nav>
+        <div class="footer-news">
+          <p class="footer-heading label">Newsletter</p>
+          <p>Short notes on building and launching faster. One email a month.</p>
+          <!-- Posts to Zoho Campaigns once NEWS-1.11 is set up. -->
+          <form action="#" method="post">
+            <div class="field">
+              <label class="field-label" for="news-email">Your email address</label>
+              <div class="form-row">
+                <input class="field-input" id="news-email" name="email" type="email" autocomplete="email" required>
+                <button class="btn btn-primary" type="submit">Join</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> Aaurigo Tech. All rights reserved.</p>
+        <ul class="list-plain" aria-label="Legal">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="accessibility.html">Accessibility Statement</a></li>
+        </ul>
+      </div>
+      <p class="footer-mark" aria-hidden="true">Aaurigo Tech</p>
+    </div>
+  </footer>
+</body>
+</html>

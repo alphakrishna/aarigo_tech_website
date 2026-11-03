@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ParkTag Case Study: Brand and Web App | Aaurigo Tech</title>
+  <meta name="description" content="How we took a founder's idea to a brand and web app with 1,000+ users, built from scratch."> <!-- was until 2026-10-17 (Krishna: never explain a client's product idea on our site): [meta name="description" content="How we shaped the ParkTag brand and built its web app from scratch: a QR tag for vehicles now used by 1,000+ owners."] -->
+  <link rel="canonical" href="https://www.aaurigotech.com/case-study-parktag"> <!-- 2026-11-03: self canonical on the final www address (RFA §5.11) -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.aaurigotech.com/"}, {"@type": "ListItem", "position": 2, "name": "Work", "item": "https://www.aaurigotech.com/work"}, {"@type": "ListItem", "position": 3, "name": "ParkTag", "item": "https://www.aaurigotech.com/case-study-parktag"}]}</script> <!-- 2026-11-03: BreadcrumbList on inner pages (RFA §5.11) -->
+  <!-- Copy: doc/copy/case-study-parktag.md (draft until approved, WEB-2.3 to WEB-2.5). Built 2026-10-17; version 2 the same day (issue first, process, brand at the end), version 3 the same day (told as a story in chapters); earlier versions in archive/. Header and footer are copies of index.html until the Astro port (WEB-3.2). -->
+
+  <!-- Google Fonts for now; self-host before launch (WEB-4.4). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+
+  <!-- Order matters: tokens → base → components → sections (in page order) -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/sections/header.css">
+  <link rel="stylesheet" href="styles/sections/work.css">
+  <link rel="stylesheet" href="styles/sections/case.css">
+  <link rel="stylesheet" href="styles/sections/cta.css">
+  <link rel="stylesheet" href="styles/sections/footer.css">
+
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="scripts/site.js" defer></script>
+</head>
+<body>
+  <!-- [PLACEHOLDER] Every href="#" Book a call link becomes the booking page (WEB-14.8.6). -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- 1. Announcement bar (home.md §1) -->
+  <div class="announce">
+    <div class="container">
+      <!-- was until 2026-10-13:
+      <p>Now booking new projects. Talk to us in as little as 30 minutes.
+        <a href="#" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </p>
+      -->
+      <p class="announce-inner">
+        <span class="announce-label label label-accent"><span class="announce-dot" aria-hidden="true"></span>Now booking</span>
+        <span class="announce-text">Talk to us in as little as 30 minutes.</span>
+        <a href="#" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Site header (WEB-5) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Aaurigo Tech</a>
+      <nav aria-label="Main">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menu</button>
+        <ul class="nav-list list-plain" id="main-menu">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html" aria-current="page">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-sm header-cta" href="#" target="_blank" rel="noopener">
+        Book a call<span class="sr-only"> (opens in a new tab)</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+  <!-- 2026-10-17 (Krishna: no other brands on our website): WhatsApp, Google, LinkedIn, AWS and EditTree Technologies taken out of the project text; the client company stays internal (doc/copy/all-projects.md). -->
+
+    <section class="page-intro intro-glow story-hero">
+      <div class="container reveal">
+        <p class="label label-accent"><a href="work.html">Work</a> · Case study · Brand and web app</p>
+        <h1 class="page-title case-issue">From a great idea <em>to its first 1,000+ users.</em></h1>
+        <p class="story-dek">The story of one founder, one everyday problem, and how we turned an idea into a product people use.</p>
+      </div>
+    </section>
+
+    <article class="section story" aria-label="The ParkTag story">
+      <div class="container">
+
+        <section class="story-chapter reveal-scroll" aria-labelledby="ch1">
+          <header class="story-head"><span class="label label-accent">Chapter 01</span><h2 class="story-title" id="ch1">The idea</h2></header>
+          <div class="story-body">
+            <p class="story-drop">A founder came to us with an idea for a problem people meet every day. No brand, no product and no website yet. Just the idea.</p> <!-- was until 2026-10-17 (Krishna: never explain a client's product idea on our site): [p class="story-drop"]Every day, someone needs a car's owner and has no way to reach them. The idea: a tag on the vehicle that anyone can scan to reach the owner, without either person ever seeing the other's number.[/p] --> <!-- was until 2026-10-17 (Krishna: the one line opens the paragraph, in the same drop cap style): [p class="story-drop"]Every day, someone needs a car's owner and has no way to reach them.[/p]  was until 2026-10-17 (Krishna: concise, one line): Every day, a car blocks another car. Lights get left on. Someone needs the owner, and there is no way to reach them. And no owner wants their phone number stuck on the windscreen for anyone to copy. 
+            [p]One founder kept seeing this problem and had a simple idea: a tag on the vehicle that anyone can scan to reach the owner, without either person ever seeing the other's number.[/p]  tried and reversed 2026-10-17 (Krishna: "no reverse"): One founder saw it again and again, and had an idea to fix it.  -->
+            <blockquote class="story-quote"><p>Every product people love started as one small idea.</p></blockquote> <!-- was until 2026-10-17 (Krishna: never explain a client's product idea on our site): [blockquote class="story-quote"][p]A small idea that could make a daily problem disappear for every driver.[/p][/blockquote] -->
+          </div>
+        </section>
+
+        <section class="story-chapter reveal-scroll" aria-labelledby="ch2">
+          <header class="story-head"><span class="label label-accent">Chapter 02</span><h2 class="story-title" id="ch2">The wall</h2></header>
+          <div class="story-body">
+            <p>But an idea is not a product. Between the two stood questions every founder knows:</p>
+            <ul class="story-questions list-plain">
+              <li>What should it be called, and how should it look?</li>
+              <li>How do you turn it into something people can actually use?</li> <!-- was until 2026-10-17 (Krishna: never explain a client's product idea on our site): [li]How do you connect two strangers by phone and keep both numbers private?[/li] -->
+              <li>Who builds it, and how fast?</li>
+              <li>How much do you spend before you even know people want it?</li>
+            </ul>
+            <p class="story-stop"><span class="story-star" aria-hidden="true"></span><span>This is where most good ideas <em>stop.</em></span><span class="story-star" aria-hidden="true"></span></p> <!-- was until 2026-10-17 (Krishna: make it feel like people stop, a little dangerous): [p]This is where most good ideas stop.[/p] -->
+          </div>
+        </section>
+
+        <section class="story-chapter reveal-scroll" aria-labelledby="ch3">
+          <header class="story-head"><span class="label label-accent">Chapter 03</span><h2 class="story-title" id="ch3">Why us</h2></header>
+          <div class="story-body">
+            <p>The founder didn't need five different suppliers. They needed one team that could shape the brand, design the product, build it and launch it, and keep it realistic: the right first version, not the most expensive one.</p>
+            <p class="story-stop story-answer"><span class="story-star" aria-hidden="true"></span><span>That's where <em>we</em> came in.</span><span class="story-star" aria-hidden="true"></span></p> <!-- was until 2026-10-17 (Krishna: same styling as the stop line): [p class="story-turn"]That's where [em]we[/em] came in.[/p] --> <!-- was until 2026-10-17 (Krishna: more elegant): That's where we came in. (no emphasis) -->
+          </div>
+        </section>
+
+        <section class="story-chapter reveal-scroll" aria-labelledby="ch4">
+          <header class="story-head"><span class="label label-accent">Chapter 04</span><h2 class="story-title" id="ch4">Making it real</h2></header>
+          <div class="story-body">
+            <ol class="story-steps list-plain">
+              <li><h3>We sat down together</h3><p>We worked through every part of the idea with the founder, before anything was built.</p></li>
+              <li><h3>We gave it a name and a face</h3><p>We shaped the brand and how it stands out.</p></li>
+              <li><h3>We built the smallest version that could prove it</h3><p>From scratch, so the budget went into what real users needed, not into guesses.</p></li>
+              <li><h3>We made it fast and simple</h3><p>A web app that opens in under half a second, with nothing to install, ready to sell and to grow.</p></li> <!-- was until 2026-10-17 (Krishna: never explain a client's product idea on our site): [li][h3]We made it fast and private[/h3][p]A scan page that opens in the phone's browser in under half a second, with no app. Private calls that connect in under three seconds, with both numbers hidden. A web app dashboard for owners, with instant alerts, plans and online ordering.[/p][/li] -->
+            </ol>
+          </div>
+        </section>
+
+        <section class="story-chapter reveal-scroll" aria-labelledby="ch5">
+          <header class="story-head"><span class="label label-accent">Chapter 05</span><h2 class="story-title" id="ch5">Today</h2></header>
+          <div class="story-body">
+            <dl class="case-stats story-stats">
+              <div><dt>1,000+</dt><dd>tag users</dd></div>
+              <div><dt>Under&nbsp;0.5&nbsp;s</dt><dd>for the app to open</dd></div> <!-- was until 2026-10-17 (Krishna: never explain a client's product idea on our site): [div][dt]Under&nbsp;0.5&nbsp;s[/dt][dd]for the scan page to open[/dd][/div] -->
+               <!-- was until 2026-10-17 (Krishna: never explain a client's product idea on our site): [div][dt]Under&nbsp;3&nbsp;s[/dt][dd]to connect a private call[/dd][/div] -->
+            </dl>
+            <!-- was until 2026-11-02 (Krishna: tell what is happening with the project now): [p]The idea is now a product people use every day. And it keeps getting better, shaped by feedback from real users.[/p] -->
+            <!-- was until 2026-11-02 (Krishna: a little more impressive; facts from parktag.me and their social page, read 2026-11-02): [p]The idea is now a business running at full speed. The team is growing, they create content for the people who use it, and they are taking it further every week.[/p] [p]The product we built together is what all of that stands on. People use it every day, and it keeps getting better from what they tell us.[/p] -->
+            <!-- was until 2026-11-02 (Krishna: clean and organised, keep every detail): [p]What started as one founder's idea is now a business in full swing. Orders ship free across the country, it sells on its own site and on one of the country's biggest online marketplaces, and there is a plan for everyone, from a single vehicle to a whole fleet.[/p] [p]Behind it, the team is growing and a steady stream of new videos brings fresh people in. At the heart of it all is the product we built together: used every day, and getting better from what real users tell us.[/p] -->
+            <p class="story-lead">What started as one founder's idea <em>is now a business in full swing.</em></p>
+            <ul class="story-now list-plain">
+              <li><strong>Delivery</strong><span>Orders ship free across the country.</span></li>
+              <li><strong>Where it sells</strong><span>On its own site and on one of the country's biggest online marketplaces.</span></li>
+              <li><strong>Plans</strong><span>One for everyone, from a single vehicle to a whole fleet.</span></li>
+              <li><strong>Growth</strong><span>A growing team, and a steady stream of new videos bringing fresh people in.</span></li>
+            </ul>
+            <p class="story-close">At the heart of it all is the product we built together: used every day, and getting better from what real users tell us.</p>
+          </div>
+        </section>
+
+      </div>
+    </article>
+
+    <section class="section section-alt case-reveal" aria-labelledby="brand-title">
+      <div class="container reveal-scroll">
+        <p class="label label-accent">The brand</p>
+        <h2 class="case-brand" id="brand-title">ParkTag</h2>
+        <p class="case-brand-about">A brand and web app we built from scratch, now with 1,000+ users. <!-- was until 2026-10-17 (Krishna: never explain a client's product idea on our site): [p class="case-brand-about"]QR tags that let anyone reach a vehicle owner, while both numbers stay private. --> <span class="case-brand-services">What we did: brand and positioning, web app, ongoing improvement.</span></p>
+        <p><a class="btn-link" href="https://parktag.me/" target="_blank" rel="noopener">Visit ParkTag <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a></p>
+        <div class="shot-frame case-frame">
+          <img src="media/work/parktag.webp" alt="ParkTag home page." width="1200" height="900" loading="lazy">
+        </div> <!-- was until 2026-10-18 (Krishna: polish the screenshot, softly rounded corners): the image alone, no frame -->
+        <!-- Client quote goes here when it arrives (Krishna will send it; WEB-2.7), with saved permission. -->
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="more-title">
+      <div class="container reveal-scroll">
+        <header class="section-head">
+          <p class="label label-accent">More case studies</p>
+          <h2 class="section-title" id="more-title">More problems we've solved.</h2>
+        </header>
+        <ul class="case-cards case-related list-plain">
+          <li class="case-card">
+            <a href="case-study-pathmole.html">
+              <span class="label label-accent">Brand and website</span>
+              <h3 class="case-card-issue">From a new venture <em>to the people it serves.</em></h3> <!-- was until 2026-10-17 (Krishna: connect the new venture with its people, not just be found): From opening day to being found online. --> <!-- was until 2026-10-17 (Krishna: we are not promoting doctors, labs or their ideas; the heading is about the problem we solved): From a brand new lab to the doctors who need it. --> <!-- was until 2026-10-17 (Krishna: PathMole was a new business that did not know how to reach people): [h3 class="case-card-issue"]From no website to a lab doctors can find online.[/h3] --> <!-- was until 2026-10-17 (Krishna: same journey pattern as ParkTag): Doctors couldn't find the lab online. Now they can. --> <!-- was until 2026-10-17 (Krishna: headings were product based; focus on the problem we solved): A trusted lab, invisible online. --> <!-- was until 2026-10-17 (Krishna: make the heading clean and attractive): A specialist lab that doctors and patients couldn't find, check or contact online. -->
+              <div class="case-card-after"><span class="label">What changed</span><p>A new business with no brand, no website and no way to reach people. We built the brand, the website, email and a newsletter.</p> <!-- was until 2026-10-17 (Krishna: PathMole was a new business that did not know how to reach people): [p]No brand and no website at the start. We built both, plus email and a newsletter.[/p] --> <!-- was until 2026-10-17 (Krishna: same journey pattern as ParkTag): [p][strong class="case-card-number"]20+[/strong] pages built from scratch, connected to email and a newsletter.[/p] --></div>
+              <p class="case-card-brand"><span class="label">The brand</span>PathMole Expert Lab</p>
+              <span class="case-card-link">Read the case study <span aria-hidden="true">→</span></span>
+            </a>
+          </li>
+          <li class="case-card">
+            <a href="case-study-dr-arpan-gandhi.html">
+              <span class="label label-accent">Website</span>
+              <h3 class="case-card-issue">From a slow site <em>to a story told in full.</em></h3> <!-- was until 2026-10-18 (Krishna: speak to many fields, not one senior person): [h3 class="case-card-issue"]From a slow site [em]to decades of work in full view.[/em][/h3] --> <!-- was until 2026-10-17 (Krishna: same journey pattern as ParkTag): A slow site hid decades of work. Now it loads fast. --> <!-- was until 2026-10-17 (Krishna: headings were product based; focus on the problem we solved): Decades of work, hidden by a slow website. --> <!-- was until 2026-10-17 (Krishna: make the heading clean and attractive): Nearly three decades of work, hidden behind a slow website. -->
+              <div class="case-card-after"><span class="label">What changed</span><p>A site that took over 7 seconds to load. We rebuilt it and wrote every page.</p> <!-- was until 2026-10-17 (Krishna: same journey pattern as ParkTag): [p]A fast site that tells the full story of his work, every page written by us.[/p] --></div>
+              <p class="case-card-brand"><span class="label">The brand</span>Dr. Arpan Gandhi</p>
+              <span class="case-card-link">Read the case study <span aria-hidden="true">→</span></span>
+            </a>
+          </li>
+        </ul>
+        <!-- was until 2026-10-17 (Krishna: cards follow the case study pages, issue first and the brand last):
+        <ul class="case-cards case-related list-plain">
+          <li class="case-card">
+            <a href="case-study-pathmole.html">
+              <span class="label label-accent">Brand and website</span>
+              <h3 class="work-title">PathMole Expert Lab</h3>
+              <dl class="case-card-rows">
+                <div><dt class="label">Before</dt><dd>No website, so doctors and patients could not check its tests or get in touch online.</dd></div>
+                <div><dt class="label">After</dt><dd><strong class="case-card-number">20+</strong> pages built from scratch, connected to email and a newsletter.</dd></div>
+              </dl>
+              <span class="case-card-link">Read the case study <span aria-hidden="true">→</span></span>
+            </a>
+          </li>
+          <li class="case-card">
+            <a href="case-study-dr-arpan-gandhi.html">
+              <span class="label label-accent">Website</span>
+              <h3 class="work-title">Dr. Arpan Gandhi</h3>
+              <dl class="case-card-rows">
+                <div><dt class="label">Before</dt><dd>A website that took over 7 seconds to load and hid nearly three decades of work.</dd></div> [ was until 2026-10-17 (Krishna: never make the old tool look bad): A WordPress site that took over 7 seconds to load and hid his achievements. ]
+                <div><dt class="label">After</dt><dd>A fast site, rebuilt from scratch, that tells the full story of his work.</dd></div>
+              </dl>
+              <span class="case-card-link">Read the case study <span aria-hidden="true">→</span></span>
+            </a>
+          </li>
+        </ul>
+        -->
+        <!-- was until 2026-10-17 (Krishna: the cards did not look good; show the issue and what changed instead):
+        <ul class="work-grid case-related list-plain">
+          <li class="work-card">
+            <a href="case-study-pathmole.html">
+              <img class="work-media" src="media/work/pathmole.webp" alt="PathMole Expert Lab home page: Precision diagnostics your clinicians can trust." width="1200" height="900" loading="lazy">
+              <span class="label label-accent">Brand and website</span>
+              <h3 class="work-title">PathMole Expert Lab</h3>
+              <span class="work-result">From no website to a lab doctors can find, check and contact.</span>
+            </a>
+          </li>
+          <li class="work-card">
+            <a href="case-study-dr-arpan-gandhi.html">
+              <img class="work-media" src="media/work/drarpangandhi.webp" alt="Dr. Arpan Gandhi home page, with his roles as a healthcare advisor and his photo." width="1200" height="900" loading="lazy">
+              <span class="label label-accent">Website</span>
+              <h3 class="work-title">Dr. Arpan Gandhi</h3>
+              <span class="work-result">Nearly three decades of work, finally shown in full.</span>
+            </a>
+          </li>
+        </ul>
+        -->
+      </div>
+    </section>
+
+    <section class="section cta cta-glow" aria-labelledby="cta-title">
+      <div class="container reveal-scroll">
+        <h2 class="cta-title" id="cta-title">Got a great idea, but nothing built yet?</h2> <!-- was until 2026-10-17: Like what you see? -->
+        <p class="cta-body">No brand, no product, no website? We'll build all three and put your idea in front of real users fast, so you learn what works before you spend big.</p> <!-- was until 2026-10-17: Book a call and talk in as little as 30 minutes. -->
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+        </div>
+        <p class="cta-closing label">Enable businesses to do more.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 13. Footer (home.md §13, WEB-5.7). No Client login link until BIZ-3.10. -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">Aaurigo Tech</p>
+          <p class="footer-tagline">Launch fast. Learn faster. Grow smarter.</p>
+        </div>
+        <nav aria-labelledby="footer-nav">
+          <p class="footer-heading label" id="footer-nav">Navigate</p>
+          <ul class="footer-links list-plain">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-work">
+          <p class="footer-heading label" id="footer-work">Work with us</p>
+          <ul class="footer-links list-plain">
+            <li><a href="websites.html">Websites</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#web-development --></li>
+            <li><a href="web-apps.html">Web apps</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#web-applications --></li>
+            <!-- was until 2026-10-21 (Krishna: brand combined with every service, not its own option): [li][a href="services.html#brand"]Brand[/a][/li] -->
+            <li><a href="mobile-apps.html">Mobile apps</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#mobile-apps --></li> <!-- was until 2026-10-14: Web Development · Web Applications · Mobile Apps -->
+            <li><a href="#" target="_blank" rel="noopener">Book a call<span class="sr-only"> (opens in a new tab)</span></a></li>
+          </ul>
+        </nav>
+        <div class="footer-news">
+          <p class="footer-heading label">Newsletter</p>
+          <p>Short notes on building and launching faster. One email a month.</p>
+          <!-- Posts to Zoho Campaigns once NEWS-1.11 is set up. -->
+          <form action="#" method="post">
+            <div class="field">
+              <label class="field-label" for="news-email">Your email address</label>
+              <div class="form-row">
+                <input class="field-input" id="news-email" name="email" type="email" autocomplete="email" required>
+                <button class="btn btn-primary" type="submit">Join</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> Aaurigo Tech. All rights reserved.</p>
+        <ul class="list-plain" aria-label="Legal">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="accessibility.html">Accessibility Statement</a></li>
+        </ul>
+        <!-- [PLACEHOLDER] Social links (LinkedIn, Instagram, GitHub, X) once WEB-1.4 is done. -->
+      </div>
+      <p class="footer-mark" aria-hidden="true">Aaurigo Tech</p> <!-- 2026-10-25 (Krishna: polish): the name set large and quiet as the closing moment; decorative, the brand is already named above -->
+    </div>
+  </footer>
+</body>
+</html>

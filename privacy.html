@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy | Aaurigo Tech</title>
+  <meta name="description" content="How Aaurigo Tech collects, uses and protects your personal data, and how to see, correct or delete it at any time.">
+  <link rel="canonical" href="https://www.aaurigotech.com/privacy"> <!-- 2026-11-03: self canonical on the final www address (RFA §5.11) -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.aaurigotech.com/"}, {"@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://www.aaurigotech.com/privacy"}]}</script> <!-- 2026-11-03: BreadcrumbList on inner pages (RFA §5.11) -->
+  <!-- Header and footer are copies of index.html until the Astro port (WEB-3.2). -->
+
+  <!-- Google Fonts for now; self-host before launch (WEB-4.4). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+
+  <!-- Order matters: tokens → base → components → sections (in page order) -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/sections/header.css">
+  <link rel="stylesheet" href="styles/sections/legal.css">
+  <link rel="stylesheet" href="styles/sections/footer.css">
+
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="scripts/site.js" defer></script>
+</head>
+<body>
+  <!-- 2026-11-03: Privacy Policy, copy from doc/copy/privacy.md (draft for approval, WEB-2.15). Matches doc/legal/data-register.md. Legal review before launch (BIZ-2.8). Provider names are kept on purpose: a privacy policy must name who handles the data (the no other brands rule covers project copy). -->
+  <!-- [PLACEHOLDER] Every href="#" Book a call link becomes the booking page (WEB-14.8.6). -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- 1. Announcement bar (home.md §1) -->
+  <div class="announce">
+    <div class="container">
+      <!-- was until 2026-10-13:
+      <p>Now booking new projects. Talk to us in as little as 30 minutes.
+        <a href="#" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </p>
+      -->
+      <p class="announce-inner">
+        <span class="announce-label label label-accent"><span class="announce-dot" aria-hidden="true"></span>Now booking</span>
+        <span class="announce-text">Talk to us in as little as 30 minutes.</span>
+        <a href="#" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Site header (WEB-5) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Aaurigo Tech</a>
+      <nav aria-label="Main">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menu</button>
+        <ul class="nav-list list-plain" id="main-menu">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-sm header-cta" href="#" target="_blank" rel="noopener">
+        Book a call<span class="sr-only"> (opens in a new tab)</span>
+      </a>
+    </div>
+  </header>
+
+    <main id="main">
+
+    <section class="page-intro intro-glow">
+      <div class="container reveal">
+        <h1 class="page-title">Privacy <em>Policy</em></h1>
+        <p class="page-lead">We collect as little as we can, we never sell your data, and you can ask us to see or delete it at any time.</p>
+      </div>
+    </section>
+
+    <!-- Full policy (privacy.md). Styles: sections/legal.css -->
+    <section class="section legal" aria-label="Full text">
+      <div class="container legal-grid">
+        <nav class="legal-toc" aria-labelledby="legal-toc-title">
+          <p class="label" id="legal-toc-title">On this page</p>
+          <ol class="list-plain">
+            <li><a href="#who">Who we are</a></li>
+            <li><a href="#collect">What we collect and why</a></li>
+            <li><a href="#helpers">Who helps us</a></li>
+            <li><a href="#keep">How long we keep it</a></li>
+            <li><a href="#rights">Your rights</a></li>
+            <li><a href="#security">Security</a></li>
+            <li><a href="#changes">Changes to this policy</a></li>
+          </ol>
+        </nav>
+        <div class="legal-body">
+          <p class="legal-updated">Last updated: <span class="placeholder">[PLACEHOLDER date]</span></p>
+          <p class="legal-summary">In short: no tracking cookies, no advertising pixels and no selling of data. We use your details only to reply to you and to send what you asked for.</p>
+
+          <h2 id="who">Who we are</h2>
+          <p>Aaurigo Tech <span class="placeholder">[PLACEHOLDER legal entity name]</span>, <span class="placeholder">[PLACEHOLDER postal address]</span>.</p>
+          <p>Questions about privacy: <span class="placeholder">[PLACEHOLDER privacy email address]</span>.</p>
+
+          <h2 id="collect">What we collect and why</h2>
+          <div class="legal-table-wrap" role="region" aria-label="What we collect and why" tabindex="0">
+            <table class="legal-table">
+              <thead><tr><th scope="col">When you</th><th scope="col">We collect</th><th scope="col">Why</th><th scope="col">Our legal basis</th></tr></thead>
+              <tbody>
+                <tr><td>Send the form on our Contact page</td><td>Name, email, company, project details, message</td><td>To reply and prepare a quote</td><td>Steps you asked for before a contract</td></tr>
+                <tr><td>Book a call</td><td>Name, email, company or website, your answers, the call time</td><td>To hold the call</td><td>Steps you asked for before a contract</td></tr>
+                <tr><td>Sign up for the newsletter or the free guide</td><td>Email address, and your first name if you give it</td><td>To send what you asked for</td><td>Your consent, which you can withdraw at any time</td></tr>
+                <tr><td>Visit the website</td><td>No personal data. Our analytics count visits without cookies or tracking</td><td>To see which pages help visitors</td><td>Not personal data</td></tr>
+                <tr><td>Receive an email from us about our services</td><td>Your business contact details, from your public business listings and website</td><td>To offer services that are relevant to your business</td><td>Our legitimate interest in offering services to businesses</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>We don't use advertising cookies or tracking pixels, and we never sell or rent your data.</p>
+
+          <h2 id="helpers">Who helps us</h2>
+          <p>We use a small number of trusted providers. They handle your data only on our instructions:</p>
+          <ul>
+            <li><strong>Zoho</strong>: our business email and the newsletter</li>
+            <li><strong>Google</strong>: booking calls and holding video calls</li>
+            <li><strong>Cloudflare</strong>: hosting, analytics without cookies, and spam protection</li>
+            <li><span class="placeholder">[PLACEHOLDER form service]</span>: delivers the Contact page form to our inbox</li>
+          </ul>
+          <p>Some of these providers store data outside your country, including outside the EU and the UK. Where they do, they use approved safeguards such as standard contractual clauses.</p>
+
+          <h2 id="keep">How long we keep it</h2>
+          <ul>
+            <li>Enquiries and bookings that don't become a project: <strong>12 months</strong>.</li>
+            <li>Client records: for the length of the project, then as long as tax and legal rules require (<span class="placeholder">[PLACEHOLDER years]</span>).</li>
+            <li>Newsletter: until you unsubscribe.</li>
+            <li>Business contact details used to offer our services: <strong>6 months</strong> if unused, otherwise 12 months after we last contacted you.</li>
+            <li>If you ask us not to contact you, we keep only your email address on a "do not contact" list, so we never email you again.</li>
+          </ul>
+
+          <h2 id="rights">Your rights</h2>
+          <p>You can ask us to <strong>see, correct or delete</strong> your data, to <strong>stop</strong> contacting you, or to <strong>object</strong> to how we use it. Email <span class="placeholder">[PLACEHOLDER privacy email address]</span> and we'll reply within one month. Every email we send includes a way to opt out.</p>
+          <p>If you're not happy with our answer, you can complain to your data protection authority (in the UK, the Information Commissioner's Office).</p>
+
+          <h2 id="security">Security</h2>
+          <p>We protect your data with strong passwords, two step sign in and access limited to the people who need it.</p>
+
+          <h2 id="changes">Changes to this policy</h2>
+          <p>If we change this policy, we'll update the date at the top of this page.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 13. Footer (home.md §13, WEB-5.7). No Client login link until BIZ-3.10. -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">Aaurigo Tech</p>
+          <p class="footer-tagline">Launch fast. Learn faster. Grow smarter.</p>
+        </div>
+        <nav aria-labelledby="footer-nav">
+          <p class="footer-heading label" id="footer-nav">Navigate</p>
+          <ul class="footer-links list-plain">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-work">
+          <p class="footer-heading label" id="footer-work">Work with us</p>
+          <ul class="footer-links list-plain">
+            <li><a href="websites.html">Websites</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#web-development --></li>
+            <li><a href="web-apps.html">Web apps</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#web-applications --></li>
+            <!-- was until 2026-10-21 (Krishna: brand combined with every service, not its own option): [li][a href="services.html#brand"]Brand[/a][/li] -->
+            <li><a href="mobile-apps.html">Mobile apps</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#mobile-apps --></li> <!-- was until 2026-10-14: Web Development · Web Applications · Mobile Apps -->
+            <li><a href="#" target="_blank" rel="noopener">Book a call<span class="sr-only"> (opens in a new tab)</span></a></li>
+          </ul>
+        </nav>
+        <div class="footer-news">
+          <p class="footer-heading label">Newsletter</p>
+          <p>Short notes on building and launching faster. One email a month.</p>
+          <!-- Posts to Zoho Campaigns once NEWS-1.11 is set up. -->
+          <form action="#" method="post">
+            <div class="field">
+              <label class="field-label" for="news-email">Your email address</label>
+              <div class="form-row">
+                <input class="field-input" id="news-email" name="email" type="email" autocomplete="email" required>
+                <button class="btn btn-primary" type="submit">Join</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> Aaurigo Tech. All rights reserved.</p>
+        <ul class="list-plain" aria-label="Legal">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="accessibility.html">Accessibility Statement</a></li>
+        </ul>
+        <!-- [PLACEHOLDER] Social links (LinkedIn, Instagram, GitHub, X) once WEB-1.4 is done. -->
+      </div>
+      <p class="footer-mark" aria-hidden="true">Aaurigo Tech</p> <!-- 2026-10-25 (Krishna: polish): the name set large and quiet as the closing moment; decorative, the brand is already named above -->
+    </div>
+  </footer>
+</body>
+</html>
