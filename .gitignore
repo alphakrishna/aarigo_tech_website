@@ -11,3 +11,6 @@ media/home/background-remover.zip
 Thumbs.db
 .vscode/
 .wrangler/
+# The temporary holding page (2026-11-04, Krishna: the full website is live, we no longer need it).
+# Kept on this computer only; the live site has its own /card redirect in _redirects.
+holding-page/

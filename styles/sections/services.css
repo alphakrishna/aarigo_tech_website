@@ -501,3 +501,210 @@
 /* No pale band through the middle (2026-11-02, Krishna: the light made the numbers look broken): one smooth gold, champagne to deep champagne.
    Was the same day: linear-gradient(165deg, var(--spark) 15%, var(--glow) 45%, var(--spark) 62%, var(--spark-deep) 95%) */
 .tag > .label { background-image: linear-gradient(170deg, var(--spark) 20%, var(--spark-deep) 100%); }
+
+/* was until 2026-11-04 (Krishna: do not make these sliders): 2026-11-04 (Krishna: the whole Home page takes too much scrolling; this section was 2416 px on a 390 px phone):
+   on phones and tablets the three cards sit in one sideways row you swipe, the next card peeking in, like How we work.
+   padding-top keeps the big numbers and the wax seal inside the row (a scrolling row clips what sticks out). 
+
+@media (max-width: 55rem) {
+  .bookmarks {
+    display: flex; gap: 1rem; align-items: stretch;
+    overflow-x: auto; overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter);
+    margin-inline: calc(-1 * var(--gutter)); padding: 2.75rem var(--gutter) 1rem;
+    scrollbar-width: thin; scrollbar-color: var(--spark) transparent;
+  }
+  .bookmark { flex: 0 0 min(82%, 20rem); margin: 0; scroll-snap-align: start; display: flex; }
+  .bookmark > .tag { flex: 1; }
+  .bookmarks:focus-visible { outline-offset: -.25rem; }
+}
+*/
+
+/* was until 2026-11-04 (Krishna, later the same day: revert all the changes on these three cards):
+[ 2026-11-04 (Krishna: no sliders; the page still too long): on phones the cards stack again, made more compact:
+   smaller sketch, less padding, a smaller gap between cards. ]
+@media (max-width: 55rem) {
+  .bookmarks { gap: 3rem; }
+  .tag { padding-block: 2.25rem 1.75rem; }
+  .sketch { max-width: 11rem; }
+}
+
+*/
+
+/* 2026-11-04 (Krishna: make the heading more noticeable, "the gap" on the next line): two lines, the second in
+   teal italic like the hero and the pain heading. */
+.build-title .line { display: block; }
+.build-title .line-italic { font-weight: 500; font-style: italic; color: var(--primary); }
+
+/* was until 2026-11-04 (Krishna, later the same day: revert all the changes on these three cards):
+[ 2026-11-04 (Krishna: the three cards smaller, too much scrolling, no sliders): on phones and tablets each card is
+   compact: the sketch sits small on the left beside the name and the line, the three points and the link run under
+   them, left aligned, with less padding. Nothing is hidden. ]
+@media (max-width: 55rem) {
+  .bookmarks { gap: 2.75rem; }
+  .tag {
+    display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: .5rem 1rem;
+    align-items: start; text-align: left;
+    padding: calc(var(--hole) + 1.25rem) 1.25rem 1.5rem;
+  }
+  .tag > .sketch { grid-column: 1; grid-row: 1 / span 2; max-width: none; margin: 0; align-self: center; }
+  .tag > .bookmark-title { grid-column: 2; font-size: clamp(1.625rem, 7vw, 2rem); }
+  .tag > .bookmark-text { grid-column: 2; max-width: none; font-size: .9375rem; line-height: 1.45; }
+  .tag > .service-features {
+    grid-column: 1 / -1; justify-items: start; gap: .375rem; padding-top: .75rem; margin-top: .5rem;
+    background-position: 0 0; font-size: .9375rem;
+  }
+  .tag > .btn-link { grid-column: 1 / -1; justify-self: start; align-self: start; margin-top: .25rem; }
+}
+@media (max-width: 55rem) {
+  [ the sketch drawn at its normal size and shrunk as a whole, so the chart, page and phone inside stay whole ]
+  .tag > .sketch { width: 10.75rem; zoom: .6; }
+}
+
+*/
+
+/* was until 2026-11-04 (Krishna, later the same day: revert all the changes on these three cards):
+[ ---------- More alive, more premium (2026-11-04, Krishna: make these cards feel more alive and more premium) ----------
+   Premium: a hairline edge on every card, a faint champagne warmth toward the foot of the white cards, a soft champagne
+   light in the top right of the dark Websites card. No shadows (build rule).
+   Alive: as each card scrolls into view, its sketch builds itself: the chart bars grow, the page draws in line by line,
+   the phone's rows fill one after another, and the big number rises into place; the wax seal presses down on the dark card.
+   It follows the scroll (scrolling back plays it backwards), plays only while the card arrives, and never loops.
+   Browsers without scroll timelines, and reduced motion, show the finished cards. A tap gives a small press. ]
+.tag { border: 1px solid var(--line); background: linear-gradient(180deg, var(--surface) 55%, color-mix(in srgb, var(--glow) 14%, var(--surface))); }   [ 14%: stronger made the foot melt into the sand ground ]
+.bookmark:nth-child(2) .tag {
+  border-color: var(--line-dark);
+  background:
+    radial-gradient(28rem 18rem at 100% 0%, var(--glow-dark), transparent 70%),
+    var(--ink);
+}
+.tag { transition: transform var(--open) var(--ease-soft), border-color var(--open) var(--ease); }
+@media (hover: hover) {
+  .tag:hover { transform: translateY(-.375rem); border-color: var(--spark); }
+}
+.tag:active { transform: scale(.985); }
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .tag { view-timeline: --tag block; }
+    .tag > .label,
+    .tag .sk-chart em,
+    .tag .sk-copy > *, .tag .sk-img, .tag .sk-nav,
+    .tag .sk-screen > *,
+    .tag .sk-side b, .tag .sk-stats span,
+    .bookmark .seal {
+      animation-timeline: --tag; animation-fill-mode: both; animation-timing-function: var(--ease-soft);
+      animation-range: entry 20% cover 45%;
+    }
+    .bookmark .seal { animation-timeline: view(); }
+    .tag > .label { animation-name: tag-num; }
+    .tag .sk-chart em { animation-name: sk-grow; }
+    .tag .sk-chart em:nth-child(2) { animation-range: entry 25% cover 47%; }
+    .tag .sk-chart em:nth-child(3) { animation-range: entry 30% cover 49%; }
+    .tag .sk-chart em:nth-child(4) { animation-range: entry 35% cover 51%; }
+    .tag .sk-chart em:nth-child(5) { animation-range: entry 40% cover 53%; }
+    .tag .sk-chart em:nth-child(6) { animation-range: entry 45% cover 55%; }
+    .tag .sk-side b, .tag .sk-stats span, .tag .sk-nav { animation-name: sk-fade; }
+    .tag .sk-copy > * { animation-name: sk-draw; transform-origin: 0 50%; }
+    .tag .sk-copy > :nth-child(2) { animation-range: entry 28% cover 48%; }
+    .tag .sk-copy > :nth-child(3) { animation-range: entry 36% cover 51%; }
+    .tag .sk-copy > :nth-child(n+4) { animation-range: entry 44% cover 55%; }
+    .tag .sk-img { animation-name: sk-reveal; animation-range: entry 30% cover 55%; }
+    .tag .sk-screen > * { animation-name: sk-row; }
+    .tag .sk-screen > :nth-child(2) { animation-range: entry 26% cover 47%; }
+    .tag .sk-screen > :nth-child(3) { animation-range: entry 32% cover 50%; }
+    .tag .sk-screen > :nth-child(4) { animation-range: entry 38% cover 52%; }
+    .tag .sk-screen > :nth-child(n+5) { animation-range: entry 44% cover 55%; }
+    .bookmark .seal { animation-name: seal-press; animation-range: entry 30% cover 50%; }
+  }
+}
+@keyframes tag-num  { from { opacity: 0; translate: 0 1.25rem; } }
+@keyframes sk-grow  { from { transform: scaleY(0); } }
+@keyframes sk-fade  { from { opacity: 0; } }
+@keyframes sk-draw  { from { scale: 0 1; opacity: 0; } }
+@keyframes sk-reveal { from { clip-path: inset(0 0 100% 0); opacity: .4; } }
+@keyframes sk-row   { from { opacity: 0; translate: -.75rem 0; } }
+@keyframes seal-press { from { opacity: 0; scale: 1.35; rotate: -14deg; } }
+*/
+
+/* 2026-11-04 (Krishna: make each card feel alive on phones, just like on desktop): phones and tablets have no hover,
+   so each card plays its desktop hover state while it sits in the middle of the screen (.is-live, set by site.js):
+   the champagne rule draws across, the number deepens, the arrow slides, and the sketch comes alive (bars shift, the
+   button turns champagne, a row lights up). It eases back when the card scrolls on. Nothing loops. */
+@media (hover: none) {
+  .tag .service-features { background-size: 30% 1px; }
+  .tag.is-live .service-features { background-size: 100% 1px; }
+  .tag.is-live > .label,
+  .bookmark:nth-child(2) .tag.is-live > .label { color: var(--spark-deep); }
+  .tag .btn-link span[aria-hidden] { display: inline-block; transition: transform var(--fast); }
+  .tag.is-live .btn-link span[aria-hidden] { transform: translateX(.25rem); }
+  .tag.is-live .sk-chart em:nth-child(1) { transform: scaleY(.55); }
+  .tag.is-live .sk-chart em:nth-child(2) { transform: scaleY(.4); }
+  .tag.is-live .sk-chart em:nth-child(3) { transform: scaleY(.7); }
+  .tag.is-live .sk-chart em:nth-child(4) { transform: scaleY(.6); }
+  .tag.is-live .sk-chart em:nth-child(5) { transform: scaleY(.85); }
+  .tag.is-live .sk-chart em:nth-child(6) { transform: scaleY(1); }
+  .tag.is-live .sk-copy em { background: var(--spark); }
+  .tag.is-live .sk-img { filter: saturate(1.25); }
+  .tag.is-live .sk-screen span:nth-of-type(2) { background: var(--glow); }
+}
+
+/* 2026-11-04 (Krishna: each card's text a little more compact; leave the animation and the name alone): on phones and
+   tablets, less padding and space between the parts, the line and the points a step smaller and closer together.
+   The sketch, its animation and the name are unchanged. */
+@media (max-width: 55rem) {
+  .tag { gap: .75rem; padding: calc(var(--hole) + 1.5rem) 1.25rem 1.75rem; }
+  .tag .bookmark-text { font-size: 1rem; line-height: 1.45; max-width: 30ch; }
+  .tag .service-features { gap: .375rem; padding-top: .75rem; font-size: .9375rem; line-height: 1.4; }
+  .tag .btn-link { margin-top: .25rem; }
+}
+
+/* 2026-11-04 (Krishna: make each of the three service cards come alive every time I hover over it): on top of the
+   hover state above, each hover replays a short build of the card's sketch: the chart bars grow up one after another,
+   the web page draws itself in line by line with its picture uncovering, the phone's rows slide in one by one; the card
+   lifts a touch and the big number rises. It plays again on every new hover, and on phones every time the card reaches
+   the middle of the screen (.is-live). It never loops while you stay. Reduced motion: no build, the hover state only. */
+.tag { transition: translate var(--open) var(--ease-soft); }
+@media (hover: hover) { .tag:hover { translate: 0 -.375rem; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  .tag:is(:hover, .is-live) .sk-chart em { animation: tag-grow .7s var(--ease-soft) both; }
+  .tag:is(:hover, .is-live) .sk-chart em:nth-child(2) { animation-delay: .06s; }
+  .tag:is(:hover, .is-live) .sk-chart em:nth-child(3) { animation-delay: .12s; }
+  .tag:is(:hover, .is-live) .sk-chart em:nth-child(4) { animation-delay: .18s; }
+  .tag:is(:hover, .is-live) .sk-chart em:nth-child(5) { animation-delay: .24s; }
+  .tag:is(:hover, .is-live) .sk-chart em:nth-child(6) { animation-delay: .3s; }
+  .tag:is(:hover, .is-live) .sk-side b,
+  .tag:is(:hover, .is-live) .sk-stats span { animation: tag-fade .5s var(--ease-soft) both; }
+  .tag:is(:hover, .is-live) .sk-stats span:nth-child(2) { animation-delay: .08s; }
+  .tag:is(:hover, .is-live) .sk-stats span:nth-child(3) { animation-delay: .16s; }
+
+  .tag:is(:hover, .is-live) .sk-copy > * { animation: tag-draw .6s var(--ease-soft) both; transform-origin: 0 50%; }
+  .tag:is(:hover, .is-live) .sk-copy > :nth-child(2) { animation-delay: .08s; }
+  .tag:is(:hover, .is-live) .sk-copy > :nth-child(3) { animation-delay: .16s; }
+  .tag:is(:hover, .is-live) .sk-copy > :nth-child(4) { animation-delay: .24s; }
+  .tag:is(:hover, .is-live) .sk-copy > :nth-child(n+5) { animation-delay: .32s; }
+  .tag:is(:hover, .is-live) .sk-img { animation: tag-uncover .8s var(--ease-soft) .1s both; }
+
+  .tag:is(:hover, .is-live) .sk-screen > * { animation: tag-row .5s var(--ease-soft) both; }
+  .tag:is(:hover, .is-live) .sk-screen > :nth-child(2) { animation-delay: .08s; }
+  .tag:is(:hover, .is-live) .sk-screen > :nth-child(3) { animation-delay: .16s; }
+  .tag:is(:hover, .is-live) .sk-screen > :nth-child(4) { animation-delay: .24s; }
+  .tag:is(:hover, .is-live) .sk-screen > :nth-child(n+5) { animation-delay: .32s; }
+
+  .tag:is(:hover, .is-live) > .label { animation: tag-rise .6s var(--ease-soft) both; }
+}
+@keyframes tag-grow    { from { transform: scaleY(0); } }
+@keyframes tag-fade    { from { opacity: 0; } }
+@keyframes tag-draw    { from { scale: 0 1; opacity: 0; } }
+@keyframes tag-uncover { from { clip-path: inset(100% 0 0 0); } }
+@keyframes tag-row     { from { opacity: 0; translate: -.75rem 0; } }
+@keyframes tag-rise    { from { opacity: .3; translate: 0 .75rem; } }
+
+/* 2026-11-04 (Krishna: the text under the three cards should take less space and be a little smaller): 14px text,
+   less space above it and between the two lines; on phones each line keeps its bold lead inline instead of on its own line. */
+.build-close { margin-top: var(--space-md); padding-top: 1.125rem; font-size: var(--text-sm); line-height: 1.5; }
+@media (max-width: 55rem) {
+  .build-close { gap: .5rem; }
+  .build-close-item strong { display: inline; }
+}

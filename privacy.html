@@ -51,7 +51,7 @@
     <div class="container header-inner">
       <a class="brand" href="index.html">Aaurigo Tech</a>
       <nav aria-label="Main">
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menu</button>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="sr-only">Menu</span><span class="burger" aria-hidden="true"><span></span><span></span><span></span></span></button> <!-- 2026-11-04 (Krishna: a burger menu instead of the Menu button); was: [button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"]Menu[/button] -->
         <ul class="nav-list list-plain" id="main-menu">
           <li><a href="services.html">Services</a></li>
           <li><a href="work.html">Work</a></li>
@@ -102,11 +102,11 @@
             <table class="legal-table">
               <thead><tr><th scope="col">When you</th><th scope="col">We collect</th><th scope="col">Why</th><th scope="col">Our legal basis</th></tr></thead>
               <tbody>
-                <tr><td>Send the form on our Contact page</td><td>Name, email, company, project details, message</td><td>To reply and prepare a quote</td><td>Steps you asked for before a contract</td></tr>
-                <tr><td>Book a call</td><td>Name, email, company or website, your answers, the call time</td><td>To hold the call</td><td>Steps you asked for before a contract</td></tr>
-                <tr><td>Sign up for the newsletter or the free guide</td><td>Email address, and your first name if you give it</td><td>To send what you asked for</td><td>Your consent, which you can withdraw at any time</td></tr>
-                <tr><td>Visit the website</td><td>No personal data. Our analytics count visits without cookies or tracking</td><td>To see which pages help visitors</td><td>Not personal data</td></tr>
-                <tr><td>Receive an email from us about our services</td><td>Your business contact details, from your public business listings and website</td><td>To offer services that are relevant to your business</td><td>Our legitimate interest in offering services to businesses</td></tr>
+                <tr><td data-label="When you">Send the form on our Contact page</td><td data-label="We collect">Name, email, company, project details, message</td><td data-label="Why">To reply and prepare a quote</td><td data-label="Our legal basis">Steps you asked for before a contract</td></tr>
+                <tr><td data-label="When you">Book a call</td><td data-label="We collect">Name, email, company or website, your answers, the call time</td><td data-label="Why">To hold the call</td><td data-label="Our legal basis">Steps you asked for before a contract</td></tr>
+                <tr><td data-label="When you">Sign up for the newsletter or the free guide</td><td data-label="We collect">Email address, and your first name if you give it</td><td data-label="Why">To send what you asked for</td><td data-label="Our legal basis">Your consent, which you can withdraw at any time</td></tr>
+                <tr><td data-label="When you">Visit the website</td><td data-label="We collect">No personal data. Our analytics count visits without cookies or tracking</td><td data-label="Why">To see which pages help visitors</td><td data-label="Our legal basis">Not personal data</td></tr>
+                <tr><td data-label="When you">Receive an email from us about our services</td><td data-label="We collect">Your business contact details, from your public business listings and website</td><td data-label="Why">To offer services that are relevant to your business</td><td data-label="Our legal basis">Our legitimate interest in offering services to businesses</td></tr>
               </tbody>
             </table>
           </div>

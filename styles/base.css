@@ -167,3 +167,9 @@ body {
 .btn-ghost { border-color: var(--primary); color: var(--primary); background: transparent; }
 .btn-ghost:hover { background: var(--primary); color: var(--on-primary); }
 */
+
+/* 2026-11-04 (Krishna: the whole Home page takes too much scrolling): less space between Home sections
+   (was --section: clamp(4.5rem, 10vw, 8rem)). Other pages keep the token as it is. */
+body.home-page .section { padding-block: clamp(3rem, 7vw, 5.5rem); }
+/* 2026-11-05 (Krishna: Services the same as Home, less scrolling): the same smaller gap between sections on Services and the three service pages */
+body.cards-page .section { padding-block: clamp(3rem, 7vw, 5.5rem); }

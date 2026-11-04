@@ -74,7 +74,7 @@
     <div class="container header-inner">
       <a class="brand" href="index.html">Aaurigo Tech</a>
       <nav aria-label="Main">
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menu</button>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="sr-only">Menu</span><span class="burger" aria-hidden="true"><span></span><span></span><span></span></span></button> <!-- 2026-11-04 (Krishna: a burger menu instead of the Menu button); was: [button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"]Menu[/button] -->
         <ul class="nav-list list-plain" id="main-menu">
           <li><a href="services.html">Services</a></li>
           <li><a href="work.html">Work</a></li> <!-- was until 2026-10-12: href="#work" -->
@@ -199,11 +199,18 @@
         -->
 
         <!-- Spec sheet facts -->
-        <ol class="hero-facts list-plain reveal" style="--d: 3"> <!-- was until 2026-10-13: style="--d: 4" while the pain points sat above -->
-          <li><span class="label label-accent">01 · Speed</span><strong>Weeks</strong><span class="fact-text">to your first real users</span></li> <!-- tried and reversed 2026-10-14 (Krishna: "reverse it"): <span class="fact-text">from first call to launch, not months</span> -->
-          <li><span class="label label-accent">02 · Range</span><strong>One team</strong><span class="fact-text">Website, web apps and mobile apps</span></li> <!-- 2026-10-21: mobile apps off and back the same day; Brand tried as a separate service and taken off (Krishna: brand will be combined with every service) -->
-          <li><span class="label label-accent">03 · Reach</span><strong>Global</strong><span class="fact-text">Clients in any time zone</span></li>
+        <ol class="hero-facts list-plain reveal" style="--d: 3"> <!-- 2026-11-04 (Krishna: remove the numbers, one font for this section): labels were 01 · Design, 02 · Search, 03 · Support. 2026-11-04 (Krishna: more concise, use the three points to highlight our features); three features already promised on the package cards: no templates, set up to be found in search and AI answers, VIP support for the entire build period. Speed is left out, the line above already says live in weeks -->
+          <li><span class="label label-accent">Design</span><strong>Custom</strong><span class="fact-text">Never a template</span></li>
+          <li><span class="label label-accent">Search</span><strong>Found</strong><span class="fact-text">In search and AI answers</span></li>
+          <li><span class="label label-accent">Support</span><strong>VIP</strong><span class="fact-text">Through the whole build</span></li>
         </ol>
+        <!-- was until 2026-11-04 (Krishna: more concise, highlight our features):
+        [ol class="hero-facts list-plain reveal" style="(d 3)"] ( was until 2026-10-13: style="(d 4)" while the pain points sat above )
+          [li][span class="label label-accent"]01 · Speed[/span][strong]Weeks[/strong][span class="fact-text"]to your first real users[/span][/li] ( tried and reversed 2026-10-14 (Krishna: "reverse it"): [span class="fact-text"]from first call to launch, not months[/span] )
+          [li][span class="label label-accent"]02 · Range[/span][strong]One team[/strong][span class="fact-text"]Website, web apps and mobile apps[/span][/li] ( 2026-10-21: mobile apps off and back the same day; Brand tried as a separate service and taken off (Krishna: brand will be combined with every service) )
+          [li][span class="label label-accent"]03 · Reach[/span][strong]Global[/strong][span class="fact-text"]Clients in any time zone[/span][/li]
+        [/ol]
+        -->
 
       </div>
     </section>
@@ -261,9 +268,11 @@
               <span class="sr-only">(opens in a new tab)</span>
             </a>
           </p>
-          <!-- Live proof (scripts/site.js): this page's real load time on the visitor's device; nothing is sent anywhere.
-               Shown only with JavaScript and under 2.5 seconds. -->
+          <!-- was until 2026-11-04 (Krishna: remove the line under Book a call):
+          [ Live proof (scripts/site.js): this page's real load time on the visitor's device; nothing is sent anywhere.
+               Shown only with JavaScript and under 2.5 seconds. ]
           <p class="pain-speed label" data-load-time hidden>Measured live: this page loaded in <span data-load-value>0.5</span> seconds on your device.</p>
+          -->
         </div>
       </div>
     </section>
@@ -275,13 +284,14 @@
       <div class="container reveal-scroll">
         <header class="section-head">
           <!-- was until 2026-10-15 (Krishna: the label and the heading right after each other did not feel good): <p class="label label-accent">What we build</p> -->
-          <h2 class="section-title" id="build-title">Three ways we close the gap.</h2> <!-- 2026-10-21: mobile apps off and back the same day; Brand tried as a separate service and taken off (Krishna: brand will be combined with every service) --> <!-- was until 2026-10-15: Three ways we help you grow. (now follows the pain panel's "We close that gap.") -->
+          <h2 class="section-title build-title" id="build-title"><span class="line">Three ways we close</span> <span class="line line-italic">the gap.</span></h2> <!-- 2026-11-04 (Krishna: more noticeable, "the gap" on the next line): two lines, the second in teal italic like the hero. was until 2026-11-04: one plain line, Three ways we close the gap. --> <!-- 2026-10-21: mobile apps off and back the same day; Brand tried as a separate service and taken off (Krishna: brand will be combined with every service) --> <!-- was until 2026-10-15: Three ways we help you grow. (now follows the pain panel's "We close that gap.") -->
         </header>
         <!-- Three hang tags (2026-10-14, Krishna, from a "tag" reference image): each service is a tag with clipped top corners and
              a punched hole, hanging on a thin string from one ink rail; strings differ a little in length. Static: nothing swings (RFA §7).
              Was until 2026-10-14: bookmark ribbons with a V notch at the bottom. Timelines stay off until WEB-1.12. -->
         <!-- Websites in the middle (2026-10-14, Krishna): the middle tag hangs lowest, so the main service stands out.
              Was until 2026-10-14: Websites 01, Web apps 02, Mobile apps 03, left to right. -->
+        <!-- 2026-11-04: a sideways row on phones was tried and removed the same day (Krishna: no sliders); compact stack instead (services.css). -->
         <ul class="bookmarks list-plain">
           <li class="bookmark">
             <!-- Twine loop (2026-10-14, Krishna: make the thread realistic): a cord loop rises above the hole, the knot sits on the hole,
@@ -662,7 +672,9 @@
         -->
         <!-- One quiet closing line under the tags (2026-10-14). "Custom platforms, integrations and technical consulting." moved out: the Services page custom section says it -->
         <p class="build-close">
+          <!-- was until 2026-11-05 (Krishna: change it; the Handover card in How we work already says it, and here it pulls away from what we build):
           <span class="build-close-item"><strong>After launch, we look after it.</strong> Every change is made and tested by us.</span>
+          -->
           <span class="build-close-item"><strong>Need something bigger or different?</strong> <a class="btn-link" href="contact.html">Tell us what you need <span aria-hidden="true">→</span></a></span>
         </p>
       </div>
@@ -988,14 +1000,14 @@
             <li class="reach-item">
               <span class="label label-accent">Book a call</span>
               <strong class="reach-number">30 minutes</strong>
-              <span class="reach-text">The soonest you can talk to us, during your business hours.</span>
+              <span class="reach-text">The soonest call, in your business hours.</span> <!-- was until 2026-11-05 (Krishna: more concise): The soonest you can talk to us, during your business hours. -->
               <!-- [PLACEHOLDER] Replace # with the booking link (WEB-14.8.6). Opens in a new tab. -->
               <a class="btn-link" href="#" target="_blank" rel="noopener">Pick a time <span aria-hidden="true">→</span><span class="sr-only"> to book a call (opens in a new tab)</span></a>
             </li>
             <li class="reach-item">
               <span class="label label-accent">Send a message</span>
               <strong class="reach-number">1 business day</strong>
-              <span class="reach-text">The longest you wait for a real reply from the person who builds it.</span>
+              <span class="reach-text">The longest wait for a real reply.</span> <!-- was until 2026-11-05 (Krishna: more concise): The longest you wait for a real reply from the person who builds it. -->
               <a class="btn-link" href="contact.html">Write to us <span aria-hidden="true">→</span></a>
             </li>
           </ul>
@@ -1021,31 +1033,37 @@
              deepen with the journey, all in the site palette: Focus on stone, Build on champagne, Grow on ink (like the
              footer). The section uses the site's own entrance. Styles: sections/journey.css. Same day (Krishna: a little more innovative): the cards stack into a deck as you scroll, name and phase on one line in .journey-top. The water pool version is in
              archive/journey-water-pools-2026-11-01.css and archive/home-how-we-work-steps-2026-11-01.html -->
+        <!-- 2026-11-04 (Krishna: too much scrolling): one row on wide screens, stacked below (no sliders, Krishna, same day). -->
         <ol class="journey-cards list-plain">
           <li class="journey-card card-focus">
             <div class="journey-top"><h3 class="journey-name">Onboard</h3><p class="label journey-when">01 · Focus</p></div>
             <p class="journey-line">You tell us once.</p>
-            <ul class="list-plain service-features journey-list"><li>Your website reviewed before we talk</li><li>One 30 minute call, one package to say yes or no to</li><li>A written agreement of exactly what's included</li><li>Everything asked for at once, no passwords shared</li></ul>
+            <ul class="list-plain service-features journey-list"><li>Your website reviewed before we talk</li><li>One 30 minute call, one written agreement</li><li>Everything asked for at once, no passwords</li></ul>
+            <!-- was until 2026-11-05 (Krishna: more concise): <ul class="list-plain service-features journey-list"><li>Your website reviewed before we talk</li><li>One 30 minute call, one package to say yes or no to</li><li>A written agreement of exactly what's included</li><li>Everything asked for at once, no passwords shared</li></ul> -->
           </li>
           <li class="journey-card card-focus">
             <div class="journey-top"><h3 class="journey-name">Prep</h3><p class="label journey-when">02 · Focus</p></div>
             <p class="journey-line">You see it take shape.</p>
-            <ul class="list-plain service-features journey-list"><li>Never a template: you describe the feel, we recommend the colours</li><li>Every page planned in one document you approve</li><li>You send only your logo, photos and what only you know</li><li>For apps, one short call per feature</li><li>Nothing built until you agree</li></ul>
+            <ul class="list-plain service-features journey-list"><li>Never a template, every page planned with you</li><li>You send only what only you have</li><li>Nothing built until you agree</li></ul>
+            <!-- was until 2026-11-05 (Krishna: more concise): <ul class="list-plain service-features journey-list"><li>Never a template: you describe the feel, we recommend the colours</li><li>Every page planned in one document you approve</li><li>You send only your logo, photos and what only you know</li><li>For apps, one short call per feature</li><li>Nothing built until you agree</li></ul> -->
           </li>
           <li class="journey-card card-build">
             <div class="journey-top"><h3 class="journey-name">Build</h3><p class="label journey-when">03 · Build</p></div>
             <p class="journey-line">You steer, we build.</p>
-            <ul class="list-plain service-features journey-list"><li>Milestones, so you see progress early</li><li>A live preview link as we build</li><li>One short call per milestone to sign off</li><li>You say what to change, we write it down</li><li>Unlimited changes across three review rounds</li></ul>
+            <ul class="list-plain service-features journey-list"><li>Milestones with a live preview link</li><li>One short call per milestone to sign off</li><li>Unlimited changes across three review rounds</li></ul>
+            <!-- was until 2026-11-05 (Krishna: more concise): <ul class="list-plain service-features journey-list"><li>Milestones, so you see progress early</li><li>A live preview link as we build</li><li>One short call per milestone to sign off</li><li>You say what to change, we write it down</li><li>Unlimited changes across three review rounds</li></ul> -->
           </li>
           <li class="journey-card card-build">
             <div class="journey-top"><h3 class="journey-name">Launch</h3><p class="label journey-when">04 · Build</p></div>
             <p class="journey-line">The real you goes live.</p>
-            <ul class="list-plain service-features journey-list"><li>Checked page by page before your final yes</li><li>Set up to be found in search and AI answers from day one</li><li>Your business online, the way it really is</li></ul>
+            <ul class="list-plain service-features journey-list"><li>Checked page by page before your final yes</li><li>Set up to be found in search and AI answers</li></ul>
+            <!-- was until 2026-11-05 (Krishna: more concise): <ul class="list-plain service-features journey-list"><li>Checked page by page before your final yes</li><li>Set up to be found in search and AI answers from day one</li><li>Your business online, the way it really is</li></ul> -->
           </li>
           <li class="journey-card card-grow">
             <div class="journey-top"><h3 class="journey-name">Handover</h3><p class="label journey-when">05 · Grow</p></div>
             <p class="journey-line">You get back to your business.</p>
-            <ul class="list-plain service-features journey-list"><li>One training session for your team</li><li>A written guide to keep</li><li>Ownership and access handed to you</li><li>A monthly care plan: every change made, tested and kept fast</li><li>You talk to the person who built it</li></ul>
+            <ul class="list-plain service-features journey-list"><li>Training, a written guide and full ownership</li><li>A care plan: every change made and kept fast</li><li>You talk to the person who built it</li></ul>
+            <!-- was until 2026-11-05 (Krishna: more concise): <ul class="list-plain service-features journey-list"><li>One training session for your team</li><li>A written guide to keep</li><li>Ownership and access handed to you</li><li>A monthly care plan: every change made, tested and kept fast</li><li>You talk to the person who built it</li></ul> -->
           </li>
         </ol>
 

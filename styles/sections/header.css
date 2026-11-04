@@ -88,3 +88,62 @@
 @media (max-width: 35rem) {
   .header-cta { display: none; } /* the announcement bar and hero carry Book a call on phones */
 }
+
+/* 2026-11-04 (Krishna: change the Menu button to a burger menu). Three ink lines in a round 48px tap area, no border;
+   when the menu is open (aria-expanded="true") the top and bottom lines turn into an X and the middle one fades.
+   The word "Menu" stays for screen readers (.sr-only). Was: a pill button with the word Menu (above). */
+@media (max-width: 55rem) {
+  .js .menu-toggle {
+    justify-content: center; width: var(--tap); height: var(--tap); padding: 0; margin-right: -.75rem;
+    border: 0; border-radius: 50%; cursor: pointer;
+  }
+  .burger { position: relative; display: block; width: 1.5rem; height: 1rem; }
+  .burger span {
+    position: absolute; left: 0; width: 100%; height: .125rem; border-radius: .125rem; background: currentColor;
+    transition: transform var(--fast) var(--ease), opacity var(--fast) var(--ease), top var(--fast) var(--ease);
+  }
+  .burger span:nth-child(1) { top: 0; }
+  .burger span:nth-child(2) { top: calc(50% - .0625rem); }
+  .burger span:nth-child(3) { top: calc(100% - .125rem); }
+  .menu-toggle[aria-expanded="true"] .burger span:nth-child(1) { top: calc(50% - .0625rem); transform: rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] .burger span:nth-child(2) { opacity: 0; }
+  .menu-toggle[aria-expanded="true"] .burger span:nth-child(3) { top: calc(50% - .0625rem); transform: rotate(-45deg); }
+}
+@media (prefers-reduced-motion: reduce) { .burger span { transition: none; } }
+@media (max-width: 55rem) and (hover: hover) { .js .menu-toggle:hover { background: var(--soft); } }   /* mouse only, so a tap leaves no circle behind */
+
+/* 2026-11-04 (Krishna: make the nav bar a little narrower, it takes too much space). Phones and tablets: the bar is
+   56px tall (was 72px, min-height 4.5rem above) and the burger's tap area 44px (was 48px), still a comfortable target. */
+@media (max-width: 55rem) {
+  .header-inner { min-height: 3.5rem; }
+  .js .menu-toggle { width: 2.75rem; height: 2.75rem; min-height: 0; margin-right: -.625rem; }
+}
+/* same day: the "Now booking" bar above it took two to three lines on phones (72 to 92px). On phones it is one line,
+   "Now booking" and "Book a call", the middle sentence only from 35rem up; slimmer padding. */
+@media (max-width: 35rem) {
+  .announce { padding-block: .375rem; }
+  .announce-inner { flex-wrap: nowrap; gap: .75rem; }
+  .announce-text { display: none; }
+}
+/* same day (Krishna: still too much padding in the nav bar): 48px tall on phones and tablets (was 56px), the burger's
+   tap area 40px (above the 24px minimum), the name a touch smaller so it sits comfortably in the slimmer bar */
+@media (max-width: 55rem) {
+  .header-inner { min-height: 3rem; }
+  .js .menu-toggle { width: 2.5rem; height: 2.5rem; margin-right: -.5rem; }
+  .brand { font-size: 1.25rem; }
+}
+/* same day, third pass (Krishna: there is still much padding): the bar 44px on phones and tablets (was 48px), the burger
+   36px (still above the 24px minimum), and the Now booking line slimmer too */
+@media (max-width: 55rem) {
+  .header-inner { min-height: 2.75rem; }
+  .js .menu-toggle { width: 2.25rem; height: 2.25rem; margin-right: -.375rem; }
+  .header-cta { min-height: 2.25rem; padding-block: .375rem; }
+}
+@media (max-width: 35rem) { .announce { padding-block: .25rem; } }
+/* same day, fourth pass (Krishna: still too much padding in the nav bar on mobile): the bar 40px on phones, just the
+   burger's height plus a hair, and the open menu tighter too (rows 44px, was 48px; less space under the last link) */
+@media (max-width: 35rem) {
+  .header-inner { min-height: 2.5rem; }
+  .js .nav-list { padding: 0 var(--gutter) .75rem; }
+  .js .nav-list a { min-height: 2.75rem; }
+}

@@ -136,6 +136,16 @@ if ("IntersectionObserver" in window) {
   items.forEach((el) => { if (el.querySelector("img")) early.observe(el); });
 }
 
+// How we work cards on Home (2026-11-05, Krishna: the same entrance as on desktop): where the cards stack (below 1200 px),
+// each card waits until it is scrolled to and then slides in from its section's side, the way all five arrive together
+// on desktop. Cards that come into view together still take turns (the card observer below). Wide screens unchanged.
+if (window.matchMedia("(max-width: 74.99rem)").matches) {
+  document.querySelectorAll(".journey-cards > .journey-card.enter-part").forEach((card) => {
+    const fromRight = card.closest(".enter-right");
+    card.classList.add("is-card", fromRight ? "card-slide-right" : "card-slide-left");
+  });
+}
+
 if ("IntersectionObserver" in window) {
   const io = new IntersectionObserver((entries) => {
     for (const entry of entries) {
@@ -362,3 +372,13 @@ const openLinkedAnswer = () => {
 };
 openLinkedAnswer();
 window.addEventListener("hashchange", openLinkedAnswer);
+
+// ---------- Home service cards come alive on phones (2026-11-04, Krishna: like the desktop hover) ----------
+// Touch screens have no hover, so a card gets .is-live while it is in the middle of the screen (services.css).
+const liveTags = document.querySelectorAll(".bookmarks .tag");
+if (liveTags.length && "IntersectionObserver" in window && window.matchMedia("(hover: none)").matches) {
+  const liveIo = new IntersectionObserver((entries) => {
+    for (const entry of entries) entry.target.classList.toggle("is-live", entry.isIntersecting);
+  }, { rootMargin: "-30% 0px -30% 0px" });
+  liveTags.forEach((tag) => liveIo.observe(tag));
+}

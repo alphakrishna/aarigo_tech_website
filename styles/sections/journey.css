@@ -70,3 +70,94 @@
   .journey-line { justify-self: start; margin-top: 0; text-align: left; }
   .journey-list { grid-template-columns: 1fr; }
 }
+
+/* 2026-11-04 (Krishna: too much scrolling to go through all of How we work; section was 2028 px on a 390 px phone, 1617 px on desktop):
+   the five cards now sit side by side in one row that you swipe or scroll sideways, the heading above them.
+   On wide screens (about 1280 px and up) all five fit with no sideways scroll; narrower, the next card peeks in at the edge.
+   The scroll deck above (sticky cards, 2026-11-02) is switched off by this block, not removed. */
+.journey-layout { grid-template-columns: minmax(0, 1fr); gap: var(--space-sm); }
+.journey-aside { position: static; }
+.journey-aside .section-intro { max-width: var(--measure); }
+.journey-cards {
+  display: flex; gap: 1rem;
+  overflow-x: auto; overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter);
+  margin-inline: calc(-1 * var(--gutter)); padding: 0 var(--gutter) 1rem;   /* the row runs to the screen edge; the first card still lines up with the page */
+  scrollbar-width: thin; scrollbar-color: var(--spark) transparent;
+}
+.journey-cards:focus-visible { outline-offset: -.25rem; }
+.journey-card,
+.journey-cards .journey-card { position: static; flex: 1 0 15rem; scroll-snap-align: start; grid-template-columns: minmax(0, 1fr); align-content: start; gap: .75rem; }
+.journey-line { justify-self: start; margin-top: 0; text-align: left; }
+.journey-list { grid-template-columns: minmax(0, 1fr); gap: .375rem; }
+@media (max-width: 55rem) {
+  .journey-cards .journey-card { flex-basis: min(82%, 20rem); }   /* the next card peeks in, so it is clear there is more */
+}
+@media (min-width: 75rem) {   /* all five fit side by side: no sideways scroll on wide screens */
+  .journey-cards { overflow-x: visible; }
+  .journey-cards .journey-card { flex: 1 1 0; min-width: 0; padding: 1.5rem 1.25rem; }
+  .journey-name { font-size: clamp(1.75rem, 2.2vw, 2rem); }
+}
+
+/* 2026-11-04 (Krishna: do not make these sliders): no sideways scrolling anywhere. Wide screens (1200 px and up) keep
+   all five in one row; below that the cards stack, two columns on tablets, one on phones. The sideways rules above stay as history. */
+@media (max-width: 74.99rem) {
+  .journey-cards {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem;
+    overflow: visible; scroll-snap-type: none; margin-inline: 0; padding: 0;
+  }
+  .journey-cards .journey-card { flex: none; }
+  .journey-cards .journey-card:last-child { grid-column: 1 / -1; }
+}
+@media (max-width: 35rem) {
+  .journey-cards { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
+  .journey-cards .journey-card { padding: 1.25rem; gap: .5rem; }
+  .journey-list { padding-top: .625rem; font-size: .875rem; gap: .25rem; }
+}
+
+/* 2026-11-05 (Krishna: work on the next section; like the sections before it, more concise and less scrolling):
+   the points are shorter (index.html, old lists commented out); on phones the phase sits on the same line as the name. */
+@media (max-width: 35rem) {
+  .journey-top { display: flex; align-items: baseline; justify-content: space-between; gap: .75rem; }
+  .journey-cards .journey-card { padding: 1.125rem 1.25rem 1.25rem; }
+}
+
+/* 2026-11-05 (Krishna: on phones the cards should arrive the same way as on desktop): where the cards stack, each one
+   slides in from the section's side when it is scrolled to (site.js adds .is-card, then .card-in), the same slide and
+   timing as desktop, without the Services page's grow. */
+.js .reveal-scroll .enter-part.card-in.card-slide-left { animation-name: enter-left; }
+.js .reveal-scroll .enter-part.card-in.card-slide-right { animation-name: enter-right; }
+
+/* 2026-11-05 (Krishna: the cards on phones should close over each other like on the desktop site): where the cards
+   stack (below 1200 px) they form the deck again: one column, each card sticks a strip lower than the one before, so the
+   next card slides up over it and leaves its name and phase showing. Pure position: sticky, no script. */
+@media (max-width: 74.99rem) {
+  .journey-cards { grid-template-columns: minmax(0, 1fr); --stack-top: 3.5rem; --stack-step: 3.25rem; }
+  .journey-cards .journey-card:last-child { grid-column: auto; }
+  .journey-cards .journey-card { position: sticky; top: calc(var(--stack-top) + var(--k, 0) * var(--stack-step)); }
+  .journey-cards .journey-card:nth-child(2) { --k: 1; }
+  .journey-cards .journey-card:nth-child(3) { --k: 2; }
+  .journey-cards .journey-card:nth-child(4) { --k: 3; }
+  .journey-cards .journey-card:nth-child(5) { --k: 4; }
+}
+@media (min-width: 35.01rem) and (max-width: 74.99rem) {
+  .journey-cards { --stack-top: 4rem; --stack-step: 3.75rem; }
+}
+/* was until 2026-11-05 (same day: a spacer let the next section slide over the deck):
+@media (max-width: 74.99rem) {
+  [ room at the end of the deck ]
+  .journey-cards::after { content: ""; height: 8rem; }
+  .journey-cards { margin-bottom: -8rem; }
+}
+*/
+/* The deck leaves together: each card carries an invisible margin below it (cancelled by the next card's negative top
+   margin, so nothing moves), which keeps the earlier cards stuck until the last card scrolls away. Without it the last
+   card left first and covered the other strips. Tablets show the phase on the name's line too, so each strip shows both. */
+@media (max-width: 74.99rem) {
+  .journey-cards .journey-card:nth-child(1) { margin-bottom: calc(4 * var(--stack-step)); }
+  .journey-cards .journey-card:nth-child(2) { margin-top: calc(-4 * var(--stack-step)); margin-bottom: calc(3 * var(--stack-step)); }
+  .journey-cards .journey-card:nth-child(3) { margin-top: calc(-3 * var(--stack-step)); margin-bottom: calc(2 * var(--stack-step)); }
+  .journey-cards .journey-card:nth-child(4) { margin-top: calc(-2 * var(--stack-step)); margin-bottom: var(--stack-step); }
+  .journey-cards .journey-card:nth-child(5) { margin-top: calc(-1 * var(--stack-step)); }
+  .journey-top { display: flex; align-items: baseline; justify-content: space-between; gap: .75rem; }
+}

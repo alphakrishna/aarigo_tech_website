@@ -77,3 +77,20 @@
 @media (max-width: 35rem) {
   .footer-grid { grid-template-columns: 1fr; }
 }
+
+/* 2026-11-03 (Krishna: responsive on every screen, no text cut): grid columns may shrink below their content's natural
+   width, so on a 320px phone the footer no longer runs 7 to 22px past the screen edge. Was 1fr columns above. */
+.footer-grid { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.5fr); }
+.footer-grid > * { min-width: 0; }
+@media (max-width: 64rem) { .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 35rem) { .footer-grid { grid-template-columns: minmax(0, 1fr); } }
+/* the newsletter form: its grid and the email field may shrink too, so Join stays on screen at 320px */
+.site-footer form, .site-footer .field { grid-template-columns: minmax(0, 1fr); min-width: 0; }
+.site-footer .form-row .field-input { flex-basis: 0; width: 100%; }
+
+/* 2026-11-04 (Krishna: the whole page takes too much scrolling): on phones the two link lists sit side by side;
+   the name and the newsletter keep the full width. */
+@media (max-width: 35rem) {
+  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .footer-grid > :first-child, .footer-grid > .footer-news { grid-column: 1 / -1; }
+}

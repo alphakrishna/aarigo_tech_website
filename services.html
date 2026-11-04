@@ -56,7 +56,7 @@
     <div class="container header-inner">
       <a class="brand" href="index.html">Aaurigo Tech</a>
       <nav aria-label="Main">
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menu</button>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="sr-only">Menu</span><span class="burger" aria-hidden="true"><span></span><span></span><span></span></span></button> <!-- 2026-11-04 (Krishna: a burger menu instead of the Menu button); was: [button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"]Menu[/button] -->
         <ul class="nav-list list-plain" id="main-menu">
           <li><a href="services.html" aria-current="page">Services</a></li>
           <li><a href="work.html">Work</a></li>
@@ -110,8 +110,8 @@
             <p class="offer-who">For businesses that look better than their website.</p>
           </div>
           <div class="offer-side">
-            <p class="offer-price"><span class="label">From</span><span class="offer-amount" data-price="website">A$4,999</span></p>
-            <p class="offer-pay">Pay in one go, or split it into 2 or 3 payments. <a class="btn-link" href="#pay-instalments">Get more information <span aria-hidden="true">→</span></a></p> <!-- 2026-11-02 (Krishna: under each card's price, like "Investment ... (split into ... payments)" with a Get more information link) -->
+            <!-- 2026-11-03 (Krishna: page too long, too many fonts, the price too loud; lead with what they get): the price and payment line moved below the list, so the card leads with what you get -->
+            <p class="offer-specs-head">What you get</p> <!-- 2026-11-05 (Krishna: take inspiration from the reference services page): a small heading over the list -->
             <ul class="offer-specs list-plain">
               <!-- 2026-11-02 (Krishna: a little more detail on each service): points taken from websites.html, already approved there -->
               <!-- 2026-11-02 (Krishna: only the relevant points): "Tested on phones, tablets, laptops and large screens" and "Fast to load and easy for everyone to use" taken off this card; both stay on websites.html -->
@@ -122,6 +122,8 @@
               <li>VIP support for the entire build period</li> <!-- back 2026-10-21 (Krishna: mention it in each service too) -->
             </ul>
             <!-- was until 2026-10-22 (Krishna: nothing repeated), said once in the pricing section: [p class="offer-note"]More pages or something specific? We quote it on top.[/p] -->
+            <p class="offer-price"><span class="label">From</span><span class="offer-amount" data-price="website">A$4,999</span></p>
+            <p class="offer-pay">Pay in one go, or split it into 2 or 3 payments. <a class="btn-link" href="#pay-instalments">Get more information <span aria-hidden="true">→</span></a></p> <!-- 2026-11-02 (Krishna: under each card's price, like "Investment ... (split into ... payments)" with a Get more information link) -->
             <div class="offer-actions">
               <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call about a website <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
               <a class="btn-link" href="websites.html">Know more <span aria-hidden="true">→</span></a> <!-- was until 2026-10-31 (Krishna: a page for each service, "Know more" in place of "See every step"): [a class="btn-link" href="#how-we-work"]See every step [span aria-hidden="true"]→[/span][/a] -->
@@ -147,8 +149,8 @@
             <p class="offer-who">For founders with an idea, and teams outgrowing spreadsheets.</p>
           </div>
           <div class="offer-side">
-            <p class="offer-price"><span class="label">From</span><span class="offer-amount" data-price="webapp">A$24,999</span></p>
-            <p class="offer-pay">Pay in one go, or split it into 2 or 3 payments. <a class="btn-link" href="#pay-instalments">Get more information <span aria-hidden="true">→</span></a></p> <!-- 2026-11-02 (Krishna: under each card's price, like "Investment ... (split into ... payments)" with a Get more information link) -->
+            <!-- 2026-11-03 (Krishna: page too long, too many fonts, the price too loud; lead with what they get): the price and payment line moved below the list, so the card leads with what you get -->
+            <p class="offer-specs-head">What you get</p> <!-- 2026-11-05 (Krishna: take inspiration from the reference services page): a small heading over the list -->
             <ul class="offer-specs list-plain">
               <!-- 2026-11-02 (Krishna: a little more detail on each service): points taken from web-apps.html, already approved there -->
               <!-- 2026-11-02 (Krishna: only the relevant points): taken off this card, all still on web-apps.html: "See how people use it, built in", "Built to grow with you, never to be rebuilt", "Unlimited changes across three review rounds" -->
@@ -159,6 +161,8 @@
               <li>VIP support for the entire build period</li> <!-- back 2026-10-21 (Krishna: mention it in each service too) -->
             </ul>
             <!-- was until 2026-10-22 (Krishna: nothing repeated), said once in the pricing section: [p class="offer-note"]Bigger scope or something specific? We quote it on top.[/p] -->
+            <p class="offer-price"><span class="label">From</span><span class="offer-amount" data-price="webapp">A$24,999</span></p>
+            <p class="offer-pay">Pay in one go, or split it into 2 or 3 payments. <a class="btn-link" href="#pay-instalments">Get more information <span aria-hidden="true">→</span></a></p> <!-- 2026-11-02 (Krishna: under each card's price, like "Investment ... (split into ... payments)" with a Get more information link) -->
             <div class="offer-actions">
               <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call about a web app <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
               <a class="btn-link" href="web-apps.html">Know more <span aria-hidden="true">→</span></a> <!-- was until 2026-10-31 (Krishna: a page for each service, "Know more" in place of "See every step"): [a class="btn-link" href="#how-we-work"]See every step [span aria-hidden="true"]→[/span][/a] -->
@@ -234,8 +238,7 @@
             <p class="offer-who">For businesses that want to live in their customer's pocket.</p>
           </div>
           <div class="offer-side">
-            <p class="offer-price"><span class="label">From</span><span class="offer-amount" data-price="mobile">A$34,999</span></p>
-            <p class="offer-pay">Pay in one go, or split it into 2 or 3 payments. <a class="btn-link" href="#pay-instalments">Get more information <span aria-hidden="true">→</span></a></p> <!-- 2026-11-02 (Krishna: under each card's price, like "Investment ... (split into ... payments)" with a Get more information link) -->
+            <!-- 2026-11-03 (Krishna: page too long, too many fonts, the price too loud; lead with what they get): the price and payment line moved below the list, so the card leads with what you get -->
             <ul class="offer-specs list-plain">
               <!-- 2026-11-02 (Krishna: a little more detail on each service): points taken from mobile-apps.html, already approved there, worded so nothing repeats the web app list -->
               <!-- 2026-11-02 (Krishna: only the relevant points): taken off this card, all still on mobile-apps.html: "Notifications and usage insight built in", "Payments, maps or another tool you rely on, linked in", "Tested on real phones of different sizes" -->
@@ -246,6 +249,8 @@
               <li>VIP support for the entire build period</li> <!-- back 2026-10-21 (Krishna: mention it in each service too) -->
             </ul>
             <!-- was until 2026-10-22 (Krishna: nothing repeated), said once in the pricing section: [p class="offer-note"]Bigger scope or something specific? We quote it on top.[/p] -->
+            <p class="offer-price"><span class="label">From</span><span class="offer-amount" data-price="mobile">A$34,999</span></p>
+            <p class="offer-pay">Pay in one go, or split it into 2 or 3 payments. <a class="btn-link" href="#pay-instalments">Get more information <span aria-hidden="true">→</span></a></p> <!-- 2026-11-02 (Krishna: under each card's price, like "Investment ... (split into ... payments)" with a Get more information link) -->
             <div class="offer-actions">
               <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call about an app <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
               <a class="btn-link" href="mobile-apps.html">Know more <span aria-hidden="true">→</span></a> <!-- was until 2026-10-31 (Krishna: a page for each service, "Know more" in place of "See every step"): [a class="btn-link" href="#how-we-work"]See every step [span aria-hidden="true"]→[/span][/a] -->
@@ -266,7 +271,7 @@
               <div class="extra-photo"><img src="media/services/premium.webp" srcset="media/services/premium-480.webp 480w, media/services/premium.webp 800w" sizes="(max-width: 55rem) 100vw, 30vw" alt="Krishna in a black shirt at a table, laptop open in front of him." width="800" height="1000" loading="lazy" decoding="async"></div> <!-- 2026-11-01 (Krishna: exchange the Brand and Premium images): the black shirt photo moved here from Brand; was alt "Krishna in a white hoodie, smiling and giving two thumbs up under the leaves." -->   <!-- 2026-10-22 (Krishna: same structure as Brand and Care plan) --> <!-- 2026-11-01 (Krishna: update the Premium) his own premium.png (thumbs up), master media-originals/services/premium-krishna-2.png, tight 4:3 crop from 23.5% down so the thumbs show; was premiuem.png (ledge), alt "Krishna in a white hoodie, sitting relaxed on a high stone ledge.", files in archive/media/services-2026-11-01/premium-hoodie-ledge*.webp --> <!-- 2026-11-01 (Krishna: a new image for Premium) his own premiuem.png, shoe stripes painted out, master media-originals/services/premium-hoodie-clean.jpg; was DSC_0723, alt "Krishna smiling, a printed project plan in his hand.", files in archive/media/services-2026-11-01/premium-dsc0723*.webp --> <!-- earlier the same day (Krishna: change the Premium photo) DSC_0723, a plan in hand for a bigger project quoted for you; was DSC_0830 (shoe stripes painted out), alt "Krishna seated high on a stone ledge in bright sunlight.", files in archive/media/services-2026-11-01/premium-dsc0830-clean*.webp --> <!-- 2026-10-31 (Krishna: more energy) DSC_0830, shoe stripes blurred; was DSC_0796, alt "Krishna outdoors in the evening light, arms crossed." -->
               <div class="extra-head">
                 <h3 class="extra-name" id="premium-upgrade-title">Premium</h3>
-                <p class="extra-price">Quoted for you</p>
+                <p class="extra-price"><span class="label">Price</span><span class="extra-amount">Quoted for you</span></p> <!-- 2026-11-03 (Krishna: the price the same way in each card, a small line on top and the amount under it); was: [p class="extra-price"]Quoted for you[/p] -->
               </div>
               <p class="extra-text">More room to grow, added before we build.</p> <!-- was until 2026-10-22 (Krishna: shorter points, cards end level): [p class="extra-text"]More room to grow, added to any package before we build.[/p] -->   <!-- was until 2026-10-22 (Krishna: cleaner, in points): one paragraph listing everything for a website and for an app -->
               <div class="premium-lists premium-lists-two">
@@ -327,7 +332,7 @@
               <div class="extra-photo"><img src="media/services/brand.webp" srcset="media/services/brand-480.webp 480w, media/services/brand.webp 800w" sizes="(max-width: 55rem) 100vw, 30vw" alt="Krishna in a white hoodie, smiling and giving two thumbs up under the leaves." width="800" height="1000" loading="lazy" decoding="async"></div> <!-- 2026-11-01 (Krishna: exchange the Brand and Premium images): the thumbs up photo moved here from Premium; was alt "Krishna in a black shirt at a table, laptop open in front of him." --> <!-- 2026-11-01 (Krishna: the new Brand image) his own Brand.png, master media-originals/services/brand-krishna.png, 4:3 crop; was DSC_0804, alt "Krishna striking a playful pose under warm evening lights.", files in archive/media/services-2026-11-01/brand-dsc0804*.webp --> <!-- 2026-10-31 (Krishna: more energy) DSC_0804; was DSC_0842, alt "Krishna seated against a pale stone wall in soft daylight." -->   <!-- 2026-10-22 (Krishna: own photos instead of project screenshots, doc/photo-shoot-services.md) -->
               <div class="extra-head">
                 <h3 class="extra-name" id="brand-addon-title">Brand</h3>
-                <p class="extra-price">+&nbsp;<span data-price="brand">A$2,999</span></p>
+                <p class="extra-price"><span class="label">Add to any package</span><span class="extra-amount">+&nbsp;<span data-price="brand">A$2,999</span></span></p> <!-- 2026-11-03 (Krishna: the price the same way in each card, a small line on top and the amount under it); was: [p class="extra-price"]+&amp;nbsp;[span data-price="brand"]A$2,999[/span][/p] -->
               </div>
               <p class="extra-text">A look people remember, ready before we build.</p>   <!-- was until 2026-10-22 (Krishna: points like the Premium card): [p class="extra-text"]A look people remember, ready before we build: your logo, colours and fonts, with icons, patterns and business card and social media designs chosen to fit your needs.[/p] -->
               <div class="premium-lists">
@@ -343,9 +348,11 @@
                     <li>Mood board</li>
                     <li>Sticker design</li>
                     <li>Animated GIFs</li>
+                    <!-- was until 2026-11-05 (Krishna: we will not provide these):
                     <li>Social media covers</li>
                     <li>Business cards</li>
                     <li>Brand patterns</li>
+                    -->
                   </ul>   <!-- was until 2026-10-22 (Krishna: Brand US$1,199 with the full brand kit): [p class="label premium-for"]Chosen to fit you[/p]                   [ul class="list-plain premium-list"]                     [li]Your logo, colours and fonts[/li]                     [li]Icons and patterns[/li]                     [li]Business card designs[/li]                     [li]Social media designs[/li]                   [/ul] -->
                 </div>
               </div>
@@ -356,20 +363,45 @@
               <div class="extra-photo"><img src="media/services/care-plan.webp" srcset="media/services/care-plan-480.webp 480w, media/services/care-plan.webp 800w" sizes="(max-width: 55rem) 100vw, 30vw" alt="Krishna in a green tee, arms resting on his closed laptop, a calm smile." width="800" height="1000" loading="lazy" decoding="async"></div> <!-- 2026-11-01 (Krishna: we can show the laptop with stickers): recropped to include the laptop; the one tech company logo sticker painted out with the lid's own silver, the text stickers kept; master media-originals/services/care-krishna-clean.jpg; was alt "Krishna in a green tee, arms resting on the table, a calm smile.", files in archive/media/services-2026-11-01/care-krishna-no-laptop*.webp --> <!-- 2026-11-01 (Krishna: the new Care image) his own care.png, master media-originals/services/care-krishna.png, 4:5 crop leaving out the cup logo and the laptop stickers; was DSC_0652, alt "Krishna smiling, arms folded on the table in front of him.", files in archive/media/services-2026-11-01/care-plan-dsc0652-4x5*.webp --> <!-- 2026-11-01 (Krishna: square add-on photos, nothing cut off): DSC_0652 recropped square, laptop stickers and café cup left out; was alt "Krishna smiling, arms resting on his closed laptop.", height 666, files in archive/media/services-2026-11-01/care-plan-dsc0652-wide*.webp; the 4:3 Premium and Brand files are there too -->   <!-- 2026-10-22 (Krishna: own photos instead of project screenshots, doc/photo-shoot-services.md) -->
               <div class="extra-head">
                 <h3 class="extra-name" id="care-plan-title">Care plan</h3>
-                <p class="extra-price">From <span data-price="care">A$449</span> a month</p> <!-- was until 2026-10-22 (Krishna: care plan from A$200 a month): [p class="extra-price"]From 10% a month[/p] -->
+                <p class="extra-price"><span class="label">From</span><span class="extra-amount"><span data-price="care">A$449</span> a month</span></p> <!-- 2026-11-03 (Krishna: the price the same way in each card, a small line on top and the amount under it); was: [p class="extra-price"]From [span data-price="care"]A$449[/span] a month[/p] --> <!-- was until 2026-10-22 (Krishna: care plan from A$200 a month): [p class="extra-price"]From 10% a month[/p] -->
               </div>
               <p class="extra-text">After launch, we stay with you.</p>   <!-- was until 2026-10-22 (Krishna: points like the Premium card): [p class="extra-text"]After launch, we stay with you: every change made, tested and kept fast by the people who built it. Starts at [span data-price="care"]A$299[/span] a month, paid in advance; more complex projects need more care, and we agree the rate with you first.[/p] -->
+              <!-- 2026-11-05 (Krishna: say properly what we do in maintenance, in a two column table): two lists side by side,
+                   taken from what every care plan includes (doc/rate-card-internal.md §3b, Starter Care and up); tiers, hours and
+                   response times stay in the agreement. -->
+              <div class="premium-lists premium-lists-two">
+                <div>
+                  <p class="label premium-for">We look after</p>
+                  <ul class="list-plain premium-list">
+                    <li>Daily backups</li>
+                    <li>Uptime and error checks</li>
+                    <li>Security updates</li>
+                    <li>Speed, as fast as launch day</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="label premium-for">We change for you</p>
+                  <ul class="list-plain premium-list">
+                    <li>Every change made</li>
+                    <li>Tested before it goes live</li>
+                    <li>By the team who built it</li>
+                    <li>More care as you grow</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- was until 2026-11-05 (Krishna: say properly what we do in maintenance):
               <div class="premium-lists">
                 <div>
                   <p class="label premium-for">Every month</p>
                   <ul class="list-plain premium-list">
-                    <li>Every change made</li> <!-- was until 2026-10-22 (Krishna: shorter points, cards end level): [li]Every change made for you[/li] -->
-                    <li>Tested first</li> <!-- was until 2026-10-22 (Krishna: shorter points, cards end level): [li]Tested before it goes live[/li] -->
-                    <li>Kept fast</li> <!-- was until 2026-10-22 (Krishna: shorter points, cards end level): [li]Kept as fast as launch day[/li] -->
-                    <li>By the team who built it</li> <!-- was until 2026-10-22 (Krishna: shorter points, cards end level): [li]Made by the people who built it[/li] -->
+                    <li>Every change made</li> [ was until 2026-10-22 (Krishna: shorter points, cards end level): [li]Every change made for you[/li] ]
+                    <li>Tested first</li> [ was until 2026-10-22 (Krishna: shorter points, cards end level): [li]Tested before it goes live[/li] ]
+                    <li>Kept fast</li> [ was until 2026-10-22 (Krishna: shorter points, cards end level): [li]Kept as fast as launch day[/li] ]
+                    <li>By the team who built it</li> [ was until 2026-10-22 (Krishna: shorter points, cards end level): [li]Made by the people who built it[/li] ]
                   </ul>
                 </div>
               </div>
+              -->
               <p class="extra-note">Paid monthly in advance. Bigger projects need more care, agreed with you first.</p> <!-- was until 2026-10-22 (Krishna: shorter points, cards end level): [p class="extra-note"]Paid in advance. Bigger projects need more care, and we agree the rate with you first.[/p] --> <!-- was until 2026-10-22 (Krishna: care plan from A$200 a month): Starts at 10% of your whole project price per month, paid in advance; more complex projects need more care, and we agree the rate with you first.[/p] -->
               <a class="btn-link" href="contact.html">Ask about the care plan <span aria-hidden="true">→</span></a>
             </article>
@@ -797,18 +829,20 @@
 
     <!-- Pricing and custom projects in one section (2026-10-22 (Krishna: nothing repeated)): the From prices, how anything bigger is quoted,
          and custom work, said once. Replaces the separate Custom projects and Pricing sections and the note under each package. -->
-    <section class="section section-alt" id="pricing" aria-labelledby="pricing-title">
-      <div class="container text-block reveal-scroll">
-        <header class="section-head">
-          <!-- was until 2026-10-22 (Krishna: remove the unnecessary labels above headings): [p class="label label-accent"]Pricing[/p] -->
-          <h2 class="section-title" id="pricing-title">Clear price, before any work starts.</h2>
-        </header>
-        <div>
-          <p>Every package starts from the price shown. Need more pages, a bigger scope or something different, like a custom platform or a system that connects to yours? Tell us about it on a short call and we send one clear price, quoted on top, never below. No work starts until you've agreed to it.</p>
-          <p class="section-cta"><a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call about your project <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a></p>
-        </div>
-      </div>
-    </section>
+    <!-- was until 2026-11-03 (Krishna: page too long, too many fonts, the price too loud; lead with what they get), its words are now in the FAQ:
+    [section class="section section-alt" id="pricing" aria-labelledby="pricing-title"]
+      [div class="container text-block reveal-scroll"]
+        [header class="section-head"]
+          ( was until 2026-10-22 (Krishna: remove the unnecessary labels above headings): [p class="label label-accent"]Pricing[/p] )
+          [h2 class="section-title" id="pricing-title"]Clear price, before any work starts.[/h2]
+        [/header]
+        [div]
+          [p]Every package starts from the price shown. Need more pages, a bigger scope or something different, like a custom platform or a system that connects to yours? Tell us about it on a short call and we send one clear price, quoted on top, never below. No work starts until you've agreed to it.[/p]
+          [p class="section-cta"][a class="btn btn-primary" href="#" target="_blank" rel="noopener"]Book a call about your project [span class="arrow" aria-hidden="true"]→[/span][span class="sr-only"] (opens in a new tab)[/span][/a][/p]
+        [/div]
+      [/div]
+    [/section]
+    -->
     <!-- was until 2026-10-22 (Krishna: nothing repeated):
     ( Custom projects (services.md §5) )
     [section class="section section-alt" aria-labelledby="custom-title"]
@@ -871,15 +905,17 @@
     -->
 
     <!-- Accessible by default (services.md §8) -->
-    <section class="section" aria-labelledby="access-title">
-      <div class="container text-block reveal-scroll">
-        <header class="section-head">
-          <!-- was until 2026-10-22 (Krishna: remove the unnecessary labels above headings): [p class="label label-accent"]Accessible by default[/p] -->
-          <h2 class="section-title" id="access-title">Built for everyone.</h2>
-        </header>
-        <p>Everything we build is accessible by default: readable contrast, full keyboard use, and it works with screen readers and reduced motion settings. It's the right thing to do, it reaches more customers, and it lowers legal risk.</p> <!-- was until 2026-10-22 (no hyphenated words): [p]Every site we build is accessible by default: readable contrast, full keyboard use, screen-reader friendly and respectful of reduced-motion settings. It's the right thing to do, it reaches more customers, and it lowers legal risk.[/p] -->
-      </div>
-    </section>
+    <!-- was until 2026-11-03 (Krishna: page too long, too many fonts, the price too loud; lead with what they get), its words are now in the FAQ:
+    [section class="section" aria-labelledby="access-title"]
+      [div class="container text-block reveal-scroll"]
+        [header class="section-head"]
+          ( was until 2026-10-22 (Krishna: remove the unnecessary labels above headings): [p class="label label-accent"]Accessible by default[/p] )
+          [h2 class="section-title" id="access-title"]Built for everyone.[/h2]
+        [/header]
+        [p]Everything we build is accessible by default: readable contrast, full keyboard use, and it works with screen readers and reduced motion settings. It's the right thing to do, it reaches more customers, and it lowers legal risk.[/p] ( was until 2026-10-22 (no hyphenated words): [p]Every site we build is accessible by default: readable contrast, full keyboard use, screen-reader friendly and respectful of reduced-motion settings. It's the right thing to do, it reaches more customers, and it lowers legal risk.[/p] )
+      [/div]
+    [/section]
+    -->
 
     <!-- FAQ (moved from Home 2026-10-12, services.md §9) -->
     <section class="section section-alt" aria-labelledby="faq-title">
@@ -893,7 +929,7 @@
           <details><summary>How can you deliver this fast without cutting quality?</summary><p>We scope tightly around one core outcome, work in focused sprints and reuse proven building blocks. We cut scope from version one, never quality.</p></details>
           <details><summary>How does launching early save me money?</summary><p>Real users show you what matters. Instead of paying to build every feature up front, you invest in what the data proves people use and pay for.</p></details>
           <!-- Old answer, commented out 2026-10-12 (quote-only replaced by From prices): Every project is different, so we quote after a short call once we understand what you need. You get a clear price and timeline before any work starts. -->
-          <details><summary>How much does it cost?</summary><p>Websites start from <span data-price="website">A$4,999</span>, web apps from <span data-price="webapp">A$24,999</span> and mobile apps from <span data-price="mobile">A$34,999</span>. A brand can be added to any of them for <span data-price="brand">A$2,999</span>. If your project needs more, we quote it on top, and you agree the price before any work starts.</p></details> <!-- was until 2026-10-21 (Krishna: real prices in AUD, shown in the visitor's currency): [details][summary]How much does it cost?[/summary][p class="placeholder"][PLACEHOLDER] Answer with the package From prices (WEB-2.19).[/p][/details] -->
+          <details><summary>How much does it cost?</summary><p>Websites start from <span data-price="website">A$4,999</span>, web apps from <span data-price="webapp">A$24,999</span> and mobile apps from <span data-price="mobile">A$34,999</span>. A brand can be added to any of them for <span data-price="brand">A$2,999</span>. Need more pages, a bigger scope or something different, like a custom platform or a system that connects to yours? We quote it on top, never below, and no work starts until you've agreed the price.</p></details> <!-- 2026-11-03 (Krishna: page too long, too many fonts, the price too loud; lead with what they get): the Pricing section folded in here; was: If your project needs more, we quote it on top, and you agree the price before any work starts. --> <!-- was until 2026-10-21 (Krishna: real prices in AUD, shown in the visitor's currency): [details][summary]How much does it cost?[/summary][p class="placeholder"][PLACEHOLDER] Answer with the package From prices (WEB-2.19).[/p][/details] -->
           <details id="pay-instalments"><summary>Can I pay in instalments?</summary><p>Yes, on every service. Pay in one go, or split the price into two or three payments spread across the build, whichever suits your cash flow best.</p></details> <!-- 2026-11-02 (Krishna: one payment, two or three instalments, for all three services; the split and dates stay internal) -->
           <details><summary>How quickly can we talk?</summary><p>In as little as 30 minutes. Book a call and pick any open slot during your business hours, shown in your own time zone.</p></details>
           <details><summary>How involved do I need to be?</summary><p>A kickoff, a few short calls to lock the scope, and a review call at each milestone. You can watch progress on your preview link any time. We handle the rest.</p></details>
@@ -901,6 +937,7 @@
           <details><summary>What happens after launch?</summary><p>We don't walk away. We train your team, hand over a written guide and full ownership, and look at the real data with you. If you want us to keep looking after it, our care plan makes every change for you.</p> <!-- was until 2026-10-21 (Krishna: care plan is a paid extra, 10% a month): [p]We train your team to run the new system day to day, review the real data with you, and keep improving it with ongoing support.[/p] --></details>
           <details><summary>Do you work with existing websites or apps?</summary><p>Yes. We can improve, rebuild or extend what you already have. We'll tell you honestly whether it's faster to improve or to start fresh.</p></details>
           <details><summary>Do you offer ongoing support?</summary><p>Yes, with our care plan: every change made, tested and kept fast by the people who built it. It starts at <span data-price="care">A$449</span> a month, paid in advance. More complex projects need more care, so the rate goes up with them, and we agree it with you first.</p> <!-- was until 2026-10-22 (Krishna: care plan from A$200 a month): It starts at 10% of your whole project price per month, paid in advance, so a website starts at [span data-price="care"]A$1,000[/span] a month. More complex projects need more care, so the rate goes up with them, and we agree it with you first.[/p] --> <!-- was until 2026-10-21 (Krishna: starts at 10% of the whole project, higher for complex projects): It costs 10% of your project price per month, paid in advance. For a website, that starts at [span data-price="care"]A$500[/span] a month.[/p] --> <!-- was until 2026-10-21 (Krishna: care plan is a paid extra, 10% a month): [p]Yes. After launch we offer ongoing support and improvements based on your real user data.[/p] --></details>
+          <details><summary>Is what you build accessible?</summary><p>Yes, by default: readable contrast, full keyboard use, and it works with screen readers and reduced motion settings. It's the right thing to do, it reaches more customers, and it lowers legal risk.</p></details> <!-- 2026-11-03 (Krishna: page too long, too many fonts, the price too loud; lead with what they get): was the Built for everyone section -->
           <details><summary>Who owns the code?</summary><p>You do. Once the project is paid for, the code, designs and accounts are yours.</p></details>
         </div>
       </div>

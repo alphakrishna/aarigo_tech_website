@@ -48,7 +48,7 @@
     <div class="container header-inner">
       <a class="brand" href="index.html">Aaurigo Tech</a>
       <nav aria-label="Main">
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menu</button>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="sr-only">Menu</span><span class="burger" aria-hidden="true"><span></span><span></span><span></span></span></button> <!-- 2026-11-04 (Krishna: a burger menu instead of the Menu button); was: [button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"]Menu[/button] -->
         <ul class="nav-list list-plain" id="main-menu">
           <li><a href="services.html" aria-current="true">Services</a></li>
           <li><a href="work.html">Work</a></li>
@@ -84,8 +84,7 @@
             <p class="offer-who">For businesses that look better than their website.</p>
           </div>
           <div class="offer-side">
-            <p class="offer-price"><span class="label">From</span><span class="offer-amount" data-price="website">A$4,999</span></p>
-            <p class="offer-pay">Pay in one go, or split it into 2 or 3 payments. <a class="btn-link" href="services.html#pay-instalments">Get more information <span aria-hidden="true">→</span></a></p> <!-- 2026-11-02 (Krishna: under each card's price, like "Investment ... (split into ... payments)" with a Get more information link) -->
+            <!-- 2026-11-03 (Krishna: page too long, too many fonts, the price too loud; lead with what they get): the price and payment line moved below the list, so the card leads with what you get -->
             <!-- was until 2026-11-02 (Krishna: write the website card in detail, on this page): one line each:
             [li]Up to 6 custom pages, designed around your brand[/li] [li]Tested on phones, tablets, laptops and large screens[/li] [li]Fast to load and easy for everyone to use[/li] [li]Set up to be found in search and AI answers[/li] [li]Unlimited changes across three review rounds[/li] [li]VIP support by email and video call while we build[/li] -->
             <ul class="offer-specs offer-specs-detail list-plain">
@@ -100,6 +99,8 @@
               <!-- was until 2026-11-02 (moved under the price): [li][strong]Flexible payments[/strong][span]Pay in one go, or in two or three parts.[/span][/li] (was until 2026-11-02 (Krishna: a very small message): [strong]Pay the way that suits you[/strong][span]One payment, or split into two or three across the project, whichever works best for your cash flow.[/span]) --> <!-- 2026-11-02 (Krishna: one payment, two or three instalments, for all three services) -->
               <li><strong>With you all the way</strong><span>VIP support by email and video call in your business hours, from the first call to launch day.</span></li>
             </ul>
+            <p class="offer-price"><span class="label">From</span><span class="offer-amount" data-price="website">A$4,999</span></p>
+            <p class="offer-pay">Pay in one go, or split it into 2 or 3 payments. <a class="btn-link" href="services.html#pay-instalments">Get more information <span aria-hidden="true">→</span></a></p> <!-- 2026-11-02 (Krishna: under each card's price, like "Investment ... (split into ... payments)" with a Get more information link) -->
             <div class="offer-actions">
               <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call about a website <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
             </div>

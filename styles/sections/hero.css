@@ -140,3 +140,132 @@
 .intro-glow .hero-facts, .intro-glow .hero-facts li + li { border-color: var(--line-dark); }
 .intro-glow .fact-text { color: var(--on-dark-muted); }
 */
+
+/* 2026-11-03 (Krishna: on the mobile screen, the photo on the right side of the text). Phones and tablets: the headline
+   on the left and the photo on its right, his arms resting on the hairline above the line under it; that line, the
+   text and the buttons then run the full width below, so nothing is squeezed. Was: the photo centred under the buttons.
+   .hero-text steps out of the way (display: contents) so the headline and the row become cells of the same grid. */
+@media (max-width: 55rem) {
+  .hero-top { grid-template-columns: minmax(0, 1fr) minmax(0, 42%); column-gap: .75rem; align-items: end; }
+  .hero-text { display: contents; }
+  .hero-text .hero-title { grid-column: 1; grid-row: 1; align-self: center; font-size: clamp(2.25rem, 12vw, 4.5rem); }
+  .hero-photo { grid-column: 2; grid-row: 1; justify-self: end; align-self: end; width: 100%; max-width: 20rem; margin: 0; }
+  .hero-text .hero-row { grid-column: 1 / -1; grid-row: 2; margin-top: 0; }
+  .hero-top + .hero-facts { margin-top: var(--space-md); }
+}
+@media (max-width: 35rem) { .hero-actions .btn-primary { white-space: nowrap; } }   /* "Book a call" on one line at 320px (2026-11-03) */
+
+/* 2026-11-04 (Krishna: on mobile the part under the hero, "Premium websites and apps, live in weeks, not months." and
+   below, is a lot bigger than the hero itself). Phones only: the sub line and text a step smaller, less space around
+   them, and the three facts side by side in one row instead of three stacked rows. Was: sub line --text-lead,
+   facts one under another with their numbers at --text-fact (see the 35rem block above). */
+@media (max-width: 35rem) {
+  .hero-text .hero-row { gap: 1.25rem; padding-top: 1.125rem; }
+  .hero-sub { font-size: var(--text-md); line-height: 1.45; }
+  .hero-intro { margin-top: .5rem; font-size: var(--text-sm); line-height: 1.6; }
+  .hero-top + .hero-facts { margin-top: var(--space-sm); }
+  .hero-facts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .hero-facts li { padding: .875rem .625rem 0 0; }
+  .hero-facts li + li { padding-left: .625rem; border-top: 0; border-left: var(--rule); }
+  .hero-facts .label { font-size: .625rem; letter-spacing: .08em; }
+  .hero-facts strong { margin-top: .25rem; font-size: 1.25rem; }
+  .fact-text { font-size: .8125rem; line-height: 1.45; }
+}
+@media (max-width: 35rem) {
+  .hero-actions { gap: .75rem 1.25rem; }
+  .hero-actions .btn-primary { flex: 1 1 auto; }   /* was flex: 1 (35rem block above), which pushed "See our work" to its own line at 320px */
+}
+
+/* 2026-11-04 (Krishna: on phones the buttons and "See our work" are still big, and the hero is a little small next to
+   them). Phones only: both buttons at the small button size (.btn-sm values, 40px tall, above the 24px touch minimum),
+   and the headline and photo a step larger: headline 13.5vw (was 12vw), the photo column 44% (was 42%) running to the
+   screen edge, no gap between them. */
+@media (max-width: 35rem) {
+  .hero-actions .btn-primary { min-height: 2.5rem; padding: .5rem 1.25rem; font-size: var(--text-sm); }
+  .hero-actions .btn-link { min-height: 2.5rem; font-size: var(--text-sm); background-position: 0 calc(100% - .5rem); }
+  .hero-top { grid-template-columns: minmax(0, 1fr) minmax(0, 44%); column-gap: 0; }
+  .hero-text .hero-title { font-size: clamp(2.5rem, 13.5vw, 4.5rem); }
+  .hero-photo { margin-right: calc(-1 * var(--gutter)); width: calc(100% + var(--gutter)); max-width: none; }
+}
+/* same day, after the screenshots: the photo stays inside the page edge (past it, its white background showed as a
+   strip, because the blend only works on the hero's own stone), each headline line stays on one line, and the button
+   keeps its own width instead of stretching */
+@media (max-width: 35rem) {
+  .hero-photo { margin-right: 0; width: 100%; }
+  .hero-text .hero-title { font-size: clamp(2.25rem, calc(13.5vw - .25rem), 4.5rem); }
+  .hero-text .hero-title .line { white-space: nowrap; }
+  .hero-actions .btn-primary { flex: none; }
+}
+
+/* 2026-11-04 (Krishna: the hero section is still small). Phones only, a new arrangement like desktop: the headline full
+   width and much larger (up to 17vw, was about 13vw beside the photo), with a hairline under it; then the sub line,
+   text and buttons on the left and the photo on the right, his arms resting on the facts line like on desktop.
+   Was (2026-11-03): headline left, photo right, text full width below. */
+@media (max-width: 35rem) {
+  .hero-top {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 46%);
+    column-gap: .75rem; align-items: end;
+  }
+  .hero-text .hero-title {
+    grid-column: 1 / -1; grid-row: 1; align-self: start;
+    font-size: clamp(2.75rem, calc(17vw - .25rem), 4.5rem);
+    padding-bottom: 1.25rem; border-bottom: var(--rule);
+  }
+  .hero-text .hero-row {
+    grid-column: 1; grid-row: 2; align-self: center;
+    gap: 1rem; padding-block: 1.25rem; border-top: 0;
+  }
+  .hero-photo { grid-column: 2; grid-row: 2; align-self: end; margin-top: 1rem; }
+  .hero-actions { flex-direction: column; align-items: flex-start; gap: .25rem; }
+  .hero-top + .hero-facts { margin-top: 0; }
+}
+
+/* 2026-11-04, later (Krishna: too much text under the headline, and the image and "Built right. Built fast." in one
+   row; mobile view only). Phones only, and it replaces the full width headline block just above: the headline and
+   the photo side by side in one row on the hairline, then only the short line "Premium websites and apps, live in
+   weeks, not months." and the two buttons on one line. The longer sentence (.hero-intro) is hidden on phones only;
+   tablets and desktop still show it. */
+@media (max-width: 35rem) {
+  .hero-top { grid-template-columns: minmax(0, 1fr) minmax(0, 46%); column-gap: 0; align-items: end; }
+  .hero-text .hero-title {
+    grid-column: 1; grid-row: 1; align-self: center;
+    font-size: clamp(2.25rem, calc(13.5vw - .25rem), 4.5rem);   /* fills the space beside the photo without touching it */
+    padding-bottom: 0; border-bottom: 0;
+  }
+  .hero-photo { grid-column: 2; grid-row: 1; align-self: end; margin: 0; }
+  .hero-text .hero-row {
+    grid-column: 1 / -1; grid-row: 2; align-self: stretch;
+    gap: 1rem; padding-block: 1rem 0; border-top: var(--rule);
+  }
+  .hero-intro { display: none; }
+  .hero-actions { flex-direction: row; align-items: center; gap: .75rem 1.25rem; }
+  .hero-top + .hero-facts { margin-top: var(--space-sm); }
+}
+@media (max-width: 35rem) { .hero-facts .label { white-space: nowrap; letter-spacing: .04em; } }   /* "03 · Support" on one line at 320px (2026-11-04) */
+
+/* 2026-11-04 (Krishna: remove the numbers and use a consistent font for this section). The three hero facts use the
+   body font only, on every screen: the small label (Design, Search, Support) in deep champagne, the bold word, the
+   line under it. Was: mono capitals for the label, the heading font for the word (above, and the 35rem blocks). */
+.hero-facts .label,
+.hero-facts strong,
+.fact-text { font-family: var(--body); font-style: normal; letter-spacing: 0; text-transform: none; }
+.hero-facts .label { font-size: var(--text-sm); font-weight: 600; white-space: normal; }
+.hero-facts strong { margin-top: .125rem; font-size: clamp(1.25rem, 2.4vw, 1.75rem); font-weight: 600; line-height: 1.2; }   /* 600 is the heaviest body weight the site loads */
+@media (max-width: 35rem) {
+  .hero-facts .label { font-size: .8125rem; }
+  .hero-facts strong { font-size: 1.125rem; }
+}
+
+/* 2026-11-04 (Krishna: on phones make "Built right. Built fast." and the photo a little bigger): the photo column is
+   wider (55%, was 46%) and the headline a step larger; the headline may run a little over the empty top left of the
+   photo (it sits above it, and the photo's white melts into the stone), level with his head, never over his face. */
+@media (max-width: 35rem) {
+  .hero-top { grid-template-columns: minmax(0, 1fr) minmax(0, 55%); }
+  .hero-text .hero-title {
+    grid-column: 1 / -1; grid-row: 1; justify-self: start; align-self: start;
+    position: relative; z-index: 1;
+    margin-top: 12%;
+    font-size: clamp(2.5rem, calc(15vw - .25rem), 5rem);
+  }
+  .hero-photo { grid-column: 2; grid-row: 1; }
+}

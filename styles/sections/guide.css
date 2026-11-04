@@ -20,3 +20,37 @@
   .guide-grid { grid-template-columns: 1fr; }
   .guide-photo { max-width: 20rem; }
 }
+
+/* was until 2026-11-05 (Krishna: make sure the full image is visible; the 4:3 crop cut off the laptop he points at):
+2026-11-04 (Krishna: the whole page takes too much scrolling): on phones the photo is a shorter 4:3 crop, his face and pointing hand kept.
+@media (max-width: 55rem) {
+  .guide-photo { max-width: none; }
+  .guide-photo img { aspect-ratio: 4 / 3; object-position: 50% 30%; }
+}
+*/
+/* 2026-11-05: the whole 4:5 photo again on phones and tablets (his face, pointing hand and the laptop); full width on
+   phones, no wider than 26rem on tablets so it never fills the screen. */
+@media (max-width: 55rem) {
+  .guide-photo { max-width: 26rem; width: 100%; }
+}
+
+/* 2026-11-05 (Krishna: in this section the text first, then the image, then the email form): on phones and tablets
+   the heading and text come first, the photo under them, and the form last. The text and form box is opened up
+   (display: contents) so the three can be reordered; desktop keeps the photo on the left. The opened box has no box of
+   its own to animate, so its two parts take the section's entrance themselves. */
+@media (max-width: 55rem) {
+  .guide-grid { gap: var(--space-sm); }
+  .guide-main { display: contents; }
+  .guide-head { order: 1; }
+  .guide-photo { order: 2; margin-top: .5rem; }
+  .guide-form { order: 3; margin-top: .5rem; }
+  .js .reveal-scroll:not(.is-visible) .guide-main > * { opacity: 0; }
+  .js .is-visible .guide-main.enter-part > * { animation: var(--enter) var(--ease-soft) calc(var(--d, 0) * var(--stagger)) both; }
+  .js .enter-left.is-visible .guide-main.enter-part > * { animation-name: enter-left; }
+  .js .enter-right.is-visible .guide-main.enter-part > * { animation-name: enter-right; }
+  .js .is-visible .guide-main.enter-part > .guide-form { animation-delay: calc((var(--d, 0) + 1) * var(--stagger)); }
+}
+@media (max-width: 55rem) and (prefers-reduced-motion: reduce) {
+  .js .reveal-scroll:not(.is-visible) .guide-main > * { opacity: 1; }
+  .js .is-visible .guide-main.enter-part > * { animation: none; }
+}

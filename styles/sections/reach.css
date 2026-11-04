@@ -21,3 +21,22 @@
   .reach-item + .reach-item { padding: 1.5rem 0; border-left: 0; }
   .reach-item + .reach-item { border-top: var(--rule); }
 }
+
+/* 2026-11-05 (Krishna: this section a little more concise and smaller, so it does not feel like too much scrolling):
+   shorter lines (index.html), the big numbers a step smaller, less padding; on phones the two options stay side by side. */
+.reach-number { font-size: clamp(1.75rem, 4.5vw, 3.5rem); }
+.reach-item { gap: .375rem; padding-top: 1.25rem; }
+.reach .btn-link { margin-top: .25rem; }
+@media (max-width: 55rem) {
+  .reach-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .reach-item { padding: 1.25rem 1rem 0 0; }
+  .reach-item + .reach-item { padding: 1.25rem 0 0 1rem; border-top: 0; border-left: var(--rule); }
+  .reach-text { font-size: var(--text-sm); line-height: 1.45; }
+  .reach .label { white-space: nowrap; }
+}
+/* the two links line up at the foot, whatever wraps above them */
+.reach-item { display: flex; flex-direction: column; align-items: flex-start; }
+.reach .btn-link { margin-top: auto; padding-top: .25rem; }
+@media (max-width: 35rem) {
+  .reach-number { font-size: clamp(1.5rem, 6.4vw, 1.75rem); }
+}

@@ -143,3 +143,269 @@
   font: italic 400 var(--text-md)/1.3 var(--display); color: var(--spark-deep);
 }
 .premium-list .premium-more::before { content: none; }
+
+/* 2026-11-03 (Krishna: the page is too long to scroll, too many font variations, and the price is too loud; we sell
+   what they get, like the one week build, not the price). Scoped to .cards-page, so Services and the three service pages.
+   The card now reads: name, promise, path, who it is for, what you get, then a quiet price line and the buttons.
+   Before: the price at the H2 size (up to 72px) above the list, with a strong rule under it. */
+.cards-page .offer-side { gap: 1.25rem; }
+.cards-page .offer-specs { margin-top: 0; border-top: var(--rule-strong); }
+.cards-page .offer-specs li { padding-block: .75rem; }
+.cards-page .offer-price { gap: .625rem; padding-bottom: 0; border-bottom: 0; }
+.cards-page .offer-amount { font: 600 var(--text-lead)/1.2 var(--display); letter-spacing: 0; }   /* the same size as the add-on prices */
+.cards-page .offer-side > .offer-pay { margin-top: -1rem; padding-bottom: 0; border-bottom: 0; }
+.cards-page .offer-path { margin-top: 1.75rem; }   /* was 2.5rem in packages.css */
+
+/* Fewer font variations: one weight for every italic card title, and the small notes in the body font
+   (were Fraunces italic at 16px in three places: "All we need", the VIP line and "And many more") */
+.cards-page .phase-card-name { font-weight: 500; }   /* matches the add-on names; was 400 in phases.css */
+.cards-page .phase-card-you,
+.cards-page .phase-card-perk { font: 600 var(--text-md)/1.45 var(--body); font-style: normal; }
+.cards-page .extras-grid .premium-list .premium-more { font-family: var(--body); font-style: normal; font-weight: 600; }
+.cards-page .offer-has-media > .offer-side { padding-top: 1.5rem; }   /* was 2rem above: closes the gap over the list */
+
+/* 2026-11-03 (Krishna: too many font styles and sizes in the service cards, it tires the eyes). Inside every card now:
+   one italic heading font size for the title, and the body font for everything else at three sizes only
+   (18px promise and price, 16px text, 14px small lines). No mono capitals inside the cards.
+   Before: the title at 72px on packages and 44px on the other cards, a 28px italic promise, mono capital labels
+   (number, path, From, list heads, step numbers), the price in the heading font. */
+.cards-page .offer-name,
+.cards-page .extra-name,
+.cards-page .phase-card-name { font: italic 500 clamp(2rem, 3.4vw, 2.75rem)/1.05 var(--display); letter-spacing: var(--tracking-title); }
+.cards-page .offer-main > .label-accent { display: none; }   /* the 01 02 03 numbers: the titles already say it */
+.cards-page .offer-name { margin-top: 0; }
+.cards-page .offer-line { margin-top: 1rem; max-width: 30ch; font: 500 var(--text-lead)/1.4 var(--body); font-style: normal; color: var(--ink); }
+.cards-page .offer .label,
+.cards-page .extra .label,
+.cards-page .phase-card .label {
+  font-family: var(--body); font-size: var(--text-sm); font-weight: 600;
+  letter-spacing: 0; text-transform: none; line-height: 1.5;
+}
+.cards-page .offer-path { margin-top: 1.25rem; gap: .25rem .625rem; }
+.cards-page .offer-price .label { color: var(--muted); font-weight: 400; }
+.cards-page .offer-amount,
+.cards-page .extra-price { font: 600 var(--text-lead)/1.3 var(--body); letter-spacing: 0; }
+.cards-page .extra-price { color: var(--spark-deep); }
+.cards-page .phase-card-you,
+.cards-page .phase-card-perk { font-size: var(--text-sm); }
+.cards-page .extras-grid .premium-list .premium-more { font-size: var(--text-sm); }
+
+/* 2026-11-03 (Krishna: the price the same in each card, "From" then "US$11,999"): every card price, packages and add-ons,
+   is a small line on top (From, Price, Add to any package) and the amount under it, same size and colour everywhere. */
+.cards-page .offer-price,
+.cards-page .extra-price { display: flex; flex-direction: column; align-items: flex-start; gap: .125rem; margin: 0; font: inherit; color: inherit; }
+.cards-page .offer-price .label,
+.cards-page .extra-price .label { font-weight: 400; color: var(--muted-deep); }
+.cards-page .offer-amount,
+.cards-page .extra-amount { font: 600 var(--text-lead)/1.3 var(--body); letter-spacing: 0; color: var(--ink); }
+.cards-page .extras-grid .extra-head { gap: .75rem; }
+.cards-page .price-symbol { margin-right: 0; }   /* "US$3,499" like the add-ons; the gap was for the big 72px price (2026-11-02, packages.css) */
+
+/* 2026-11-05 (Krishna: the Services page feels too long to scroll; make each image whole in its card): on phones and
+   tablets the photo no longer fills the top of the card as a 4:3 crop. It sits whole (its own shape, nothing cut) on the
+   left beside the card's name and first line, and the rest of the card runs full width under them. The Mobile apps demo
+   phones keep their place on top. Desktop is unchanged. */
+@media (max-width: 55rem) {
+  .cards-page .offer-has-media:has(> .offer-photo img) {
+    grid-template-columns: minmax(0, 38%) minmax(0, 1fr); column-gap: 1rem; align-items: center;
+  }
+  .cards-page .offer-has-media:has(> .offer-photo img) > .offer-main { display: contents; }
+  .cards-page .offer-has-media > .offer-photo:has(img) {
+    grid-column: 1; grid-row: 1 / span 2; align-self: start;
+    min-height: 0; aspect-ratio: auto; margin: 1.25rem 0 0 1.25rem;
+    border-radius: 1rem; overflow: hidden;
+  }
+  .cards-page .offer-has-media > .offer-photo img { position: static; height: auto; }
+  .cards-page .offer-has-media:has(> .offer-photo img) .offer-name { grid-column: 2; grid-row: 1; align-self: end; padding: 1.25rem 1.25rem 0 0; }
+  .cards-page .offer-has-media:has(> .offer-photo img) .offer-line { grid-column: 2; grid-row: 2; align-self: start; padding-right: 1.25rem; }
+  .cards-page .offer-has-media:has(> .offer-photo img) .offer-path,
+  .cards-page .offer-has-media:has(> .offer-photo img) .offer-who { grid-column: 1 / -1; padding-inline: 1.25rem; margin-top: .75rem; }
+  .cards-page .offer-has-media:has(> .offer-photo img) > .offer-side { grid-column: 1 / -1; grid-row: auto; padding-inline: 1.25rem; }
+
+  /* was until 2026-11-05 (Krishna, later the same day: the add-on photos the same as the cards above):
+  Add-ons: the 4:5 photo small on the left beside the name and price
+  .cards-page .extra:has(> .extra-photo img) {
+    display: grid; grid-template-columns: minmax(0, 36%) minmax(0, 1fr); gap: .75rem 1rem; align-items: center;
+    --pad: 1.25rem;
+  }
+  .cards-page .extra > .extra-photo:has(img) { grid-column: 1; grid-row: 1 / span 2; margin: 0; border-radius: 1rem; }
+  .cards-page .extra:has(> .extra-photo img) > .extra-head { grid-column: 2; grid-row: 1; align-self: end; }
+  .cards-page .extra:has(> .extra-photo img) > .extra-text { grid-column: 2; grid-row: 2; align-self: start; }
+  .cards-page .extra:has(> .extra-photo img) > :not(.extra-photo, .extra-head, .extra-text) { grid-column: 1 / -1; }
+  */
+}
+/* 2026-11-05 (Krishna: the add-on photos the same as the Websites and Web apps cards above): on phones each add-on
+   photo is back on top of its card, edge to edge and whole (the photos are 4:5), as before; on tablets it sits whole
+   on one half beside the text, alternating sides, like the cards above. Desktop unchanged (photo whole on top). */
+@media (min-width: 35.01rem) and (max-width: 55rem) {
+  .cards-page .extra:has(> .extra-photo img) {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; gap: .875rem 0;
+    padding: 0; overflow: hidden;
+  }
+  .cards-page .extra > .extra-photo:has(img) { grid-column: 1; grid-row: 1 / span 8; margin: 0; }
+  .cards-page .extra:has(> .extra-photo img) > :not(.extra-photo) { grid-column: 2; padding-inline: 1.75rem; }
+  .cards-page .extra:has(> .extra-photo img) > .extra-head { padding-top: 1.75rem; }
+  .cards-page .extra:has(> .extra-photo img) > :last-child { padding-bottom: 1.75rem; }
+  .cards-page .extras-grid .extra:nth-child(even):has(> .extra-photo img) > .extra-photo { grid-column: 2; }
+  .cards-page .extras-grid .extra:nth-child(even):has(> .extra-photo img) > :not(.extra-photo) { grid-column: 1; }
+}
+
+/* 2026-11-05 (Krishna: Services too long to scroll, the same as Home): on phones the six step cards are compact:
+   the phase sits on the name's line, less padding and gaps, the text a step smaller. Words unchanged.
+   The package cards' list starts closer under the "For businesses" line. */
+@media (max-width: 35rem) {
+  .cards-page .phase-cards { gap: .75rem; }
+  .cards-page .phase-card {
+    display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline;
+    gap: .5rem .75rem; padding: 1.25rem;
+  }
+  .cards-page .phase-card > * { grid-column: 1 / -1; }
+  .cards-page .phase-card-name { grid-column: 1; font-size: 1.875rem; }
+  .cards-page .phase-card > .phase-card-when { grid-column: 2; padding-bottom: 0; border-bottom: 0; white-space: nowrap; }
+  .cards-page .phase-card-text { padding-top: .625rem; border-top: 1px solid var(--spark); font-size: .9375rem; line-height: 1.5; }
+  .cards-page .offer-has-media:has(> .offer-photo img) > .offer-side { padding-top: 1rem; }
+}
+
+/* 2026-11-05 (Krishna: for the Websites and Web apps cards, take inspiration from the reference services page):
+   borrowed structure only (no words, colours or branding): the two cards join into one block with no gap, photo and
+   text alternating like a checkerboard, round corners only on the outside; a fine champagne line under each name;
+   a small "What you get" heading over the list; small round bullets in place of a hairline between each point.
+   Photos stay whole on phones (the block above). */
+.cards-page #web-applications { margin-top: 0; }
+.cards-page #web-development { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+.cards-page #web-applications { border-top-left-radius: 0; border-top-right-radius: 0; border-top: 1px solid var(--line); }
+.cards-page :is(#web-development, #web-applications) .offer-name {
+  padding-bottom: .75rem; margin-bottom: .25rem; border-bottom: 1px solid var(--spark);
+}
+.cards-page :is(#web-development, #web-applications) .offer-specs-head {
+  margin: 0 0 .5rem; font: 600 var(--text-sm)/1.4 var(--body); color: var(--ink);
+}
+.cards-page :is(#web-development, #web-applications) .offer-specs { display: grid; gap: .5rem; border-top: 0; }
+.cards-page :is(#web-development, #web-applications) .offer-specs li {
+  position: relative; padding: 0 0 0 1.125rem; border: 0;
+}
+.cards-page :is(#web-development, #web-applications) .offer-specs li::before {
+  content: ""; position: absolute; left: 0; top: .6em;
+  width: .375rem; height: .375rem; border-radius: 50%; background: var(--spark);
+}
+.cards-page :is(#web-development, #web-applications) .offer-specs + .offer-price { margin-top: .75rem; }
+.cards-page :is(#web-development, #web-applications) > .offer-side { padding-top: .75rem; }
+@media (max-width: 55rem) {
+  .cards-page .offer-has-media:has(> .offer-photo img) { grid-template-rows: none; row-gap: 0; }
+  .cards-page .offer-has-media:has(> .offer-photo img) .offer-name { padding-right: 0; margin-right: 1.25rem; }
+  .cards-page .offer-has-media:has(> .offer-photo img) .offer-line { margin-top: .5rem; }
+  .cards-page .offer-has-media:has(> .offer-photo img) .offer-path { margin-top: 1rem; }
+  .cards-page .offer-has-media:has(> .offer-photo img) .offer-who { margin-top: .5rem; }
+  .cards-page :is(#web-development, #web-applications) > .offer-side { padding-top: 1rem; }
+}
+.cards-page :is(#web-development, #web-applications) { row-gap: 0; }
+.cards-page :is(#web-development, #web-applications) > .offer-side { padding-top: 1.75rem; }
+.cards-page :is(#web-development, #web-applications) .offer-specs-head { margin-bottom: -.5rem; }
+
+/* 2026-11-05 (Krishna: follow the reference for the image too): on phones and tablets the Websites and Web apps photos
+   sit on top of their card, edge to edge, like the reference services page, but whole (their own shape, nothing cut),
+   so the earlier ask stays true. The name and everything else run full width under the photo. */
+@media (max-width: 55rem) {
+  .cards-page :is(#web-development, #web-applications):has(> .offer-photo img) { grid-template-columns: minmax(0, 1fr); }
+  .cards-page :is(#web-development, #web-applications) > .offer-photo:has(img) {
+    grid-column: 1; grid-row: auto; margin: 0; border-radius: 0;
+  }
+  .cards-page :is(#web-development, #web-applications):has(> .offer-photo img) :is(.offer-name, .offer-line, .offer-path, .offer-who) {
+    grid-column: 1; grid-row: auto; padding-inline: 1.25rem; margin-right: 0;
+  }
+  .cards-page :is(#web-development, #web-applications):has(> .offer-photo img) .offer-name { margin-inline: 1.25rem; padding-inline: 0; padding-top: 1.5rem; }
+  .cards-page :is(#web-development, #web-applications):has(> .offer-photo img) .offer-line { margin-top: .75rem; }
+}
+/* Tablets: a full width whole photo was nearly 1,000 px tall, so there it sits whole on the left half, the text on the right */
+@media (min-width: 35.01rem) and (max-width: 55rem) {
+  .cards-page :is(#web-development, #web-applications):has(> .offer-photo img) { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+  .cards-page :is(#web-development, #web-applications) > .offer-photo:has(img) { grid-column: 1; grid-row: 1 / span 6; }
+  .cards-page :is(#web-development, #web-applications):has(> .offer-photo img) :is(.offer-name, .offer-line, .offer-path, .offer-who),
+  .cards-page :is(#web-development, #web-applications):has(> .offer-photo img) > .offer-side { grid-column: 2; }
+}
+@media (min-width: 35.01rem) and (max-width: 55rem) {   /* alternate like desktop: the Web apps photo on the right */
+  .cards-page #web-applications > .offer-photo:has(img) { grid-column: 2; }
+  .cards-page #web-applications:has(> .offer-photo img) :is(.offer-name, .offer-line, .offer-path, .offer-who),
+  .cards-page #web-applications:has(> .offer-photo img) > .offer-side { grid-column: 1; }
+}
+@media (min-width: 35.01rem) and (max-width: 55rem) {   /* side space as margin, so rules and link underlines stay the width of their text column */
+  .cards-page .extra:has(> .extra-photo img) > :not(.extra-photo) { padding-inline: 0; margin-inline: 1.75rem; }
+  .cards-page .extra:has(> .extra-photo img) > .btn-link { justify-self: start; margin-bottom: 1.75rem; padding-bottom: 0; }
+}
+
+/* 2026-11-05 (Krishna: the add-on cards a little smaller, the photos a little smaller too, same format): the photo
+   stays whole (4:5) in the same place, but sits inset with a small margin and its own round corners instead of edge to
+   edge, so it is a little smaller; the card has less padding, a smaller name and tighter lists. */
+.cards-page .extras-grid .extra { --pad: clamp(1.25rem, 2.2vw, 1.75rem); gap: .875rem; }
+.cards-page .extras-grid .extra > .extra-photo:has(img) { margin: calc(var(--pad) * -.4) calc(var(--pad) * -.4) .25rem; border-radius: 1rem; }
+.cards-page .extras-grid .extra-name { font-size: clamp(1.75rem, 2.6vw, 2.25rem); }
+.cards-page .extras-grid .extra-head { padding-bottom: .75rem; gap: .5rem; }
+.cards-page .extras-grid .premium-lists { gap: .75rem; }
+.cards-page .extras-grid .premium-list li { padding-block: .125rem; }
+.cards-page .extras-grid .extra-note { line-height: 1.45; }
+@media (min-width: 35.01rem) and (max-width: 55rem) {   /* tablets: the photo column a little narrower, inset the same way */
+  .cards-page .extra:has(> .extra-photo img) { grid-template-columns: minmax(0, 42%) minmax(0, 1fr); }
+  .cards-page .extras-grid .extra:nth-child(even):has(> .extra-photo img) { grid-template-columns: minmax(0, 1fr) minmax(0, 42%); }
+  .cards-page .extras-grid .extra > .extra-photo:has(img) { margin: 1rem; }
+}
+
+/* 2026-11-05 (Krishna, later the same day: no border on the images; the add-on cards smaller and more compact, too much
+   scrolling): the photo runs edge to edge again (no inset margin, which read as a frame), and is a little shorter: a
+   10:11 crop that only trims empty wall above his head and a sliver at the foot, so his face, hands and laptop stay in.
+   Text tighter still. */
+.cards-page .extras-grid .extra > .extra-photo:has(img) {
+  margin: calc(var(--pad) * -1) calc(var(--pad) * -1) 0; border-radius: 0; aspect-ratio: 10 / 11;
+}
+.cards-page .extras-grid .extra > .extra-photo img { object-position: 50% 70%; }
+.cards-page .extras-grid .extra { gap: .75rem; }
+.cards-page .extras-grid .extra-text { font-size: var(--text-md); line-height: 1.45; }
+@media (min-width: 35.01rem) and (max-width: 55rem) {
+  .cards-page .extras-grid .extra > .extra-photo:has(img) { margin: 0; aspect-ratio: 10 / 11; }
+}
+@media (min-width: 35.01rem) and (max-width: 55rem) {   /* tablets: no empty rows under the text (the photo spans spare rows; gaps there added space) */
+  .cards-page .extra:has(> .extra-photo img) { row-gap: 0; }
+  .cards-page .extra:has(> .extra-photo img) > :not(.extra-photo, .extra-head) { margin-top: .75rem; }
+  .cards-page .extra:has(> .extra-photo img) > :last-child { padding-bottom: 0; margin-bottom: 1.5rem; }
+}
+
+/* 2026-11-05 (Krishna: just a little more smaller): the photo a step shorter (20:21; only wall above his head and a
+   sliver at the foot go, his hair, hands and laptop stay in), a little less padding and space in the text. */
+.cards-page .extras-grid .extra { --pad: clamp(1.125rem, 2vw, 1.5rem); gap: .625rem; }
+.cards-page .extras-grid .extra > .extra-photo:has(img) { aspect-ratio: 20 / 21; }
+.cards-page .extras-grid .extra > .extra-photo img { object-position: 50% 68%; }
+.cards-page .extras-grid .extra-name { font-size: clamp(1.625rem, 2.4vw, 2rem); }
+.cards-page .extras-grid .extra-head { padding-bottom: .625rem; gap: .375rem; }
+.cards-page .extras-grid .premium-lists { gap: .5rem; }
+.cards-page .extras-grid .premium-list li { padding-block: .0625rem; }
+@media (min-width: 35.01rem) and (max-width: 55rem) {
+  .cards-page .extras-grid .extra > .extra-photo:has(img) { aspect-ratio: 20 / 21; }
+  .cards-page .extra:has(> .extra-photo img) > :not(.extra-photo, .extra-head) { margin-top: .625rem; }
+}
+
+/* 2026-11-05 (Krishna: more smaller on phones and tablets): each photo cropped to just what matters in it (from his
+   hair to his hands and laptop): Premium and Care plan square, Brand 9:10 so the thumbs stay in; the text a step
+   smaller with less padding. Desktop unchanged. */
+@media (max-width: 55rem) {
+  .cards-page .extras-grid .extra { --pad: 1rem; gap: .5rem; }
+  .cards-page .extras-grid #premium-upgrade > .extra-photo:has(img),
+  .cards-page .extras-grid #care-plan > .extra-photo:has(img) { aspect-ratio: 1 / 1; }
+  .cards-page .extras-grid #brand-addon > .extra-photo:has(img) { aspect-ratio: 9 / 10; }
+  .cards-page .extras-grid #premium-upgrade > .extra-photo img { object-position: 50% 72%; }
+  .cards-page .extras-grid #care-plan > .extra-photo img { object-position: 50% 58%; }
+  .cards-page .extras-grid #brand-addon > .extra-photo img { object-position: 50% 45%; }
+  .cards-page .extras-grid .extra-name { font-size: 1.5rem; }
+  .cards-page .extras-grid .extra-amount { font-size: 1.0625rem; }
+  .cards-page .extras-grid .extra-text { font-size: .9375rem; }
+  .cards-page .extras-grid .premium-list li,
+  .cards-page .extras-grid .extra-note { font-size: .8125rem; line-height: 1.4; }
+  .cards-page .extras-grid .premium-for { font-size: .8125rem; }
+  .cards-page .extras-grid { gap: 1rem; }
+}
+@media (min-width: 35.01rem) and (max-width: 55rem) {
+  .cards-page .extra:has(> .extra-photo img) { grid-template-columns: minmax(0, 38%) minmax(0, 1fr); }
+  .cards-page .extras-grid .extra:nth-child(even):has(> .extra-photo img) { grid-template-columns: minmax(0, 1fr) minmax(0, 38%); }
+  .cards-page .extra:has(> .extra-photo img) > :not(.extra-photo) { margin-inline: 1.25rem; }
+  .cards-page .extra:has(> .extra-photo img) > .extra-head { padding-top: 1.25rem; }
+  .cards-page .extra:has(> .extra-photo img) > :last-child { margin-bottom: 1.25rem; }
+}
+@media (max-width: 55rem) { .cards-page .extras-grid .premium-list li::before { top: .55em; } }   /* the dot sits level with the smaller text */
