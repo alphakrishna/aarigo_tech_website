@@ -15,6 +15,12 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
 
   <!-- Order matters: tokens → base → components → sections (in page order) -->
+  <!-- Favicon (2026-11-05, Krishna: make the new favicon): the folded A mark from the business card logo, site colours, media/brand/ (the "Aa" monogram before it is in archive/media/brand-aa-2026-11-05/) -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/media/brand/favicon.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="/media/brand/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)"> <!-- 2026-11-05 (Krishna: one for the dark background): browsers in dark mode show the dark favicon -->
+  <link rel="apple-touch-icon" href="/media/brand/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="styles/tokens.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/components.css">
@@ -26,7 +32,7 @@
   <script>document.documentElement.classList.add("js");</script>
   <script src="scripts/site.js" defer></script>
 </head>
-<body>
+<body>   <!-- was until 2026-11-05 (Krishna: revert to the original design): body class work-page cards-page, data-enter cards -->
   <!-- [PLACEHOLDER] Every href="#" Book a call link becomes the booking page (WEB-14.8.6). -->
   <a class="skip-link" href="#main">Skip to main content</a>
 
@@ -87,6 +93,7 @@
         <ul class="case-cards list-plain">
           <li class="case-card">
             <a href="case-study-parktag.html">
+              <!-- was until 2026-11-05 (Krishna: revert to the original design): a live site screenshot on the case card (parktag) -->
               <span class="label label-accent">Brand and web app</span>
               <h3 class="case-card-issue">From a great idea <em>to its first 1,000+ users.</em></h3> <!-- was until 2026-10-17 (Krishna: a great idea to its first 1,000+ users): A great idea, but no brand, no product, no website. We built all three. --> <!-- was until 2026-10-17 (shorter; the 10,000+ shows just below): A great idea, but no brand, no product and no website. Now 10,000+ people use it. --> <!-- was until 2026-10-17 (Krishna: tell the ParkTag story of how we helped, not what the product does): No private way to reach a vehicle owner. Now there is. --> <!-- was until 2026-10-17 (Krishna: headings were product based; focus on the problem we solved): A strong idea. Nothing built yet. --> <!-- was until 2026-10-17 (Krishna: make the heading clean and attractive): A good idea, but no brand, no product and no private way to reach a vehicle owner. -->
               <div class="case-card-after"><span class="label">What changed</span><p>No brand, no product, no website at the start. We built all three.</p> <!-- was until 2026-10-17 (Krishna: a great idea to its first 1,000+ users): 1,000+ people use the brand and web app we built from scratch. --> <!-- was until 2026-10-17 (Krishna: tell the ParkTag story of how we helped, not what the product does): [p][strong class="case-card-number"]10,000+[/strong] tag users now, and nobody ever sees anyone's number.[/p] --></div>
@@ -96,6 +103,7 @@
           </li>
           <li class="case-card">
             <a href="case-study-pathmole.html">
+              <!-- was until 2026-11-05 (Krishna: revert to the original design): a live site screenshot on the case card (pathmole) -->
               <span class="label label-accent">Brand and website</span>
               <h3 class="case-card-issue">From a new venture <em>to the people it serves.</em></h3> <!-- was until 2026-10-17 (Krishna: connect the new venture with its people, not just be found): From opening day to being found online. --> <!-- was until 2026-10-17 (Krishna: we are not promoting doctors, labs or their ideas; the heading is about the problem we solved): From a brand new lab to the doctors who need it. --> <!-- was until 2026-10-17 (Krishna: PathMole was a new business that did not know how to reach people): [h3 class="case-card-issue"]From no website to a lab doctors can find online.[/h3] --> <!-- was until 2026-10-17 (Krishna: same journey pattern as ParkTag): Doctors couldn't find the lab online. Now they can. --> <!-- was until 2026-10-17 (Krishna: headings were product based; focus on the problem we solved): A trusted lab, invisible online. --> <!-- was until 2026-10-17 (Krishna: make the heading clean and attractive): A specialist lab that doctors and patients couldn't find, check or contact online. -->
               <div class="case-card-after"><span class="label">What changed</span><p>A new business with no brand, no website and no way to reach people. We built the brand, the website, email and a newsletter.</p> <!-- was until 2026-10-17 (Krishna: PathMole was a new business that did not know how to reach people): [p]No brand and no website at the start. We built both, plus email and a newsletter.[/p] --> <!-- was until 2026-10-17 (Krishna: same journey pattern as ParkTag): [p][strong class="case-card-number"]20+[/strong] pages built from scratch, connected to email and a newsletter.[/p] --></div>
@@ -105,6 +113,7 @@
           </li>
           <li class="case-card">
             <a href="case-study-dr-arpan-gandhi.html">
+              <!-- was until 2026-11-05 (Krishna: revert to the original design): a live site screenshot on the case card (drarpangandhi) -->
               <span class="label label-accent">Website</span>
               <h3 class="case-card-issue">From a slow site <em>to a story told in full.</em></h3> <!-- was until 2026-10-18 (Krishna: speak to many fields, not one senior person): [h3 class="case-card-issue"]From a slow site [em]to decades of work in full view.[/em][/h3] --> <!-- was until 2026-10-17 (Krishna: same journey pattern as ParkTag): A slow site hid decades of work. Now it loads fast. --> <!-- was until 2026-10-17 (Krishna: headings were product based; focus on the problem we solved): Decades of work, hidden by a slow website. --> <!-- was until 2026-10-17 (Krishna: make the heading clean and attractive): Nearly three decades of work, hidden behind a slow website. -->
               <div class="case-card-after"><span class="label">What changed</span><p>A site that took over 7 seconds to load. We rebuilt it and wrote every page.</p> <!-- was until 2026-10-17 (Krishna: same journey pattern as ParkTag): [p]A fast site that tells the full story of his work, every page written by us.[/p] --></div>
@@ -351,6 +360,7 @@
         <div>
           <p class="footer-brand">Aaurigo Tech</p>
           <p class="footer-tagline">Launch fast. Learn faster. Grow smarter.</p>
+          <p class="footer-email"><a href="mailto:hello@aaurigotech.com">hello@aaurigotech.com</a></p> <!-- 2026-11-06 (Krishna: the Zoho aliases are live) -->
         </div>
         <nav aria-labelledby="footer-nav">
           <p class="footer-heading label" id="footer-nav">Navigate</p>

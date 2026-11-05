@@ -15,6 +15,12 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
 
   <!-- Order matters: tokens → base → components → sections (in page order) -->
+  <!-- Favicon (2026-11-05, Krishna: make the new favicon): the folded A mark from the business card logo, site colours, media/brand/ (the "Aa" monogram before it is in archive/media/brand-aa-2026-11-05/) -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/media/brand/favicon.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="/media/brand/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)"> <!-- 2026-11-05 (Krishna: one for the dark background): browsers in dark mode show the dark favicon -->
+  <link rel="apple-touch-icon" href="/media/brand/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="styles/tokens.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/components.css">
@@ -129,7 +135,7 @@
           <li><span class="label label-accent">03</span><h3>One clear proposal</h3><p>One package we recommend, with the price, before any work starts. You say yes or no.</p></li> <!-- was until 2026-10-17 (Krishna: update the sub pages to match Home; no timeline until WEB-1.12): <li><span class="label label-accent">03</span><h3>Clear proposal</h3><p>Scope, timeline and price, before any work starts.</p></li> -->
           <li><span class="label label-accent">04</span><h3>Onboarding</h3><p>Once you say yes, a written agreement of exactly what is included, then everything we need asked for in one go.</p></li> <!-- was until 2026-10-17 (Krishna: update the sub pages to match Home; no timeline until WEB-1.12): <li><span class="label label-accent">04</span><h3>Onboarding</h3><p>Once you say yes, we collect everything we need in one go and your project begins.</p></li> -->
         </ol>
-        <!-- Other ways to reach us (contact.md §5): email and LinkedIn once WEB-2.14 and WEB-1.4 are done. -->
+        <p class="contact-email">Prefer email? Write to <a href="mailto:hello@aaurigotech.com">hello@aaurigotech.com</a></p> <!-- 2026-11-06 (Krishna: the Zoho aliases are live): other ways to reach us (contact.md §5); LinkedIn once WEB-1.4 is done -->
       </div>
     </section>
 
@@ -142,6 +148,7 @@
         <div>
           <p class="footer-brand">Aaurigo Tech</p>
           <p class="footer-tagline">Launch fast. Learn faster. Grow smarter.</p>
+          <p class="footer-email"><a href="mailto:hello@aaurigotech.com">hello@aaurigotech.com</a></p> <!-- 2026-11-06 (Krishna: the Zoho aliases are live) -->
         </div>
         <nav aria-labelledby="footer-nav">
           <p class="footer-heading label" id="footer-nav">Navigate</p>

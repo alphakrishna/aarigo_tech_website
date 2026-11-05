@@ -382,3 +382,32 @@ if (liveTags.length && "IntersectionObserver" in window && window.matchMedia("(h
   }, { rootMargin: "-30% 0px -30% 0px" });
   liveTags.forEach((tag) => liveIo.observe(tag));
 }
+
+// ---------- Work: selected projects open on tap on phones and touch screens (2026-11-05, Krishna: like the desktop view) ----------
+// Desktop opens a project's details on hover (work.css). Where there is no hover, or the window is narrow, the details
+// start closed and the project's name becomes a button: a tap slides them open (one at a time), a second tap closes.
+const tapProjects = document.querySelectorAll(".projects .project");
+if (tapProjects.length && window.matchMedia("(hover: none), (max-width: 40rem)").matches) {
+  tapProjects.forEach((project, n) => {
+    const head = project.querySelector(".project-head");
+    const more = project.querySelector(".project-more");
+    if (!head || !more) return;
+    project.classList.add("is-tap");
+    project.removeAttribute("tabindex");
+    more.id = more.id || `project-more-${n + 1}`;
+    head.setAttribute("role", "button");
+    head.setAttribute("tabindex", "0");
+    head.setAttribute("aria-controls", more.id);
+    head.setAttribute("aria-expanded", "false");
+    const toggle = () => {
+      const open = !project.classList.contains("is-open");
+      tapProjects.forEach((other) => {
+        other.classList.remove("is-open");
+        other.querySelector(".project-head")?.setAttribute("aria-expanded", "false");
+      });
+      if (open) { project.classList.add("is-open"); head.setAttribute("aria-expanded", "true"); }
+    };
+    head.addEventListener("click", toggle);
+    head.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } });
+  });
+}

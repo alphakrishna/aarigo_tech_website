@@ -15,6 +15,12 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
 
   <!-- Order matters: tokens → base → components → sections (in page order) -->
+  <!-- Favicon (2026-11-05, Krishna: make the new favicon): the folded A mark from the business card logo, site colours, media/brand/ (the "Aa" monogram before it is in archive/media/brand-aa-2026-11-05/) -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/media/brand/favicon.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="/media/brand/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)"> <!-- 2026-11-05 (Krishna: one for the dark background): browsers in dark mode show the dark favicon -->
+  <link rel="apple-touch-icon" href="/media/brand/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="styles/tokens.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/components.css">
@@ -95,7 +101,7 @@
 
           <h2 id="who">Who we are</h2>
           <p>Aaurigo Tech <span class="placeholder">[PLACEHOLDER legal entity name]</span>, <span class="placeholder">[PLACEHOLDER postal address]</span>.</p>
-          <p>Questions about privacy: <span class="placeholder">[PLACEHOLDER privacy email address]</span>.</p>
+          <p>Questions about privacy: <a href="mailto:privacy@aaurigotech.com">privacy@aaurigotech.com</a>. <!-- was until 2026-11-06 (Krishna: the Zoho aliases are live): [span class="placeholder"][PLACEHOLDER privacy email address][/span] --></p>
 
           <h2 id="collect">What we collect and why</h2>
           <div class="legal-table-wrap" role="region" aria-label="What we collect and why" tabindex="0">
@@ -132,7 +138,7 @@
           </ul>
 
           <h2 id="rights">Your rights</h2>
-          <p>You can ask us to <strong>see, correct or delete</strong> your data, to <strong>stop</strong> contacting you, or to <strong>object</strong> to how we use it. Email <span class="placeholder">[PLACEHOLDER privacy email address]</span> and we'll reply within one month. Every email we send includes a way to opt out.</p>
+          <p>You can ask us to <strong>see, correct or delete</strong> your data, to <strong>stop</strong> contacting you, or to <strong>object</strong> to how we use it. Email <a href="mailto:privacy@aaurigotech.com">privacy@aaurigotech.com</a> <!-- was until 2026-11-06 (Krishna: the Zoho aliases are live): [span class="placeholder"][PLACEHOLDER privacy email address][/span] --> and we'll reply within one month. Every email we send includes a way to opt out.</p>
           <p>If you're not happy with our answer, you can complain to your data protection authority (in the UK, the Information Commissioner's Office).</p>
 
           <h2 id="security">Security</h2>
@@ -153,6 +159,7 @@
         <div>
           <p class="footer-brand">Aaurigo Tech</p>
           <p class="footer-tagline">Launch fast. Learn faster. Grow smarter.</p>
+          <p class="footer-email"><a href="mailto:hello@aaurigotech.com">hello@aaurigotech.com</a></p> <!-- 2026-11-06 (Krishna: the Zoho aliases are live) -->
         </div>
         <nav aria-labelledby="footer-nav">
           <p class="footer-heading label" id="footer-nav">Navigate</p>

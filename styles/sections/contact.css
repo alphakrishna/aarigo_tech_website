@@ -40,3 +40,7 @@
 @media (max-width: 35rem) {
   .next-list { grid-template-columns: 1fr; }
 }
+
+/* 2026-11-06 (Krishna: the Zoho aliases are live): the email line under the next steps */
+.contact-email { margin-top: clamp(1.5rem, 3vw, 2.5rem); }
+.contact-email a { color: var(--primary); text-underline-offset: .3em; overflow-wrap: anywhere; }

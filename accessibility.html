@@ -15,6 +15,12 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
 
   <!-- Order matters: tokens → base → components → sections (in page order) -->
+  <!-- Favicon (2026-11-05, Krishna: make the new favicon): the folded A mark from the business card logo, site colours, media/brand/ (the "Aa" monogram before it is in archive/media/brand-aa-2026-11-05/) -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/media/brand/favicon.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="/media/brand/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)"> <!-- 2026-11-05 (Krishna: one for the dark background): browsers in dark mode show the dark favicon -->
+  <link rel="apple-touch-icon" href="/media/brand/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="styles/tokens.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/components.css">
@@ -112,7 +118,7 @@
           </ul>
 
           <h2 id="feedback">Tell us what isn't working</h2>
-          <p>If anything on this site is hard to use, tell us what happened and on which page. Email <span class="placeholder">[PLACEHOLDER email address]</span> or use the form on our <a href="contact.html">Contact page</a>. We'll reply within one business day and, where we can, fix it.</p>
+          <p>If anything on this site is hard to use, tell us what happened and on which page. Email <a href="mailto:hello@aaurigotech.com">hello@aaurigotech.com</a> <!-- was until 2026-11-06 (Krishna: the Zoho aliases are live): [span class="placeholder"][PLACEHOLDER email address][/span] --> or use the form on our <a href="contact.html">Contact page</a>. We'll reply within one business day and, where we can, fix it.</p>
 
           <h2 id="review">How we check</h2>
           <p>We check the site with automated tests and by hand, using a keyboard and zoomed in text. This statement was last reviewed on <span class="placeholder">[PLACEHOLDER date]</span>.</p>
@@ -129,6 +135,7 @@
         <div>
           <p class="footer-brand">Aaurigo Tech</p>
           <p class="footer-tagline">Launch fast. Learn faster. Grow smarter.</p>
+          <p class="footer-email"><a href="mailto:hello@aaurigotech.com">hello@aaurigotech.com</a></p> <!-- 2026-11-06 (Krishna: the Zoho aliases are live) -->
         </div>
         <nav aria-labelledby="footer-nav">
           <p class="footer-heading label" id="footer-nav">Navigate</p>

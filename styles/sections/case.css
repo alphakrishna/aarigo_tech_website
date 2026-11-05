@@ -179,3 +179,35 @@
 }
 
 */
+
+/* 2026-11-05 (Krishna: each case study feels too long, too much scrolling): the same story, tighter. Less space
+   between chapters; on wide screens The brand section puts its name and text beside a smaller screenshot instead of
+   a full width one above the next section. Words unchanged. */
+.story-chapter { padding-block: clamp(1.75rem, 3.5vw, 3rem); }
+@media (min-width: 55.01rem) {
+  .case-reveal .container { grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); column-gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+  .case-reveal .container > :not(.case-frame) { grid-column: 1; }
+  .case-reveal .container > .case-frame { grid-column: 2; grid-row: 1 / span 8; align-self: center; margin-top: 0; }
+}
+@media (max-width: 35rem) {
+  .story-chapter { padding-block: 1.75rem; gap: .75rem; }
+}
+@media (min-width: 55.01rem) {
+  .case-reveal .case-brand { font-size: clamp(3rem, 5.5vw, 5.25rem); line-height: 1; overflow-wrap: anywhere; }   /* fits its half beside the screenshot */
+}
+
+/* 2026-11-05 (Krishna: make the More case studies section a slider): the two other case studies sit in one row you
+   swipe or scroll sideways on phones and tablets, each card snapping into place with the next one peeking in; on wide
+   screens both already fit side by side, so nothing moves there. Keyboard: the row takes focus and scrolls with the arrows. */
+@media (max-width: 55rem) {
+  .case-related {
+    display: flex; gap: 1rem;
+    overflow-x: auto; overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter);
+    margin-inline: calc(-1 * var(--gutter)); padding: 0 var(--gutter) 1rem;
+    scrollbar-width: thin; scrollbar-color: var(--spark) transparent;
+  }
+  .case-related > .case-card { flex: 0 0 min(82%, 22rem); scroll-snap-align: start; display: flex; }
+  .case-related > .case-card a { flex: 1; }
+  .case-related:focus-visible { outline: 2px solid var(--primary); outline-offset: .25rem; }
+}

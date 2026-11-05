@@ -94,3 +94,8 @@
   .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .footer-grid > :first-child, .footer-grid > .footer-news { grid-column: 1 / -1; }
 }
+
+/* 2026-11-06 (Krishna: the Zoho aliases are live): hello@ under the tagline on every page, quiet like the links */
+.footer-email { margin-top: 1.25rem; }
+.footer-email a { display: inline-flex; align-items: center; min-height: 2rem; color: var(--on-dark); text-decoration: none; overflow-wrap: anywhere; }
+.footer-email a:hover { text-decoration: underline; text-underline-offset: .3em; }

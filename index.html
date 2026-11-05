@@ -6,7 +6,7 @@
   <title>Fast Web &amp; Mobile App Development | Aaurigo Tech</title> <!-- 2026-10-21: mobile apps off and back the same day; Brand tried as a separate service and taken off (Krishna: brand will be combined with every service) -->
   <meta name="description" content="Premium websites, web apps and mobile apps, built in weeks, not months. Launch fast, learn from real users and grow smarter with Aaurigo Tech."> <!-- 2026-10-21: mobile apps off and back the same day; Brand tried as a separate service and taken off (Krishna: brand will be combined with every service) -->
   <link rel="canonical" href="https://www.aaurigotech.com/"> <!-- 2026-11-03: self canonical on the final www address (RFA §5.11) -->
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://www.aaurigotech.com/#organization", "name": "Aaurigo Tech", "url": "https://www.aaurigotech.com/", "slogan": "The best quality, in the shortest time.", "description": "Aaurigo Tech builds websites, web apps and mobile apps that help businesses grow.", "founder": {"@type": "Person", "name": "Krishna Singh"}, "knowsAbout": ["Website design and development", "Web app development", "Mobile app development"]}, {"@type": "WebSite", "@id": "https://www.aaurigotech.com/#website", "name": "Aaurigo Tech", "url": "https://www.aaurigotech.com/", "inLanguage": "en", "publisher": {"@id": "https://www.aaurigotech.com/#organization"}}]}</script> <!-- 2026-11-03: Organization and WebSite schema on Home only (RFA §5.11). Add "logo" with the favicon (WEB-16.4), "email" once the address is live, and "sameAs" with the social profiles (WEB-1.4). No FAQ schema. -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://www.aaurigotech.com/#organization", "name": "Aaurigo Tech", "url": "https://www.aaurigotech.com/", "slogan": "The best quality, in the shortest time.", "description": "Aaurigo Tech builds websites, web apps and mobile apps that help businesses grow.", "email": "hello@aaurigotech.com", "founder": {"@type": "Person", "name": "Krishna Singh"}, "knowsAbout": ["Website design and development", "Web app development", "Mobile app development"]}, {"@type": "WebSite", "@id": "https://www.aaurigotech.com/#website", "name": "Aaurigo Tech", "url": "https://www.aaurigotech.com/", "inLanguage": "en", "publisher": {"@id": "https://www.aaurigotech.com/#organization"}}]}</script> <!-- 2026-11-03: Organization and WebSite schema on Home only (RFA §5.11). Add "logo" with the favicon (WEB-16.4), "email" added 2026-11-06, and "sameAs" with the social profiles (WEB-1.4). No FAQ schema. -->
   <!-- 2026-11-03 Google Search Console (WEB-18.5): best verified with a DNS TXT record at GoDaddy (a Domain property covers www and the bare domain, no code on the site). If the URL prefix method is used instead, paste the code from Search Console here and uncomment: [meta name="google-site-verification" content="PASTE_CODE_HERE"]. Bing Webmaster Tools can import the property from Search Console. -->
   <!-- tried and reversed 2026-10-14 (Krishna: "reverse it"): <meta name="description" content="Fast, custom websites, web apps and mobile apps for established businesses. Your business, seen as it really is, live in weeks, not months."> -->
 
@@ -16,6 +16,12 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
 
   <!-- Order matters: tokens → base → components → sections (in page order) -->
+  <!-- Favicon (2026-11-05, Krishna: make the new favicon): the folded A mark from the business card logo, site colours, media/brand/ (the "Aa" monogram before it is in archive/media/brand-aa-2026-11-05/) -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/media/brand/favicon.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="/media/brand/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)"> <!-- 2026-11-05 (Krishna: one for the dark background): browsers in dark mode show the dark favicon -->
+  <link rel="apple-touch-icon" href="/media/brand/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="styles/tokens.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/components.css">
@@ -211,7 +217,6 @@
           [li][span class="label label-accent"]03 · Reach[/span][strong]Global[/strong][span class="fact-text"]Clients in any time zone[/span][/li]
         [/ol]
         -->
-
       </div>
     </section>
 
@@ -1358,6 +1363,7 @@
         <div>
           <p class="footer-brand">Aaurigo Tech</p>
           <p class="footer-tagline">Launch fast. Learn faster. Grow smarter.</p>
+          <p class="footer-email"><a href="mailto:hello@aaurigotech.com">hello@aaurigotech.com</a></p> <!-- 2026-11-06 (Krishna: the Zoho aliases are live) -->
         </div>
         <nav aria-labelledby="footer-nav">
           <p class="footer-heading label" id="footer-nav">Navigate</p>
