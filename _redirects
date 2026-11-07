@@ -4,3 +4,9 @@
 # Business card QR code (doc/print/card-qr.svg) points to /card.
 # 302 (temporary) on purpose: change the target any time without reprinting cards.
 /card  /  302
+
+# Book a call (2026-11-07): every Book a call button links to /book. site.js swaps in the booking page for the
+# visitor's region (BOOKING in site.js); without JavaScript this redirect is used. Change the target here and in
+# BOOKING when the booking pages are made. Until then it goes to the Contact page form.
+# 2026-11-08: the Zoho Bookings page (Dubai hours) is live. Was: /book  /contact  302
+/book  https://aaurigotech.zohobookings.in/489336000000031010/#/489336000000031010  302

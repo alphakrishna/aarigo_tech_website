@@ -40,13 +40,13 @@
     <div class="container">
       <!-- was until 2026-10-13:
       <p>Now booking new projects. Talk to us in as little as 30 minutes.
-        <a href="#" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+        <a href="/book" data-book target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
       </p>
       -->
       <p class="announce-inner">
         <span class="announce-label label label-accent"><span class="announce-dot" aria-hidden="true"></span>Now booking</span>
         <span class="announce-text">Talk to us in as little as 30 minutes.</span>
-        <a href="#" target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+        <a href="/book" data-book target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
       </p>
     </div>
   </div>
@@ -64,7 +64,7 @@
           <li><a href="contact.html" aria-current="page">Contact</a></li>
         </ul>
       </nav>
-      <a class="btn btn-primary btn-sm header-cta" href="#" target="_blank" rel="noopener">
+      <a class="btn btn-primary btn-sm header-cta" href="/book" data-book target="_blank" rel="noopener">
         Book a call<span class="sr-only"> (opens in a new tab)</span>
       </a>
     </div>
@@ -96,27 +96,91 @@
             <li>The fastest route to real users</li>
             <li>What we recommend, and what happens next</li> <!-- was until 2026-10-17 (Krishna: update the sub pages to match Home; no timeline until WEB-1.12): A rough timeline, and what happens next -->
           </ul>
-          <p><a class="btn btn-primary" href="#" target="_blank" rel="noopener">Book a call <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a></p>
+          <p><a class="btn btn-primary" href="/book" data-book target="_blank" rel="noopener">Book a call <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a></p>
           <p class="form-note">Calls during your business hours. Times are shown in your own time zone.</p>
         </div>
 
-        <!-- Option 2: Start a project form (contact.md §3, WEB-12.2). Connects to the form service at WEB-14. -->
+        <!-- Option 2: Start a project form (contact.md §3, WEB-12.2). Sent by Web3Forms to hello@ (2026-11-07, Krishna: use Web3Forms for enquiries). The access key is public by design; it only lets this form send to our inbox. --> <!-- was until 2026-11-07: Connects to the form service at WEB-14. -->
         <div class="contact-option contact-write">
           <p class="label label-accent">Option 2</p>
           <h2>Or tell us <em>about your project.</em></h2> <!-- was until 2026-11-02: [h2]Or tell us about your project.[/h2] -->
-          <form class="contact-form" action="#" method="post">
-            <div class="field"><label class="field-label" for="c-name">Name</label><input class="field-input" id="c-name" name="name" autocomplete="name" required></div>
-            <div class="field"><label class="field-label" for="c-email">Email</label><input class="field-input" id="c-email" name="email" type="email" autocomplete="email" required></div>
-            <div class="field"><label class="field-label" for="c-company">Company or website <span class="field-hint">(optional)</span></label><input class="field-input" id="c-company" name="company" autocomplete="organization"></div>
-            <div class="field"><label class="field-label" for="c-what">What are you building?</label>
-              <select class="field-input field-select" id="c-what" name="building"><option>Website</option><option>Web app</option><option>Mobile app</option><!-- 2026-10-21: mobile apps off and back the same day; Brand tried as a separate service and taken off (Krishna: brand will be combined with every service) --><option>Something else</option></select></div>
-            <div class="field"><label class="field-label" for="c-when">When do you want to launch?</label>
-              <select class="field-input field-select" id="c-when" name="launch"><option>As soon as possible</option><option>Within 1 month</option><option>1 to 3 months</option><option>Just exploring</option></select></div>
-            <!-- Budget range (optional): ranges not decided yet (contact.md §3 placeholder). -->
-            <div class="field"><label class="field-label" for="c-more">Tell us a little more</label><textarea class="field-input" id="c-more" name="message" placeholder="Your idea, your goal and any deadline"></textarea></div>
-            <div><button class="btn btn-primary" type="submit">Send message <span class="arrow" aria-hidden="true">→</span></button></div>
-            <p class="form-note">We only use your details to reply to you. See our <a href="privacy.html">Privacy Policy</a>.</p>
+          <form class="contact-form" action="https://api.web3forms.com/submit" method="post" data-web3forms> <!-- 2026-11-07 (Krishna: add the add-ons, every section gives us the key info and feels professional): three short groups, taps first, typing last -->
+            <input type="hidden" name="access_key" value="a77c5cd0-b9ae-411d-a322-4763d78538ba">
+            <input type="hidden" name="subject" value="New enquiry from aaurigotech.com">
+            <input type="hidden" name="from_name" value="Aaurigo Tech website">
+            <input type="checkbox" name="botcheck" hidden tabindex="-1" autocomplete="off"> <!-- spam trap: people never see it, bots tick it -->
+
+            <fieldset class="form-group">
+              <legend class="form-legend"><span class="form-step">01</span> About you</legend>
+              <div class="form-pair">
+                <div class="field"><label class="field-label" for="c-name">Name</label><input class="field-input" id="c-name" name="name" autocomplete="name" required></div>
+                <div class="field"><label class="field-label" for="c-email">Work email</label><input class="field-input" id="c-email" name="email" type="email" autocomplete="email" required></div>
+              </div>
+              <div class="form-pair">
+                <div class="field"><label class="field-label" for="c-company">Business name <span class="field-hint">(optional)</span></label><input class="field-input" id="c-company" name="company" autocomplete="organization"></div>
+                <div class="field"><label class="field-label" for="c-place">Where your business is based</label><input class="field-input" id="c-place" name="based_in" placeholder="City, country" autocomplete="country-name" required></div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-group">
+              <legend class="form-legend"><span class="form-step">02</span> Your project</legend>
+              <fieldset class="field">
+                <legend class="field-label">What do you need? <span class="field-hint">(pick all that apply)</span></legend> <!-- 2026-11-07 (Krishna: projects should allow more than one): ticks, at least one checked by site.js -->
+                <div class="choices" data-pick-one="Please pick at least one thing you need.">
+                  <label class="choice"><input type="checkbox" name="need_website" value="Yes"> Website</label>
+                  <label class="choice"><input type="checkbox" name="need_web_app" value="Yes"> Web app</label>
+                  <label class="choice"><input type="checkbox" name="need_mobile_app" value="Yes"> Mobile app</label>
+                  <label class="choice"><input type="checkbox" name="need_not_sure" value="Yes"> Not sure yet</label>
+                </div>
+              </fieldset>
+              <fieldset class="field">
+                <legend class="field-label">Add-ons <span class="field-hint">(optional, pick any)</span></legend> <!-- 2026-11-07 (Krishna: the form looks too long): pills like the services; was tick cards with a line each -->
+                <div class="choices">
+                  <label class="choice"><input type="checkbox" name="addon_premium" value="Yes"> Premium upgrade</label>
+                  <label class="choice"><input type="checkbox" name="addon_brand" value="Yes"> Brand</label>
+                  <label class="choice"><input type="checkbox" name="addon_care_plan" value="Yes"> Care plan</label>
+                </div>
+                <p class="form-note"><a href="services.html#premium-upgrade">See what each add-on includes</a></p>
+              </fieldset>
+              <div class="form-pair"> <!-- 2026-11-07: two dropdowns side by side -->
+              <div class="field"><label class="field-label" for="c-start">Where are you starting from?</label> <!-- 2026-11-07 (Krishna: a clean dropdown); was three tap pills -->
+                <select class="field-input field-select" id="c-start" name="starting_point" required><option value="" selected disabled>Choose one</option><option>Starting fresh, nothing built yet</option><option>Replacing what we have</option><option>Improving what we have</option></select></div>
+              <div class="field"><label class="field-label" for="c-when">When do you want to launch?</label>
+                <select class="field-input field-select" id="c-when" name="launch"><option>As soon as possible</option><option>Within 1 month</option><option>1 to 3 months</option><option>Just exploring</option></select></div>
+              </div>
+              <!-- Budget range (optional): ranges not decided yet (contact.md §3 placeholder). -->
+              <!-- 2026-11-07 (Krishna: too long): group 03 The details merged into 02 -->
+              <div class="field"><label class="field-label" for="c-more">What should it do for your business?</label><textarea class="field-input" id="c-more" name="message" placeholder="Your goal, who it is for, any deadline, and a link to your current site if you have one" required></textarea></div>
+              <div class="field"><label class="field-label" for="c-found">How did you find us? <span class="field-hint">(optional)</span></label>
+                <select class="field-input field-select" id="c-found" name="found_us"><option value="">Choose one</option><option>Search</option><option>An AI assistant</option><option>A friend or client</option><option>Social media</option><option>An email from us</option><option>Something else</option></select></div>
+            </fieldset>
+
+            <div class="form-send">
+              <button class="btn btn-primary" type="submit">Send enquiry <span class="arrow" aria-hidden="true">→</span></button>
+              <p class="form-note">We reply within one business day. We only use your details to reply to you. See our <a href="privacy.html">Privacy Policy</a>.</p>
+            </div>
+            <p class="form-status" role="status" aria-live="polite"></p>
           </form>
+          <!-- was until 2026-11-07 (one list of fields, no add-ons):
+          [form class="contact-form" action="https://api.web3forms.com/submit" method="post" data-web3forms] [!- - was until 2026-11-07: action="#" - -]
+            [input type="hidden" name="access_key" value="a77c5cd0-b9ae-411d-a322-4763d78538ba"]
+            [input type="hidden" name="subject" value="New enquiry from aaurigotech.com"]
+            [input type="hidden" name="from_name" value="Aaurigo Tech website"]
+            [input type="checkbox" name="botcheck" hidden tabindex="-1" autocomplete="off"] [!- - spam trap: people never see it, bots tick it - -]
+            [div class="field"][label class="field-label" for="c-name"]Name[/label][input class="field-input" id="c-name" name="name" autocomplete="name" required][/div]
+            [div class="field"][label class="field-label" for="c-email"]Email[/label][input class="field-input" id="c-email" name="email" type="email" autocomplete="email" required][/div]
+            [div class="field"][label class="field-label" for="c-company"]Company or website [span class="field-hint"](optional)[/span][/label][input class="field-input" id="c-company" name="company" autocomplete="organization"][/div]
+            [div class="field"][label class="field-label" for="c-what"]What are you building?[/label]
+              [select class="field-input field-select" id="c-what" name="building"][option]Website[/option][option]Web app[/option][option]Mobile app[/option][!- - 2026-10-21: mobile apps off and back the same day; Brand tried as a separate service and taken off (Krishna: brand will be combined with every service) - -][option]Something else[/option][/select][/div]
+            [div class="field"][label class="field-label" for="c-when"]When do you want to launch?[/label]
+              [select class="field-input field-select" id="c-when" name="launch"][option]As soon as possible[/option][option]Within 1 month[/option][option]1 to 3 months[/option][option]Just exploring[/option][/select][/div]
+            [!- - Budget range (optional): ranges not decided yet (contact.md §3 placeholder). - -]
+            [div class="field"][label class="field-label" for="c-more"]Tell us a little more[/label][textarea class="field-input" id="c-more" name="message" placeholder="Your idea, your goal and any deadline"][/textarea][/div]
+            [div][button class="btn btn-primary" type="submit"]Send message [span class="arrow" aria-hidden="true"]→[/span][/button][/div]
+            [p class="form-status" role="status" aria-live="polite"][/p]
+            [p class="form-note"]We only use your details to reply to you. See our [a href="privacy.html"]Privacy Policy[/a].[/p]
+          [/form]
+          -->
         </div>
 
       </div>
@@ -166,7 +230,7 @@
             <li><a href="web-apps.html">Web apps</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#web-applications --></li>
             <!-- was until 2026-10-21 (Krishna: brand combined with every service, not its own option): [li][a href="services.html#brand"]Brand[/a][/li] -->
             <li><a href="mobile-apps.html">Mobile apps</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#mobile-apps --></li> <!-- was until 2026-10-14: Web Development · Web Applications · Mobile Apps -->
-            <li><a href="#" target="_blank" rel="noopener">Book a call<span class="sr-only"> (opens in a new tab)</span></a></li>
+            <li><a href="/book" data-book target="_blank" rel="noopener">Book a call<span class="sr-only"> (opens in a new tab)</span></a></li>
           </ul>
         </nav>
         <div class="footer-news">

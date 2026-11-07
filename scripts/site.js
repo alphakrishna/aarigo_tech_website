@@ -411,3 +411,67 @@ if (tapProjects.length && window.matchMedia("(hover: none), (max-width: 40rem)")
     head.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } });
   });
 }
+
+// ---------- Contact form sent by Web3Forms without leaving the page (2026-11-07, Krishna: use Web3Forms for enquiries) ----------
+// Without JavaScript the form still posts straight to Web3Forms, which shows its own thank you page.
+document.querySelectorAll("form[data-web3forms]").forEach((form) => {
+  const status = form.querySelector(".form-status");
+  const button = form.querySelector("button[type=submit]");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    // Tick groups where at least one box is needed (2026-11-07: What do you need?)
+    const emptyGroup = [...form.querySelectorAll("[data-pick-one]")].find((g) => !g.querySelector("input:checked"));
+    if (emptyGroup && status) {
+      status.classList.add("is-error");
+      status.textContent = emptyGroup.dataset.pickOne;
+      emptyGroup.querySelector("input")?.focus();
+      return;
+    }
+    if (!status) { form.submit(); return; }
+    status.classList.remove("is-error");
+    status.textContent = "Sending your message…";
+    if (button) button.disabled = true;
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.success) throw new Error(data.message || "Send failed");
+      form.reset();
+      status.textContent = "Thank you. Your message is with us, and Krishna will reply within one business day.";
+    } catch (err) {
+      status.classList.add("is-error");
+      status.textContent = "Sorry, that didn't send. Please try again, or email hello@aaurigotech.com.";
+    } finally {
+      if (button) button.disabled = false;
+    }
+  });
+});
+
+// ---------- Book a call: send each visitor to the booking page for their region (2026-11-07, RFA §5.3) ----------
+// Every Book a call link is href="/book" data-book. /book is a redirect in _redirects (the fallback without JavaScript).
+// Here we pick the page from the browser's time zone: nothing is sent or stored. Phase 1 has two pages, Sydney and
+// Dubai hours; a visitor anywhere else gets the one whose business day is closest to theirs. Empty = keep /book.
+const BOOKING = {
+  au: "https://calendar.app.google/f6fuwhwytJMuiQ7f9",   // Google booking page (hello@), Discovery call, Sydney time (2026-11-08). Was "/contact" until the page existed
+  ae: "https://aaurigotech.zohobookings.in/489336000000031010/#/489336000000031010",   // Zoho Bookings, Discovery call, Dubai 09:00 to 18:00 (2026-11-08)
+};
+(() => {
+  const links = document.querySelectorAll("a[data-book]");
+  if (!links.length) return;
+  let zone = "";
+  try { zone = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch (e) { /* old browser: keep /book */ }
+  let region;
+  if (zone.startsWith("Australia/")) region = "au";
+  else if (/^Asia\/(Dubai|Muscat|Qatar|Bahrain|Kuwait|Riyadh)$/.test(zone)) region = "ae";
+  else {
+    // Nearest business day by UTC offset, going round the clock (Los Angeles is closer to Sydney than to Dubai).
+    const offset = -new Date().getTimezoneOffset() / 60;
+    const gap = (a, b) => { const d = Math.abs(a - b) % 24; return Math.min(d, 24 - d); };
+    region = gap(offset, 10.5) < gap(offset, 4) ? "au" : "ae";
+  }
+  const url = BOOKING[region];
+  if (url) links.forEach((a) => { a.href = url; });
+})();
