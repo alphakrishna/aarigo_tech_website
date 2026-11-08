@@ -99,3 +99,11 @@
 .footer-email { margin-top: 1.25rem; }
 .footer-email a { display: inline-flex; align-items: center; min-height: 2rem; color: var(--on-dark); text-decoration: none; overflow-wrap: anywhere; }
 .footer-email a:hover { text-decoration: underline; text-underline-offset: .3em; }
+
+/* 2026-11-08 (Krishna: LinkedIn company page live): a quiet text link under the email, same style, every page. */
+.footer-social { margin-top: .25rem; }
+.footer-social a { display: inline-flex; align-items: center; min-height: 2rem; color: var(--on-dark); text-decoration: none; }
+.footer-social a:hover { text-decoration: underline; text-underline-offset: .3em; }
+/* 2026-11-08 (Krishna: add the LinkedIn icon too): the mark before the word, in the link's own colour. */
+.footer-social a { gap: .5rem; }
+.footer-icon { flex: none; width: 1.125rem; height: 1.125rem; }
