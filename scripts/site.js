@@ -475,3 +475,72 @@ const BOOKING = {
   const url = BOOKING[region];
   if (url) links.forEach((a) => { a.href = url; });
 })();
+
+/* How we work video on Home (2026-11-09, Krishna: sound on demand only, optimised and fast to load; WEB-8.15).
+   Nothing downloads with the page. When the video nears the screen we choose the file (1080p only for large, sharp
+   screens on a good connection, 720p otherwise); once half of it is in view it plays muted. Sound starts only when the
+   visitor asks for it. It pauses when scrolled away and resumes when back, unless the visitor paused it or it ended
+   (it never loops). With reduced motion or data saver it never starts by itself: the poster waits for a tap. */
+(function () {
+  const v = document.querySelector(".how-video-player");
+  if (!v) return;
+  const btn = document.querySelector(".how-video-sound");
+  const txt = btn && btn.querySelector(".how-video-sound-text");
+  const conn = navigator.connection || {};
+  const slow = /(^|-)(2g|3g)$/.test(conn.effectiveType || "");
+  const saveData = !!conn.saveData;
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const auto = !reduce && !saveData;
+  // 1080p only when the frame itself is drawn wider than about 1100 real pixels (was the window width until 2026-11-09)
+  const hdNow = () => !saveData && !slow && v.getBoundingClientRect().width * Math.min(devicePixelRatio || 1, 2) > 1100;
+  // 2026-11-09 (Krishna: responsive on every screen, optimised): phones get the portrait 9:16 cut (same test as the CSS),
+  // and browsers that can play AV1 get a file about 25% smaller. Names: how-we-work-v4-{portrait|720|1080}[-av1].mp4
+  const portrait = matchMedia("(max-width: 40rem)").matches;
+  const av1 = /probably|maybe/.test(v.canPlayType('video/mp4; codecs="av01.0.08M.08, mp4a.40.2"'));
+  if (portrait && v.dataset.posterPortrait) v.poster = v.dataset.posterPortrait;
+  let chosen = false, userStopped = false, autoPause = false;
+
+  const choose = () => {
+    if (chosen) return;
+    chosen = true;
+    v.src = v.dataset.src + (portrait ? "portrait" : hdNow() ? "1080" : "720") + (av1 ? "-av1" : "") + ".mp4";   // replaces the 720p <source> kept for visitors without JavaScript
+  };
+  const sync = () => {
+    if (!btn) return;
+    const on = !v.muted && v.volume > 0;
+    btn.dataset.sound = on ? "on" : "off";
+    txt.textContent = on ? "Turn sound off" : "Turn sound on";
+  };
+
+  v.muted = true;
+  if (btn) {
+    btn.hidden = false;
+    btn.addEventListener("click", () => {
+      choose();
+      v.muted = !v.muted;
+      if (!v.muted && v.volume === 0) v.volume = 1;
+      if (!v.muted && v.paused) { userStopped = false; v.play().catch(() => {}); }
+      sync();
+    });
+  }
+  v.addEventListener("volumechange", sync);
+  v.addEventListener("play", () => { userStopped = false; });
+  v.addEventListener("pause", () => { if (!autoPause) userStopped = true; autoPause = false; });   // also true when it ends
+  sync();
+
+  if (!("IntersectionObserver" in window)) { choose(); return; }
+  // pick the file a little before it arrives (setting src with preload none fetches nothing yet)
+  new IntersectionObserver((entries, o) => {
+    if (entries.some((e) => e.isIntersecting)) { choose(); o.disconnect(); }
+  }, { rootMargin: "300px 0px" }).observe(v);
+  // play when half of it is really on screen, pause when it leaves
+  new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.intersectionRatio >= .5) {
+        if (auto && !userStopped && v.paused && !v.ended) { choose(); v.preload = "auto"; v.play().catch(() => {}); }
+      } else if (!v.paused) {
+        autoPause = true; v.pause();
+      }
+    });
+  }, { threshold: [0, .5] }).observe(v);
+})();

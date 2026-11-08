@@ -6,3 +6,8 @@ https://:project.pages.dev/*
 
 https://:version.:project.pages.dev/*
   X-Robots-Tag: noindex
+
+# 2026-11-09 (Krishna: the How we work video, fast to load): the video files and poster are kept by browsers for a week,
+# so a second visit does not download them again. Give a changed video a new file name.
+/media/video/*
+  Cache-Control: public, max-age=604800

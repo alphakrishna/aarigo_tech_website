@@ -1,0 +1,64 @@
+/* How we work video on Home (2026-11-09, Krishna: the video on the website, sound on demand only, fast to load; WEB-8.15).
+   Sits under the five How we work cards, full width of the section. The frame keeps its 16:9 space before anything
+   loads (no layout shift); the poster is a 13 KB WebP; the video file is fetched by site.js only when it comes into view. */
+
+.how-video { margin: var(--space-md) 0 0; grid-column: 1 / -1; }
+
+.how-video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--bg);
+  border: var(--rule);
+}
+.how-video-player { display: block; width: 100%; height: 100%; object-fit: cover; background: var(--bg); }
+
+/* "Turn sound on": the only way sound starts (the video always begins muted) */
+.how-video-sound {
+  position: absolute; top: .875rem; right: .875rem;
+  display: inline-flex; align-items: center; gap: .5rem;
+  min-height: 2.75rem; padding: 0 1.125rem;
+  border: 0; border-radius: var(--radius-control);
+  background: var(--primary); color: var(--on-primary);
+  font: inherit; font-size: var(--text-sm); font-weight: 600;
+  cursor: pointer;
+  transition: background-color .3s var(--ease-soft), opacity .3s var(--ease-soft);
+}
+.how-video-sound[hidden] { display: none; }
+.how-video-sound:hover { background: var(--primary-deep); }
+.how-video-icon { flex: none; }
+.how-video-sound .how-video-waves { display: none; }
+.how-video-sound[data-sound="on"] .how-video-waves { display: inline; }
+.how-video-sound[data-sound="on"] .how-video-x { display: none; }
+
+.how-video-caption { margin-top: .875rem; font-size: var(--text-sm); color: var(--muted); }
+
+.how-video-transcript { margin-top: .5rem; font-size: var(--text-sm); color: var(--muted); max-width: var(--measure); }
+.how-video-transcript summary { cursor: pointer; color: var(--primary); font-weight: 600; min-height: 2.75rem; display: flex; align-items: center; }
+.how-video-transcript ol { margin: .25rem 0 .75rem; padding-left: 1.25rem; display: grid; gap: .5rem; }
+.how-video-transcript strong { color: var(--ink); }
+
+/* 2026-11-09 (Krishna: responsive on every screen): the whole video always fits the screen height
+   (short laptops, phones held sideways), centred in the section. */
+.how-video-frame, .how-video-caption, .how-video-transcript {
+  margin-inline: auto;
+  width: min(100%, calc((100vh - 8rem) * 16 / 9));    /* older browsers */
+  width: min(100%, calc((100svh - 8rem) * 16 / 9));
+}
+.how-video-transcript { max-width: none; }
+.how-video-transcript ol, .how-video-transcript p { max-width: var(--measure); }
+
+/* phones: site.js plays the portrait 9:16 cut (larger text); the same width test is used there (max-width: 40rem) */
+@media (max-width: 40rem) {
+  .js .how-video-frame { aspect-ratio: 9 / 16; width: min(100%, calc((100svh - 6rem) * 9 / 16)); }
+  .js .how-video-caption, .js .how-video-transcript { width: 100%; }
+}
+
+@media (max-width: 35rem) {
+  .how-video { margin-top: var(--space-sm); }
+  .how-video-frame { border-radius: calc(var(--radius-card) * .66); }
+  /* phones: a round speaker button, so it covers little of the picture; the words stay for screen readers */
+  .how-video-sound { top: .5rem; right: .5rem; width: 2.5rem; min-height: 2.5rem; padding: 0; justify-content: center; }
+  .how-video-sound-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+}

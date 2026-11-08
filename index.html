@@ -42,6 +42,7 @@
   <!-- <link rel="stylesheet" href="styles/sections/work.css"> Selected work removed from Home 2026-10-17; work.html still uses it -->
   <!-- <link rel="stylesheet" href="styles/sections/process.css"> was until 2026-11-01: How we work on Home moved to cards (journey.css); About still uses process.css -->
   <link rel="stylesheet" href="styles/sections/journey.css">   <!-- 2026-11-01 (Krishna: How we work as cards) -->
+  <link rel="stylesheet" href="styles/sections/how-video.css">   <!-- 2026-11-09 (Krishna: the How we work video) -->
 
   <!-- <link rel="stylesheet" href="styles/sections/values.css"> section moved off Home 2026-10-12 -->
   <link rel="stylesheet" href="styles/sections/guide.css">
@@ -52,6 +53,7 @@
   <link rel="stylesheet" href="styles/sections/footer.css">
 
   <!-- Marks that JavaScript runs, before first paint, so scroll fades never flash. -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "How we work at Aaurigo Tech", "description": "A 90 second illustrated video of a project with Aaurigo Tech in five clear steps: Onboard, Prep, Build, Launch and Handover.", "thumbnailUrl": "https://www.aaurigotech.com/media/video/how-we-work-poster.webp", "uploadDate": "2026-11-09", "duration": "PT1M22S", "contentUrl": "https://www.aaurigotech.com/media/video/how-we-work-v4-1080.mp4", "inLanguage": "en", "publisher": {"@id": "https://www.aaurigotech.com/#organization"}}</script> <!-- 2026-11-09: the How we work video (WEB-8.15) -->
   <script>document.documentElement.classList.add("js");</script>
   <script src="scripts/site.js" defer></script>
 </head>
@@ -1085,7 +1087,44 @@
         </ol>
         -->
 
-        <!-- Explainer video (WEB-7.11). Swap the placeholder for this once WEB-2.23 and WEB-2.24 are done:
+        <!-- 2026-11-09 (Krishna: put the How we work video on the website, sound on demand only, optimised and fast to load; WEB-8.15).
+             Self hosted, never a video platform embed. Nothing downloads with the page (preload none, no src): site.js picks the
+             720p or 1080p file only when the video comes into view, then plays it muted. Since 2026-11-09 (Krishna: optimise
+             and make it responsive on all screens): phones get a portrait 9:16 cut with larger text, and browsers that play AV1 get
+             files about 25% smaller (-av1); the frame always fits the screen height. Sound only when the visitor turns it on.
+             No autoplay with reduced motion or data saver: the poster waits for a tap. Styles: sections/how-video.css. -->
+        <figure class="how-video">
+          <div class="how-video-frame">
+            <video class="how-video-player" controls muted playsinline preload="none" width="1280" height="720"
+                   poster="media/video/how-we-work-poster.webp"
+                   data-src="media/video/how-we-work-v4-" data-poster-portrait="media/video/how-we-work-poster-portrait.webp"
+                   aria-label="How we work: a 90 second illustrated and narrated video of a project with us, from the first call to handover">
+              <source src="media/video/how-we-work-v4-720.mp4" type="video/mp4">
+              <track kind="captions" src="media/video/how-we-work-v3.vtt" srclang="en" label="English">
+            </video>
+            <button class="how-video-sound" type="button" data-sound="off" hidden>
+              <svg class="how-video-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 9v6h4l5 4V5L7 9H3z"/><path class="how-video-waves" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="how-video-x" d="M16 9.5l5 5M21 9.5l-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <span class="how-video-sound-text">Turn sound on</span>
+            </button>
+          </div>
+          <figcaption class="how-video-caption">See a whole project with us in 90 seconds, from the first call to handover.</figcaption>
+          <details class="how-video-transcript">
+            <summary>Read what happens in the video</summary>
+            <!-- 2026-11-09 (Krishna: a female voiceover explaining each step): the spoken words, scene by scene. Was until 2026-11-09: a scene list with "Music and sound effects only, no speech." -->
+            <ol>
+              <li>Messages pile up around a busy business owner. "Building a website shouldn't feel like a second job. With us, it doesn't." Our team walks in and shakes their hand. "Here's how we work, in five clear steps."</li>
+              <li><strong>Onboard.</strong> "First, onboard. You tell us once. We come prepared to one thirty minute call, with a clear plan we recommend for your business. You just say yes."</li>
+              <li><strong>Prep.</strong> "Then, prep. You see it take shape. We design your website's own theme: its colours and typography. Then we plan every page, and write every word. Nothing is built until you agree."</li>
+              <li><strong>Build.</strong> "Build. You steer, we build. Watch it come to life on a live preview link, with a short call at each milestone. Want a change? Unlimited changes, across three review rounds."</li>
+              <li><strong>Launch.</strong> "Launch. Tested on every screen, and set up for search. Then, with your final yes, you're live."</li>
+              <li><strong>Handover.</strong> "Handover. You get back to your business. We train your team, and hand you full ownership, with a written guide. And our care plan keeps it fast and secure, as your business grows." New enquiries and bookings start to arrive.</li>
+              <li>"Built right. Built fast. Book a call, and talk to us in as little as thirty minutes."</li>
+            </ol>
+            <p>Narrated, with music and sound effects. Captions are in the video's menu.</p>
+          </details>
+        </figure>
+
+        <!-- was until 2026-11-09 (the real video is above): Explainer video (WEB-7.11). Swap the placeholder for this once WEB-2.23 and WEB-2.24 are done:
         <video controls preload="none" poster="media/how-we-work-poster.jpg" width="1280" height="720">
           <source src="media/how-we-work.mp4" type="video/mp4">
           <track kind="captions" src="media/how-we-work.vtt" srclang="en" label="English" default>
