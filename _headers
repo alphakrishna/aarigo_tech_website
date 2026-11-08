@@ -1,0 +1,8 @@
+# Cloudflare Pages headers (2026-11-08, Krishna: nothing hidden from Google, no duplicates).
+# The project's own address (aarigo-tech-website.pages.dev and its preview copies) is a copy of the real site.
+# Keep it out of search so Google only indexes https://www.aaurigotech.com (every page's canonical points there too).
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex

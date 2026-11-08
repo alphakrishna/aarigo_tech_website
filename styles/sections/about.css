@@ -208,3 +208,7 @@
   .drives-photo { max-width: 24rem; }
 /* was until 2026-10-25 (signature moved to the founder section):   .drives-sign { margin-bottom: 0; top: 0; } */
 }
+/* 2026-11-08 (Krishna: nothing hidden from the Google crawler): the first screen fills the window, but never more than
+   75rem. Google renders a page in one very tall window; without the cap this band grew with it and pushed every section
+   below out of view, so they never faded in and Google saw them as invisible. Normal screens are unchanged. */
+.about-hero { min-height: min(calc(100svh - var(--top-h)), 75rem); }
