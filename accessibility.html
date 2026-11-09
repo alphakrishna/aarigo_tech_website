@@ -177,22 +177,13 @@
           <p>Short notes on building and launching faster. One email a month.</p>
           <!-- Posts to Zoho Campaigns once NEWS-1.11 is set up. -->
           <!-- 2026-11-09 (Krishna: newsletter on Zoho Campaigns): posts to the Website newsletter list; was [form action="#" method="post"] with name="email" -->
-          <form action="https://zgp4-zgp4.maillist-manage.in/weboptin.zc" method="post" data-zoho-signup>
-            <input type="hidden" name="submitType" value="optinCustomView">
-            <input type="hidden" name="emailReportId" value="">
-            <input type="hidden" name="formType" value="QuickForm">
-            <input type="hidden" name="zx" value="1dfdef0878">
-            <input type="hidden" name="zcvers" value="2.0">
-            <input type="hidden" name="oldListIds" value="">
-            <input type="hidden" name="mode" value="OptinCreateView">
-            <input type="hidden" name="zcld" value="1579f185f41b9331">
-            <input type="hidden" name="zctd" value="">
-            <input type="hidden" name="zc_trackCode" value="ZCFORMVIEW">
-            <input type="hidden" name="zc_formIx" value="3z58b46f8abd67e0ab02560ce551d73f067119d82d9ccd573cbec796715f07619d">
+          <form action="/api/subscribe" method="post" data-zoho-signup> <!-- 2026-11-09: through our Cloudflare function to Zoho (Zoho dropped sign ups posted straight to its form); was action="https://zgp4-zgp4.maillist-manage.in/weboptin.zc" -->
+            <input type="hidden" name="page" value="accessibility">
+            <input type="checkbox" name="botcheck" hidden tabindex="-1" autocomplete="off"> <!-- spam trap: people never see it, bots tick it -->
             <div class="field">
               <label class="field-label" for="news-email">Your email address</label>
               <div class="form-row">
-                <input class="field-input" id="news-email" name="CONTACT_EMAIL" type="email" autocomplete="email" required>
+                <input class="field-input" id="news-email" name="email" type="email" autocomplete="email" required>
                 <button class="btn btn-primary" type="submit">Join</button>
               </div>
             </div>

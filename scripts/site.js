@@ -547,7 +547,7 @@ const BOOKING = {
 
 // ---------- Newsletter sign ups to Zoho Campaigns (2026-11-09, Krishna: newsletter on Zoho Campaigns) ----------
 // Zoho answers without a CORS header, so the page cannot read the reply: we send it and tell the visitor the next step
-// (Zoho sends a confirmation email first, double opt-in). Without JavaScript the form posts to Zoho, which redirects
+// (single opt in: Zoho adds them straight away, double opt in is off, Krishna 2026-11-09). Without JavaScript the form posts to Zoho, which redirects
 // back to /?subscribed=1#free-guide.
 document.querySelectorAll("form[data-zoho-signup]").forEach((form) => {
   const status = form.querySelector(".form-status");
@@ -559,23 +559,41 @@ document.querySelectorAll("form[data-zoho-signup]").forEach((form) => {
     status.textContent = "Adding you to the list…";
     if (button) button.disabled = true;
     try {
-      await fetch(form.action, { method: "POST", mode: "no-cors", body: new URLSearchParams(new FormData(form)) });
+      // was until 2026-11-09: await fetch(form.action, { method: "POST", mode: "no-cors", body: new URLSearchParams(new FormData(form)) });
+      const data = new FormData(form);
+      const res = await fetch(form.action, { method: "POST", headers: { Accept: "application/json" }, body: data });
+      if (res.status === 400) throw new Error("bad email");
+      if (!res.ok) await signupFallback(data);   // Zoho keys not set or Zoho down: the sign up comes to hello@ instead
       form.reset();
       status.textContent = "";   // 2026-11-09: the pop up says it now (was the same words on one line)
       showThanks(form);
     } catch (err) {
       status.classList.add("is-error");
-      status.textContent = "Sorry, that didn't go through. Please try again, or email hello@aaurigotech.com.";
+      status.textContent = err.message === "bad email"
+        ? "Please check your email address and try again."
+        : "Sorry, that didn't go through. Please try again, or email hello@aaurigotech.com.";
     } finally {
       if (button) button.disabled = false;
     }
   });
 });
+// Safety net (2026-11-09): if our function cannot reach Zoho, the sign up is emailed to hello@ by Web3Forms (same key as Contact).
+async function signupFallback(data) {
+  const body = new FormData();
+  body.append("access_key", "a77c5cd0-b9ae-411d-a322-4763d78538ba");
+  body.append("subject", "Newsletter sign up to add to Zoho (website fallback)");
+  body.append("from_name", "Aaurigo Tech website");
+  body.append("email", data.get("email"));
+  body.append("page", data.get("page") || "");
+  const res = await fetch("https://api.web3forms.com/submit", { method: "POST", headers: { Accept: "application/json" }, body });
+  const out = await res.json().catch(() => ({}));
+  if (!res.ok || !out.success) throw new Error("fallback failed");
+}
 if (new URLSearchParams(location.search).get("subscribed") === "1") {
   showThanks(null);
 }
 
-// Thank you pop up (2026-11-09, Krishna: a pop up on the screen, not one line). A native dialog: focus moves into it,
+// Thank you pop up (2026-11-09, Krishna: a pop up on the screen, not one line; single opt in, so no "check your inbox"). A native dialog: focus moves into it,
 // Escape and the button close it, and focus goes back to the form.
 function showThanks(form) {
   let pop = document.querySelector(".thanks-pop");
@@ -585,8 +603,8 @@ function showThanks(form) {
     pop.setAttribute("aria-labelledby", "thanks-pop-title");
     pop.innerHTML = `<div class="thanks-pop-body">
       <span class="thanks-pop-mark" aria-hidden="true">✓</span>
-      <h2 class="thanks-pop-title" id="thanks-pop-title">You are almost in. <em>Check your inbox.</em></h2>
-      <p class="thanks-pop-text">We have sent you a short email. Confirm it, and every issue comes straight to you: one email a month on how tech can grow your business.</p>
+      <h2 class="thanks-pop-title" id="thanks-pop-title">You are on the list. <em>Welcome aboard.</em></h2>
+      <p class="thanks-pop-text">Every issue now comes straight to your inbox: one email a month on how tech can grow your business. Leave any time with one click.</p>
       <p class="thanks-pop-line">Launch fast. Learn faster. Grow smarter.</p>
       <button class="btn btn-primary" type="button" data-close>Got it</button>
     </div>`;
@@ -596,5 +614,5 @@ function showThanks(form) {
   }
   pop.addEventListener("close", () => form?.querySelector("input[type=email]")?.focus(), { once: true });
   if (typeof pop.showModal === "function") pop.showModal();
-  else { const s = form?.querySelector(".form-status"); if (s) s.textContent = "Thank you. Check your inbox and confirm, and you are on the list."; }
+  else { const s = form?.querySelector(".form-status"); if (s) s.textContent = "Thank you. You are on the list."; }
 }
