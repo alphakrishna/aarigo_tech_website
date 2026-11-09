@@ -11,3 +11,8 @@ https://:version.:project.pages.dev/*
 # so a second visit does not download them again. Give a changed video a new file name.
 /media/video/*
   Cache-Control: public, max-age=604800
+
+# 2026-11-09 (Krishna: fix the Google Fonts request): our own font files, kept by browsers for a year.
+# They never change under the same name; a new font version gets a new file name.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable

@@ -6,13 +6,28 @@
   <title>Privacy Policy | Aaurigo Tech</title>
   <meta name="description" content="How Aaurigo Tech collects, uses and protects your personal data, and how to see, correct or delete it at any time.">
   <link rel="canonical" href="https://www.aaurigotech.com/privacy"> <!-- 2026-11-03: self canonical on the final www address (RFA §5.11) -->
+  <!-- Share previews on LinkedIn, WhatsApp, Facebook and X (2026-11-09, Krishna; WEB-16.3). Image master: media-originals/brand/share/ -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Aaurigo Tech">
+  <meta property="og:title" content="Privacy Policy | Aaurigo Tech">
+  <meta property="og:description" content="How Aaurigo Tech collects, uses and protects your personal data, and how to see, correct or delete it at any time.">
+  <meta property="og:url" content="https://www.aaurigotech.com/privacy">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:image" content="https://www.aaurigotech.com/media/share/share-default.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Aaurigo Tech. Built right. Built fast. Premium websites, web apps and mobile apps, with founder Krishna Singh.">
+  <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.aaurigotech.com/"}, {"@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://www.aaurigotech.com/privacy"}]}</script> <!-- 2026-11-03: BreadcrumbList on inner pages (RFA §5.11) -->
   <!-- Header and footer are copies of index.html until the Astro port (WEB-3.2). -->
 
   <!-- Google Fonts for now; self-host before launch (WEB-4.4). -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+  <!-- 2026-11-09 (Krishna: fix the Google Fonts request): fonts self-hosted in /fonts/, no request to Google. was until 2026-11-09:
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap"> -->
+  <link rel="preload" href="fonts/fraunces-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/plus-jakarta-sans-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles/fonts.css">
 
   <!-- Order matters: tokens → base → components → sections (in page order) -->
   <!-- Favicon (2026-11-05, Krishna: make the new favicon): the folded A mark from the business card logo, site colours, media/brand/ (the "Aa" monogram before it is in archive/media/brand-aa-2026-11-05/) -->

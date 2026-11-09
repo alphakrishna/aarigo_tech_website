@@ -6,14 +6,29 @@
   <title>Fast Web &amp; Mobile App Development | Aaurigo Tech</title> <!-- 2026-10-21: mobile apps off and back the same day; Brand tried as a separate service and taken off (Krishna: brand will be combined with every service) -->
   <meta name="description" content="Premium websites, web apps and mobile apps, built in weeks, not months. Launch fast, learn from real users and grow smarter with Aaurigo Tech."> <!-- 2026-10-21: mobile apps off and back the same day; Brand tried as a separate service and taken off (Krishna: brand will be combined with every service) -->
   <link rel="canonical" href="https://www.aaurigotech.com/"> <!-- 2026-11-03: self canonical on the final www address (RFA §5.11) -->
+  <!-- Share previews on LinkedIn, WhatsApp, Facebook and X (2026-11-09, Krishna; WEB-16.3). Image master: media-originals/brand/share/ -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Aaurigo Tech">
+  <meta property="og:title" content="Fast Web &amp; Mobile App Development | Aaurigo Tech">
+  <meta property="og:description" content="Premium websites, web apps and mobile apps, built in weeks, not months. Launch fast, learn from real users and grow smarter with Aaurigo Tech.">
+  <meta property="og:url" content="https://www.aaurigotech.com/">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:image" content="https://www.aaurigotech.com/media/share/share-default.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Aaurigo Tech. Built right. Built fast. Premium websites, web apps and mobile apps, with founder Krishna Singh.">
+  <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://www.aaurigotech.com/#organization", "name": "Aaurigo Tech", "url": "https://www.aaurigotech.com/", "slogan": "The best quality, in the shortest time.", "description": "Aaurigo Tech builds websites, web apps and mobile apps that help businesses grow.", "email": "hello@aaurigotech.com", "sameAs": ["https://www.linkedin.com/company/aaurigo-tech/"], "founder": {"@type": "Person", "name": "Krishna Singh"}, "knowsAbout": ["Website design and development", "Web app development", "Mobile app development"]}, {"@type": "WebSite", "@id": "https://www.aaurigotech.com/#website", "name": "Aaurigo Tech", "url": "https://www.aaurigotech.com/", "inLanguage": "en", "publisher": {"@id": "https://www.aaurigotech.com/#organization"}}]}</script> <!-- 2026-11-03: Organization and WebSite schema on Home only (RFA §5.11). Add "logo" with the favicon (WEB-16.4), "email" added 2026-11-06, and "sameAs" with the social profiles (WEB-1.4; LinkedIn company page added 2026-11-08, Clutch next). No FAQ schema. -->
   <!-- 2026-11-03 Google Search Console (WEB-18.5): best verified with a DNS TXT record at GoDaddy (a Domain property covers www and the bare domain, no code on the site). If the URL prefix method is used instead, paste the code from Search Console here and uncomment: [meta name="google-site-verification" content="PASTE_CODE_HERE"]. Bing Webmaster Tools can import the property from Search Console. -->
   <!-- tried and reversed 2026-10-14 (Krishna: "reverse it"): <meta name="description" content="Fast, custom websites, web apps and mobile apps for established businesses. Your business, seen as it really is, live in weeks, not months."> -->
 
   <!-- Google Fonts for now; self-host before launch (WEB-4.4). -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+  <!-- 2026-11-09 (Krishna: fix the Google Fonts request): fonts self-hosted in /fonts/, no request to Google. was until 2026-11-09:
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap"> -->
+  <link rel="preload" href="fonts/fraunces-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/plus-jakarta-sans-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles/fonts.css">
 
   <!-- Order matters: tokens → base → components → sections (in page order) -->
   <!-- Favicon (2026-11-05, Krishna: make the new favicon): the folded A mark from the business card logo, site colours, media/brand/ (the "Aa" monogram before it is in archive/media/brand-aa-2026-11-05/) -->
