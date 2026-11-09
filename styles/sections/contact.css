@@ -46,9 +46,10 @@
 .contact-email a { color: var(--primary); text-underline-offset: .3em; overflow-wrap: anywhere; }
 
 /* ---------- Form status line (2026-11-07, Web3Forms): shown after Send message ---------- */
+/* moved to components.css on 2026-11-09 (the Home newsletter form uses it too):
 .form-status:empty { display: none; }
 .form-status { font-size: var(--text-sm); font-weight: 600; color: var(--ink); }
-.form-status.is-error { color: var(--wax); }
+.form-status.is-error { color: var(--wax); } */
 
 /* ---------- Enquiry form in three groups (2026-11-07, Krishna: add the add-ons, key info, professional) ----------
    Numbered groups with a champagne rule, two fields side by side on wide cards, and tap choices as round pills

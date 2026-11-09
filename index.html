@@ -1304,7 +1304,8 @@
     </section>
     -->
 
-    <!-- 8. Free guide (home.md §8, WEB-8.7). Form posts to Zoho Campaigns once NEWS-2.9 is set up. -->
+    <!-- 8. Newsletter (2026-11-09, Krishna: the free guide becomes the newsletter, same photo and layout; the guide comes back at NEWS-2).
+         Sign ups go to the Zoho Campaigns list Website newsletter (2026-11-09; Web3Forms before that). Was: 8. Free guide (home.md §8, WEB-8.7). -->
     <section class="section section-alt" id="free-guide" aria-labelledby="guide-title">
       <!-- 2026-11-02 (Krishna: put my photo in the free guide section, mirror it if that fits): his own photo on the left,
            not mirrored, so he faces and points toward the heading and the form. Same day (Krishna: add the laptop, without it the
@@ -1322,19 +1323,63 @@
         </figure>
         <div class="guide-main">
         <div class="section-head guide-head">
-          <p class="label label-accent">Free guide</p>
-          <h2 class="section-title" id="guide-title">From idea to real users, without wasting a month.</h2>
-          <p class="guide-body">The checklist we use before every build: what to prepare, what to cut from version one, and what to measure after launch. Drop your email and it's yours.</p>
+          <!-- was until 2026-11-09:           [p class="label label-accent"]Free guide[/p]
+          [h2 class="section-title" id="guide-title"]From idea to real users, without wasting a month.[/h2]
+          [p class="guide-body"]The checklist we use before every build: what to prepare, what to cut from version one, and what to measure after launch. Drop your email and it's yours.[/p] -->
+          <p class="label label-accent">Newsletter</p>
+          <!-- was until 2026-11-09 (Krishna: about how tech can help them, with our taglines): [h2 class="section-title" id="guide-title"]Build smarter, one email a month.[/h2] [p class="guide-body"]Short notes from the projects we build: what to prepare, what to cut from version one, and what to measure after launch. One email a month, and you can leave any time.[/p] -->
+          <!-- was until 2026-11-09 (Krishna: write something impactful): [h2]See how tech can grow your business.[/h2] [p class="guide-body"]Once a month, simple ideas you can use: how the right website or app wins more customers, saves your team time and pays you back. Launch fast. Learn faster. Grow smarter.[/p] -->
+          <h2 class="section-title" id="guide-title">Stay one step ahead.</h2>
+          <p class="guide-body">One email a month on what is working right now: websites that turn visitors into customers, apps that give your team hours back, and ideas you can use straight away. Launch fast. Learn faster. Grow smarter.</p>
         </div>
-        <form class="guide-form" action="#" method="post">
-          <p class="label">The Launch-Ready Checklist</p>
+        <!-- was until 2026-11-09:         [form class="guide-form" action="#" method="post"]
+          [p class="label"]The Launch-Ready Checklist[/p]
+          [div class="field"]
+            [label class="field-label" for="guide-email"]Your email address[/label]
+            [div class="form-row"]
+              [input class="field-input" id="guide-email" name="email" type="email" autocomplete="email" required]
+              [button class="btn btn-primary" type="submit"]Send me the checklist[/button]
+            [/div]
+          [/div]
+        [/form] -->
+        <!-- was until 2026-11-09 (Krishna: newsletter on Zoho Campaigns):         [form class="guide-form" action="https://api.web3forms.com/submit" method="post" data-web3forms
+              data-sending="Adding you to the list…" data-success="Thank you. You are on the list for the next issue."]
+          [input type="hidden" name="access_key" value="a77c5cd0-b9ae-411d-a322-4763d78538ba"]
+          [input type="hidden" name="subject" value="New newsletter sign up from aaurigotech.com"]
+          [input type="hidden" name="from_name" value="Aaurigo Tech website"]
+          [input type="hidden" name="form" value="Newsletter (Home)"]
+          [input type="checkbox" name="botcheck" hidden tabindex="-1" autocomplete="off"]
+          [p class="label"]Built right. Built fast. In your inbox.[/p] [!- - was until 2026-11-09: The Aaurigo Tech newsletter - -]
+          [div class="field"]
+            [label class="field-label" for="guide-email"]Your email address[/label]
+            [div class="form-row"]
+              [input class="field-input" id="guide-email" name="email" type="email" autocomplete="email" required]
+              [button class="btn btn-primary" type="submit"]Keep me ahead[/button] [!- - was until 2026-11-09: Join the newsletter - -]
+            [/div]
+          [/div]
+          [p class="form-status" role="status" aria-live="polite"][/p]
+        [/form] -->
+        <form class="guide-form" action="https://zgp4-zgp4.maillist-manage.in/weboptin.zc" method="post" data-zoho-signup>
+          <input type="hidden" name="submitType" value="optinCustomView">
+          <input type="hidden" name="emailReportId" value="">
+          <input type="hidden" name="formType" value="QuickForm">
+          <input type="hidden" name="zx" value="1dfdef0878">
+          <input type="hidden" name="zcvers" value="2.0">
+          <input type="hidden" name="oldListIds" value="">
+          <input type="hidden" name="mode" value="OptinCreateView">
+          <input type="hidden" name="zcld" value="1579f185f41b9331">
+          <input type="hidden" name="zctd" value="">
+          <input type="hidden" name="zc_trackCode" value="ZCFORMVIEW">
+          <input type="hidden" name="zc_formIx" value="3z58b46f8abd67e0ab02560ce551d73f067119d82d9ccd573cbec796715f07619d">
+          <p class="label">Built right. Built fast. In your inbox.</p>
           <div class="field">
             <label class="field-label" for="guide-email">Your email address</label>
             <div class="form-row">
-              <input class="field-input" id="guide-email" name="email" type="email" autocomplete="email" required>
-              <button class="btn btn-primary" type="submit">Send me the checklist</button>
+              <input class="field-input" id="guide-email" name="CONTACT_EMAIL" type="email" autocomplete="email" required>
+              <button class="btn btn-primary" type="submit">Keep me ahead</button>
             </div>
           </div>
+          <p class="form-status" role="status" aria-live="polite"></p>
         </form>
         </div>
       </div>
@@ -1444,14 +1489,27 @@
           <p class="footer-heading label">Newsletter</p>
           <p>Short notes on building and launching faster. One email a month.</p>
           <!-- Posts to Zoho Campaigns once NEWS-1.11 is set up. -->
-          <form action="#" method="post">
+          <!-- 2026-11-09 (Krishna: newsletter on Zoho Campaigns): posts to the Website newsletter list; was [form action="#" method="post"] with name="email" -->
+          <form action="https://zgp4-zgp4.maillist-manage.in/weboptin.zc" method="post" data-zoho-signup>
+            <input type="hidden" name="submitType" value="optinCustomView">
+            <input type="hidden" name="emailReportId" value="">
+            <input type="hidden" name="formType" value="QuickForm">
+            <input type="hidden" name="zx" value="1dfdef0878">
+            <input type="hidden" name="zcvers" value="2.0">
+            <input type="hidden" name="oldListIds" value="">
+            <input type="hidden" name="mode" value="OptinCreateView">
+            <input type="hidden" name="zcld" value="1579f185f41b9331">
+            <input type="hidden" name="zctd" value="">
+            <input type="hidden" name="zc_trackCode" value="ZCFORMVIEW">
+            <input type="hidden" name="zc_formIx" value="3z58b46f8abd67e0ab02560ce551d73f067119d82d9ccd573cbec796715f07619d">
             <div class="field">
               <label class="field-label" for="news-email">Your email address</label>
               <div class="form-row">
-                <input class="field-input" id="news-email" name="email" type="email" autocomplete="email" required>
+                <input class="field-input" id="news-email" name="CONTACT_EMAIL" type="email" autocomplete="email" required>
                 <button class="btn btn-primary" type="submit">Join</button>
               </div>
             </div>
+            <p class="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>

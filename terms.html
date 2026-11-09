@@ -118,7 +118,8 @@
           <p class="legal-summary">In short: browse and share freely, don't copy our work, and treat our prices as a guide until your proposal confirms them.</p>
 
           <h2 id="who">Who we are</h2>
-          <p>This website is run by Aaurigo Tech <span class="placeholder">[PLACEHOLDER legal entity name]</span>, <span class="placeholder">[PLACEHOLDER postal address]</span>.</p>
+          <!-- was until 2026-11-09: [p]This website is run by Aaurigo Tech [span class="placeholder"][PLACEHOLDER legal entity name][/span], [span class="placeholder"][PLACEHOLDER postal address][/span].[/p] -->
+          <p>This website is run by Krishna Pratap Singh, a sole trader trading as Aaurigo Tech, A-1618, 16th Floor, Tower T3, NX One, Plot 17, Tech Zone IV, Greater Noida, Uttar Pradesh 201318, India.</p>
           <p>Questions about these terms: <a href="mailto:hello@aaurigotech.com">hello@aaurigotech.com</a> <!-- was until 2026-11-06 (Krishna: the Zoho aliases are live): [span class="placeholder"][PLACEHOLDER email address][/span] -->, or use the form on our <a href="contact.html">Contact page</a>.</p>
 
           <h2 id="use">Using this website</h2>
@@ -191,14 +192,27 @@
           <p class="footer-heading label">Newsletter</p>
           <p>Short notes on building and launching faster. One email a month.</p>
           <!-- Posts to Zoho Campaigns once NEWS-1.11 is set up. -->
-          <form action="#" method="post">
+          <!-- 2026-11-09 (Krishna: newsletter on Zoho Campaigns): posts to the Website newsletter list; was [form action="#" method="post"] with name="email" -->
+          <form action="https://zgp4-zgp4.maillist-manage.in/weboptin.zc" method="post" data-zoho-signup>
+            <input type="hidden" name="submitType" value="optinCustomView">
+            <input type="hidden" name="emailReportId" value="">
+            <input type="hidden" name="formType" value="QuickForm">
+            <input type="hidden" name="zx" value="1dfdef0878">
+            <input type="hidden" name="zcvers" value="2.0">
+            <input type="hidden" name="oldListIds" value="">
+            <input type="hidden" name="mode" value="OptinCreateView">
+            <input type="hidden" name="zcld" value="1579f185f41b9331">
+            <input type="hidden" name="zctd" value="">
+            <input type="hidden" name="zc_trackCode" value="ZCFORMVIEW">
+            <input type="hidden" name="zc_formIx" value="3z58b46f8abd67e0ab02560ce551d73f067119d82d9ccd573cbec796715f07619d">
             <div class="field">
               <label class="field-label" for="news-email">Your email address</label>
               <div class="form-row">
-                <input class="field-input" id="news-email" name="email" type="email" autocomplete="email" required>
+                <input class="field-input" id="news-email" name="CONTACT_EMAIL" type="email" autocomplete="email" required>
                 <button class="btn btn-primary" type="submit">Join</button>
               </div>
             </div>
+            <p class="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>

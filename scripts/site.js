@@ -429,7 +429,7 @@ document.querySelectorAll("form[data-web3forms]").forEach((form) => {
     }
     if (!status) { form.submit(); return; }
     status.classList.remove("is-error");
-    status.textContent = "Sending your message…";
+    status.textContent = form.dataset.sending || "Sending your message…";   // 2026-11-09: each form can set its own lines
     if (button) button.disabled = true;
     try {
       const res = await fetch(form.action, {
@@ -440,7 +440,7 @@ document.querySelectorAll("form[data-web3forms]").forEach((form) => {
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.success) throw new Error(data.message || "Send failed");
       form.reset();
-      status.textContent = "Thank you. Your message is with us, and Krishna will reply within one business day.";
+      status.textContent = form.dataset.success || "Thank you. Your message is with us, and Krishna will reply within one business day.";
     } catch (err) {
       status.classList.add("is-error");
       status.textContent = "Sorry, that didn't send. Please try again, or email hello@aaurigotech.com.";
@@ -544,3 +544,33 @@ const BOOKING = {
     });
   }, { threshold: [0, .5] }).observe(v);
 })();
+
+// ---------- Newsletter sign ups to Zoho Campaigns (2026-11-09, Krishna: newsletter on Zoho Campaigns) ----------
+// Zoho answers without a CORS header, so the page cannot read the reply: we send it and tell the visitor the next step
+// (Zoho sends a confirmation email first, double opt-in). Without JavaScript the form posts to Zoho, which redirects
+// back to /?subscribed=1#free-guide.
+document.querySelectorAll("form[data-zoho-signup]").forEach((form) => {
+  const status = form.querySelector(".form-status");
+  const button = form.querySelector("button[type=submit]");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (!status) { form.submit(); return; }
+    status.classList.remove("is-error");
+    status.textContent = "Adding you to the list…";
+    if (button) button.disabled = true;
+    try {
+      await fetch(form.action, { method: "POST", mode: "no-cors", body: new URLSearchParams(new FormData(form)) });
+      form.reset();
+      status.textContent = "Thank you. Check your inbox and confirm, and you are on the list.";
+    } catch (err) {
+      status.classList.add("is-error");
+      status.textContent = "Sorry, that didn't go through. Please try again, or email hello@aaurigotech.com.";
+    } finally {
+      if (button) button.disabled = false;
+    }
+  });
+});
+if (new URLSearchParams(location.search).get("subscribed") === "1") {
+  const status = document.querySelector("#free-guide .form-status");
+  if (status) status.textContent = "Thank you. Check your inbox and confirm, and you are on the list.";
+}

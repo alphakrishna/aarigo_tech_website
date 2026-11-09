@@ -169,3 +169,8 @@
 
 /* Solid pink band (2026-10-18, Krishna: Work page heading and final call to action in solid pink). Dark text stays as on stone. */
 /* was until 2026-10-18 (Krishna: Work page black too): .band-blush { background: var(--blush); } */
+
+/* Form status line under a form sent by Web3Forms (Contact, Home newsletter; moved from contact.css 2026-11-09) */
+.form-status:empty { display: none; }
+.form-status { margin-top: var(--space-sm); font-size: var(--text-sm); font-weight: 600; color: var(--ink); }
+.form-status.is-error { color: var(--wax); }
