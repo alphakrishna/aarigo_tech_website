@@ -561,7 +561,8 @@ document.querySelectorAll("form[data-zoho-signup]").forEach((form) => {
     try {
       await fetch(form.action, { method: "POST", mode: "no-cors", body: new URLSearchParams(new FormData(form)) });
       form.reset();
-      status.textContent = "Thank you. Check your inbox and confirm, and you are on the list.";
+      status.textContent = "";   // 2026-11-09: the pop up says it now (was the same words on one line)
+      showThanks(form);
     } catch (err) {
       status.classList.add("is-error");
       status.textContent = "Sorry, that didn't go through. Please try again, or email hello@aaurigotech.com.";
@@ -571,6 +572,29 @@ document.querySelectorAll("form[data-zoho-signup]").forEach((form) => {
   });
 });
 if (new URLSearchParams(location.search).get("subscribed") === "1") {
-  const status = document.querySelector("#free-guide .form-status");
-  if (status) status.textContent = "Thank you. Check your inbox and confirm, and you are on the list.";
+  showThanks(null);
+}
+
+// Thank you pop up (2026-11-09, Krishna: a pop up on the screen, not one line). A native dialog: focus moves into it,
+// Escape and the button close it, and focus goes back to the form.
+function showThanks(form) {
+  let pop = document.querySelector(".thanks-pop");
+  if (!pop) {
+    pop = document.createElement("dialog");
+    pop.className = "thanks-pop";
+    pop.setAttribute("aria-labelledby", "thanks-pop-title");
+    pop.innerHTML = `<div class="thanks-pop-body">
+      <span class="thanks-pop-mark" aria-hidden="true">✓</span>
+      <h2 class="thanks-pop-title" id="thanks-pop-title">You are almost in. <em>Check your inbox.</em></h2>
+      <p class="thanks-pop-text">We have sent you a short email. Confirm it, and every issue comes straight to you: one email a month on how tech can grow your business.</p>
+      <p class="thanks-pop-line">Launch fast. Learn faster. Grow smarter.</p>
+      <button class="btn btn-primary" type="button" data-close>Got it</button>
+    </div>`;
+    document.body.appendChild(pop);
+    pop.querySelector("[data-close]").addEventListener("click", () => pop.close());
+    pop.addEventListener("click", (e) => { if (e.target === pop) pop.close(); });   // a tap on the dark wash closes it
+  }
+  pop.addEventListener("close", () => form?.querySelector("input[type=email]")?.focus(), { once: true });
+  if (typeof pop.showModal === "function") pop.showModal();
+  else { const s = form?.querySelector(".form-status"); if (s) s.textContent = "Thank you. Check your inbox and confirm, and you are on the list."; }
 }

@@ -11,6 +11,7 @@
   --glow: #EBDBC0;   /* was until 2026-10-18 (Krishna: a little more): #EFE3CF */         /* pale champagne, only for the soft wash behind page headings (2026-10-18, Krishna: trial) */
   /* was until 2026-10-18 (Krishna: black): --band: #D6E7EA;        ( pale teal, the solid band behind page headings and the final call to action (2026-10-18, Krishna: try a different solid colour); gold, muted text and teal pass 4.5:1 on it ) */
   --line: #E4E0D8;
+  --veil: rgba(19, 34, 39, .55);   /* ink wash behind a pop up (2026-11-09, Krishna: the newsletter thank you as a pop up) */
   --ink: #132227;
   --black: #0A0A0A;       /* true black, only for the heading band and the final call to action (2026-10-18, Krishna: make it black, not ink) */
   --glow-dark: rgba(176, 141, 87, .16);   /* champagne at low strength, only for the soft corner glow on the black How we work band (2026-10-22) and the About first screen (2026-10-25) */

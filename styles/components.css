@@ -174,3 +174,23 @@
 .form-status:empty { display: none; }
 .form-status { margin-top: var(--space-sm); font-size: var(--text-sm); font-weight: 600; color: var(--ink); }
 .form-status.is-error { color: var(--wax); }
+
+/* Thank you pop up after a newsletter sign up (2026-11-09, Krishna: a pop up, not one line). One dialog, added by site.js. */
+.thanks-pop { width: min(30rem, calc(100% - 2 * var(--gutter))); padding: 0; border: 1px solid var(--line); border-radius: var(--radius-card);
+  background: var(--surface); color: var(--ink); }
+.thanks-pop::backdrop { background: var(--veil); }
+.thanks-pop-body { display: grid; gap: var(--space-sm); padding: clamp(1.75rem, 5vw, 2.5rem); text-align: center; }
+.thanks-pop-body .btn { margin-top: var(--space-sm); }
+.thanks-pop-mark { justify-self: center; display: grid; place-items: center; width: 3.5rem; height: 3.5rem; border-radius: 50%;
+  background: var(--glow); color: var(--spark-deep); font-family: var(--display); font-size: var(--text-h3); }
+.thanks-pop-title { margin: 0; font-family: var(--display); font-size: var(--text-h3); line-height: 1.15; }
+.thanks-pop-title em { font-style: italic; font-weight: 500; color: var(--spark-deep); }
+.thanks-pop-text { margin: 0; color: var(--muted-deep); }
+.thanks-pop-line { margin: 0; font-size: var(--text-sm); font-weight: 600; color: var(--spark-deep); }
+.thanks-pop .btn { justify-self: center; }
+@media (prefers-reduced-motion: no-preference) {
+  .thanks-pop[open] { animation: thanks-in .5s var(--ease-soft); }
+  .thanks-pop[open]::backdrop { animation: thanks-fade .5s var(--ease-soft); }
+}
+@keyframes thanks-in { from { opacity: 0; transform: translateY(1rem) scale(.97); } to { opacity: 1; transform: none; } }
+@keyframes thanks-fade { from { opacity: 0; } to { opacity: 1; } }
