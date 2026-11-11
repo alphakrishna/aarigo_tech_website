@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Only indexable, canonical pages (RFA §5.11). Never the 404 page, archive/ or test pages. Update lastmod when a page changes. -->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.aaurigotech.com/</loc><lastmod>2026-11-03</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url><loc>https://www.aaurigotech.com/</loc><lastmod>2026-11-11</lastmod></url>
+  <!-- 2026-11-11: video watch page, with Google's video sitemap details (Krishna: ready for indexing) -->
+  <url>
+    <loc>https://www.aaurigotech.com/how-we-work</loc>
+    <lastmod>2026-11-11</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://www.aaurigotech.com/media/video/how-we-work-poster.jpg</video:thumbnail_loc>
+      <video:title>How we work at Aaurigo Tech</video:title>
+      <video:description>A short illustrated and narrated video of how Aaurigo Tech builds a website around your business, in five clear steps: Onboard, Prep, Build, Launch and Handover.</video:description>
+      <video:content_loc>https://www.aaurigotech.com/media/video/how-we-work-v5-720.mp4</video:content_loc>
+      <video:duration>82</video:duration>
+      <video:publication_date>2026-11-09T12:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
   <url><loc>https://www.aaurigotech.com/services</loc><lastmod>2026-11-03</lastmod></url>
   <url><loc>https://www.aaurigotech.com/websites</loc><lastmod>2026-11-03</lastmod></url>
   <url><loc>https://www.aaurigotech.com/web-apps</loc><lastmod>2026-11-03</lastmod></url>

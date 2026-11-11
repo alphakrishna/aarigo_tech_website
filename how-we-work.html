@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How We Work Video | Aaurigo Tech</title>
+  <meta name="description" content="Watch a whole project with Aaurigo Tech in under 90 seconds: onboard, prep, build, launch and handover, from the first call to your new website going live.">
+  <link rel="canonical" href="https://www.aaurigotech.com/how-we-work"> <!-- 2026-11-03: self canonical on the final www address (RFA §5.11) -->
+  <!-- Share previews on LinkedIn, WhatsApp, Facebook and X (2026-11-09, Krishna; WEB-16.3). Image master: media-originals/brand/share/ -->
+  <meta property="og:type" content="video.other">
+  <meta property="og:site_name" content="Aaurigo Tech">
+  <meta property="og:title" content="How We Work Video | Aaurigo Tech">
+  <meta property="og:description" content="Watch a whole project with Aaurigo Tech in under 90 seconds: onboard, prep, build, launch and handover, from the first call to your new website going live.">
+  <meta property="og:url" content="https://www.aaurigotech.com/how-we-work">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:image" content="https://www.aaurigotech.com/media/share/share-default.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Aaurigo Tech. Built right. Built fast. Premium websites, web apps and mobile apps, with founder Krishna Singh.">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- 2026-11-11 (Krishna: ready for indexing): no embedUrl (that is for a player URL), a JPG and a WebP thumbnail, the transcript in the data.
+       2026-11-11 (Krishna: get the video into Google video results): this is the video's watch page, the video is the main content here.
+       Google does not index a video that is only one section of a page (Search Console: "Video isn't on a watch page"). -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "How we work at Aaurigo Tech", "description": "A short illustrated and narrated video of how Aaurigo Tech builds a website around your business, in five clear steps: Onboard, Prep, Build, Launch and Handover.", "thumbnailUrl": ["https://www.aaurigotech.com/media/video/how-we-work-poster.jpg", "https://www.aaurigotech.com/media/video/how-we-work-poster.webp"], "uploadDate": "2026-11-09T12:00:00+05:30", "duration": "PT1M22S", "contentUrl": "https://www.aaurigotech.com/media/video/how-we-work-v5-720.mp4", "inLanguage": "en", "publisher": {"@id": "https://www.aaurigotech.com/#organization"}, "transcript": "Messages pile up around a busy business owner. \"Building a website shouldn't feel like a second job. With us, it doesn't.\" Our team walks in and shakes their hand. \"Here's how we build it around your business, in five clear steps.\" Onboard. \"First, onboard. You tell us once. We come prepared to one thirty minute call, with a clear plan we recommend for your business. You just say yes.\" Prep. \"Then, prep. You see it take shape. We design a theme made just for you: your colours and typography. Then we plan every page, and write every word for your customers. Nothing is built until you agree.\" Build. \"Build. You steer, we build. Watch it come to life on a live preview link, with a short call at each milestone. Want a change? Unlimited changes, across three review rounds.\" Launch. \"Launch. Tested on every screen, and set up for search. Then, with your final yes, you're live.\" Handover. \"Handover. You get back to your business. We train your team, and hand you full ownership, with a written guide. And our care plan keeps it fast and secure, as your business grows.\" New enquiries and bookings start to arrive. \"Built right. Built fast. Book a call, and talk to us in as little as thirty minutes.\""}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.aaurigotech.com/"}, {"@type": "ListItem", "position": 2, "name": "How we work video", "item": "https://www.aaurigotech.com/how-we-work"}]}</script> <!-- 2026-11-03: BreadcrumbList on inner pages (RFA §5.11) -->
+  <!-- Header and footer are copies of index.html until the Astro port (WEB-3.2). -->
+
+  <!-- Google Fonts for now; self-host before launch (WEB-4.4). -->
+  <!-- 2026-11-09 (Krishna: fix the Google Fonts request): fonts self-hosted in /fonts/, no request to Google. was until 2026-11-09:
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap"> -->
+  <link rel="preload" href="fonts/fraunces-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/plus-jakarta-sans-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles/fonts.css">
+
+  <!-- Order matters: tokens → base → components → sections (in page order) -->
+  <!-- Favicon (2026-11-05, Krishna: make the new favicon): the folded A mark from the business card logo, site colours, media/brand/ (the "Aa" monogram before it is in archive/media/brand-aa-2026-11-05/) -->
+  <!-- 2026-11-11 (Krishna: favicon in Google Search): Google wants a square PNG or ICO larger than 48 px and does not list SVG, so a 192 px PNG comes first, at the site root next to favicon.ico -->
+  <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/media/brand/favicon.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="/media/brand/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)"> <!-- 2026-11-05 (Krishna: one for the dark background): browsers in dark mode show the dark favicon -->
+  <link rel="apple-touch-icon" href="/media/brand/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/sections/header.css">
+  <link rel="stylesheet" href="styles/sections/how-video.css">
+  <link rel="stylesheet" href="styles/sections/watch.css">
+  <link rel="stylesheet" href="styles/sections/footer.css">
+
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="scripts/site.js" defer></script>
+</head>
+<body>
+  <!-- [PLACEHOLDER] Every href="#" Book a call link becomes the booking page (WEB-14.8.6). -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- 1. Announcement bar (home.md §1) -->
+  <div class="announce">
+    <div class="container">
+      <!-- was until 2026-10-13:
+      <p>Now booking new projects. Talk to us in as little as 30 minutes.
+        <a href="/book" data-book target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </p>
+      -->
+      <p class="announce-inner">
+        <span class="announce-label label label-accent"><span class="announce-dot" aria-hidden="true"></span>Now booking</span>
+        <span class="announce-text">Talk to us in as little as 30 minutes.</span>
+        <a href="/book" data-book target="_blank" rel="noopener">Book a call <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Site header (WEB-5) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Aaurigo Tech</a>
+      <nav aria-label="Main">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="sr-only">Menu</span><span class="burger" aria-hidden="true"><span></span><span></span><span></span></span></button> <!-- 2026-11-04 (Krishna: a burger menu instead of the Menu button); was: [button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"]Menu[/button] -->
+        <ul class="nav-list list-plain" id="main-menu">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-sm header-cta" href="/book" data-book target="_blank" rel="noopener">
+        Book a call<span class="sr-only"> (opens in a new tab)</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- 2026-11-11 (Krishna: a video page with a small heading): the How we work video on its own page, same files as Home.
+         Small heading so the video sits in the first screen. Styles: sections/how-video.css, sections/watch.css -->
+    <section class="section watch" aria-labelledby="watch-title">
+      <div class="container">
+        <div class="watch-head">
+          <p class="label label-accent">How we work</p>
+          <h1 class="watch-title" id="watch-title">A whole project, <em>in under 90 seconds.</em></h1>
+        </div>
+        <figure class="how-video">
+          <div class="how-video-frame">
+            <!-- 2026-11-11 (Krishna: focus on customisation): v5 files and captions; v4 files in archive/media/video-2026-11-11-v4/ -->
+            <video class="how-video-player" controls muted playsinline preload="none" width="1280" height="720"
+                   poster="media/video/how-we-work-poster.webp"
+                   data-src="media/video/how-we-work-v5-" data-poster-portrait="media/video/how-we-work-poster-portrait.webp"
+                   aria-label="How we work: a 90 second illustrated and narrated video of a project with us, from the first call to handover">
+              <source src="media/video/how-we-work-v5-720.mp4" type="video/mp4">
+              <track kind="captions" src="media/video/how-we-work-v5.vtt" srclang="en" label="English">
+            </video>
+            <button class="how-video-sound" type="button" data-sound="off" hidden>
+              <svg class="how-video-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 9v6h4l5 4V5L7 9H3z"/><path class="how-video-waves" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="how-video-x" d="M16 9.5l5 5M21 9.5l-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <span class="how-video-sound-text">Turn sound on</span>
+            </button>
+          </div>
+          <figcaption class="how-video-caption">See a whole project with us in 90 seconds, from the first call to handover.</figcaption>
+          <!-- 2026-11-11 (Krishna: the transcript on the video page only, all the text shown): always open, no click needed.
+               was until 2026-11-11: inside a closed [details] "Read what happens in the video", the same list -->
+          <div class="how-video-transcript watch-transcript">
+            <h2 class="watch-transcript-title">What happens in the video</h2>
+            <!-- 2026-11-11 (Krishna: focus on customisation in the video, v5): two spoken lines changed. Was until 2026-11-11:
+                 "Here's how we work, in five clear steps." and "We design your website's own theme: its colours and typography.
+                 Then we plan every page, and write every word." -->
+            <ol>
+            <li>Messages pile up around a busy business owner. "Building a website shouldn't feel like a second job. With us, it doesn't." Our team walks in and shakes their hand. "Here's how we build it around your business, in five clear steps."</li>
+            <li><strong>Onboard.</strong> "First, onboard. You tell us once. We come prepared to one thirty minute call, with a clear plan we recommend for your business. You just say yes."</li>
+            <li><strong>Prep.</strong> "Then, prep. You see it take shape. We design a theme made just for you: your colours and typography. Then we plan every page, and write every word for your customers. Nothing is built until you agree."</li>
+            <li><strong>Build.</strong> "Build. You steer, we build. Watch it come to life on a live preview link, with a short call at each milestone. Want a change? Unlimited changes, across three review rounds."</li>
+            <li><strong>Launch.</strong> "Launch. Tested on every screen, and set up for search. Then, with your final yes, you're live."</li>
+            <li><strong>Handover.</strong> "Handover. You get back to your business. We train your team, and hand you full ownership, with a written guide. And our care plan keeps it fast and secure, as your business grows." New enquiries and bookings start to arrive.</li>
+            <li>"Built right. Built fast. Book a call, and talk to us in as little as thirty minutes."</li>
+            </ol>
+            <p>Narrated, with music and sound effects. Captions are in the video's menu.</p>
+          </div>
+        </figure>
+
+        <p class="watch-actions">
+          <a class="btn btn-primary" href="/book" data-book target="_blank" rel="noopener">Book a call<span class="sr-only"> (opens in a new tab)</span></a>
+          <a class="btn-link" href="services.html">See our services <span aria-hidden="true">→</span></a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 13. Footer (home.md §13, WEB-5.7). No Client login link until BIZ-3.10. -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">Aaurigo Tech</p>
+          <p class="footer-tagline">Launch fast. Learn faster. Grow smarter.</p>
+          <p class="footer-email"><a href="mailto:hello@aaurigotech.com">hello@aaurigotech.com</a></p> <!-- 2026-11-06 (Krishna: the Zoho aliases are live) -->
+          <p class="footer-social"><a href="https://www.linkedin.com/company/aaurigo-tech/" target="_blank" rel="noopener me"><svg class="footer-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn<span class="sr-only"> (opens in a new tab)</span></a></p> <!-- 2026-11-08 (Krishna: LinkedIn company page live; icon added the same day) -->
+        </div>
+        <nav aria-labelledby="footer-nav">
+          <p class="footer-heading label" id="footer-nav">Navigate</p>
+          <ul class="footer-links list-plain">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-work">
+          <p class="footer-heading label" id="footer-work">Work with us</p>
+          <ul class="footer-links list-plain">
+            <li><a href="websites.html">Websites</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#web-development --></li>
+            <li><a href="web-apps.html">Web apps</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#web-applications --></li>
+            <!-- was until 2026-10-21 (Krishna: brand combined with every service, not its own option): [li][a href="services.html#brand"]Brand[/a][/li] -->
+            <li><a href="mobile-apps.html">Mobile apps</a> <!-- was until 2026-10-31 (Krishna: a page for each service): services.html#mobile-apps --></li> <!-- was until 2026-10-14: Web Development · Web Applications · Mobile Apps -->
+            <li><a href="/book" data-book target="_blank" rel="noopener">Book a call<span class="sr-only"> (opens in a new tab)</span></a></li>
+          </ul>
+        </nav>
+        <div class="footer-news">
+          <p class="footer-heading label">Newsletter</p>
+          <p>Short notes on building and launching faster. One email a month.</p>
+          <!-- Posts to Zoho Campaigns once NEWS-1.11 is set up. -->
+          <!-- 2026-11-09 (Krishna: newsletter on Zoho Campaigns): posts to the Website newsletter list; was [form action="#" method="post"] with name="email" -->
+          <form action="/api/subscribe" method="post" data-zoho-signup> <!-- 2026-11-09: through our Cloudflare function to Zoho (Zoho dropped sign ups posted straight to its form); was action="https://zgp4-zgp4.maillist-manage.in/weboptin.zc" -->
+            <input type="hidden" name="page" value="accessibility">
+            <input type="checkbox" name="botcheck" hidden tabindex="-1" autocomplete="off"> <!-- spam trap: people never see it, bots tick it -->
+            <div class="field">
+              <label class="field-label" for="news-email">Your email address</label>
+              <div class="form-row">
+                <input class="field-input" id="news-email" name="email" type="email" autocomplete="email" required>
+                <button class="btn btn-primary" type="submit">Join</button>
+              </div>
+            </div>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> Aaurigo Tech. All rights reserved.</p>
+        <ul class="list-plain" aria-label="Legal">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="accessibility.html">Accessibility Statement</a></li>
+        </ul>
+        <!-- [PLACEHOLDER] Social links (LinkedIn, Instagram, GitHub, X) once WEB-1.4 is done. -->
+      </div>
+      <p class="footer-mark" aria-hidden="true">Aaurigo Tech</p> <!-- 2026-10-25 (Krishna: polish): the name set large and quiet as the closing moment; decorative, the brand is already named above -->
+    </div>
+  </footer>
+</body>
+</html>

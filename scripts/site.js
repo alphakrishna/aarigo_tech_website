@@ -494,7 +494,7 @@ const BOOKING = {
   // 1080p only when the frame itself is drawn wider than about 1100 real pixels (was the window width until 2026-11-09)
   const hdNow = () => !saveData && !slow && v.getBoundingClientRect().width * Math.min(devicePixelRatio || 1, 2) > 1100;
   // 2026-11-09 (Krishna: responsive on every screen, optimised): phones get the portrait 9:16 cut (same test as the CSS),
-  // and browsers that can play AV1 get a file about 25% smaller. Names: how-we-work-v4-{portrait|720|1080}[-av1].mp4
+  // and browsers that can play AV1 get a file about 25% smaller. Names: how-we-work-v5-{portrait|720|1080}[-av1].mp4 (v5 since 2026-11-11, was v4)
   const portrait = matchMedia("(max-width: 40rem)").matches;
   const av1 = /probably|maybe/.test(v.canPlayType('video/mp4; codecs="av01.0.08M.08, mp4a.40.2"'));
   if (portrait && v.dataset.posterPortrait) v.poster = v.dataset.posterPortrait;

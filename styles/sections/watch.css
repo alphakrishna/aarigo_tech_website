@@ -1,0 +1,32 @@
+/* How we work video page (2026-11-11, Krishna: the video on its own page with a small heading, so Google can index it).
+   The heading stays small so the video is in the first screen; the video itself uses how-video.css. */
+
+.watch { padding-top: var(--space-md); }
+
+.watch-head { margin-bottom: var(--space-sm); text-align: center; }
+.watch-title {
+  margin-top: .5rem;
+  font: 600 var(--text-h3)/1.15 var(--display);
+  letter-spacing: var(--tracking-title);
+  font-variation-settings: "opsz" 144;
+}
+.watch-title em { font-style: italic; font-weight: 500; color: var(--primary); }
+
+.watch .how-video { margin-top: 0; }
+
+.watch-actions {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: 1rem 1.5rem;
+  margin-top: var(--space-sm);
+}
+
+/* 2026-11-11 (Krishna: all the transcript text on the video page): always shown, readable body size, ink text */
+.watch-transcript { margin-top: var(--space-sm); font-size: var(--text-md); color: var(--ink); }
+.watch-transcript-title {
+  font: 600 var(--text-h3)/1.15 var(--display);
+  letter-spacing: var(--tracking-title);
+  font-variation-settings: "opsz" 144;
+  margin-bottom: 1rem;
+}
+.watch-transcript ol { gap: .875rem; margin-bottom: 1rem; }
+.watch-transcript p { color: var(--muted); font-size: var(--text-sm); }

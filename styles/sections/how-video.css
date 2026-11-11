@@ -34,6 +34,10 @@
 
 .how-video-caption { margin-top: .875rem; font-size: var(--text-sm); color: var(--muted); }
 
+/* 2026-11-11 (Krishna: one link button): Open the video page, on Home only, between the caption and the transcript */
+.how-video-page { margin-inline: auto; width: min(100%, calc((100svh - 8rem) * 16 / 9)); margin-top: 1rem; }  /* was .75rem until 2026-11-11, when the caption above it was removed */
+@media (max-width: 40rem) { .js .how-video-page { width: 100%; } }
+
 .how-video-transcript { margin-top: .5rem; font-size: var(--text-sm); color: var(--muted); max-width: var(--measure); }
 .how-video-transcript summary { cursor: pointer; color: var(--primary); font-weight: 600; min-height: 2.75rem; display: flex; align-items: center; }
 .how-video-transcript ol { margin: .25rem 0 .75rem; padding-left: 1.25rem; display: grid; gap: .5rem; }
