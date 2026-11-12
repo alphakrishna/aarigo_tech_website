@@ -47,6 +47,7 @@
   <!-- was until 2026-11-02 (the steps section moved to archive): [link rel="stylesheet" href="styles/sections/phases.css"] -->
   <link rel="stylesheet" href="styles/sections/faq.css">
   <link rel="stylesheet" href="styles/sections/service-cards.css">
+  <link rel="stylesheet" href="styles/sections/plans.css"> <!-- 2026-11-12: Two ways to start -->
   <link rel="stylesheet" href="styles/sections/cta.css">
   <link rel="stylesheet" href="styles/sections/footer.css">
 
@@ -122,13 +123,58 @@
               <!-- was until 2026-11-02 (moved under the price): [li][strong]Flexible payments[/strong][span]Pay in one go, or in two or three parts.[/span][/li] (was until 2026-11-02 (Krishna: a very small message): [strong]Pay the way that suits you[/strong][span]One payment, or split into two or three across the project, whichever works best for your cash flow.[/span]) --> <!-- 2026-11-02 (Krishna: one payment, two or three instalments, for all three services) -->
               <li><strong>With you all the way</strong><span>VIP support by email and video call in your business hours, from the first call to launch day.</span></li>
             </ul>
-            <p class="offer-price"><span class="label">From</span><span class="offer-amount" data-price="website">A$4,999</span></p>
+            <!-- was until 2026-11-12 (Krishna: two prices in the Websites card, 6 pages and a single page): [p class="offer-price"][span class="label"]From[/span][span class="offer-amount" data-price="website"]A$3,999[/span]( was until 2026-11-12: A$4,999 )[/p] -->
+            <div class="offer-prices">
+              <p class="offer-price"><span class="label">Up to 6 pages, from</span><span class="offer-amount" data-price="website">A$3,999</span></p>
+              <p class="offer-price"><span class="label">Single page, from</span><span class="offer-amount" data-price="landing">A$1,499</span></p>
+            </div>
             <p class="offer-pay">Pay in one go, or split it into 2 or 3 payments. <a class="btn-link" href="services.html#pay-instalments">Get more information <span aria-hidden="true">→</span></a></p> <!-- 2026-11-02 (Krishna: under each card's price, like "Investment ... (split into ... payments)" with a Get more information link) -->
             <div class="offer-actions">
               <a class="btn btn-primary" href="/book" data-book target="_blank" rel="noopener">Book a call about a website <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
             </div>
           </div>
         </article>
+      </div>
+    </section>
+
+    <!-- 2026-11-12 (Krishna: the landing page goes on Services; this page gives more detail on the complete website plan) -->
+    <section class="section" id="two-ways" aria-labelledby="two-ways-title">
+      <div class="container reveal-scroll">
+        <div class="section-head">
+          <h2 class="section-title" id="two-ways-title">Two ways <em>to start.</em></h2>
+        </div>
+        <div class="plans">
+          <article class="plan">
+            <h3 class="plan-name">Landing page</h3>
+            <p class="plan-for">One page for your ads, when you need results first.</p>
+            <ul class="plan-list list-plain">
+              <!-- was until 2026-11-12 (Krishna: concise, the same points as the Services card): One page, one offer, one clear next step · Words written with you · Light and fast on phones · Enquiries straight to your inbox · Two weeks of our care plan included -->
+              <li>One page, one clear goal</li>
+              <li>Words written with you</li>
+              <li>Fast on phones</li>
+              <li>Enquiries to your inbox</li>
+              <li>Two weeks of care included</li>
+            </ul>
+            <p class="plan-price"><span class="plan-from">From</span> <span data-price="landing">A$1,499</span></p>
+            <a class="btn-link" href="/book" data-book target="_blank" rel="noopener">Book a call about a single page <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a> <!-- was until 2026-11-12 (the Services landing card was removed): [a class="btn-link" href="services.html#landing-page"]See the landing page[/a] -->
+          </article>
+          <article class="plan plan-full">
+            <h3 class="plan-name">Complete website</h3>
+            <p class="plan-for">Your whole business online, built to win customers for years.</p>
+            <ul class="plan-list list-plain">
+              <li>Up to 6 custom pages in your colours, fonts and voice</li>
+              <li>Home, services, about, contact and the pages your customers need</li>
+              <li>Tested on phones, tablets, laptops and large displays</li>
+              <li>Fast, and meets the accessibility standard (WCAG 2.2 AA)</li>
+              <li>Set up for search engines and AI answers</li>
+              <li>Unlimited changes across three review rounds</li>
+              <li>VIP support from the first call to launch day</li>
+              <li>Two weeks of our care plan included</li>
+            </ul>
+            <p class="plan-price"><span class="plan-from">From</span> <span data-price="website">A$3,999</span></p>
+            <a class="btn btn-primary" href="/book" data-book target="_blank" rel="noopener">Book a call about a website <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+          </article>
+        </div>
       </div>
     </section>
 

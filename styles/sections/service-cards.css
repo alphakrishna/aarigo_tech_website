@@ -409,3 +409,119 @@
   .cards-page .extra:has(> .extra-photo img) > :last-child { margin-bottom: 1.25rem; }
 }
 @media (max-width: 55rem) { .cards-page .extras-grid .premium-list li::before { top: .55em; } }   /* the dot sits level with the smaller text */
+
+/* Landing page card, smaller (2026-11-12, Krishna: "it became a little too big"): on wide screens the photo takes a
+   narrower column and the text sits closer, so this entry offer reads lighter than the three main packages. */
+@media (min-width: 55.01rem) {
+  .cards-page #landing-page.offer-has-media { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+  .cards-page #landing-page > .offer-main { padding-top: clamp(1.5rem, 3vw, 2.5rem); }
+  .cards-page #landing-page > .offer-side { padding-top: 1rem; padding-bottom: clamp(1.5rem, 3vw, 2.5rem); gap: 1.25rem; }
+  .cards-page #landing-page .offer-path { margin-top: 1.25rem; }
+  .cards-page #landing-page .offer-specs li { padding-block: .55rem; }
+  /* was until 2026-11-12 (still too big, Krishna): .cards-page #landing-page .offer-photo img { object-position: 50% 30%; } */
+  /* the whole photo, smaller, inside a pale champagne panel instead of a full half card crop */
+  .cards-page #landing-page .offer-photo { display: flex; align-items: center; justify-content: center; padding: clamp(1.5rem, 3vw, 2.5rem); background: var(--glow); }
+  .cards-page #landing-page .offer-photo img { position: static; width: 100%; max-width: 20rem; height: auto; aspect-ratio: 4 / 5; border-radius: var(--radius-card); }
+}
+
+/* Landing page card, a step smaller again (2026-11-12, Krishna: "make the card a little smaller"): narrower than the
+   packages, no empty band above What you get, a smaller title and tighter list. */
+@media (min-width: 55.01rem) {
+  .cards-page #landing-page { max-width: 60rem; margin-inline: auto; row-gap: 0; grid-template-rows: auto auto; }
+  .cards-page #landing-page > .offer-main { padding-top: clamp(1.25rem, 2.5vw, 2rem); }
+  .cards-page #landing-page > .offer-side { padding-top: .75rem; padding-bottom: clamp(1.25rem, 2.5vw, 2rem); gap: 1rem; }
+  .cards-page #landing-page .offer-name { font-size: var(--text-h3); }
+  .cards-page #landing-page .offer-line { margin-top: .75rem; }
+  .cards-page #landing-page .offer-path { margin-top: 1rem; }
+  .cards-page #landing-page .offer-who { margin-top: .5rem; }
+  .cards-page #landing-page .offer-specs li { padding-block: .4rem; }
+  .cards-page #landing-page .offer-photo img { max-width: 16rem; }
+}
+
+/* Landing page card, smaller still (2026-11-12, Krishna: "make the card more smaller"): narrower, smaller text and photo. */
+@media (min-width: 55.01rem) {
+  .cards-page #landing-page { max-width: 50rem; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); }
+  .cards-page #landing-page > .offer-main,
+  .cards-page #landing-page > .offer-side { padding-inline: clamp(1.25rem, 2.5vw, 2rem); }
+  .cards-page #landing-page .offer-line { font-size: var(--text-md); }
+  .cards-page #landing-page .offer-who,
+  .cards-page #landing-page .offer-specs li,
+  .cards-page #landing-page .offer-pay { font-size: var(--text-sm); }
+  .cards-page #landing-page .offer-amount { font-size: var(--text-lead); }
+  .cards-page #landing-page .offer-specs li { padding-block: .3rem; }
+  .cards-page #landing-page .offer-actions { gap: .75rem; }
+  .cards-page #landing-page .offer-photo { padding: 1.25rem; }
+  .cards-page #landing-page .offer-photo img { max-width: 12.5rem; }
+}
+
+/* Landing page photo full size (2026-11-12, Krishna: "make sure the image is full size"): the photo fills its whole
+   half of the small card again, edge to edge, in place of the small inset on the champagne panel. */
+@media (min-width: 55.01rem) {
+  .cards-page #landing-page.offer-has-media { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }   /* was 1.25fr 1fr the same day: too close a crop; .offer-has-media added so it outranks the first block */
+  .cards-page #landing-page .offer-photo { display: block; padding: 0; background: none; }
+  .cards-page #landing-page .offer-photo img { position: absolute; inset: 0; width: 100%; max-width: none; height: 100%; aspect-ratio: auto; border-radius: 0; object-fit: cover; object-position: 48% 50%; }   /* was 35% 40%, then 62% 50% the same day (cut the face): face, pointing hand and laptop */
+}
+
+/* was until 2026-11-12 (Krishna, same day: "make it a horizontal card, not vertical"; back to the side by side card above):
+Landing page card vertical (2026-11-12, Krishna: "make this card more vertical, not horizontal"): one narrow column,
+   the photo on top, then the text; centred under the packages. Overrides the side by side blocks above.
+@media (min-width: 55.01rem) {
+  .cards-page #landing-page.offer-has-media { max-width: 26rem; grid-template-columns: minmax(0, 1fr); grid-template-rows: none; }
+  .cards-page #landing-page.offer-has-media > .offer-media,
+  .cards-page #landing-page.offer-has-media > .offer-main,
+  .cards-page #landing-page.offer-has-media > .offer-side { grid-column: 1; grid-row: auto; }
+  .cards-page #landing-page.offer-has-media > .offer-media { order: -1; min-height: 0; aspect-ratio: 1 / 1; }   (was 4 / 3 the same day: the pointing hand was cut)
+  .cards-page #landing-page .offer-photo img { object-position: 45% 12%; }   (was 45% 35% the same day: cut the top of his head)
+  .cards-page #landing-page .offer-actions .btn { width: 100%; justify-content: center; }
+}
+*/
+
+/* Landing page card more horizontal (2026-11-12, Krishna: "make it more horizontal"): wider and shorter, in three
+   columns: the name and line, then what you get with the price and buttons, then the photo. */
+@media (min-width: 55.01rem) {
+  .cards-page #landing-page.offer-has-media { max-width: 66rem; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) minmax(0, .95fr); grid-template-rows: auto; }
+  .cards-page #landing-page.offer-has-media > .offer-main { grid-column: 1; grid-row: 1; padding-bottom: clamp(1.25rem, 2.5vw, 2rem); }
+  .cards-page #landing-page.offer-has-media > .offer-side { grid-column: 2; grid-row: 1; padding-top: clamp(1.25rem, 2.5vw, 2rem); padding-inline-start: 0; }
+  .cards-page #landing-page.offer-has-media > .offer-media { grid-column: 3; grid-row: 1; }
+  .cards-page #landing-page .offer-photo img { object-position: 45% 40%; }
+}
+
+/* Landing page card, polished (2026-11-12, Krishna: "make it feel more polished"): the first column becomes a pale
+   champagne panel with a larger title, both text columns sit centred so no column has an empty band, and the price
+   gets more weight. Same three columns as above. */
+@media (min-width: 55.01rem) {
+  .cards-page #landing-page.offer-has-media > .offer-main {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: clamp(1.75rem, 3vw, 2.75rem); background: var(--glow);
+  }
+  .cards-page #landing-page .offer-name { font-size: var(--text-h2); line-height: 1; }
+  .cards-page #landing-page .offer-line { margin-top: 1rem; font-size: var(--text-lead); max-width: 16ch; }
+  .cards-page #landing-page .offer-path { margin-top: 1.5rem; }
+  .cards-page #landing-page .offer-who { margin-top: .5rem; color: var(--muted-deep); }
+  .cards-page #landing-page.offer-has-media > .offer-side {
+    align-content: center; padding: clamp(1.75rem, 3vw, 2.75rem);
+  }
+  .cards-page #landing-page .offer-amount { font: 600 var(--text-h3)/1 var(--display); }
+  .cards-page #landing-page .offer-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; }
+  .cards-page #landing-page .offer-actions .btn-link { white-space: nowrap; }   /* the link wrapped badly at 900 px */
+}
+
+/* Landing page card after Websites (2026-11-12, Krishna: "put this after the website card"). It now sits between
+   Websites and Web apps, so those two are no longer one joined block: each gets its own round corners and gap back,
+   and Web apps and Mobile apps keep the photo sides they had (the even/odd rule above would flip them). */
+.cards-page #web-development:has(+ #landing-page) { border-bottom-left-radius: var(--radius-card); border-bottom-right-radius: var(--radius-card); }
+.cards-page #landing-page + #web-applications { margin-top: clamp(1.25rem, 2.5vw, 2rem); border-top-left-radius: var(--radius-card); border-top-right-radius: var(--radius-card); border-top: 0; }
+@media (min-width: 55.01rem) {
+  .cards-page #web-applications.offer-has-media > .offer-main,
+  .cards-page #web-applications.offer-has-media > .offer-side { grid-column: 1; }
+  .cards-page #web-applications.offer-has-media > .offer-media { grid-column: 2; }
+  .cards-page #mobile-apps.offer-has-media > .offer-main,
+  .cards-page #mobile-apps.offer-has-media > .offer-side { grid-column: 2; }
+  .cards-page #mobile-apps.offer-has-media > .offer-media { grid-column: 1; }
+}
+
+/* Two prices in the Websites card (2026-11-12, Krishna: up to 6 pages from US$2,699, a single page from US$999):
+   side by side, the same style each, one rule under both. */
+.offer-prices { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr)); gap: 1rem 2rem; }   /* no rule under it, like the other card prices */
+.offer-prices .offer-price { border-bottom: 0; padding-bottom: 0; }
+.cards-page :is(#web-development) .offer-specs + .offer-prices { margin-top: .75rem; }

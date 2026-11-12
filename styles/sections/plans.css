@@ -1,0 +1,36 @@
+/* Two ways to start (websites.html, 2026-11-12, Krishna): the landing page beside the complete website plan.
+   Two round cards side by side, stacked on phones; the complete website on pale champagne so it reads as the full plan. */
+.plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+.plan {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  background: var(--surface);
+  border: var(--rule);
+  border-radius: var(--radius-card);
+}
+.plan-full { background: var(--glow); }
+.plan-name { font: 600 var(--text-h3)/1.1 var(--display); font-style: italic; letter-spacing: var(--tracking-title); }
+.plan-for { color: var(--muted-deep); max-width: 36ch; }
+.plan-list { display: grid; gap: .6rem; padding-top: 1rem; border-top: var(--rule-strong); }
+.plan-list li { position: relative; padding-left: 1.1rem; font-size: var(--text-sm); text-wrap: pretty; }
+.plan-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .6em;
+  width: .4rem;
+  height: .4rem;
+  border-radius: var(--radius-pill);
+  background: var(--spark);
+}
+.plan-price { display: flex; align-items: baseline; gap: .5rem; margin-top: .5rem; font: 600 var(--text-lead)/1.2 var(--body); }
+.plan .btn, .plan .btn-link { justify-self: start; }
+/* plain body text, no mono capitals inside cards (2026-11-03 rule) */
+.plan-from { font: 400 var(--text-sm)/1 var(--body); color: var(--muted-deep); }

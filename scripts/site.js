@@ -267,12 +267,21 @@ if (speed && window.performance && performance.getEntriesByType) {
 // Australia's apps from a higher US$ base (16,499 · 23,499) because local prices there are about twice as high. Strategy in doc/rate-card-internal.md §1.
 // Was the same day: AUD webapp 13999 mobile 23999 · AED 34999 58499 · GBP 7499 12499 · USD 9499 15999
 // 2026-10-31 (Krishna: Brand up to 2k): Brand US$1,999, converted the same way; was AUD 1799, AED 4399, GBP 949, USD 1199
+// 2026-11-12 (Krishna: about 20% lower, "the client may compromise on the features but not on the price"; landing page
+// for ads added as an entry offer, not shown on any page until Krishna approves its wording). doc/rate-card-internal.md §3.
 const PRICES = {
-  AUD: { website: 4999, webapp: 24999, mobile: 34999, brand: 2999, care: 449 },   // website was 6499 until 2026-10-31; brand was 999 until 2026-10-22 (Krishna: Brand US$1,199 with the full brand kit); care was 299 until 2026-10-22 (Krishna: care plan from US$299 a month)
-  AED: { website: 12999, webapp: 43999, mobile: 65999, brand: 7499, care: 1099 },   // website was 16499 until 2026-10-31; brand was 2499 until 2026-10-22 (Krishna: Brand US$1,199 with the full brand kit); care was 749 until 2026-10-22 (Krishna: care plan from US$299 a month)
-  GBP: { website: 2499, webapp: 9499, mobile: 13999, brand: 1499, care: 249 },   // website was 3499 until 2026-10-31; brand was 549 until 2026-10-22 (Krishna: Brand US$1,199 with the full brand kit); care was 149 until 2026-10-22 (Krishna: care plan from US$299 a month)
-  USD: { website: 3499, webapp: 11999, mobile: 17999, brand: 1999, care: 299 },   // website was 4499 until 2026-10-31; brand was 699 until 2026-10-22 (Krishna: Brand US$1,199 with the full brand kit); care was 199 until 2026-10-22 (Krishna: care plan from US$299 a month)
+  AUD: { website: 3999, webapp: 19999, mobile: 27999, brand: 2499, care: 449, landing: 1499 },
+  AED: { website: 9999, webapp: 36999, mobile: 54999, brand: 5499, care: 1099, landing: 3699 },
+  GBP: { website: 1999, webapp: 7999, mobile: 11999, brand: 1199, care: 249, landing: 799 },
+  USD: { website: 2699, webapp: 9999, mobile: 14999, brand: 1499, care: 299, landing: 999 },
 };
+// was until 2026-11-12:
+// const PRICES = {
+//   AUD: { website: 4999, webapp: 24999, mobile: 34999, brand: 2999, care: 449 },   // website was 6499 until 2026-10-31; brand was 999 until 2026-10-22 (Krishna: Brand US$1,199 with the full brand kit); care was 299 until 2026-10-22 (Krishna: care plan from US$299 a month)
+//   AED: { website: 12999, webapp: 43999, mobile: 65999, brand: 7499, care: 1099 },   // website was 16499 until 2026-10-31; brand was 2499 until 2026-10-22 (Krishna: Brand US$1,199 with the full brand kit); care was 749 until 2026-10-22 (Krishna: care plan from US$299 a month)
+//   GBP: { website: 2499, webapp: 9499, mobile: 13999, brand: 1499, care: 249 },   // website was 3499 until 2026-10-31; brand was 549 until 2026-10-22 (Krishna: Brand US$1,199 with the full brand kit); care was 149 until 2026-10-22 (Krishna: care plan from US$299 a month)
+//   USD: { website: 3499, webapp: 11999, mobile: 17999, brand: 1999, care: 299 },   // website was 4499 until 2026-10-31; brand was 699 until 2026-10-22 (Krishna: Brand US$1,199 with the full brand kit); care was 199 until 2026-10-22 (Krishna: care plan from US$299 a month)
+// };
 // was until 2026-10-22 (Krishna: packages about 15% below the hourly value at US$75):
 // const PRICES = {
 //   AUD: { website: 5999, webapp: 17999, mobile: 26999, brand: 999, care: 299 },
