@@ -252,7 +252,8 @@ if (speed && window.performance && performance.getEntriesByType) {
 
 // ---------- Prices in the visitor's currency (Services, 2026-10-21) ----------
 // Krishna's prices are in AUD. care = the care plan for a website, 10% of its price per month (2026-10-21). The other currencies are rounded prices for the same packages:
-// [CONFIRM] Krishna to approve each number before launch (rate card, BIZ-1.12). Market names never appear on the site.
+// [CONFIRM] Krishna to approve each number before launch (rate card, BIZ-1.12). Market names: only Australia and the UAE appear on the site (2026-11-16, RFA §8.1). <!-- was until 2026-11-16: Market names never appear on the site. -->
+// 2026-11-16: a page can fix its currency with data-currency on <body> (the Australia page shows A$, the UAE page AED, for every visitor and crawler).
 // The currency is picked automatically from the device time zone (nothing is sent anywhere, nothing is stored).
 // 2026-10-22 (Krishna: middle of the market, whole numbers): the middle of each market range Krishna gave, rounded to the nearest 1,000. Brand unchanged.
 // 2026-10-22 (Krishna: 99 pricing, every price ends in 9s): each price one under the round number.
@@ -322,7 +323,9 @@ const SYMBOL = { AUD: "A$", AED: "AED\u00a0", GBP: "£", USD: "US$" };
 // The currency is set automatically from the device time zone; there is no picker (2026-10-21, Krishna).
 if (document.querySelector("[data-price]")) {
   const zone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
-  const code = zone.startsWith("Australia/") ? "AUD"
+  const fixed = document.body.dataset.currency;   // 2026-11-16: country pages fix their currency
+  const code = PRICES[fixed] ? fixed
+    : zone.startsWith("Australia/") ? "AUD"
     : zone === "Asia/Dubai" ? "AED"
     : zone === "Europe/London" ? "GBP"
     : "USD";
@@ -625,3 +628,115 @@ function showThanks(form) {
   if (typeof pop.showModal === "function") pop.showModal();
   else { const s = form?.querySelector(".form-status"); if (s) s.textContent = "Thank you. You are on the list."; }
 }
+
+// 2026-11-16 (Krishna: a reading widget like the How we work video): the reading cup on articles. The founder sits at a
+// cafe table with a flat white that empties as you read; the number shows how much of the article you have read.
+// Redrawn the same day (Krishna: full body on a chair, one leg over the other, his hand moving): each time you read
+// another 10% he lifts the glass and takes a sip. The arm only moves when you read on, never in a loop, and never with
+// reduced motion. Only on pages with [data-read-cup].
+(() => {
+  const cup = document.querySelector("[data-read-cup]");
+  const body = document.querySelector(".legal-body");
+  if (!cup || !body) return;
+  const coffee = cup.querySelector(".read-cup-coffee");
+  const steam = cup.querySelector(".read-cup-steam");
+  const arm = cup.querySelector(".read-cup-arm");
+  const mug = cup.querySelector(".read-cup-mug");
+  const shoulder = cup.querySelector(".read-cup-shoulder");   // 2026-11-16: the whole arm swings up for the cheers
+  const pct = cup.querySelector(".read-cup-pct");
+  const label = cup.querySelector(".read-cup-label");
+  const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const DRAIN = 9.5;   // how far the coffee sinks when the glass is empty (SVG units)
+  let last = -1;
+  let sipped = 0;      // the last 10% step he took a sip for
+  let first = true;    // the first count, when the page opens
+  let sipping = false;
+  let level = 0;       // how much has been read, 0 to 1
+  let queued = false;
+
+  // One sip: the forearm turns up around the elbow, the glass stays upright and tips a little towards his mouth.
+  // armTo / mugTo: the angles at the top of the move. A sip: -75 and 50 (the glass tips towards his mouth).
+  // 2026-11-16 (Krishna: celebrate at 100%): a toast, -50 and 40 (the glass raised out to the side, clear of his face).
+  // 2026-11-16 (Krishna: "raise the glass high on cheers"): the shoulder turn lifts the whole arm; the elbow and the
+  // glass turn back so the glass is held high and upright, above his head. A sip keeps the shoulder still.
+  const pose = (t, armTo = -75, mugTo = 50, shoulderTo = 0) => {
+    if (shoulder) shoulder.setAttribute("transform", `rotate(${(shoulderTo * t).toFixed(1)} 53 56)`);
+    steam.style.opacity = String((1 - level) * (1 - t));   // no steam across his face while he drinks
+    arm.setAttribute("transform", `rotate(${(armTo * t).toFixed(1)} 57 67)`);
+    mug.setAttribute("transform", `rotate(${(mugTo * t).toFixed(1)} 73 64)`);
+  };
+  const ease = (x) => (x < 0.5 ? 2 * x * x : 1 - (-2 * x + 2) ** 2 / 2);
+  const move = (armTo, mugTo, UP, HOLD, DOWN, shoulderTo = 0) => {
+    if (calm || sipping) return false;
+    sipping = true;
+    const start = performance.now();
+    const step = (now) => {
+      const ms = now - start;
+      if (ms < UP) pose(ease(ms / UP), armTo, mugTo, shoulderTo);
+      else if (ms < UP + HOLD) pose(1, armTo, mugTo, shoulderTo);
+      else if (ms < UP + HOLD + DOWN) pose(ease(1 - (ms - UP - HOLD) / DOWN), armTo, mugTo, shoulderTo);
+      else { pose(0); sipping = false; return; }
+      requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+    return true;
+  };
+  const sip = () => move(-75, 50, 700, 800, 700);
+
+  // 2026-11-16 (Krishna: "at 100% they should be celebrating, a pop up and balloons going up"): once per visit he raises
+  // his glass, smiles wide, "Cheers!" pops up, confetti bursts and three balloons rise (insights.css). If he is still
+  // finishing a sip, the toast waits for it.
+  // 2026-11-16 (Krishna: "it should happen each time it reaches 100"): every time the count comes back up to 100%, not
+  // once per visit. A new celebration restarts the balloons and confetti from the start. Was until the same day: once per
+  // visit (let partied = false; ... if (n === 100 && !partied)).
+  let partyEnd = 0;
+  const party = () => {
+    if (sipping && !calm) { setTimeout(party, 250); return; }
+    clearTimeout(partyEnd);
+    cup.classList.remove("is-party");
+    void cup.offsetWidth;            // restart the CSS animations
+    cup.classList.add("is-party");
+    move(60, 71, 700, 2600, 800, -131);   // the glass raised high above his head (was until 2026-11-16: move(-50, 40, ...), out to the side at shoulder height)
+    partyEnd = setTimeout(() => cup.classList.remove("is-party"), 5600);
+  };
+
+  const update = () => {
+    queued = false;
+    const box = body.getBoundingClientRect();
+    // 2026-11-16 (Krishna: "I reached Related articles and it still shows 95%"): 0% at the top of the page, 100% as soon
+    // as the end of the article (Related articles included) is in view at the bottom of the screen, or the page can't
+    // scroll any further. Was until 2026-11-16: done = (scrollY - top + innerHeight * 0.25) / (height - innerHeight * 0.5),
+    // which only reached 100% when the end of the article was in the middle of the screen.
+    const related = body.querySelector(".post-related");                             // the article ends where Related articles start
+    const end = (related ? related.getBoundingClientRect().top + 40 : box.bottom) + window.scrollY;   // 40: the heading's first line in view
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;   // how far the page can scroll at all
+    // 2026-11-16 (Krishna: "add some percentage on the page visit; we can read the main heading just by visiting"):
+    // the count is how much of the article has been on screen, from the top of the page to the bottom edge of the
+    // screen, so the heading, the lead and the short answer count as soon as the page opens.
+    // Was until the same day: done = scrollY / (end - innerHeight), which started at 0% with the heading already in view.
+    const seen = window.scrollY + window.innerHeight;                               // everything above the bottom edge of the screen
+    const done = window.scrollY >= maxScroll - 2 ? 1 : Math.min(1, Math.max(0, seen / Math.max(1, end)));
+    const n = Math.round(done * 100);
+    const band = document.querySelector(".cta-glow");   // light words over the black call to action band, checked on every scroll
+    if (band) { const b = band.getBoundingClientRect(), c = cup.getBoundingClientRect(); cup.classList.toggle("is-on-dark", c.bottom > b.top && c.top < b.bottom); }
+    if (n === last) return;
+    last = n;
+    coffee.style.transform = `translateY(${(done * DRAIN).toFixed(2)}px)`;   // a CSS transform, so the drop eases (insights.css); px are SVG units here
+    level = done;
+    if (!sipping) steam.style.opacity = String(1 - done);
+    pct.textContent = n === 100 ? "All" : `${n}%`;
+    label.textContent = n === 100 ? "read, thank you" : "read";
+    cup.setAttribute("aria-valuenow", String(n));
+    cup.style.setProperty("--read", done.toFixed(3));   // the reading line on the bottom bar (tablets and phones, insights.css)
+    const tenth = Math.floor(n / 10);
+    if (first) { sipped = tenth; first = false; }   // no sip for what was already on screen when the page opened
+    cup.classList.toggle("is-done", n === 100);     // the wide smile while the article is finished
+    if (tenth < sipped) sipped = tenth;               // scrolled back up: he sips again on the way down
+    if (n === 100) { sipped = 10; party(); }        // every time it reaches 100% (the count only runs here when it changed)
+    else if (tenth > sipped) { sipped = tenth; sip(); }
+  };
+  const ask = () => { if (!queued) { queued = true; requestAnimationFrame(update); } };
+  window.addEventListener("scroll", ask, { passive: true });
+  window.addEventListener("resize", ask);
+  update();
+})();

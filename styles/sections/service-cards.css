@@ -525,3 +525,18 @@ Landing page card vertical (2026-11-12, Krishna: "make this card more vertical, 
 .offer-prices { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr)); gap: 1rem 2rem; }   /* no rule under it, like the other card prices */
 .offer-prices .offer-price { border-bottom: 0; padding-bottom: 0; }
 .cards-page :is(#web-development) .offer-specs + .offer-prices { margin-top: .75rem; }
+
+/* 2026-11-16 (Krishna: wording people search for, e.g. corporate website, creative website): "What we build" on the
+   three service pages. One white card per kind of site or app, its name as an H3 so search engines read each kind. */
+.cards-page .kind-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 1.5rem); }
+.cards-page .kind { padding: clamp(1.5rem, 3vw, 2rem); background: var(--surface); border-radius: var(--radius-card); }
+.cards-page .kind h3 { font-family: var(--display); font-size: var(--text-h3); font-style: italic; font-weight: 500; line-height: 1.2; }
+.cards-page .kind p { margin-top: .75rem; color: var(--muted); font-size: var(--text-md); line-height: 1.6; }   /* 16px, the card text size (2026-11-03 rule above); was until 2026-11-16: var(--text-sm) */
+.cards-page .kind a { color: var(--primary); }
+@media (max-width: 63.99rem) { .cards-page .kind-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 40rem) { .cards-page .kind-grid { grid-template-columns: minmax(0, 1fr); } }
+/* 2026-11-16 (Krishna: highlight the important terms, same font style): key terms in bold, in the body font and ink,
+   like the bold names in the package lists. Never italic, never a different font or size. */
+.cards-page .kind p strong { font-weight: 600; color: var(--ink); }
+.intro-glow .page-lead strong { font-weight: 600; color: var(--on-dark); }
+.section-intro strong { font-weight: 600; color: var(--ink); }

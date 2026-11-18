@@ -4,13 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Custom Website Design and Development | Aaurigo Tech</title>
-  <meta name="description" content="A custom website of up to 6 pages, built in one week after one week of prep together. Tested on every screen, set up to be found, with two weeks of care."> <!-- 2026-11-09 (Krishna: descriptions 160 characters or fewer, WEB-16.2). was until 2026-11-09: A custom website of up to 6 pages, built in one week after one week of prep together. Tested on every screen, set up to be found, with two weeks of care included after launch. -->
+  <meta name="description" content="Custom website design for business: small business, corporate and portfolio websites of up to 6 pages, built in one week after one week of prep together."> <!-- 2026-11-09 (Krishna: descriptions 160 characters or fewer, WEB-16.2). was until 2026-11-09: A custom website of up to 6 pages, built in one week after one week of prep together. Tested on every screen, set up to be found, with two weeks of care included after launch. -->
   <link rel="canonical" href="https://www.aaurigotech.com/websites"> <!-- 2026-11-03: self canonical on the final www address (RFA §5.11) -->
+  <!-- was until 2026-11-16 (Krishna: wording people search for, like corporate website or creative website): description, og:description and Service schema description were: A custom website of up to 6 pages, built in one week after one week of prep together. Tested on every screen, set up to be found, with two weeks of care. -->
   <!-- Share previews on LinkedIn, WhatsApp, Facebook and X (2026-11-09, Krishna; WEB-16.3). Image master: media-originals/brand/share/ -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Aaurigo Tech">
   <meta property="og:title" content="Custom Website Design and Development | Aaurigo Tech">
-  <meta property="og:description" content="A custom website of up to 6 pages, built in one week after one week of prep together. Tested on every screen, set up to be found, with two weeks of care.">
+  <meta property="og:description" content="Custom website design for business: small business, corporate and portfolio websites of up to 6 pages, built in one week after one week of prep together.">
   <meta property="og:url" content="https://www.aaurigotech.com/websites">
   <meta property="og:locale" content="en_GB">
   <meta property="og:image" content="https://www.aaurigotech.com/media/share/share-default.jpg">
@@ -19,6 +20,7 @@
   <meta property="og:image:alt" content="Aaurigo Tech. Built right. Built fast. Premium websites, web apps and mobile apps, with founder Krishna Singh.">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.aaurigotech.com/"}, {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.aaurigotech.com/services"}, {"@type": "ListItem", "position": 3, "name": "Websites", "item": "https://www.aaurigotech.com/websites"}]}</script> <!-- 2026-11-03: BreadcrumbList on inner pages (RFA §5.11) -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "@id": "https://www.aaurigotech.com/websites#service", "name": "Custom website design and development", "serviceType": "Website design and development", "description": "Custom website design for business: small business, corporate and portfolio websites of up to 6 pages, built in one week after one week of prep together.", "url": "https://www.aaurigotech.com/websites", "provider": {"@id": "https://www.aaurigotech.com/#organization"}}, {"@type": "Organization", "@id": "https://www.aaurigotech.com/#organization", "name": "Aaurigo Tech", "url": "https://www.aaurigotech.com/"}]}</script> <!-- 2026-11-16 (Krishna: schema for authority): Service schema, matches the page. No Offer or price on purpose: the visible price changes with the visitor's currency (site.js), and markup must match what is shown -->
   <!-- 2026-10-31 (Krishna: a page for each service, linked as "Know more" from Services). Structure borrowed from the reference
        service page (what you get, the steps, investment, questions, call), our own words. Header and footer are copies until the Astro port (WEB-3.2). -->
 
@@ -76,6 +78,7 @@
         <ul class="nav-list list-plain" id="main-menu">
           <li><a href="services.html" aria-current="true">Services</a></li>
           <li><a href="work.html">Work</a></li>
+          <li><a href="insights.html">Insights</a></li> <!-- 2026-11-16 (Krishna: Insights in the burger menu and the nav bar) -->
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -91,7 +94,7 @@
     <section class="page-intro intro-glow">
       <div class="container reveal">
         <h1 class="page-title">A website as good as <em>your business.</em></h1>
-        <p class="page-lead">One week of prep together, then one week to design and build every page. A website that finally shows people how good you are.</p>
+        <p class="page-lead"><strong>Custom website design</strong> for your business. One week of prep together, then one week to design and build every page, so people finally see how good you are.</p> <!-- was until 2026-11-16 (Krishna: wording people search for): One week of prep together, then one week to design and build every page. A website that finally shows people how good you are. -->
       </div>
     </section>
 
@@ -206,6 +209,24 @@
       </div>
     </section>
 
+    <!-- 2026-11-16 (Krishna: wording people search for, like corporate website or creative website): the kinds of website we build, each name an H3 -->
+    <section class="section" aria-labelledby="kinds-title">
+      <div class="container reveal-scroll">
+        <header class="section-head">
+          <h2 class="section-title" id="kinds-title">Websites we <em>design and build.</em></h2>
+          <p class="section-intro">Every one is <strong>custom designed</strong>, fast on phones and set up to be found in search.</p>
+        </header>
+        <div class="kind-grid">
+          <article class="kind"><h3>Business websites</h3><p>A professional <strong>business website</strong> that shows what you do, who it's for and how to reach you, so visitors become enquiries.</p></article>
+          <article class="kind"><h3>Small business websites</h3><p>Everything a <strong>small business website</strong> needs on up to 6 pages, from one clear price, with none of the template look.</p></article>
+          <article class="kind"><h3>Corporate websites</h3><p>A polished <strong>corporate website</strong> for established companies: your services, your team and your standards. More pages with <a href="services.html#premium-upgrade">Premium</a>.</p></article>
+          <article class="kind"><h3>Creative and portfolio websites</h3><p>A <strong>portfolio website</strong> for studios, designers, photographers and creative businesses, where your work is the hero.</p></article>
+          <article class="kind"><h3>Personal brand websites</h3><p>A <strong>personal brand website</strong> for founders, consultants and doctors who are the face of their business, like the <a href="case-study-dr-arpan-gandhi.html">website we built for Dr. Arpan Gandhi</a>.</p></article>
+          <article class="kind"><h3>Website redesigns</h3><p>A <strong>website redesign</strong> when your current site is slow, dated or hard to change. We keep what works and rebuild the rest, so you don't lose what you've earned in search.</p></article>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-alt" aria-labelledby="faq-title">
       <div class="container faq-grid reveal-scroll">
         <header class="section-head">
@@ -218,6 +239,7 @@
           <details><summary>Can I edit the website myself?</summary><p>We keep your website free of an editing panel, so nothing can slow it down or break it. Every change is made by us instead.</p></details>
           <details><summary>What does it cost to run?</summary><p>Hosting and your domain. They're set up in your name and you pay the providers directly, so nothing is ever locked to us.</p></details>
           <details><summary>Can you rebuild my current website?</summary><p>Yes. We tell you honestly whether to improve it or start fresh.</p></details>
+          <details><summary>How much do websites usually cost?</summary><p>Most Australian businesses pay between A$1,500 and A$10,000. Our guide shows every price level and what changes it: <a class="btn-link" href="website-cost-australia.html">how much does a website cost in Australia</a>.</p></details> <!-- 2026-11-16: link to the first Insights article -->
           <details><summary>Who owns the website?</summary><p>You do. Once it's paid for, the code, the design and every account are yours.</p></details>
         </div>
       </div>
@@ -251,6 +273,7 @@
           <ul class="footer-links list-plain">
             <li><a href="services.html">Services</a></li>
             <li><a href="work.html">Work</a></li>
+            <li><a href="insights.html">Insights</a></li> <!-- 2026-11-16: the blog -->
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>

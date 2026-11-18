@@ -19,6 +19,7 @@
   <meta property="og:image:alt" content="Aaurigo Tech. Built right. Built fast. Premium websites, web apps and mobile apps, with founder Krishna Singh.">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.aaurigotech.com/"}, {"@type": "ListItem", "position": 2, "name": "About", "item": "https://www.aaurigotech.com/about"}]}</script> <!-- 2026-11-03: BreadcrumbList on inner pages (RFA §5.11) -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://www.aaurigotech.com/about#krishna", "name": "Krishna Pratap Singh", "alternateName": "Krishna Singh", "jobTitle": "Founder", "image": "https://www.aaurigotech.com/media/about/founder-krishna.webp", "url": "https://www.aaurigotech.com/about", "worksFor": {"@id": "https://www.aaurigotech.com/#organization"}}, {"@type": "AboutPage", "@id": "https://www.aaurigotech.com/about#page", "url": "https://www.aaurigotech.com/about", "name": "About Aaurigo Tech", "about": {"@id": "https://www.aaurigotech.com/#organization"}, "mainEntity": {"@id": "https://www.aaurigotech.com/about#krishna"}}, {"@type": "Organization", "@id": "https://www.aaurigotech.com/#organization", "name": "Aaurigo Tech", "url": "https://www.aaurigotech.com/"}]}</script> <!-- 2026-11-16 (Krishna: schema for authority): the founder as a Person, full name with the short name the page shows. Add "sameAs" with Krishna's own LinkedIn address once it is confirmed -->
   <!-- Copy: doc/copy/about.md (draft until approved). Header and footer are copies of index.html until the Astro port (WEB-3.2). -->
 
   <!-- Google Fonts for now; self-host before launch (WEB-4.4). -->
@@ -81,6 +82,7 @@
         <ul class="nav-list list-plain" id="main-menu">
           <li><a href="services.html">Services</a></li>
           <li><a href="work.html">Work</a></li>
+          <li><a href="insights.html">Insights</a></li> <!-- 2026-11-16 (Krishna: Insights in the burger menu and the nav bar) -->
           <li><a href="about.html" aria-current="page">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -319,6 +321,7 @@
           <ul class="footer-links list-plain">
             <li><a href="services.html">Services</a></li>
             <li><a href="work.html">Work</a></li>
+            <li><a href="insights.html">Insights</a></li> <!-- 2026-11-16: the blog -->
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>

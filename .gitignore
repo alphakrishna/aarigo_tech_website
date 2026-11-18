@@ -1,5 +1,8 @@
 # The GitHub repo is PUBLIC (2026-11-03): only the live website goes up.
 # Old versions of pages and photos, never deployed
+# 2026-11-14: also holds files no longer needed here, kept on this computer only:
+#   archive/holding-page/ (the old holding page)
+#   archive/old-site/ (the old site/ copy, from before the site moved to the repo root)
 archive/
 # Stray files in media (a saved search results page, a cut-out master, a zip)
 media/about/aaurigo Tech - Google Search.html
@@ -21,3 +24,33 @@ Screenshot*.png
 *.jfif
 *.removebg*
 *_files/
+
+# 2026-11-16 (Krishna: keep unnecessary pages out of git): everything that is not the live website.
+# These were only in .git/info/exclude on one computer; here they stay out on every computer.
+# Internal docs, plans, prices, client copy drafts and legal notes (never public)
+CLAUDE.md
+doc/
+# Client journey tools (Palette Studio and the rest) and client files
+tools/
+# Lead generation engine and its contact data
+lead_generation_auto/
+*.csv
+.browser_profile/
+.venv/
+venv/
+__pycache__/
+*.pyc
+# Newsletter drafts
+newsletter/
+# The old site/ copy from before the site moved to the repo root
+site/
+# Copyrighted reference sites
+website-reference/
+# Build output, dependencies and secrets
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+.idea/
+.claude/

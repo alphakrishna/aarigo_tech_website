@@ -13,6 +13,9 @@
   --line: #E4E0D8;
   --veil: rgba(19, 34, 39, .55);   /* ink wash behind a pop up (2026-11-09, Krishna: the newsletter thank you as a pop up) */
   --ink: #132227;
+  --cup-skin: #D49A72;   /* 2026-11-16 (Krishna: a reading widget like the How we work video): the founder character's skin in the reading cup on articles (insights.css) */
+  --cup-skin-light: #EDBF9C;   /* 2026-11-16 (Krishna: make it feel fully 3D): the lit side of the skin */
+  --cup-skin-dark: #A8704D;    /* the shaded side of the skin, under the chin and the far ear */
   --black: #0A0A0A;       /* true black, only for the heading band and the final call to action (2026-10-18, Krishna: make it black, not ink) */
   --glow-dark: rgba(176, 141, 87, .16);   /* champagne at low strength, only for the soft corner glow on the black How we work band (2026-10-22) and the About first screen (2026-10-25) */
   --glow-warm: rgba(176, 141, 87, .3);   /* champagne, stronger: only the glow behind the demo phones on black (2026-11-01, Krishna: more stylish) */
